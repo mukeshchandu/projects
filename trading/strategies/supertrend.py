@@ -1,0 +1,111 @@
+#strategies/supertrend.py — refined v2 (looser entries)
+from __future__ import annotations
+from typing import Any, Dict, List, Optional
+from config import EOD_EXIT_HOUR, EOD_EXIT_MINUTE
+from marketdata import Candle
+from strategies.base import BaseStrategy
+
+
+class SupertrendStrategy(BaseStrategy):
+    """
+    Refined v2:
+    - multiplier 3.0 → 2.0   (more entries, was only 21 trades over 59 days)
+    - atr_period 10 → 7      (more responsive to recent volatility)
+    """
+
+    def __init__(self, symbol: str, qty: int,
+                 atr_period: int = 14, multiplier: float = 1.5) -> None:
+        super().__init__(symbol, qty)
+        self.atr_period = atr_period
+        self.multiplier = multiplier
+        self._reset_all()
+
+    def reset(self) -> None:
+        super().reset()
+        self._reset_all()
+
+    def _reset_all(self) -> None:
+        self._candles:     List[Candle]    = []
+        self._atr:         Optional[float] = None
+        self._upper:       Optional[float] = None
+        self._lower:       Optional[float] = None
+        self._supertrend:  Optional[float] = None
+        self._trend:       int             = 0
+        self.current_date: Optional[str]   = None
+
+    def _reset_day(self) -> None:
+        self.position = 0
+
+    def _tr(self, candle: Candle) -> float:
+        if not self._candles:
+            return candle.high - candle.low
+        p = self._candles[-1]
+        return max(candle.high - candle.low,
+                   abs(candle.high - p.close),
+                   abs(candle.low  - p.close))
+
+    def on_candle(self, candle: Candle) -> List[Dict[str, Any]]:
+        signals: List[Dict[str, Any]] = []
+        date = candle.start.strftime("%Y-%m-%d")
+        h, m = candle.start.hour, candle.start.minute
+
+        if self.current_date != date:
+            self.current_date = date
+            self._reset_day()
+
+        if h > EOD_EXIT_HOUR or (h == EOD_EXIT_HOUR and m >= EOD_EXIT_MINUTE):
+            if self.position != 0:
+                signals.append(self._signal("EXIT", candle.close, "EOD exit"))
+                self.position = 0
+            return signals
+
+        tr = self._tr(candle)
+        self._atr = tr if self._atr is None else (self._atr * (self.atr_period - 1) + tr) / self.atr_period
+        self._candles.append(candle)
+        if len(self._candles) > self.atr_period + 5:
+            self._candles.pop(0)
+        if len(self._candles) < self.atr_period:
+            return signals
+
+        hl2         = (candle.high + candle.low) / 2
+        basic_upper = hl2 + self.multiplier * self._atr
+        basic_lower = hl2 - self.multiplier * self._atr
+        prev_close  = self._candles[-2].close if len(self._candles) >= 2 else candle.close
+
+        if self._upper is None:
+            upper, lower = basic_upper, basic_lower
+        else:
+            upper = basic_upper if (basic_upper < self._upper or prev_close > self._upper) else self._upper
+            lower = basic_lower if (basic_lower > self._lower or prev_close < self._lower) else self._lower
+
+        if self._supertrend is None:
+            new_st, new_trend = (lower, 1) if candle.close > hl2 else (upper, -1)
+        elif self._supertrend == self._upper:
+            new_st, new_trend = (lower, 1) if candle.close > upper else (upper, -1)
+        else:
+            new_st, new_trend = (upper, -1) if candle.close < lower else (lower, 1)
+
+        prev_trend       = self._trend
+        self._trend      = new_trend
+        self._supertrend = new_st
+        self._upper      = upper
+        self._lower      = lower
+
+        if self.position == 1 and candle.close < new_st:
+            signals.append(self._signal("EXIT", new_st, f"trail SL | st={new_st:.2f}"))
+            self.position = 0
+        elif self.position == -1 and candle.close > new_st:
+            signals.append(self._signal("EXIT", new_st, f"trail SL | st={new_st:.2f}"))
+            self.position = 0
+
+        if prev_trend != 0 and new_trend != prev_trend and self.position == 0:
+            if new_trend == 1:
+                self.position = 1
+                signals.append(self._signal("BUY", candle.close,
+                    f"flip UP | atr={self._atr:.2f} st={new_st:.2f}"))
+            else:
+                self.position = -1
+                signals.append(self._signal("SELL", candle.close,
+                    f"flip DOWN | atr={self._atr:.2f} st={new_st:.2f}"))
+
+        return signals

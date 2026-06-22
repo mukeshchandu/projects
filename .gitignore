@@ -1,0 +1,13 @@
+# Secrets & Configs
+.env
+*.pyc
+__pycache__/
+
+# Virtual Environments
+venv/
+ENV/
+
+# Logs and local debug artifacts
+*.log
+logs/
+stuck_debug.png
