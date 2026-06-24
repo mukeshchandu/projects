@@ -17,6 +17,7 @@ from auth import get_session
 from client import FlattradeClient
 from marketdata import CandleBuilder, Tick
 from paper import PaperBroker
+from live_broker import LiveBroker
 from strategies.supertrend import SupertrendStrategy
 from config import IST, EOD_EXIT_HOUR, EOD_EXIT_MINUTE
 
@@ -87,19 +88,25 @@ def resolve_tokens(client: FlattradeClient) -> None:
     for exch, sym in BASKET:
         results = client.search_scrip(exch, sym)
         token = None
+        tsym  = None
         for r in results:
             ts = r.get("tsym", "")
             if ts in (f"{sym}-EQ", sym):
                 token = r.get("token")
+                tsym  = ts
                 break
         if not token and results:
             token = results[0].get("token")
+            tsym  = results[0].get("tsym", f"{sym}-EQ")
+        if not tsym:
+            tsym = f"{sym}-EQ"
         if not token:
             log.warning("No token for %s — skipping", sym)
             continue
         INSTRUMENTS[token] = {
             "symbol":   sym,
             "exchange": exch,
+            "tsym":     tsym,
             "strategy": SupertrendStrategy(symbol=sym, qty=1),
             "builder":  CandleBuilder(interval_seconds=INTERVAL_S),
         }
@@ -185,7 +192,9 @@ class TradingApp:
         if ts.hour > EOD_EXIT_HOUR or (ts.hour == EOD_EXIT_HOUR and ts.minute >= EOD_EXIT_MINUTE):
             t = _open_trades.get(symbol)
             if t:
-                pnl = ((price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - price)) * t["qty"]
+                exit_side = "SELL" if t["side"] == "LONG" else "BUY"
+                fill = broker.simulate_fill(symbol, exit_side, t["qty"], price, "EOD")
+                pnl = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * t["qty"]
                 _total_pnl += pnl
                 _open_trades[symbol] = None
                 log.info("EOD EXIT  %-12s  Rs%+.2f  total=Rs%+.2f", symbol, pnl, _total_pnl)
@@ -193,7 +202,7 @@ class TradingApp:
                 _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
                               f"{meta.get('entry_time','')},"
                               f"{t['entry']:.2f},{ts.strftime('%H:%M')},"
-                              f"{price:.2f},{t['qty']},{pnl:.2f}\n")
+                              f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
                 _csv_fh.flush()
             if not _eod_done and all(v is None for v in _open_trades.values()):
                 _eod_done = True
@@ -268,6 +277,12 @@ def main() -> None:
     log.info("Strategy: Supertrend atr=14 mult=1.5 | 15-min | paper mode")
     log.info("Resolving NSE tokens...")
     resolve_tokens(client)
+
+    global broker
+    if os.getenv("LIVE_MODE") == "1":
+        tsym_map = {inst["symbol"]: inst["tsym"] for inst in INSTRUMENTS.values()}
+        broker = LiveBroker(client, tsym_map)
+        log.info("*** LIVE MODE — real orders will be placed ***")
 
     if not INSTRUMENTS:
         log.error("No instruments resolved — exiting")
