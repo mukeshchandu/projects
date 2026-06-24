@@ -1,12 +1,10 @@
-#generate_token.py — reads creds from .env, writes FLATTRADE_SESSION_TOKEN back to .env
-import re, sys, hashlib
-import pyotp, requests
+import hashlib
+import pyotp
+import requests
+import re
 from playwright.sync_api import sync_playwright
 
-ENV_PATH = ".env"
-
-
-def read_env(path=ENV_PATH):
+def read_env(path=".env"):
     env = {}
     for line in open(path):
         line = line.strip()
@@ -15,12 +13,11 @@ def read_env(path=ENV_PATH):
             env[k.strip()] = v.strip().strip('"').strip("'")
     return env
 
-
-def set_env(key, value, path=ENV_PATH):
+def set_env(key, value, path=".env"):
     lines = open(path).read().splitlines()
     out, found = [], False
     for ln in lines:
-        if ln.strip().startswith(f"{key}="):
+        if re.match(rf"^\s*{re.escape(key)}\s*=", ln):
             out.append(f"{key}={value}"); found = True
         else:
             out.append(ln)
@@ -28,85 +25,93 @@ def set_env(key, value, path=ENV_PATH):
         out.append(f"{key}={value}")
     open(path, "w").write("\n".join(out) + "\n")
 
-
 cfg = read_env()
-def need(k):
-    v = cfg.get(k)
-    if not v:
-        sys.exit(f"ERROR: {k} missing from .env")
-    return v
+API_KEY     = cfg["FLATTRADE_API_KEY"]
+API_SECRET  = cfg["FLATTRADE_API_SECRET"]
+USER_ID     = cfg["FLATTRADE_USER_ID"]
+PASSWORD    = cfg["PASSWORD"]
+TOTP_SECRET = cfg["TOTP_SECRET"]
 
-API_KEY     = need("FLATTRADE_API_KEY")
-API_SECRET  = need("FLATTRADE_API_SECRET")
-PASSWORD    = need("PASSWORD")
-TOTP_SECRET = need("TOTP_SECRET")
-USER_ID     = cfg.get("FLATTRADE_USER_ID") or cfg.get("USER_ID") or cfg.get("FLATTRADE_UID")
-if not USER_ID:
-    sys.exit("ERROR: USER_ID missing from .env — add a line:  USER_ID=FZ38545")
-
-
-def get_request_code():
+def get_flattrade_jkey():
+    print("Initializing Playwright...", flush=True)
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True, args=[
-            "--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage",
-            "--disable-gpu", "--no-zygote", "--disable-blink-features=AutomationControlled",
-        ])
-        ctx = browser.new_context(
-            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"),
-            viewport={"width": 1280, "height": 800})
-        page = ctx.new_page()
-        page.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined})")
+        browser = p.chromium.launch(
+            headless=True,
+            args=['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage',
+                  '--disable-gpu','--no-zygote','--disable-blink-features=AutomationControlled']
+        )
+        context = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+            viewport={"width": 1280, "height": 800}
+        )
+        page = context.new_page()
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+        captured_code = {"code": None}
 
-        captured = {"code": None}
-        def on_request(req):
-            if "code=" in req.url:
-                m = re.search(r"code=([a-zA-Z0-9-]+)", req.url)
-                if m:
-                    captured["code"] = m.group(1)
+        def on_request(request):
+            if "code=" in request.url:
+                match = re.search(r"code=([a-zA-Z0-9-]+)", request.url)
+                if match:
+                    captured_code["code"] = match.group(1)
+
         page.on("request", on_request)
-
         try:
-            page.goto(f"https://auth.flattrade.in/?app_key={API_KEY}",
-                      wait_until="networkidle", timeout=30000)
-            u = page.locator('input[placeholder*="User ID"]'); u.wait_for(timeout=5000)
-            u.click(); u.fill(USER_ID)
-            pw = page.locator('input[placeholder*="Password"]'); pw.click(); pw.fill(PASSWORD)
-            secret = re.sub(r"[^A-Z2-7]", "", TOTP_SECRET.upper())
-            otp = pyotp.TOTP(secret).now()
-            of = page.locator('input[placeholder*="OTP"]'); of.click(); of.fill(otp)
+            print("Step 1: Navigating to Portal...", flush=True)
+            page.goto(f"https://auth.flattrade.in/?app_key={API_KEY}", wait_until="networkidle", timeout=30000)
+            print("Step 2: Entering Credentials...", flush=True)
+            user_field = page.locator('input[placeholder*="User ID"]')
+            user_field.wait_for(timeout=5000)
+            user_field.click()
+            user_field.fill(USER_ID)
+            pass_field = page.locator('input[placeholder*="Password"]')
+            pass_field.click()
+            pass_field.fill(PASSWORD)
+            totp = pyotp.TOTP(TOTP_SECRET.replace(" ", "")).now()
+            otp_field = page.locator('input[placeholder*="OTP"]')
+            otp_field.click()
+            otp_field.fill(totp)
+            print(f"Submitting with TOTP: {totp}", flush=True)
             page.wait_for_timeout(1000)
-            page.locator('button:has-text("Log In"), button:has-text("Sign In")').first.dispatch_event("click")
+            submit_btn = page.locator('button:has-text("Log In"), button:has-text("Sign In")').first
+            submit_btn.dispatch_event("click")
+            print("Step 3: Waiting for redirect...", flush=True)
             for _ in range(40):
-                if captured["code"]:
+                if captured_code["code"]:
                     break
                 page.wait_for_timeout(500)
-            if not captured["code"]:
+            if not captured_code["code"]:
+                print(f"Timed out. Still at: {page.url}", flush=True)
+                try:
+                    body_text = page.locator("body").text_content()
+                    for line in body_text.split('\n'):
+                        if line.strip():
+                            print(f"| {line.strip()}")
+                except Exception as e:
+                    print(f"Could not read page text: {e}")
                 page.screenshot(path="stuck_debug.png")
-                print(f"timed out at {page.url} (see stuck_debug.png)", file=sys.stderr)
-            return captured["code"]
+                return None
+            print(f"Success! Captured Code: {captured_code['code']}", flush=True)
+            return captured_code['code']
+        except Exception as e:
+            print(f"Playwright error: {e}", flush=True)
+            return None
         finally:
             browser.close()
 
-
-def main():
-    print("Logging in to Flattrade (headless)...", flush=True)
-    code = get_request_code()
-    if not code:
-        sys.exit("ERROR: failed to capture request code")
-    print(f"Got code ({code[:4]}...). Exchanging for token...", flush=True)
-
-    api_hash = hashlib.sha256((API_KEY + code + API_SECRET).encode()).hexdigest()
-    r = requests.post("https://authapi.flattrade.in/trade/apitoken",
-                      json={"api_key": API_KEY, "request_code": code, "api_secret": api_hash},
-                      timeout=15)
-    token = r.json().get("token")
-    if not token:
-        sys.exit(f"ERROR: token exchange failed - {r.json()}")
-
-    set_env("FLATTRADE_SESSION_TOKEN", token)
-    print(f"OK: FLATTRADE_SESSION_TOKEN updated in .env  ({token[:4]}...{token[-4:]})", flush=True)
-
-
-if __name__ == "__main__":
-    main()
+jkey = get_flattrade_jkey()
+if jkey:
+    code = jkey
+    api_token = hashlib.sha256((API_KEY + code + API_SECRET).encode()).hexdigest()
+    resp = requests.post('https://authapi.flattrade.in/trade/apitoken',
+                        json={'api_key': API_KEY, 'request_code': code, 'api_secret': api_token})
+    result = resp.json()
+    print("\n--- FLATTRADE RESPONSE ---", flush=True)
+    print(result, flush=True)
+    token = result.get("token") or result.get("jKey") or result.get("access_token")
+    if token:
+        set_env("FLATTRADE_SESSION_TOKEN", token)
+        print(f"Token saved to .env", flush=True)
+    else:
+        print(f"No token in response: {result}", flush=True)
+else:
+    print("Failed to get code", flush=True)

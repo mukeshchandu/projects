@@ -196,4 +196,4 @@ class FlattradeClient:
 
     def _ws_close(self, ws: websocket.WebSocketApp, code: Any, msg: Any) -> None:
         if self.on_close:
-            self.on_close()
+            self.on_close(code, msg)

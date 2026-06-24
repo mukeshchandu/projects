@@ -1,17 +1,15 @@
-#strategies/supertrend.py — refined v2 (looser entries)
+#strategies/supertrend.py
 from __future__ import annotations
+import json, os
 from typing import Any, Dict, List, Optional
 from config import EOD_EXIT_HOUR, EOD_EXIT_MINUTE
 from marketdata import Candle
 from strategies.base import BaseStrategy
 
+STATE_DIR = "data/st_state"
+
 
 class SupertrendStrategy(BaseStrategy):
-    """
-    Refined v2:
-    - multiplier 3.0 → 2.0   (more entries, was only 21 trades over 59 days)
-    - atr_period 10 → 7      (more responsive to recent volatility)
-    """
 
     def __init__(self, symbol: str, qty: int,
                  atr_period: int = 14, multiplier: float = 1.5) -> None:
@@ -19,6 +17,54 @@ class SupertrendStrategy(BaseStrategy):
         self.atr_period = atr_period
         self.multiplier = multiplier
         self._reset_all()
+        self._load_state()
+
+    def _state_path(self) -> str:
+        os.makedirs(STATE_DIR, exist_ok=True)
+        return f"{STATE_DIR}/{self.symbol}.json"
+
+    def _load_state(self) -> None:
+        path = self._state_path()
+        if not os.path.exists(path):
+            return
+        try:
+            s = json.load(open(path))
+            self._atr        = s.get("atr")
+            self._upper      = s.get("upper")
+            self._lower      = s.get("lower")
+            self._supertrend = s.get("supertrend")
+            self._trend      = s.get("trend", 0)
+            candles_raw      = s.get("candles", [])
+            from marketdata import Candle
+            from datetime import datetime
+            from config import IST
+            self._candles = []
+            for c in candles_raw:
+                self._candles.append(Candle(
+                    start  = datetime.fromtimestamp(c["ts"], tz=IST),
+                    open   = c["o"], high = c["h"],
+                    low    = c["l"], close = c["c"]
+                ))
+            print(f"[ST] {self.symbol} loaded state — atr={self._atr:.4f} trend={self._trend} candles={len(self._candles)}")
+        except Exception as e:
+            print(f"[ST] {self.symbol} state load failed: {e} — starting fresh")
+            self._reset_all()
+
+    def save_state(self) -> None:
+        path = self._state_path()
+        s = {
+            "atr":        self._atr,
+            "upper":      self._upper,
+            "lower":      self._lower,
+            "supertrend": self._supertrend,
+            "trend":      self._trend,
+            "candles": [
+                {"ts": int(c.start.timestamp()),
+                 "o": c.open, "h": c.high, "l": c.low, "c": c.close}
+                for c in self._candles
+            ]
+        }
+        json.dump(s, open(path, "w"))
 
     def reset(self) -> None:
         super().reset()
@@ -57,6 +103,7 @@ class SupertrendStrategy(BaseStrategy):
             if self.position != 0:
                 signals.append(self._signal("EXIT", candle.close, "EOD exit"))
                 self.position = 0
+            self.save_state()
             return signals
 
         tr = self._tr(candle)

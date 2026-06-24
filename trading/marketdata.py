@@ -41,10 +41,7 @@ class CandleBuilder:
             self.current = Candle(bucket_start, tick.ltp, tick.ltp, tick.ltp, tick.ltp)
             return None
 
-        bucket_end = datetime.fromtimestamp(
-            bucket_ts + self.interval_seconds, tz=IST
-        )
-        if tick.ts >= bucket_end:
+        if bucket_start > self.current.start:
             finished     = self.current
             self.current = Candle(bucket_start, tick.ltp, tick.ltp, tick.ltp, tick.ltp)
             return finished
