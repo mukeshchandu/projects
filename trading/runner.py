@@ -57,8 +57,16 @@ BASKET = [
     ("NSE", "NMDC"),
     ("NSE", "NTPC"),
     ("NSE", "ADANIPORTS"),
+    ("NSE", "ASHOKLEY"),
+    ("NSE", "COFORGE"),
+    ("NSE", "ADANIGREEN"),
+    ("NSE", "BHEL"),
+    ("NSE", "MPHASIS"),
+    ("NSE", "INDUSINDBK"),
 ]
 MAX_CAPITAL_PER_STOCK = 10_000
+MAX_POSITIONS     = int(os.getenv("MAX_POSITIONS", "1"))
+CAPITAL_PER_TRADE = MAX_CAPITAL_PER_STOCK
 INTERVAL_S            = 900
 
 # ── State ────────────────────────────────────────────────────────────────
@@ -112,6 +120,28 @@ def resolve_tokens(client: FlattradeClient) -> None:
         }
         _open_trades[sym] = None
         log.info("Resolved  %-15s  token=%s", sym, token)
+
+
+def _sync_positions_from_exchange(client: FlattradeClient) -> None:
+    """On restart: read open positions from exchange and restore _open_trades."""
+    try:
+        result = client.positions()
+        if not isinstance(result, list):
+            return
+        for p in result:
+            tsym   = p.get("tsym", "")
+            sym    = tsym.replace("-EQ", "")
+            netqty = int(p.get("netqty", 0) or 0)
+            if sym not in _open_trades or netqty == 0:
+                continue
+            side = "LONG" if netqty > 0 else "SHORT"
+            avg  = float(p.get("netavgprc", 0) or 0)
+            qty  = abs(netqty)
+            _open_trades[sym] = {"side": side, "entry": avg, "qty": qty, "ts_str": "resumed"}
+            log.warning("POSITION RESUMED  %-12s  %s  qty=%d  entry=Rs%.2f",
+                        sym, side, qty, avg)
+    except Exception as e:
+        log.warning("Position sync failed: %s — starting with clean slate", e)
 
 
 def _heartbeat() -> None:
@@ -194,6 +224,10 @@ class TradingApp:
             if t:
                 exit_side = "SELL" if t["side"] == "LONG" else "BUY"
                 fill = broker.simulate_fill(symbol, exit_side, t["qty"], price, "EOD")
+                if fill is None:
+                    _open_trades[symbol] = None
+                    log.error("EOD ORDER REJECTED  %s — position may be open on exchange!", symbol)
+                    continue
                 pnl = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * t["qty"]
                 _total_pnl += pnl
                 _open_trades[symbol] = None
@@ -225,8 +259,12 @@ class TradingApp:
             reason = sig.get("reason", "")
 
             if action == "BUY" and _open_trades[symbol] is None:
-                qty  = max(1, int(MAX_CAPITAL_PER_STOCK / px))
+                if sum(1 for v in _open_trades.values() if v) >= MAX_POSITIONS:
+                    continue
+                qty  = max(1, int(CAPITAL_PER_TRADE / px))
                 fill = broker.simulate_fill(symbol, "BUY", qty, px, reason)
+                if fill is None:
+                    continue
                 _trade_no += 1
                 _open_trades[symbol] = {"side": "LONG", "entry": fill.price, "qty": qty, "ts_str": ts_str}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
@@ -234,8 +272,12 @@ class TradingApp:
                          _trade_no, symbol, fill.price, qty, reason)
 
             elif action == "SELL" and _open_trades[symbol] is None:
-                qty  = max(1, int(MAX_CAPITAL_PER_STOCK / px))
+                if sum(1 for v in _open_trades.values() if v) >= MAX_POSITIONS:
+                    continue
+                qty  = max(1, int(CAPITAL_PER_TRADE / px))
                 fill = broker.simulate_fill(symbol, "SELL", qty, px, reason)
+                if fill is None:
+                    continue
                 _trade_no += 1
                 _open_trades[symbol] = {"side": "SHORT", "entry": fill.price, "qty": qty, "ts_str": ts_str}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
@@ -246,6 +288,8 @@ class TradingApp:
                 t    = _open_trades[symbol]
                 side = "SELL" if t["side"] == "LONG" else "BUY"
                 fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
+                if fill is None:
+                    continue
                 pnl  = ((fill.price - t["entry"]) if t["side"] == "LONG"
                         else (t["entry"] - fill.price)) * t["qty"]
                 _total_pnl += pnl
@@ -277,12 +321,21 @@ def main() -> None:
     log.info("Strategy: Supertrend atr=14 mult=1.5 | 15-min | paper mode")
     log.info("Resolving NSE tokens...")
     resolve_tokens(client)
+    _sync_positions_from_exchange(client)
 
-    global broker
+    global broker, MAX_CAPITAL_PER_STOCK
     if os.getenv("LIVE_MODE") == "1":
         tsym_map = {inst["symbol"]: inst["tsym"] for inst in INSTRUMENTS.values()}
         broker = LiveBroker(client, tsym_map)
-        log.info("*** LIVE MODE — real orders will be placed ***")
+        global CAPITAL_PER_TRADE
+        try:
+            limits = client.get_limits()
+            cash = float(limits.get("cash", 0) or 0)
+            CAPITAL_PER_TRADE = max(1000, int(cash * 4 / MAX_POSITIONS))
+            log.info("*** LIVE MODE  cash=Rs%.0f  4x=Rs%.0f  K=%d  per_trade=Rs%d ***",
+                     cash, cash * 4, MAX_POSITIONS, CAPITAL_PER_TRADE)
+        except Exception as e:
+            log.warning("Could not fetch limits (%s) — using Rs%d/trade", e, CAPITAL_PER_TRADE)
 
     if not INSTRUMENTS:
         log.error("No instruments resolved — exiting")
