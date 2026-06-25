@@ -39,31 +39,28 @@ log = logging.getLogger(__name__)
 
 # ── Basket ───────────────────────────────────────────────────────────────
 BASKET = [
-    ("NSE", "IDEA"),
-    ("NSE", "SUZLON"),
-    ("NSE", "YESBANK"),
-    ("NSE", "NHPC"),
-    ("NSE", "SAIL"),
-    ("NSE", "PNB"),
-    ("NSE", "RPOWER"),
-    ("NSE", "TATASTEEL"),
-    ("NSE", "IDFCFIRSTB"),
+    ("NSE", "IRFC"),
     ("NSE", "HFCL"),
-    ("NSE", "VEDL"),
-    ("NSE", "COALINDIA"),
-    ("NSE", "NATIONALUM"),
+    ("NSE", "JSWSTEEL"),
     ("NSE", "BANKBARODA"),
-    ("NSE", "UNIONBANK"),
+    ("NSE", "TATASTEEL"),
     ("NSE", "NMDC"),
-    ("NSE", "NTPC"),
-    ("NSE", "ADANIPORTS"),
-    ("NSE", "ASHOKLEY"),
-    ("NSE", "COFORGE"),
-    ("NSE", "ADANIGREEN"),
-    ("NSE", "BHEL"),
-    ("NSE", "MPHASIS"),
+    ("NSE", "IDEA"),
     ("NSE", "INDUSINDBK"),
+    ("NSE", "SUZLON"),
 ]
+# MIS = intraday (EOD exit 3PM) | CNC = delivery (hold overnight)
+MODES = {
+    "IRFC":       "CNC",
+    "HFCL":       "CNC",
+    "JSWSTEEL":   "CNC",
+    "BANKBARODA": "CNC",
+    "TATASTEEL":  "CNC",
+    "NMDC":       "CNC",
+    "IDEA":       "CNC",
+    "INDUSINDBK": "CNC",
+    "SUZLON":     "MIS",
+}
 MAX_CAPITAL_PER_STOCK = 10_000
 MAX_POSITIONS     = int(os.getenv("MAX_POSITIONS", "1"))
 CAPITAL_PER_TRADE = MAX_CAPITAL_PER_STOCK
@@ -115,6 +112,7 @@ def resolve_tokens(client: FlattradeClient) -> None:
             "symbol":   sym,
             "exchange": exch,
             "tsym":     tsym,
+            "mode":     MODES.get(sym, "MIS"),
             "strategy": SupertrendStrategy(symbol=sym, qty=1),
             "builder":  CandleBuilder(interval_seconds=INTERVAL_S),
         }
@@ -173,8 +171,12 @@ def _eod_summary() -> None:
     still_open = {s: t for s, t in _open_trades.items() if t}
     if still_open:
         for sym, t in still_open.items():
-            log.warning("STILL OPEN  %s  %s  entry=Rs%.2f  qty=%d",
-                        sym, t["side"], t["entry"], t["qty"])
+            if MODES.get(sym, "MIS") == "CNC":
+                log.info("CNC OVERNIGHT  %s  %s  entry=Rs%.2f  qty=%d",
+                         sym, t["side"], t["entry"], t["qty"])
+            else:
+                log.warning("STILL OPEN  %s  %s  entry=Rs%.2f  qty=%d",
+                            sym, t["side"], t["entry"], t["qty"])
     else:
         log.info("All positions flat at EOD")
     log.info("Ticks  -> %s", _tick_path)
@@ -222,23 +224,29 @@ class TradingApp:
         if ts.hour > EOD_EXIT_HOUR or (ts.hour == EOD_EXIT_HOUR and ts.minute >= EOD_EXIT_MINUTE):
             t = _open_trades.get(symbol)
             if t:
-                exit_side = "SELL" if t["side"] == "LONG" else "BUY"
-                fill = broker.simulate_fill(symbol, exit_side, t["qty"], price, "EOD")
-                if fill is None:
+                mode = inst.get("mode", "MIS")
+                if mode == "CNC":
+                    log.info("EOD  %-12s  [CNC] holding overnight  entry=Rs%.2f  qty=%d",
+                             symbol, t["entry"], t["qty"])
+                else:
+                    exit_side = "SELL" if t["side"] == "LONG" else "BUY"
+                    fill = broker.simulate_fill(symbol, exit_side, t["qty"], price, "EOD")
+                    if fill is None:
+                        _open_trades[symbol] = None
+                        log.error("EOD ORDER REJECTED  %s", symbol)
+                        return
+                    pnl = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * t["qty"]
+                    _total_pnl += pnl
                     _open_trades[symbol] = None
-                    log.error("EOD ORDER REJECTED  %s — position may be open on exchange!", symbol)
-                    continue
-                pnl = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * t["qty"]
-                _total_pnl += pnl
-                _open_trades[symbol] = None
-                log.info("EOD EXIT  %-12s  Rs%+.2f  total=Rs%+.2f", symbol, pnl, _total_pnl)
-                meta = _entry_meta.get(_trade_no, {})
-                _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
-                              f"{meta.get('entry_time','')},"
-                              f"{t['entry']:.2f},{ts.strftime('%H:%M')},"
-                              f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
-                _csv_fh.flush()
-            if not _eod_done and all(v is None for v in _open_trades.values()):
+                    log.info("EOD EXIT  %-12s  Rs%+.2f  total=Rs%+.2f", symbol, pnl, _total_pnl)
+                    meta = _entry_meta.get(_trade_no, {})
+                    _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
+                                  f"{meta.get('entry_time','')},"
+                                  f"{t['entry']:.2f},{ts.strftime('%H:%M')},"
+                                  f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
+                    _csv_fh.flush()
+            mis_open = any(_open_trades.get(s) for s in MODES if MODES[s] == "MIS")
+            if not _eod_done and not mis_open:
                 _eod_done = True
                 _eod_summary()
             return
@@ -307,8 +315,28 @@ class TradingApp:
                 _csv_fh.flush()
 
     def handle_order(self, msg: dict) -> None:
-        log.info("ORDER  %s  %s  norenordno=%s",
-                 msg.get("reporttype"), msg.get("tsym"), msg.get("norenordno", ""))
+        rtype      = msg.get("reporttype", "")
+        norenordno = msg.get("norenordno", "")
+        tsym       = msg.get("tsym", "")
+
+        if rtype.lower() in ("fill", "complete") and hasattr(broker, "pending"):
+            p = broker.pending.pop(norenordno, None)
+            if p:
+                actual = float(msg.get("avgprc") or msg.get("flprc") or p["est"])
+                slip   = (actual - p["est"]) if p["side"] == "BUY" else (p["est"] - actual)
+                log.info("FILL CONFIRMED  %-12s  %s  actual=Rs%.4f  est=Rs%.4f  slippage=Rs%+.4f",
+                         p["symbol"], p["side"], actual, p["est"], slip)
+                # Update open trade entry price to actual fill
+                t = _open_trades.get(p["symbol"])
+                if t:
+                    t["entry"] = actual
+            else:
+                log.info("FILL  %s  norenordno=%s  avgprc=%s", tsym, norenordno, msg.get("avgprc"))
+        elif rtype.lower() == "rejected":
+            log.error("ORDER REJECTED  %s  norenordno=%s  reason=%s",
+                      tsym, norenordno, msg.get("rejreason", "unknown"))
+        else:
+            log.info("ORDER UPDATE  %-8s  %s  norenordno=%s", rtype, tsym, norenordno)
 
 
 def main() -> None:
@@ -326,7 +354,8 @@ def main() -> None:
     global broker, MAX_CAPITAL_PER_STOCK
     if os.getenv("LIVE_MODE") == "1":
         tsym_map = {inst["symbol"]: inst["tsym"] for inst in INSTRUMENTS.values()}
-        broker = LiveBroker(client, tsym_map)
+        mode_map = {inst["symbol"]: inst.get("mode","MIS") for inst in INSTRUMENTS.values()}
+        broker   = LiveBroker(client, tsym_map, mode_map)
         global CAPITAL_PER_TRADE
         try:
             limits = client.get_limits()
@@ -349,6 +378,7 @@ def main() -> None:
 
     def on_open(c: FlattradeClient) -> None:
         c.subscribe(scrip_keys, feed_type="t")
+        c.subscribe_orders()
         log.info("WS CONNECTED  subscribed=%d instruments", len(INSTRUMENTS))
         log.info("Ticks -> %s", _tick_path)
 
@@ -371,8 +401,8 @@ def main() -> None:
     signal.signal(signal.SIGINT, _shutdown)
     signal.signal(signal.SIGTERM, _shutdown)
 
-    log.info("%d stocks | Rs%d/stock | EOD %02d:%02d IST",
-             len(INSTRUMENTS), MAX_CAPITAL_PER_STOCK, EOD_EXIT_HOUR, EOD_EXIT_MINUTE)
+    log.info("%d stocks | Rs%d/trade | K=%d | EOD %02d:%02d IST",
+             len(INSTRUMENTS), CAPITAL_PER_TRADE, MAX_POSITIONS, EOD_EXIT_HOUR, EOD_EXIT_MINUTE)
     log.info("=" * 60)
 
     client.start_websocket(
