@@ -346,7 +346,8 @@ def main() -> None:
 
     log.info("=" * 60)
     log.info("STARTUP  date=%s  pid=%d", _today, os.getpid())
-    log.info("Strategy: Supertrend atr=14 mult=1.5 | 15-min | paper mode")
+    mode_label = "LIVE" if os.getenv("LIVE_MODE") == "1" else "PAPER"
+    log.info("Strategy: Supertrend atr=14 mult=1.5 | 15-min | %s mode", mode_label)
     log.info("Resolving NSE tokens...")
     resolve_tokens(client)
     _sync_positions_from_exchange(client)

@@ -127,6 +127,9 @@ class FlattradeClient:
             payload["remarks"] = remarks
         return self._req("PlaceOrder", payload)
 
+    def get_limits(self) -> dict:
+        return self._req("Limits", {"product": "I", "segment": "EQ", "exchange": "NSE"})
+
     def cancel_order(self, order_no: str) -> Dict[str, Any]:
         return self._req("CancelOrder", {"norenordno": order_no})
 

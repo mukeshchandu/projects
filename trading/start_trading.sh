@@ -18,7 +18,7 @@ sleep 2
         break
     fi
     echo "[$(date)] Starting runner..." >> logs/runner_${DATE}.log
-    python runner.py
+    LIVE_MODE=1 python runner.py
     echo "[$(date)] Runner exited, restarting in 10s..." >> logs/runner_${DATE}.log
     sleep 10
 done) &
