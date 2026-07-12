@@ -49,6 +49,23 @@ class LiveBroker:
             log.warning("holdings() failed for %s: %s", symbol, e)
         return 0
 
+    def net_position(self, symbol: str):
+        """Signed net intraday qty from the exchange PositionBook. Returns None if the
+        call fails (so callers can tell 'genuinely flat' from 'don't know')."""
+        try:
+            result = self.client.positions()
+            if not isinstance(result, list):
+                return None
+            tsym = self.tsym_map.get(symbol, f"{symbol}-EQ")
+            for p in result:
+                pt = p.get("tsym", "")
+                if pt == tsym or pt.startswith(symbol):
+                    return int(p.get("netqty", 0) or 0)
+            return 0
+        except Exception as e:
+            log.warning("positions() failed for %s: %s", symbol, e)
+            return None
+
     def simulate_fill(self, symbol: str, side: str, qty: int,
                       mid_price: float, reason: str = "") -> Optional[PaperFill]:
         mode     = self.mode_map.get(symbol, "MIS")
@@ -100,21 +117,26 @@ class LiveBroker:
         log.info("ORDER  %-12s  %-5s  %-4s  qty=%-6d  price=Rs%-7.2f  reason=%s",
                  symbol, side.upper(), mode, qty, limit_price, reason)
 
-        resp = self.client.place_order(
-            buy_or_sell   = trantype,
-            product_type  = product,
-            exchange      = "NSE",
-            tradingsymbol = tsym,
-            quantity      = qty,
-            price_type    = "LMT",
-            price         = limit_price,
-            retention     = "IOC",
-            remarks       = reason[:20] if reason else "",
-        )
+        try:
+            resp = self.client.place_order(
+                buy_or_sell   = trantype,
+                product_type  = product,
+                exchange      = "NSE",
+                tradingsymbol = tsym,
+                quantity      = qty,
+                price_type    = "LMT",
+                price         = limit_price,
+                retention     = "IOC",
+                remarks       = reason[:20] if reason else "",
+            )
+        except Exception as e:
+            log.error("place_order EXCEPTION  %s  %s  qty=%d: %s — treating as NOT placed",
+                      symbol, side.upper(), qty, e)
+            return None
 
-        if resp.get("stat") != "Ok":
+        if not isinstance(resp, dict) or resp.get("stat") != "Ok":
             log.error("ORDER REJECTED  %s  %s  qty=%d  reason=%s",
-                      symbol, side.upper(), qty, resp.get("emsg", resp))
+                      symbol, side.upper(), qty, resp.get("emsg", resp) if isinstance(resp, dict) else resp)
             return None
 
         norenordno = resp.get("norenordno", "")

@@ -85,7 +85,7 @@ _tick_fh   = open(_tick_path, "a")
 _csv_path = f"logs/trades_{_today}.csv"
 _csv_fh   = open(_csv_path, "a")
 if os.path.getsize(_csv_path) == 0:
-    _csv_fh.write("trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,pnl\n")
+    _csv_fh.write("trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,gross_pnl,cost,net_pnl\n")
     _csv_fh.flush()
 
 _entry_meta: Dict[int, dict] = {}   # trade_no → {entry_time}
@@ -281,6 +281,22 @@ def _align_strategy_from_trades() -> None:
             strat._entry_atr   = None
 
 
+def _charges(entry_val: float, exit_val: float, mode: str) -> float:
+    """Estimated Flattrade round-trip charges (INR): STT + exchange + SEBI + stamp + GST,
+    plus the flat DP charge on CNC (delivery) sells. Brokerage is nil on Flattrade."""
+    if mode == "CNC":
+        stt = 0.001 * entry_val + 0.001 * exit_val
+        stamp = 0.00015 * entry_val
+        dp = 20.0 * 1.18
+    else:
+        stt = 0.00025 * exit_val
+        stamp = 0.00003 * entry_val
+        dp = 0.0
+    exch = 0.0000307 * (entry_val + exit_val)
+    sebi = 0.000001 * (entry_val + exit_val)
+    return stt + stamp + dp + exch + sebi + 0.18 * (exch + sebi)
+
+
 def _flush_and_close() -> None:
     _tick_fh.flush()
     _tick_fh.close()
@@ -300,18 +316,21 @@ class TradingApp:
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
         if fill is None:
             return False
-        pnl = ((fill.price - t["entry"]) if t["side"] == "LONG"
-               else (t["entry"] - fill.price)) * t["qty"]
+        gross = ((fill.price - t["entry"]) if t["side"] == "LONG"
+                 else (t["entry"] - fill.price)) * t["qty"]
+        cost  = _charges(t["entry"] * t["qty"], fill.price * t["qty"], MODES.get(symbol, "MIS"))
+        pnl   = gross - cost
         _total_pnl += pnl
         _open_trades[symbol] = None
         result = "WIN " if pnl >= 0 else "LOSS"
-        log.info("EXIT  #%-3d  %-12s  %s  Rs%+.2f  entry=Rs%.2f@%s  exit=Rs%.2f  total=Rs%+.2f  [%s]",
-                 _trade_no, symbol, result, pnl, t["entry"], t["ts_str"], fill.price, _total_pnl, reason)
+        log.info("EXIT  #%-3d  %-12s  %s  net=Rs%+.2f (gross=Rs%+.2f cost=Rs%.2f)  "
+                 "entry=Rs%.2f@%s  exit=Rs%.2f  total=Rs%+.2f  [%s]",
+                 _trade_no, symbol, result, pnl, gross, cost, t["entry"], t["ts_str"], fill.price, _total_pnl, reason)
         meta = _entry_meta.get(_trade_no, {})
         _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
                       f"{meta.get('entry_time','')},"
                       f"{t['entry']:.2f},{ts_str},"
-                      f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
+                      f"{fill.price:.2f},{t['qty']},{gross:.2f},{cost:.2f},{pnl:.2f}\n")
         _csv_fh.flush()
         _save_runner_state()
         return True
@@ -358,22 +377,38 @@ class TradingApp:
                     log.info("EOD  %-12s  [CNC] holding overnight  entry=Rs%.2f  qty=%d",
                              symbol, t["entry"], t["qty"])
                 else:
-                    exit_side = "SELL" if t["side"] == "LONG" else "BUY"
-                    fill = broker.simulate_fill(symbol, exit_side, t["qty"], price, "EOD")
+                    # Verify the REAL position before closing — never sell what we don't hold.
+                    # A rejected/unfilled entry must not become a phantom SHORT at EOD.
+                    net = broker.net_position(symbol) if hasattr(broker, "net_position") else None
+                    if net == 0:
+                        log.warning("EOD %s — ledger says open but exchange net=0 (phantom); clearing, NO order", symbol)
+                        _open_trades[symbol] = None
+                        _save_runner_state()
+                        return
+                    if net is not None and net != 0:
+                        exit_side = "SELL" if net > 0 else "BUY"
+                        close_qty = abs(net)
+                    else:  # positions() unavailable — best-effort from our ledger
+                        exit_side = "SELL" if t["side"] == "LONG" else "BUY"
+                        close_qty = t["qty"]
+                    fill = broker.simulate_fill(symbol, exit_side, close_qty, price, "EOD")
                     if fill is None:
                         _open_trades[symbol] = None
                         _save_runner_state()
-                        log.error("EOD ORDER REJECTED  %s", symbol)
+                        log.error("EOD close REJECTED/UNFILLED  %s — position may need manual check", symbol)
                         return
-                    pnl = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * t["qty"]
+                    gross = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * close_qty
+                    cost  = _charges(t["entry"] * close_qty, fill.price * close_qty, "MIS")
+                    pnl   = gross - cost
                     _total_pnl += pnl
                     _open_trades[symbol] = None
-                    log.info("EOD EXIT  %-12s  Rs%+.2f  total=Rs%+.2f", symbol, pnl, _total_pnl)
+                    log.info("EOD EXIT  %-12s  net=Rs%+.2f (gross=Rs%+.2f cost=Rs%.2f)  total=Rs%+.2f",
+                             symbol, pnl, gross, cost, _total_pnl)
                     meta = _entry_meta.get(_trade_no, {})
                     _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
                                   f"{meta.get('entry_time','')},"
                                   f"{t['entry']:.2f},{ts.strftime('%H:%M')},"
-                                  f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
+                                  f"{fill.price:.2f},{close_qty},{gross:.2f},{cost:.2f},{pnl:.2f}\n")
                     _csv_fh.flush()
             mis_open = any(_open_trades.get(s) for s in MODES if MODES[s] == "MIS")
             if not _eod_done and not mis_open:
@@ -457,10 +492,12 @@ class TradingApp:
                     t["entry"] = actual
             else:
                 log.info("FILL  %s  norenordno=%s  avgprc=%s", tsym, norenordno, msg.get("avgprc"))
-        elif rtype.lower() == "rejected":
-            log.error("ORDER REJECTED  %s  norenordno=%s  reason=%s",
-                      tsym, norenordno, msg.get("rejreason", "unknown"))
-            # If a BUY entry we optimistically recorded is rejected async, undo the phantom.
+        elif rtype.lower() in ("rejected", "canceled", "cancelled"):
+            log.warning("ORDER %s  %s  norenordno=%s  reason=%s",
+                        rtype.upper(), tsym, norenordno, msg.get("rejreason", "unknown"))
+            # A BUY entry we optimistically recorded but that was rejected OR an IOC that
+            # cancelled without filling => undo the phantom. (A partial fill already popped
+            # `pending` in the fill branch, so a later cancel finds nothing and is a no-op.)
             if hasattr(broker, "pending"):
                 p = broker.pending.pop(norenordno, None)
                 if p and p["side"].upper() == "BUY":
