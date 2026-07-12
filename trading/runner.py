@@ -320,6 +320,10 @@ class TradingApp:
                  else (t["entry"] - fill.price)) * t["qty"]
         cost  = _charges(t["entry"] * t["qty"], fill.price * t["qty"], MODES.get(symbol, "MIS"))
         pnl   = gross - cost
+        if getattr(fill, "ordno", "") and hasattr(broker, "pending") and fill.ordno in broker.pending:
+            broker.pending[fill.ordno].update({
+                "kind": "exit", "entry": t["entry"], "side": t["side"],
+                "mode": MODES.get(symbol, "MIS"), "prov_net": pnl, "prov_qty": t["qty"]})
         _total_pnl += pnl
         _open_trades[symbol] = None
         result = "WIN " if pnl >= 0 else "LOSS"
@@ -400,6 +404,10 @@ class TradingApp:
                     gross = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * close_qty
                     cost  = _charges(t["entry"] * close_qty, fill.price * close_qty, "MIS")
                     pnl   = gross - cost
+                    if getattr(fill, "ordno", "") and hasattr(broker, "pending") and fill.ordno in broker.pending:
+                        broker.pending[fill.ordno].update({
+                            "kind": "exit", "entry": t["entry"], "side": t["side"],
+                            "mode": "MIS", "prov_net": pnl, "prov_qty": close_qty})
                     _total_pnl += pnl
                     _open_trades[symbol] = None
                     log.info("EOD EXIT  %-12s  net=Rs%+.2f (gross=Rs%+.2f cost=Rs%.2f)  total=Rs%+.2f",
@@ -475,6 +483,7 @@ class TradingApp:
         _save_runner_state()
 
     def handle_order(self, msg: dict) -> None:
+        global _total_pnl
         rtype      = msg.get("reporttype", "")
         norenordno = msg.get("norenordno", "")
         tsym       = msg.get("tsym", "")
@@ -483,13 +492,34 @@ class TradingApp:
             p = broker.pending.pop(norenordno, None)
             if p:
                 actual = float(msg.get("avgprc") or msg.get("flprc") or p["est"])
-                slip   = (actual - p["est"]) if p["side"] == "BUY" else (p["est"] - actual)
-                log.info("FILL CONFIRMED  %-12s  %s  actual=Rs%.4f  est=Rs%.4f  slippage=Rs%+.4f",
-                         p["symbol"], p["side"], actual, p["est"], slip)
-                # Update open trade entry price to actual fill
-                t = _open_trades.get(p["symbol"])
-                if t:
-                    t["entry"] = actual
+                # actual filled qty (Flattrade: fillshares/flqty); fall back to ordered qty
+                try:
+                    filled = int(float(msg.get("fillshares") or msg.get("flqty") or p["qty"]))
+                except (TypeError, ValueError):
+                    filled = p["qty"]
+                filled = max(1, min(filled, p["qty"]))
+
+                if p.get("kind") == "exit":
+                    # Correct the exit PnL from the provisional (limit-price) estimate to the
+                    # real average fill price and actually-filled qty.
+                    entry, side, mode = p["entry"], p["side"], p["mode"]
+                    a_gross = ((actual - entry) if side == "LONG" else (entry - actual)) * filled
+                    a_net = a_gross - _charges(entry * filled, actual * filled, mode)
+                    adj = a_net - p.get("prov_net", a_net)
+                    _total_pnl += adj
+                    log.info("EXIT CONFIRMED  %-12s  actual=Rs%.4f  filled=%d/%d  adj=Rs%+.2f  total=Rs%+.2f",
+                             p["symbol"], actual, filled, p.get("prov_qty", filled), adj, _total_pnl)
+                else:
+                    slip = (actual - p["est"]) if p["side"] == "BUY" else (p["est"] - actual)
+                    t = _open_trades.get(p["symbol"])
+                    if t:
+                        t["entry"] = actual
+                        if filled < p["qty"]:
+                            t["qty"] = filled
+                            log.warning("PARTIAL ENTRY  %s  filled=%d/%d — position qty reduced to %d",
+                                        p["symbol"], filled, p["qty"], filled)
+                    log.info("FILL CONFIRMED  %-12s  %s  actual=Rs%.4f  est=Rs%.4f  slippage=Rs%+.4f",
+                             p["symbol"], p["side"], actual, p["est"], slip)
             else:
                 log.info("FILL  %s  norenordno=%s  avgprc=%s", tsym, norenordno, msg.get("avgprc"))
         elif rtype.lower() in ("rejected", "canceled", "cancelled"):

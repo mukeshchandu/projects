@@ -159,8 +159,10 @@ class LiveBroker:
         if norenordno:
             self.pending[norenordno] = {
                 "symbol": symbol, "side": side,
-                "qty": qty, "est": mid_price, "mode": mode,
+                "qty": qty, "est": limit_price, "mode": mode,
             }
 
+        # Record the fill at the (marketable) limit price we placed — a far better estimate
+        # than the mid; the confirmation later corrects it to the true average fill.
         return PaperFill(datetime.now(timezone.utc), symbol, side.upper(),
-                         qty, mid_price, reason)
+                         qty, limit_price, reason, norenordno)

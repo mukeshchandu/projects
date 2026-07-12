@@ -24,6 +24,7 @@ class PaperFill:
     qty:    int
     price:  float
     reason: str = ""
+    ordno:  str = ""   # broker order id (live), for correlating fill confirmations
 
 
 @dataclass
