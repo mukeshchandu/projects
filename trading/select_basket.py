@@ -15,8 +15,15 @@ from datetime import datetime, timedelta
 warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+from strategies.supertrend import SupertrendStrategy
+_ORIG_SAVE = SupertrendStrategy.save_state
+_ORIG_LOAD = SupertrendStrategy._load_state
+SupertrendStrategy.save_state = lambda self: None    # disabled during scoring (re-enabled to warm)
+SupertrendStrategy._load_state = lambda self: None
+
 LOOKBACK = 5           # trading days for the ranking window
 TOP_K = 5
+EMA_PERIOD = 50        # must match the runner's dynamic-basket EMA filter
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/today_basket.json")
 
 # Official NIFTY 100 (Nifty 50 + Next 50). Yahoo-unavailable names self-prune at download.
@@ -54,11 +61,8 @@ def _bars_for(sub):
 
 def score_stock(bars):
     """Return (avg_range_pct_over_lookback, supertrend_flip_count_over_lookback) or None."""
-    from strategies.supertrend import SupertrendStrategy
     from marketdata import Candle
     from config import IST
-    SupertrendStrategy.save_state = lambda self: None
-    SupertrendStrategy._load_state = lambda self: None
     if len(bars) < 60:
         return None
     # daily range%
@@ -91,6 +95,7 @@ def select():
     import yfinance as yf
     tickers = [s + ".NS" for s in UNIVERSE if s not in MIS_BLOCKLIST]
     scores = {}
+    bars_by_sym = {}
     for i in range(0, len(tickers), 30):
         chunk = tickers[i:i+30]
         df = yf.download(chunk, period="12d", interval="15m", group_by="ticker",
@@ -99,9 +104,11 @@ def select():
             sym = tk[:-3]
             try:
                 sub = df[tk] if len(chunk) > 1 else df
-                s = score_stock(_bars_for(sub))
+                bars = _bars_for(sub)
+                s = score_stock(bars)
                 if s:
                     scores[sym] = s
+                    bars_by_sym[sym] = bars
             except Exception:
                 continue
     # rank-sum: high range% (better) + low flips (better)
@@ -114,13 +121,35 @@ def select():
     for r, s in enumerate(by_flip):
         rank[s] += r
     ranked = sorted(syms, key=lambda s: rank[s])
-    return ranked, scores
+    return ranked, scores, bars_by_sym
+
+
+def warmup(symbols, bars_by_sym):
+    """Seed ATR/Supertrend/EMA state for the selected stocks from recent 15-min history,
+    so the morning runner loads them warm and can signal from 9:15 (no cold start)."""
+    from marketdata import Candle
+    from config import IST
+    SupertrendStrategy.save_state = _ORIG_SAVE     # re-enable persistence for the warm-up
+    SupertrendStrategy._load_state = _ORIG_LOAD
+    print("   warming selected stocks (ATR + EMA state):")
+    for sym in symbols:
+        bars = bars_by_sym.get(sym)
+        if not bars:
+            print(f"     {sym:12s} — no bars, skipped (will warm live)")
+            continue
+        strat = SupertrendStrategy(sym, qty=1, multiplier=1.5, ema_period=EMA_PERIOD)
+        strat._reset_all()                          # discard any stale state; rebuild from history
+        for dt, o, h, l, c in bars:
+            strat.on_candle(Candle(start=dt.astimezone(IST), open=o, high=h, low=l, close=c))
+        strat.save_state()
+        atr = f"{strat._atr:.4f}" if strat._atr else "warming"
+        print(f"     {sym:12s} atr={atr}  trend={strat._trend}  candles={len(strat._candles)}  ema={'set' if strat._ema else 'none'}")
 
 
 def main():
     dry = "--dry" in sys.argv
     try:
-        ranked, scores = select()
+        ranked, scores, bars_by_sym = select()
     except Exception as e:
         print(f"[select_basket] selection FAILED ({e}) — runner will use its default basket")
         sys.exit(0)
@@ -155,6 +184,7 @@ def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(payload, open(OUT, "w"), indent=2)
     print(f"   wrote {OUT}")
+    warmup(top, bars_by_sym)
 
 
 if __name__ == "__main__":
