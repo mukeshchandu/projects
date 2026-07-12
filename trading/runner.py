@@ -576,7 +576,7 @@ def main() -> None:
     _sync_positions_from_exchange(client)
     _align_strategy_from_trades()
 
-    global broker, MAX_CAPITAL_PER_STOCK
+    global broker
     if os.getenv("LIVE_MODE") == "1":
         tsym_map = {inst["symbol"]: inst["tsym"] for inst in INSTRUMENTS.values()}
         mode_map = {inst["symbol"]: inst.get("mode","MIS") for inst in INSTRUMENTS.values()}
