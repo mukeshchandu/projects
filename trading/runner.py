@@ -73,6 +73,8 @@ _trade_no     = 0
 _total_pnl    = 0.0
 _last_tick:   Dict[str, datetime]      = {}
 _eod_done     = False
+_shutting_down = False
+_runner_state_path = "data/runner_state.json"
 
 # ── Tick file (raw) ──────────────────────────────────────────────────────
 _tick_path = f"data/{_today}/ticks.jsonl"
@@ -132,6 +134,8 @@ def _sync_positions_from_exchange(client: FlattradeClient) -> None:
             netqty = int(p.get("netqty", 0) or 0)
             if sym not in _open_trades or netqty == 0:
                 continue
+            if _open_trades.get(sym):
+                continue   # already restored from saved ledger — don't overwrite
             side = "LONG" if netqty > 0 else "SHORT"
             avg  = float(p.get("netavgprc", 0) or 0)
             qty  = abs(netqty)
@@ -184,6 +188,66 @@ def _eod_summary() -> None:
     log.info("─" * 60)
 
 
+def _save_runner_state() -> None:
+    """Persist the position ledger so a restart resumes exactly where we left off."""
+    try:
+        with open(_runner_state_path, "w") as f:
+            json.dump({
+                "date":        _today,
+                "trade_no":    _trade_no,
+                "total_pnl":   _total_pnl,
+                "open_trades": _open_trades,
+            }, f)
+    except Exception as e:
+        log.warning("runner state save failed: %s", e)
+
+
+def _load_runner_state() -> None:
+    """Restore _open_trades across restarts. MIS positions from a prior day are dropped
+    (they were EOD-squared at 15:00); CNC positions carry overnight."""
+    global _trade_no, _total_pnl
+    if not os.path.exists(_runner_state_path):
+        return
+    try:
+        s = json.load(open(_runner_state_path))
+    except Exception as e:
+        log.warning("runner state load failed: %s", e)
+        return
+    saved_date = s.get("date")
+    _trade_no  = int(s.get("trade_no", 0) or 0)
+    _total_pnl = float(s.get("total_pnl", 0.0) or 0.0)
+    for sym, t in (s.get("open_trades") or {}).items():
+        if not t or sym not in _open_trades:
+            continue
+        if MODES.get(sym, "MIS") == "MIS" and saved_date != _today:
+            log.info("Dropping stale MIS position %s (saved %s)", sym, saved_date)
+            continue
+        _open_trades[sym] = t
+        log.warning("STATE RESTORED  %-12s  %s  entry=Rs%.2f  qty=%d  (saved %s)",
+                    sym, t.get("side"), float(t.get("entry", 0) or 0),
+                    int(t.get("qty", 0) or 0), saved_date)
+
+
+def _align_strategy_from_trades() -> None:
+    """Make each strategy's internal position match the runner ledger (the source of
+    truth for whether a position exists) so hard/trailing SL run on resumed positions."""
+    for inst in INSTRUMENTS.values():
+        sym   = inst["symbol"]
+        strat = inst["strategy"]
+        t     = _open_trades.get(sym)
+        if t:
+            strat.position = 1 if t["side"] == "LONG" else -1
+            if getattr(strat, "_entry_price", None) is None:
+                strat._entry_price = float(t.get("entry", 0) or 0)
+            log.info("ALIGN  %-12s  strat.position=%d  entry=Rs%.2f",
+                     sym, strat.position, strat._entry_price or 0.0)
+        elif strat.position != 0:
+            # ledger says flat but strategy state disagreed — trust the ledger
+            strat.position     = 0
+            strat._entry_price = None
+            strat._entry_atr   = None
+
+
 def _flush_and_close() -> None:
     _tick_fh.flush()
     _tick_fh.close()
@@ -218,6 +282,11 @@ class TradingApp:
         except (ValueError, OSError):
             return
 
+        # Ignore stale snapshot ticks (e.g. Friday's close arriving on a Monday connect):
+        # they must not build candles or trip the EOD branch.
+        if ts.date() != datetime.now(tz=IST).date():
+            return
+
         _last_tick[symbol] = datetime.now(tz=IST)
 
         # EOD
@@ -233,6 +302,7 @@ class TradingApp:
                     fill = broker.simulate_fill(symbol, exit_side, t["qty"], price, "EOD")
                     if fill is None:
                         _open_trades[symbol] = None
+                        _save_runner_state()
                         log.error("EOD ORDER REJECTED  %s", symbol)
                         return
                     pnl = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * t["qty"]
@@ -249,6 +319,7 @@ class TradingApp:
             if not _eod_done and not mis_open:
                 _eod_done = True
                 _eod_summary()
+            _save_runner_state()
             return
 
         vol    = float(msg.get("v", 0) or 0)
@@ -316,6 +387,8 @@ class TradingApp:
                               f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
                 _csv_fh.flush()
 
+        _save_runner_state()
+
     def handle_order(self, msg: dict) -> None:
         rtype      = msg.get("reporttype", "")
         norenordno = msg.get("norenordno", "")
@@ -337,6 +410,25 @@ class TradingApp:
         elif rtype.lower() == "rejected":
             log.error("ORDER REJECTED  %s  norenordno=%s  reason=%s",
                       tsym, norenordno, msg.get("rejreason", "unknown"))
+            # If a BUY entry we optimistically recorded is rejected async, undo the phantom.
+            if hasattr(broker, "pending"):
+                p = broker.pending.pop(norenordno, None)
+                if p and p["side"].upper() == "BUY":
+                    sym = p["symbol"]
+                    if _open_trades.get(sym):
+                        _open_trades[sym] = None
+                        log.warning("PHANTOM CLEARED  %s — entry rejected, ledger reset", sym)
+                        for inst in INSTRUMENTS.values():
+                            if inst["symbol"] == sym:
+                                st = inst["strategy"]
+                                st.position = 0
+                                st._entry_price = None
+                                st._entry_atr = None
+                                break
+                        if hasattr(broker, "_committed"):
+                            margin = (p["qty"] * p["est"] / 4.0) if p.get("mode") == "MIS" else (p["qty"] * p["est"])
+                            broker._committed = max(0.0, broker._committed - margin)
+                        _save_runner_state()
         else:
             log.info("ORDER UPDATE  %-8s  %s  norenordno=%s", rtype, tsym, norenordno)
 
@@ -352,7 +444,9 @@ def main() -> None:
     log.info("Strategy: Supertrend atr=14 mult=1.5 | 15-min | %s mode", mode_label)
     log.info("Resolving NSE tokens...")
     resolve_tokens(client)
+    _load_runner_state()
     _sync_positions_from_exchange(client)
+    _align_strategy_from_trades()
 
     global broker, MAX_CAPITAL_PER_STOCK
     if os.getenv("LIVE_MODE") == "1":
@@ -390,15 +484,25 @@ def main() -> None:
     def on_close(code=None, msg=None) -> None:
         log.warning("WS DISCONNECTED  code=%s  reason=%s  trades=%d  pnl=Rs%+.2f",
                     code, msg, _trade_no, _total_pnl)
-        _tick_fh.flush()
-        _csv_fh.flush()
+        if _shutting_down:
+            return
+        try:
+            _tick_fh.flush()
+            _csv_fh.flush()
+        except ValueError:
+            pass   # files already closed during shutdown
 
     def on_error(e) -> None:
+        if _shutting_down:
+            return
         log.error("WS ERROR  %s", e)
 
     def _shutdown(sig, frame):
+        global _shutting_down
+        _shutting_down = True
         signame = "SIGINT" if sig == signal.SIGINT else "SIGTERM"
-        log.info("%s received — flushing and shutting down", signame)
+        log.info("%s received — saving state and shutting down", signame)
+        _save_runner_state()
         _eod_summary()
         _flush_and_close()
         sys.exit(0)

@@ -3,6 +3,7 @@
 *.pem
 *.key
 data/st_state/*.json
+data/runner_state.json
 logs/
 __pycache__/
 *.pyc

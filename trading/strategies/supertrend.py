@@ -37,6 +37,8 @@ class SupertrendStrategy(BaseStrategy):
             self._lower      = s.get("lower")
             self._supertrend = s.get("supertrend")
             self._trend      = s.get("trend", 0)
+            self.position     = s.get("position", 0)
+            self.current_date = s.get("current_date")
             self._entry_price = s.get("entry_price")
             self._entry_atr   = s.get("entry_atr")
             candles_raw      = s.get("candles", [])
@@ -63,6 +65,8 @@ class SupertrendStrategy(BaseStrategy):
             "lower":       self._lower,
             "supertrend":  self._supertrend,
             "trend":       self._trend,
+            "position":    self.position,
+            "current_date": self.current_date,
             "entry_price": self._entry_price,
             "entry_atr":   self._entry_atr,
             "candles": [
@@ -89,6 +93,8 @@ class SupertrendStrategy(BaseStrategy):
         self._entry_atr:   Optional[float] = None
 
     def _reset_day(self) -> None:
+        if self.long_only:
+            return   # CNC held overnight — do not flatten across the day boundary
         self.position     = 0
         self._entry_price = None
         self._entry_atr   = None
@@ -203,4 +209,6 @@ class SupertrendStrategy(BaseStrategy):
                 signals.append(self._signal("SELL", candle.close,
                     f"flip DOWN | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close + HARD_SL_MULT*self._atr:.2f}"))
 
+        # Persist after every closed candle so a mid-day restart restores position + entry_atr
+        self.save_state()
         return signals
