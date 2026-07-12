@@ -1,8 +1,8 @@
 .env
-venv/
-data/
+.env.*
+*.pem
+*.key
+data/st_state/*.json
 logs/
 __pycache__/
 *.pyc
-*.log
-*.csv

@@ -6,7 +6,8 @@ from config import EOD_EXIT_HOUR, EOD_EXIT_MINUTE
 from marketdata import Candle
 from strategies.base import BaseStrategy
 
-STATE_DIR = "data/st_state"
+STATE_DIR    = "data/st_state"
+HARD_SL_MULT = 1.5   # exit if price moves 1.5×ATR against entry price
 
 
 class SupertrendStrategy(BaseStrategy):
@@ -34,6 +35,8 @@ class SupertrendStrategy(BaseStrategy):
             self._lower      = s.get("lower")
             self._supertrend = s.get("supertrend")
             self._trend      = s.get("trend", 0)
+            self._entry_price = s.get("entry_price")
+            self._entry_atr   = s.get("entry_atr")
             candles_raw      = s.get("candles", [])
             from marketdata import Candle
             from datetime import datetime
@@ -53,11 +56,13 @@ class SupertrendStrategy(BaseStrategy):
     def save_state(self) -> None:
         path = self._state_path()
         s = {
-            "atr":        self._atr,
-            "upper":      self._upper,
-            "lower":      self._lower,
-            "supertrend": self._supertrend,
-            "trend":      self._trend,
+            "atr":         self._atr,
+            "upper":       self._upper,
+            "lower":       self._lower,
+            "supertrend":  self._supertrend,
+            "trend":       self._trend,
+            "entry_price": self._entry_price,
+            "entry_atr":   self._entry_atr,
             "candles": [
                 {"ts": int(c.start.timestamp()),
                  "o": c.open, "h": c.high, "l": c.low, "c": c.close}
@@ -78,9 +83,13 @@ class SupertrendStrategy(BaseStrategy):
         self._supertrend:  Optional[float] = None
         self._trend:       int             = 0
         self.current_date: Optional[str]   = None
+        self._entry_price: Optional[float] = None
+        self._entry_atr:   Optional[float] = None
 
     def _reset_day(self) -> None:
-        self.position = 0
+        self.position     = 0
+        self._entry_price = None
+        self._entry_atr   = None
 
     def _tr(self, candle: Candle) -> float:
         if not self._candles:
@@ -102,7 +111,9 @@ class SupertrendStrategy(BaseStrategy):
         if h > EOD_EXIT_HOUR or (h == EOD_EXIT_HOUR and m >= EOD_EXIT_MINUTE):
             if self.position != 0:
                 signals.append(self._signal("EXIT", candle.close, "EOD exit"))
-                self.position = 0
+                self.position     = 0
+                self._entry_price = None
+                self._entry_atr   = None
             self.save_state()
             return signals
 
@@ -138,21 +149,56 @@ class SupertrendStrategy(BaseStrategy):
         self._upper      = upper
         self._lower      = lower
 
+        # ── Hard ATR stop loss (fires before trailing SL) ──────────────
+        hard_sl_hit = False
+        if self.position == 1 and self._entry_price is not None and self._entry_atr is not None:
+            sl = self._entry_price - HARD_SL_MULT * self._entry_atr
+            if candle.close < sl:
+                signals.append(self._signal("EXIT", candle.close,
+                    f"HARD SL | entry={self._entry_price:.2f} sl={sl:.2f} atr={self._entry_atr:.2f}"))
+                self.position     = 0
+                self._entry_price = None
+                self._entry_atr   = None
+                hard_sl_hit       = True
+
+        elif self.position == -1 and self._entry_price is not None and self._entry_atr is not None:
+            sl = self._entry_price + HARD_SL_MULT * self._entry_atr
+            if candle.close > sl:
+                signals.append(self._signal("EXIT", candle.close,
+                    f"HARD SL | entry={self._entry_price:.2f} sl={sl:.2f} atr={self._entry_atr:.2f}"))
+                self.position     = 0
+                self._entry_price = None
+                self._entry_atr   = None
+                hard_sl_hit       = True
+
+        if hard_sl_hit:
+            return signals   # skip trailing SL + re-entry on same candle
+
+        # ── Trailing supertrend SL ──────────────────────────────────────
         if self.position == 1 and candle.close < new_st:
             signals.append(self._signal("EXIT", new_st, f"trail SL | st={new_st:.2f}"))
-            self.position = 0
+            self.position     = 0
+            self._entry_price = None
+            self._entry_atr   = None
         elif self.position == -1 and candle.close > new_st:
             signals.append(self._signal("EXIT", new_st, f"trail SL | st={new_st:.2f}"))
-            self.position = 0
+            self.position     = 0
+            self._entry_price = None
+            self._entry_atr   = None
 
+        # ── Entry on trend flip ─────────────────────────────────────────
         if prev_trend != 0 and new_trend != prev_trend and self.position == 0:
             if new_trend == 1:
-                self.position = 1
+                self.position     = 1
+                self._entry_price = candle.close
+                self._entry_atr   = self._atr
                 signals.append(self._signal("BUY", candle.close,
-                    f"flip UP | atr={self._atr:.2f} st={new_st:.2f}"))
+                    f"flip UP | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close - HARD_SL_MULT*self._atr:.2f}"))
             else:
-                self.position = -1
+                self.position     = -1
+                self._entry_price = candle.close
+                self._entry_atr   = self._atr
                 signals.append(self._signal("SELL", candle.close,
-                    f"flip DOWN | atr={self._atr:.2f} st={new_st:.2f}"))
+                    f"flip DOWN | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close + HARD_SL_MULT*self._atr:.2f}"))
 
         return signals

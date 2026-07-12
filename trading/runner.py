@@ -39,26 +39,24 @@ log = logging.getLogger(__name__)
 
 # ── Basket ───────────────────────────────────────────────────────────────
 BASKET = [
-    ("NSE", "IRFC"),
     ("NSE", "HFCL"),
-    ("NSE", "JSWSTEEL"),
     ("NSE", "BANKBARODA"),
-    ("NSE", "TATASTEEL"),
     ("NSE", "NMDC"),
-    ("NSE", "IDEA"),
-    ("NSE", "INDUSINDBK"),
+    ("NSE", "CESC"),
+    ("NSE", "ZEEL"),
+    ("NSE", "BALRAMCHIN"),
+    ("NSE", "GRANULES"),
     ("NSE", "SUZLON"),
 ]
 # MIS = intraday (EOD exit 3PM) | CNC = delivery (hold overnight)
 MODES = {
-    "IRFC":       "CNC",
     "HFCL":       "CNC",
-    "JSWSTEEL":   "CNC",
     "BANKBARODA": "CNC",
-    "TATASTEEL":  "CNC",
     "NMDC":       "CNC",
-    "IDEA":       "CNC",
-    "INDUSINDBK": "CNC",
+    "CESC":       "CNC",
+    "ZEEL":       "CNC",
+    "BALRAMCHIN": "CNC",
+    "GRANULES":   "MIS",
     "SUZLON":     "MIS",
 }
 MAX_CAPITAL_PER_STOCK = 10_000

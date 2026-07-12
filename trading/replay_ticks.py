@@ -11,27 +11,58 @@ Run after market close: python replay_ticks.py
 import json
 import os
 import sys
+import time
 from datetime import datetime
 
 from config import IST
 from marketdata import CandleBuilder, Tick
 from strategies.supertrend import SupertrendStrategy
 
-# Token → symbol (from today's SearchScrip resolve)
-TOKEN_MAP = {
-    "14366": "IDEA",
-    "12018": "SUZLON",
-    "11915": "YESBANK",
-    "17400": "NHPC",
-    "2963":  "SAIL",
-    "10666": "PNB",
-    "15259": "RPOWER",
-    "3499":  "TATASTEEL",
-    "11184": "IDFCFIRSTB",
-}
+BASKET = [
+    ("NSE", "HFCL"), ("NSE", "BANKBARODA"), ("NSE", "NMDC"),
+    ("NSE", "CESC"), ("NSE", "ZEEL"), ("NSE", "BALRAMCHIN"),
+    ("NSE", "GRANULES"), ("NSE", "SUZLON"),
+]
 
 INTERVAL_S = 900  # 15-min candles
 
+# ── Resolve token → symbol dynamically (no stale hardcoded map) ──────────
+print("Resolving tokens via SearchScrip ...")
+from auth import get_session
+from client import FlattradeClient
+
+uid, sess_token = get_session()
+client = FlattradeClient()
+client.set_session(user_id=uid, token=sess_token)
+
+TOKEN_MAP: dict = {}
+for exch, sym in BASKET:
+    try:
+        hits = client.search_scrip(exch, sym)
+        tok = None
+        for r in hits:
+            ts = r.get("tsym", "")
+            if ts in (f"{sym}-EQ", sym):
+                tok = r.get("token")
+                break
+        if not tok and hits:
+            tok = hits[0].get("token")
+        if tok:
+            TOKEN_MAP[tok] = sym
+            print(f"  {sym:<14} token={tok}")
+        else:
+            print(f"  WARN: {sym} — no token found, skipping")
+    except Exception as e:
+        print(f"  ERROR: {sym} — {e}")
+    time.sleep(0.15)
+
+if not TOKEN_MAP:
+    print("ERROR: could not resolve any tokens — check auth / network")
+    sys.exit(1)
+
+print(f"Resolved {len(TOKEN_MAP)}/{len(BASKET)} symbols\n")
+
+# ── Locate today's tick file ──────────────────────────────────────────────
 today     = datetime.now(tz=IST).strftime("%Y-%m-%d")
 tick_file = f"data/{today}/ticks.jsonl"
 
@@ -102,3 +133,4 @@ for sym in sorted(TOKEN_MAP.values()):
 
 print(f"\nState saved to data/st_state/")
 print("Tomorrow's runner will load this state — no warmup needed.")
+
