@@ -8,10 +8,12 @@ log = logging.getLogger(__name__)
 
 class LiveBroker:
     def __init__(self, client, tsym_map: Dict[str, str],
-                 mode_map: Optional[Dict[str, str]] = None) -> None:
+                 mode_map: Optional[Dict[str, str]] = None,
+                 ti_map: Optional[Dict[str, float]] = None) -> None:
         self.client      = client
         self.tsym_map    = tsym_map
         self.mode_map    = mode_map or {}
+        self.ti_map      = ti_map or {}   # real per-stock tick size from the exchange
         self.pending:    Dict[str, dict] = {}
         self._committed  = 0.0   # margin locked by orders placed this session
 
@@ -54,7 +56,7 @@ class LiveBroker:
         tsym     = self.tsym_map.get(symbol, f"{symbol}-EQ")
         trantype = "B" if side.upper() == "BUY" else "S"
 
-        t = _get_tick(mid_price)
+        t = self.ti_map.get(symbol) or _get_tick(mid_price)   # prefer real exchange tick size
         if side.upper() == "BUY":
             limit_price = round((math.ceil(round(mid_price / t, 8)) + 1) * t, 4)
         else:

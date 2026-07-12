@@ -119,32 +119,40 @@ def resolve_tokens(client: FlattradeClient) -> None:
         results = client.search_scrip(exch, sym)
         token = None
         tsym  = None
+        tick  = None
         for r in results:
             ts = r.get("tsym", "")
             if ts in (f"{sym}-EQ", sym):
                 token = r.get("token")
                 tsym  = ts
+                tick  = r.get("ti")
                 break
         if not token and results:
             token = results[0].get("token")
             tsym  = results[0].get("tsym", f"{sym}-EQ")
+            tick  = results[0].get("ti")
         if not tsym:
             tsym = f"{sym}-EQ"
         if not token:
             log.warning("No token for %s — skipping", sym)
             continue
+        try:
+            tick_f = float(tick) if tick else None
+        except (TypeError, ValueError):
+            tick_f = None
         INSTRUMENTS[token] = {
             "symbol":   sym,
             "exchange": exch,
             "tsym":     tsym,
             "mode":     MODES.get(sym, "MIS"),
+            "ti":       tick_f,
             "strategy": SupertrendStrategy(symbol=sym, qty=1,
                                            long_only=(MODES.get(sym, "MIS") == "CNC"),
                                            ema_period=EMA_PERIOD),
             "builder":  CandleBuilder(interval_seconds=INTERVAL_S),
         }
         _open_trades[sym] = None
-        log.info("Resolved  %-15s  token=%s", sym, token)
+        log.info("Resolved  %-15s  token=%s  tick=%s", sym, token, tick_f)
 
 
 def _sync_positions_from_exchange(client: FlattradeClient) -> None:
@@ -505,7 +513,8 @@ def main() -> None:
     if os.getenv("LIVE_MODE") == "1":
         tsym_map = {inst["symbol"]: inst["tsym"] for inst in INSTRUMENTS.values()}
         mode_map = {inst["symbol"]: inst.get("mode","MIS") for inst in INSTRUMENTS.values()}
-        broker   = LiveBroker(client, tsym_map, mode_map)
+        ti_map   = {inst["symbol"]: inst.get("ti") for inst in INSTRUMENTS.values()}
+        broker   = LiveBroker(client, tsym_map, mode_map, ti_map)
         global CAPITAL_PER_TRADE
         try:
             limits = client.get_limits()
