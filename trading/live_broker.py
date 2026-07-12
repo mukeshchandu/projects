@@ -29,8 +29,8 @@ class LiveBroker:
     def _available_cash(self, mode: str) -> float:
         """Cash available for a new order, subtracting already-committed margin."""
         broker = self._broker_cash()
-        # Use 75% of broker cash as safety buffer, then subtract what we already committed
-        effective = broker * 0.75 - self._committed
+        # Deploy at most 85% of broker cash, then subtract what we already committed
+        effective = broker * 0.85 - self._committed
         return max(0.0, effective)
 
     def _held_qty(self, symbol: str) -> int:

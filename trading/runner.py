@@ -59,9 +59,10 @@ MODES = {
     "GRANULES":   "MIS",
     "SUZLON":     "MIS",
 }
-MAX_CAPITAL_PER_STOCK = 10_000
-MAX_POSITIONS     = int(os.getenv("MAX_POSITIONS", "1"))
-CAPITAL_PER_TRADE = MAX_CAPITAL_PER_STOCK
+MAX_CAPITAL_PER_STOCK = 5_000          # own capital deployed per stock (pre-leverage)
+MAX_POSITIONS      = int(os.getenv("MAX_POSITIONS", "2"))
+CAPITAL_PER_TRADE  = MAX_CAPITAL_PER_STOCK
+WALLET_DEPLOY_FRAC = 0.85              # never commit more than 85% of wallet cash
 INTERVAL_S            = 900
 
 # ── State ────────────────────────────────────────────────────────────────
@@ -111,7 +112,8 @@ def resolve_tokens(client: FlattradeClient) -> None:
             "exchange": exch,
             "tsym":     tsym,
             "mode":     MODES.get(sym, "MIS"),
-            "strategy": SupertrendStrategy(symbol=sym, qty=1),
+            "strategy": SupertrendStrategy(symbol=sym, qty=1,
+                                           long_only=(MODES.get(sym, "MIS") == "CNC")),
             "builder":  CandleBuilder(interval_seconds=INTERVAL_S),
         }
         _open_trades[sym] = None
@@ -267,7 +269,8 @@ class TradingApp:
             if action == "BUY" and _open_trades[symbol] is None:
                 if sum(1 for v in _open_trades.values() if v) >= MAX_POSITIONS:
                     continue
-                qty  = max(1, int(CAPITAL_PER_TRADE / px))
+                lev  = 4 if inst.get("mode", "MIS") == "MIS" else 1
+                qty  = max(1, int(CAPITAL_PER_TRADE * lev / px))
                 fill = broker.simulate_fill(symbol, "BUY", qty, px, reason)
                 if fill is None:
                     continue
@@ -280,7 +283,8 @@ class TradingApp:
             elif action == "SELL" and _open_trades[symbol] is None:
                 if sum(1 for v in _open_trades.values() if v) >= MAX_POSITIONS:
                     continue
-                qty  = max(1, int(CAPITAL_PER_TRADE / px))
+                lev  = 4 if inst.get("mode", "MIS") == "MIS" else 1
+                qty  = max(1, int(CAPITAL_PER_TRADE * lev / px))
                 fill = broker.simulate_fill(symbol, "SELL", qty, px, reason)
                 if fill is None:
                     continue
@@ -359,9 +363,11 @@ def main() -> None:
         try:
             limits = client.get_limits()
             cash = float(limits.get("cash", 0) or 0)
-            CAPITAL_PER_TRADE = max(1000, int(cash * 4 / MAX_POSITIONS))
-            log.info("*** LIVE MODE  cash=Rs%.0f  4x=Rs%.0f  K=%d  per_trade=Rs%d ***",
-                     cash, cash * 4, MAX_POSITIONS, CAPITAL_PER_TRADE)
+            deploy = WALLET_DEPLOY_FRAC * cash
+            CAPITAL_PER_TRADE = max(1, min(MAX_CAPITAL_PER_STOCK, int(deploy / MAX_POSITIONS)))
+            log.info("*** LIVE MODE  cash=Rs%.0f  deploy(85%%)=Rs%.0f  K=%d  cap/stock=Rs%d "
+                     "(MIS notional 4x, CNC 1x) ***",
+                     cash, deploy, MAX_POSITIONS, CAPITAL_PER_TRADE)
         except Exception as e:
             log.warning("Could not fetch limits (%s) — using Rs%d/trade", e, CAPITAL_PER_TRADE)
 

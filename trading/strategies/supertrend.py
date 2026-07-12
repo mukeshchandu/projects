@@ -13,10 +13,12 @@ HARD_SL_MULT = 1.5   # exit if price moves 1.5×ATR against entry price
 class SupertrendStrategy(BaseStrategy):
 
     def __init__(self, symbol: str, qty: int,
-                 atr_period: int = 14, multiplier: float = 1.5) -> None:
+                 atr_period: int = 14, multiplier: float = 1.5,
+                 long_only: bool = False) -> None:
         super().__init__(symbol, qty)
         self.atr_period = atr_period
         self.multiplier = multiplier
+        self.long_only  = long_only   # CNC: no short entries, bearish flip = exit only
         self._reset_all()
         self._load_state()
 
@@ -194,7 +196,7 @@ class SupertrendStrategy(BaseStrategy):
                 self._entry_atr   = self._atr
                 signals.append(self._signal("BUY", candle.close,
                     f"flip UP | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close - HARD_SL_MULT*self._atr:.2f}"))
-            else:
+            elif not self.long_only:
                 self.position     = -1
                 self._entry_price = candle.close
                 self._entry_atr   = self._atr
