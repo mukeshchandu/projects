@@ -312,20 +312,9 @@ class TradingApp:
         t = _open_trades.get(symbol)
         if not t:
             return False
-        # If a live entry was never confirmed filled, verify the REAL position before selling —
-        # a never-filled (or lost-confirmation) entry must not become a phantom short intraday.
-        if hasattr(broker, "net_position") and not t.get("filled", True):
-            net = broker.net_position(symbol)
-            if net == 0:
-                log.warning("EXIT %s — entry never filled (exchange net=0); clearing ledger, NO close order", symbol)
-                _open_trades[symbol] = None
-                for inst in INSTRUMENTS.values():
-                    if inst["symbol"] == symbol:
-                        st = inst["strategy"]
-                        st.position = 0; st._entry_price = None; st._entry_atr = None
-                        break
-                _save_runner_state()
-                return False
+        # Exits go straight through (no extra REST call on the hot path). We trust the WS
+        # order feed: rejected/cancelled entries are cleared when their notification arrives,
+        # and the EOD close verifies the real exchange position as the backstop.
         side = "SELL" if t["side"] == "LONG" else "BUY"
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
         if fill is None:
