@@ -256,6 +256,33 @@ def _flush_and_close() -> None:
 
 
 class TradingApp:
+    def _do_exit(self, symbol: str, px: float, reason: str, ts_str: str) -> bool:
+        """Close the open position for `symbol` at ~px. Shared by candle-close and
+        tick-level (real-time) stop paths. Returns True if a fill happened."""
+        global _total_pnl
+        t = _open_trades.get(symbol)
+        if not t:
+            return False
+        side = "SELL" if t["side"] == "LONG" else "BUY"
+        fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
+        if fill is None:
+            return False
+        pnl = ((fill.price - t["entry"]) if t["side"] == "LONG"
+               else (t["entry"] - fill.price)) * t["qty"]
+        _total_pnl += pnl
+        _open_trades[symbol] = None
+        result = "WIN " if pnl >= 0 else "LOSS"
+        log.info("EXIT  #%-3d  %-12s  %s  Rs%+.2f  entry=Rs%.2f@%s  exit=Rs%.2f  total=Rs%+.2f  [%s]",
+                 _trade_no, symbol, result, pnl, t["entry"], t["ts_str"], fill.price, _total_pnl, reason)
+        meta = _entry_meta.get(_trade_no, {})
+        _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
+                      f"{meta.get('entry_time','')},"
+                      f"{t['entry']:.2f},{ts_str},"
+                      f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
+        _csv_fh.flush()
+        _save_runner_state()
+        return True
+
     def handle_tick(self, msg: dict) -> None:
         global _trade_no, _total_pnl, _eod_done
 
@@ -322,6 +349,15 @@ class TradingApp:
             _save_runner_state()
             return
 
+        # ── Real-time stop management: evaluate stops on EVERY tick, not just candle close.
+        # Entry/trend logic still runs only on closed candles (below).
+        t = _open_trades.get(symbol)
+        if t is not None:
+            exit_sig = inst["strategy"].check_stops(price)
+            if exit_sig:
+                self._do_exit(symbol, exit_sig["price"], exit_sig.get("reason", ""),
+                              datetime.now(tz=IST).strftime("%H:%M"))
+
         vol    = float(msg.get("v", 0) or 0)
         tick   = Tick(ts=ts, symbol=token, ltp=price, volume=vol, raw=msg)
         candle = inst["builder"].update(tick)
@@ -366,26 +402,7 @@ class TradingApp:
                          _trade_no, symbol, fill.price, qty, reason)
 
             elif action == "EXIT" and _open_trades[symbol] is not None:
-                t    = _open_trades[symbol]
-                side = "SELL" if t["side"] == "LONG" else "BUY"
-                fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
-                if fill is None:
-                    continue
-                pnl  = ((fill.price - t["entry"]) if t["side"] == "LONG"
-                        else (t["entry"] - fill.price)) * t["qty"]
-                _total_pnl += pnl
-                _open_trades[symbol] = None
-                result = "WIN " if pnl >= 0 else "LOSS"
-                log.info("EXIT  #%-3d  %-12s  %s  Rs%+.2f  "
-                         "entry=Rs%.2f@%s  exit=Rs%.2f  total=Rs%+.2f",
-                         _trade_no, symbol, result, pnl,
-                         t["entry"], t["ts_str"], fill.price, _total_pnl)
-                meta = _entry_meta.get(_trade_no, {})
-                _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
-                              f"{meta.get('entry_time','')},"
-                              f"{t['entry']:.2f},{ts_str},"
-                              f"{fill.price:.2f},{t['qty']},{pnl:.2f}\n")
-                _csv_fh.flush()
+                self._do_exit(symbol, px, reason, ts_str)
 
         _save_runner_state()
 

@@ -7,7 +7,10 @@ from marketdata import Candle
 from strategies.base import BaseStrategy
 
 STATE_DIR    = "data/st_state"
-HARD_SL_MULT = 1.5   # exit if price moves 1.5×ATR against entry price
+HARD_SL_MULT = 1.5           # hard stop: exit if price moves 1.5×ATR against entry
+BREAKEVEN_TRIGGER_MULT = 1.0 # once +1×ATR in profit, move stop to entry (0 disables)
+TRAIL_PEAK_MULT = 0.0        # chandelier: exit if price retraces N×ATR from peak (0 disables)
+TAKE_PROFIT_MULT = 0.0       # fixed take-profit at N×ATR (0 disables; caps winners — backtest first)
 
 
 class SupertrendStrategy(BaseStrategy):
@@ -41,6 +44,8 @@ class SupertrendStrategy(BaseStrategy):
             self.current_date = s.get("current_date")
             self._entry_price = s.get("entry_price")
             self._entry_atr   = s.get("entry_atr")
+            self._peak        = s.get("peak")
+            self._breakeven_armed = s.get("breakeven_armed", False)
             candles_raw      = s.get("candles", [])
             from marketdata import Candle
             from datetime import datetime
@@ -69,6 +74,8 @@ class SupertrendStrategy(BaseStrategy):
             "current_date": self.current_date,
             "entry_price": self._entry_price,
             "entry_atr":   self._entry_atr,
+            "peak":        self._peak,
+            "breakeven_armed": self._breakeven_armed,
             "candles": [
                 {"ts": int(c.start.timestamp()),
                  "o": c.open, "h": c.high, "l": c.low, "c": c.close}
@@ -91,6 +98,8 @@ class SupertrendStrategy(BaseStrategy):
         self.current_date: Optional[str]   = None
         self._entry_price: Optional[float] = None
         self._entry_atr:   Optional[float] = None
+        self._peak:        Optional[float] = None   # best price seen since entry
+        self._breakeven_armed: bool        = False
 
     def _reset_day(self) -> None:
         if self.long_only:
@@ -98,6 +107,8 @@ class SupertrendStrategy(BaseStrategy):
         self.position     = 0
         self._entry_price = None
         self._entry_atr   = None
+        self._peak        = None
+        self._breakeven_armed = False
 
     def _tr(self, candle: Candle) -> float:
         if not self._candles:
@@ -106,6 +117,60 @@ class SupertrendStrategy(BaseStrategy):
         return max(candle.high - candle.low,
                    abs(candle.high - p.close),
                    abs(candle.low  - p.close))
+
+    def _exit_now(self, price: float, why: str) -> Dict[str, Any]:
+        sig = self._signal("EXIT", price, why)
+        self.position     = 0
+        self._entry_price = None
+        self._entry_atr   = None
+        self._peak        = None
+        self._breakeven_armed = False
+        return sig
+
+    def check_stops(self, price: float) -> Optional[Dict[str, Any]]:
+        """Real-time exit checks — safe to call on every tick AND at candle close.
+        Returns an EXIT signal (and flattens internal state) if a stop fires, else None.
+        Priority: hard SL → breakeven → peak-trail → take-profit → trailing supertrend."""
+        if self.position == 0 or self._entry_price is None:
+            return None
+        atr   = self._entry_atr or self._atr or 0.0
+        entry = self._entry_price
+
+        # track best price seen since entry
+        if self._peak is None:
+            self._peak = price
+        elif self.position == 1:
+            self._peak = max(self._peak, price)
+        else:
+            self._peak = min(self._peak, price)
+
+        if self.position == 1:
+            if atr and price <= entry - HARD_SL_MULT * atr:
+                return self._exit_now(price, f"HARD SL | entry={entry:.2f} atr={atr:.2f}")
+            if atr and BREAKEVEN_TRIGGER_MULT and price >= entry + BREAKEVEN_TRIGGER_MULT * atr:
+                self._breakeven_armed = True
+            if self._breakeven_armed and price <= entry:
+                return self._exit_now(price, f"BREAKEVEN | entry={entry:.2f}")
+            if atr and TRAIL_PEAK_MULT and self._peak is not None and price <= self._peak - TRAIL_PEAK_MULT * atr:
+                return self._exit_now(price, f"PEAK TRAIL | peak={self._peak:.2f} atr={atr:.2f}")
+            if atr and TAKE_PROFIT_MULT and price >= entry + TAKE_PROFIT_MULT * atr:
+                return self._exit_now(price, f"TAKE PROFIT | entry={entry:.2f}")
+            if self._supertrend is not None and price < self._supertrend:
+                return self._exit_now(price, f"trail SL | st={self._supertrend:.2f}")
+        else:  # short
+            if atr and price >= entry + HARD_SL_MULT * atr:
+                return self._exit_now(price, f"HARD SL | entry={entry:.2f} atr={atr:.2f}")
+            if atr and BREAKEVEN_TRIGGER_MULT and price <= entry - BREAKEVEN_TRIGGER_MULT * atr:
+                self._breakeven_armed = True
+            if self._breakeven_armed and price >= entry:
+                return self._exit_now(price, f"BREAKEVEN | entry={entry:.2f}")
+            if atr and TRAIL_PEAK_MULT and self._peak is not None and price >= self._peak + TRAIL_PEAK_MULT * atr:
+                return self._exit_now(price, f"PEAK TRAIL | peak={self._peak:.2f} atr={atr:.2f}")
+            if atr and TAKE_PROFIT_MULT and price <= entry - TAKE_PROFIT_MULT * atr:
+                return self._exit_now(price, f"TAKE PROFIT | entry={entry:.2f}")
+            if self._supertrend is not None and price > self._supertrend:
+                return self._exit_now(price, f"trail SL | st={self._supertrend:.2f}")
+        return None
 
     def on_candle(self, candle: Candle) -> List[Dict[str, Any]]:
         signals: List[Dict[str, Any]] = []
@@ -122,6 +187,8 @@ class SupertrendStrategy(BaseStrategy):
                 self.position     = 0
                 self._entry_price = None
                 self._entry_atr   = None
+                self._peak        = None
+                self._breakeven_armed = False
             self.save_state()
             return signals
 
@@ -157,42 +224,12 @@ class SupertrendStrategy(BaseStrategy):
         self._upper      = upper
         self._lower      = lower
 
-        # ── Hard ATR stop loss (fires before trailing SL) ──────────────
-        hard_sl_hit = False
-        if self.position == 1 and self._entry_price is not None and self._entry_atr is not None:
-            sl = self._entry_price - HARD_SL_MULT * self._entry_atr
-            if candle.close < sl:
-                signals.append(self._signal("EXIT", candle.close,
-                    f"HARD SL | entry={self._entry_price:.2f} sl={sl:.2f} atr={self._entry_atr:.2f}"))
-                self.position     = 0
-                self._entry_price = None
-                self._entry_atr   = None
-                hard_sl_hit       = True
-
-        elif self.position == -1 and self._entry_price is not None and self._entry_atr is not None:
-            sl = self._entry_price + HARD_SL_MULT * self._entry_atr
-            if candle.close > sl:
-                signals.append(self._signal("EXIT", candle.close,
-                    f"HARD SL | entry={self._entry_price:.2f} sl={sl:.2f} atr={self._entry_atr:.2f}"))
-                self.position     = 0
-                self._entry_price = None
-                self._entry_atr   = None
-                hard_sl_hit       = True
-
-        if hard_sl_hit:
-            return signals   # skip trailing SL + re-entry on same candle
-
-        # ── Trailing supertrend SL ──────────────────────────────────────
-        if self.position == 1 and candle.close < new_st:
-            signals.append(self._signal("EXIT", new_st, f"trail SL | st={new_st:.2f}"))
-            self.position     = 0
-            self._entry_price = None
-            self._entry_atr   = None
-        elif self.position == -1 and candle.close > new_st:
-            signals.append(self._signal("EXIT", new_st, f"trail SL | st={new_st:.2f}"))
-            self.position     = 0
-            self._entry_price = None
-            self._entry_atr   = None
+        # ── Stop management (identical code path used on every live tick) ──
+        exit_sig = self.check_stops(candle.close)
+        if exit_sig:
+            signals.append(exit_sig)
+            self.save_state()
+            return signals   # exited this candle — no re-entry on the same bar
 
         # ── Entry on trend flip ─────────────────────────────────────────
         if prev_trend != 0 and new_trend != prev_trend and self.position == 0:
@@ -200,12 +237,16 @@ class SupertrendStrategy(BaseStrategy):
                 self.position     = 1
                 self._entry_price = candle.close
                 self._entry_atr   = self._atr
+                self._peak        = candle.close
+                self._breakeven_armed = False
                 signals.append(self._signal("BUY", candle.close,
                     f"flip UP | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close - HARD_SL_MULT*self._atr:.2f}"))
             elif not self.long_only:
                 self.position     = -1
                 self._entry_price = candle.close
                 self._entry_atr   = self._atr
+                self._peak        = candle.close
+                self._breakeven_armed = False
                 signals.append(self._signal("SELL", candle.close,
                     f"flip DOWN | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close + HARD_SL_MULT*self._atr:.2f}"))
 
