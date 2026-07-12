@@ -312,6 +312,20 @@ class TradingApp:
         t = _open_trades.get(symbol)
         if not t:
             return False
+        # If a live entry was never confirmed filled, verify the REAL position before selling —
+        # a never-filled (or lost-confirmation) entry must not become a phantom short intraday.
+        if hasattr(broker, "net_position") and not t.get("filled", True):
+            net = broker.net_position(symbol)
+            if net == 0:
+                log.warning("EXIT %s — entry never filled (exchange net=0); clearing ledger, NO close order", symbol)
+                _open_trades[symbol] = None
+                for inst in INSTRUMENTS.values():
+                    if inst["symbol"] == symbol:
+                        st = inst["strategy"]
+                        st.position = 0; st._entry_price = None; st._entry_atr = None
+                        break
+                _save_runner_state()
+                return False
         side = "SELL" if t["side"] == "LONG" else "BUY"
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
         if fill is None:
@@ -458,7 +472,7 @@ class TradingApp:
                 if fill is None:
                     continue
                 _trade_no += 1
-                _open_trades[symbol] = {"side": "LONG", "entry": fill.price, "qty": qty, "ts_str": ts_str}
+                _open_trades[symbol] = {"side": "LONG", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
                 log.info("ENTRY #%-3d  %-12s  LONG   Rs%.2f  qty=%d  [%s]",
                          _trade_no, symbol, fill.price, qty, reason)
@@ -472,7 +486,7 @@ class TradingApp:
                 if fill is None:
                     continue
                 _trade_no += 1
-                _open_trades[symbol] = {"side": "SHORT", "entry": fill.price, "qty": qty, "ts_str": ts_str}
+                _open_trades[symbol] = {"side": "SHORT", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
                 log.info("ENTRY #%-3d  %-12s  SHORT  Rs%.2f  qty=%d  [%s]",
                          _trade_no, symbol, fill.price, qty, reason)
@@ -514,6 +528,7 @@ class TradingApp:
                     t = _open_trades.get(p["symbol"])
                     if t:
                         t["entry"] = actual
+                        t["filled"] = True   # confirmed by the exchange -> real position
                         if filled < p["qty"]:
                             t["qty"] = filled
                             log.warning("PARTIAL ENTRY  %s  filled=%d/%d — position qty reduced to %d",
