@@ -17,11 +17,12 @@ class SupertrendStrategy(BaseStrategy):
 
     def __init__(self, symbol: str, qty: int,
                  atr_period: int = 14, multiplier: float = 1.5,
-                 long_only: bool = False) -> None:
+                 long_only: bool = False, ema_period: int = None) -> None:
         super().__init__(symbol, qty)
         self.atr_period = atr_period
         self.multiplier = multiplier
         self.long_only  = long_only   # CNC: no short entries, bearish flip = exit only
+        self.ema_period = ema_period  # if set: only long above EMA, short below (trend filter)
         self._reset_all()
         self._load_state()
 
@@ -46,6 +47,7 @@ class SupertrendStrategy(BaseStrategy):
             self._entry_atr   = s.get("entry_atr")
             self._peak        = s.get("peak")
             self._breakeven_armed = s.get("breakeven_armed", False)
+            self._ema         = s.get("ema")
             candles_raw      = s.get("candles", [])
             from marketdata import Candle
             from datetime import datetime
@@ -76,6 +78,7 @@ class SupertrendStrategy(BaseStrategy):
             "entry_atr":   self._entry_atr,
             "peak":        self._peak,
             "breakeven_armed": self._breakeven_armed,
+            "ema":         self._ema,
             "candles": [
                 {"ts": int(c.start.timestamp()),
                  "o": c.open, "h": c.high, "l": c.low, "c": c.close}
@@ -100,6 +103,7 @@ class SupertrendStrategy(BaseStrategy):
         self._entry_atr:   Optional[float] = None
         self._peak:        Optional[float] = None   # best price seen since entry
         self._breakeven_armed: bool        = False
+        self._ema:         Optional[float] = None   # EMA trend filter value
 
     def _reset_day(self) -> None:
         if self.long_only:
@@ -192,6 +196,10 @@ class SupertrendStrategy(BaseStrategy):
             self.save_state()
             return signals
 
+        if self.ema_period:
+            k = 2.0 / (self.ema_period + 1)
+            self._ema = candle.close if self._ema is None else candle.close * k + self._ema * (1 - k)
+
         tr = self._tr(candle)
         self._atr = tr if self._atr is None else (self._atr * (self.atr_period - 1) + tr) / self.atr_period
         self._candles.append(candle)
@@ -231,9 +239,11 @@ class SupertrendStrategy(BaseStrategy):
             self.save_state()
             return signals   # exited this candle — no re-entry on the same bar
 
-        # ── Entry on trend flip ─────────────────────────────────────────
+        # ── Entry on trend flip (optionally gated by EMA trend filter) ──
         if prev_trend != 0 and new_trend != prev_trend and self.position == 0:
-            if new_trend == 1:
+            long_ok  = self._ema is None or candle.close > self._ema
+            short_ok = self._ema is None or candle.close < self._ema
+            if new_trend == 1 and long_ok:
                 self.position     = 1
                 self._entry_price = candle.close
                 self._entry_atr   = self._atr
@@ -241,7 +251,7 @@ class SupertrendStrategy(BaseStrategy):
                 self._breakeven_armed = False
                 signals.append(self._signal("BUY", candle.close,
                     f"flip UP | atr={self._atr:.2f} st={new_st:.2f} sl={candle.close - HARD_SL_MULT*self._atr:.2f}"))
-            elif not self.long_only:
+            elif new_trend == -1 and not self.long_only and short_ok:
                 self.position     = -1
                 self._entry_price = candle.close
                 self._entry_atr   = self._atr

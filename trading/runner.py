@@ -63,6 +63,7 @@ MAX_CAPITAL_PER_STOCK = 5_000          # own capital deployed per stock (pre-lev
 MAX_POSITIONS      = int(os.getenv("MAX_POSITIONS", "2"))
 CAPITAL_PER_TRADE  = MAX_CAPITAL_PER_STOCK
 WALLET_DEPLOY_FRAC = 0.85              # never commit more than 85% of wallet cash
+EMA_PERIOD = int(os.getenv("EMA_FILTER", "0")) or None   # EMA trend filter (None = off; dynamic basket sets 50)
 INTERVAL_S            = 900
 
 # ── State ────────────────────────────────────────────────────────────────
@@ -90,6 +91,29 @@ if os.path.getsize(_csv_path) == 0:
 _entry_meta: Dict[int, dict] = {}   # trade_no → {entry_time}
 
 
+def _load_today_basket():
+    """If data/today_basket.json exists and is for today, use it (dynamic selection);
+    otherwise return None and the built-in fixed basket is used."""
+    path = "data/today_basket.json"
+    if not os.path.exists(path):
+        return None
+    try:
+        s = json.load(open(path))
+    except Exception as e:
+        log.warning("today_basket load failed: %s — using default basket", e)
+        return None
+    if s.get("date") != _today:
+        log.warning("today_basket is stale (date=%s, today=%s) — using default basket",
+                    s.get("date"), _today)
+        return None
+    stocks = s.get("stocks") or []
+    if not stocks:
+        return None
+    basket = [("NSE", x["symbol"]) for x in stocks]
+    modes  = {x["symbol"]: x.get("mode", "MIS") for x in stocks}
+    return basket, modes
+
+
 def resolve_tokens(client: FlattradeClient) -> None:
     for exch, sym in BASKET:
         results = client.search_scrip(exch, sym)
@@ -115,7 +139,8 @@ def resolve_tokens(client: FlattradeClient) -> None:
             "tsym":     tsym,
             "mode":     MODES.get(sym, "MIS"),
             "strategy": SupertrendStrategy(symbol=sym, qty=1,
-                                           long_only=(MODES.get(sym, "MIS") == "CNC")),
+                                           long_only=(MODES.get(sym, "MIS") == "CNC"),
+                                           ema_period=EMA_PERIOD),
             "builder":  CandleBuilder(interval_seconds=INTERVAL_S),
         }
         _open_trades[sym] = None
@@ -451,6 +476,7 @@ class TradingApp:
 
 
 def main() -> None:
+    global BASKET, MODES, EMA_PERIOD
     uid, token = get_session()
     client = FlattradeClient()
     client.set_session(user_id=uid, token=token)
@@ -459,6 +485,16 @@ def main() -> None:
     log.info("STARTUP  date=%s  pid=%d", _today, os.getpid())
     mode_label = "LIVE" if os.getenv("LIVE_MODE") == "1" else "PAPER"
     log.info("Strategy: Supertrend atr=14 mult=1.5 | 15-min | %s mode", mode_label)
+
+    dyn = _load_today_basket()
+    if dyn:
+        BASKET, MODES = dyn
+        EMA_PERIOD = EMA_PERIOD or 50   # match the backtested dynamic-MIS config
+        log.info("DYNAMIC BASKET (%d): %s | EMA filter=%s",
+                 len(BASKET), ",".join(s for _, s in BASKET), EMA_PERIOD)
+    else:
+        log.info("Using default fixed basket (%d stocks)", len(BASKET))
+
     log.info("Resolving NSE tokens...")
     resolve_tokens(client)
     _load_runner_state()
