@@ -11,7 +11,7 @@ Usage: python3 select_basket.py         (writes data/today_basket.json)
 """
 from __future__ import annotations
 import json, os, sys, warnings
-from datetime import datetime
+from datetime import datetime, timedelta
 warnings.filterwarnings("ignore")
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -130,11 +130,20 @@ def main():
         sys.exit(0)
 
     top = ranked[:TOP_K]
-    today = datetime.now().astimezone().strftime("%Y-%m-%d")
-    payload = {"date": today, "lookback": LOOKBACK, "selector": "vol+lowflips",
+    # Stamp the basket for the NEXT trading session so an evening run is valid next morning.
+    # Run after market open (>=9 IST) -> next session; run pre-open -> today. Skip weekends.
+    from config import IST
+    now = datetime.now(IST)
+    session = now.date() + (timedelta(days=1) if now.hour >= 9 else timedelta(0))
+    while session.weekday() >= 5:      # Sat/Sun -> roll to Monday
+        session += timedelta(days=1)
+    session_str = session.strftime("%Y-%m-%d")
+    payload = {"date": session_str, "generated": now.strftime("%Y-%m-%d %H:%M IST"),
+               "lookback": LOOKBACK, "selector": "vol+lowflips",
                "stocks": [{"symbol": s, "mode": "MIS"} for s in top]}
 
-    print(f"[select_basket] {today}  top {TOP_K} by vol + low-flips ({LOOKBACK}d):")
+    print(f"[select_basket] generated {now:%Y-%m-%d %H:%M} IST -> for session {session_str}  "
+          f"top {TOP_K} by vol + low-flips ({LOOKBACK}d):")
     for s in top:
         rng, fl = scores[s]
         print(f"    {s:12s} range={rng:4.2f}%  flips={fl}")
