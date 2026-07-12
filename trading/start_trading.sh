@@ -2,6 +2,19 @@
 cd /home/ec2-user/projects/trading
 source venv/bin/activate
 
+mkdir -p logs
+
+# ── Singleton guard: only ONE watchdog may run at a time ────────────────────
+# The lock is held by fd 9 for the life of the backgrounded watchdog subshell
+# (which inherits fd 9), so a second invocation — manual or cron — exits here
+# instead of stacking another watchdog + runner (which double-logs the account).
+exec 9>/home/ec2-user/projects/trading/.watchdog.lock
+if ! flock -n 9; then
+    echo "[$(date)] start_trading.sh: another watchdog already running — exiting" \
+        >> logs/runner_$(date +%Y-%m-%d).log
+    exit 0
+fi
+
 DATE=$(date +%Y-%m-%d)
 STOP_FLAG=/home/ec2-user/projects/trading/STOP
 
