@@ -73,6 +73,7 @@ _open_trades: Dict[str, Optional[dict]] = {}
 _trade_no     = 0
 _total_pnl    = 0.0
 _last_tick:   Dict[str, datetime]      = {}
+_quote:       Dict[str, tuple]         = {}   # symbol -> (best_bid, best_ask) from the feed
 _eod_done     = False
 _shutting_down = False
 _runner_state_path = "data/runner_state.json"
@@ -316,7 +317,7 @@ class TradingApp:
         # order feed: rejected/cancelled entries are cleared when their notification arrives,
         # and the EOD close verifies the real exchange position as the backstop.
         side = "SELL" if t["side"] == "LONG" else "BUY"
-        fill = broker.simulate_fill(symbol, side, t["qty"], px, reason)
+        fill = broker.simulate_fill(symbol, side, t["qty"], px, reason, quote=_quote.get(symbol))
         if fill is None:
             return False
         gross = ((fill.price - t["entry"]) if t["side"] == "LONG"
@@ -358,6 +359,15 @@ class TradingApp:
         _tick_fh.write(json.dumps(msg) + "\n")
         _tick_fh.flush()
 
+        # Track best bid/ask (top of book) so orders are priced to actually cross the spread,
+        # not off last-price. Touchline 'tf' updates may omit these — keep the last known.
+        bid, ask = msg.get("bp1"), msg.get("sp1")
+        if bid and ask:
+            try:
+                _quote[symbol] = (float(bid), float(ask))
+            except (TypeError, ValueError):
+                pass
+
         lp = msg.get("lp") or msg.get("c")
         ft = msg.get("ft")
         if not lp or not ft:
@@ -398,7 +408,7 @@ class TradingApp:
                     else:  # positions() unavailable — best-effort from our ledger
                         exit_side = "SELL" if t["side"] == "LONG" else "BUY"
                         close_qty = t["qty"]
-                    fill = broker.simulate_fill(symbol, exit_side, close_qty, price, "EOD")
+                    fill = broker.simulate_fill(symbol, exit_side, close_qty, price, "EOD", quote=_quote.get(symbol))
                     if fill is None:
                         _open_trades[symbol] = None
                         _save_runner_state()
@@ -457,7 +467,7 @@ class TradingApp:
                     continue
                 lev  = 4 if inst.get("mode", "MIS") == "MIS" else 1
                 qty  = max(1, int(CAPITAL_PER_TRADE * lev / px))
-                fill = broker.simulate_fill(symbol, "BUY", qty, px, reason)
+                fill = broker.simulate_fill(symbol, "BUY", qty, px, reason, quote=_quote.get(symbol))
                 if fill is None:
                     continue
                 _trade_no += 1
@@ -471,7 +481,7 @@ class TradingApp:
                     continue
                 lev  = 4 if inst.get("mode", "MIS") == "MIS" else 1
                 qty  = max(1, int(CAPITAL_PER_TRADE * lev / px))
-                fill = broker.simulate_fill(symbol, "SELL", qty, px, reason)
+                fill = broker.simulate_fill(symbol, "SELL", qty, px, reason, quote=_quote.get(symbol))
                 if fill is None:
                     continue
                 _trade_no += 1

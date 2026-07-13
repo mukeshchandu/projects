@@ -67,17 +67,26 @@ class LiveBroker:
             return None
 
     def simulate_fill(self, symbol: str, side: str, qty: int,
-                      mid_price: float, reason: str = "") -> Optional[PaperFill]:
+                      mid_price: float, reason: str = "", quote=None) -> Optional[PaperFill]:
         mode     = self.mode_map.get(symbol, "MIS")
         product  = "C" if mode == "CNC" else "I"
         tsym     = self.tsym_map.get(symbol, f"{symbol}-EQ")
         trantype = "B" if side.upper() == "BUY" else "S"
 
         t = self.ti_map.get(symbol) or _get_tick(mid_price)   # prefer real exchange tick size
-        if side.upper() == "BUY":
-            limit_price = round((math.ceil(round(mid_price / t, 8)) + 1) * t, 4)
+        CROSS = 1   # cross the opposite top-of-book by 1 tick so the IOC actually fills
+        if quote and quote[0] > 0 and quote[1] > 0:
+            bid, ask = quote
+            if side.upper() == "BUY":
+                limit_price = round((math.ceil(round(ask / t, 8)) + CROSS) * t, 4)   # take the ask
+            else:
+                limit_price = round((math.floor(round(bid / t, 8)) - CROSS) * t, 4)  # hit the bid
         else:
-            limit_price = round((math.floor(round(mid_price / t, 8)) - 1) * t, 4)
+            # no live quote -> fall back to last-price ± 1 tick (may not cross a wide spread)
+            if side.upper() == "BUY":
+                limit_price = round((math.ceil(round(mid_price / t, 8)) + 1) * t, 4)
+            else:
+                limit_price = round((math.floor(round(mid_price / t, 8)) - 1) * t, 4)
 
         # ── Capital check before BUY ───────────────────────────────────────
         if side.upper() == "BUY":
