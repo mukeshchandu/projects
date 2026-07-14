@@ -335,8 +335,8 @@ class TradingApp:
         if not t or t.get("exiting"):
             return False
         side = "SELL" if t["side"] == "LONG" else "BUY"
-        # First attempt sits AT the bid/ask (0 ticks); each retry crosses one more tick.
-        cross = min(t.get("exit_tries", 0), 6)
+        # First attempt sits AT the bid/ask (0 ticks); every retry crosses a fixed 1 tick.
+        cross = 1 if t.get("exit_tries", 0) else 0
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason,
                                     quote=_quote.get(symbol), cross_ticks=cross)
         if fill is None:
