@@ -1,0 +1,4 @@
+trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,pnl
+1,BANKBARODA,SHORT,06:00,272.80,09:45,272.87,13,-0.94
+2,BANKBARODA,LONG,09:45,275.30,12:45,275.10,13,-2.62
+3,BANKBARODA,SHORT,12:45,273.40,14:15,272.14,13,16.32

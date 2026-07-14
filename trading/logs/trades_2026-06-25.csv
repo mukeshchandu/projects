@@ -1,0 +1,2 @@
+trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,pnl
+0,NHPC,LONG,,79.85,15:00,79.40,50,-22.50

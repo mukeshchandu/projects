@@ -1,0 +1,2 @@
+trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,pnl
+0,SUZLON,LONG,,57.64,15:00,57.05,67,-39.53
