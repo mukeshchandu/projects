@@ -75,24 +75,19 @@ class LiveBroker:
         trantype = "B" if side.upper() == "BUY" else "S"
 
         t = self.ti_map.get(symbol) or _get_tick(mid_price)   # prefer real exchange tick size
-        # ENTRIES cross by 1 tick (tight; missing one is harmless). EXITS cross ~0.4% through
-        # the book so a stop fills even in a fast move — a missed stop is a real risk. Still a
-        # LIMIT, so a flash-crash print can't fill you at a crazy price.
-        EXIT_CROSS = 0.004
+        # Price off the FRESH best bid/ask (never the last price), crossing by a couple of
+        # ticks so the IOC fills. Exits cross a hair more (want-out priority) but only ~2 ticks
+        # — NOT a fat %; if it still misses (price moved), the runner retries with the newer
+        # bid/ask, so we chase with minimal slippage instead of pre-paying a wide buffer.
+        cross = 2 if exit_order else 1
         if quote and quote[0] > 0 and quote[1] > 0:
             ref_buy, ref_sell = quote[1], quote[0]     # buy crosses the ask, sell hits the bid
         else:
-            ref_buy = ref_sell = mid_price             # no quote -> off last price
+            ref_buy = ref_sell = mid_price             # fallback only: no quote -> last price
         if side.upper() == "BUY":
-            if exit_order:
-                limit_price = round(math.ceil(round(ref_buy * (1 + EXIT_CROSS) / t, 8)) * t, 4)
-            else:
-                limit_price = round((math.ceil(round(ref_buy / t, 8)) + 1) * t, 4)
+            limit_price = round((math.ceil(round(ref_buy / t, 8)) + cross) * t, 4)
         else:
-            if exit_order:
-                limit_price = round(math.floor(round(ref_sell * (1 - EXIT_CROSS) / t, 8)) * t, 4)
-            else:
-                limit_price = round((math.floor(round(ref_sell / t, 8)) - 1) * t, 4)
+            limit_price = round((math.floor(round(ref_sell / t, 8)) - cross) * t, 4)
 
         # ── Capital check before BUY ───────────────────────────────────────
         if side.upper() == "BUY":
