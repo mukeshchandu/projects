@@ -92,6 +92,34 @@ if os.path.getsize(_csv_path) == 0:
 
 _entry_meta: Dict[int, dict] = {}   # trade_no → {entry_time}
 
+# ── Strategy-state log (per closed candle: the belt/EMA/trend the strategy actually saw) ──
+_strat_path = f"logs/strategy_{_today}.csv"
+_strat_fh   = open(_strat_path, "a")
+if os.path.getsize(_strat_path) == 0:
+    _strat_fh.write("time,symbol,open,high,low,close,atr,supertrend,trend,upper,lower,ema,position,signal,reason\n")
+    _strat_fh.flush()
+
+
+def _log_strat_state(candle, symbol, strat, sig) -> None:
+    """Record the real-time strategy state at each closed candle so behaviour can be
+    reviewed/charted from the actual live values — no recomputation needed."""
+    def f(v):
+        return f"{v:.2f}" if isinstance(v, (int, float)) else ""
+    try:
+        _strat_fh.write(",".join([
+            candle.start.strftime("%Y-%m-%d %H:%M"), symbol,
+            f(candle.open), f(candle.high), f(candle.low), f(candle.close),
+            f(getattr(strat, "_atr", None)), f(getattr(strat, "_supertrend", None)),
+            str(getattr(strat, "_trend", "")),
+            f(getattr(strat, "_upper", None)), f(getattr(strat, "_lower", None)),
+            f(getattr(strat, "_ema", None)), str(getattr(strat, "position", "")),
+            (sig.get("action", "") if sig else ""),
+            (sig.get("reason", "").replace(",", " ") if sig else ""),
+        ]) + "\n")
+        _strat_fh.flush()
+    except Exception as e:
+        log.warning("strat-state log failed for %s: %s", symbol, e)
+
 
 def _load_today_basket():
     """If data/today_basket.json exists and is for today, use it (dynamic selection);
@@ -304,6 +332,8 @@ def _flush_and_close() -> None:
     _tick_fh.close()
     _csv_fh.flush()
     _csv_fh.close()
+    _strat_fh.flush()
+    _strat_fh.close()
 
 
 class TradingApp:
@@ -469,7 +499,10 @@ class TradingApp:
         log.debug("CANDLE  %-12s  O=%.2f  H=%.2f  L=%.2f  C=%.2f",
                   symbol, candle.open, candle.high, candle.low, candle.close)
 
-        for sig in inst["strategy"].on_candle(candle):
+        strat = inst["strategy"]
+        sigs  = strat.on_candle(candle)
+        _log_strat_state(candle, symbol, strat, sigs[0] if sigs else None)
+        for sig in sigs:
             action = sig["action"]
             px     = sig["price"]
             reason = sig.get("reason", "")
