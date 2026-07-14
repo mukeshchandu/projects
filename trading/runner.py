@@ -74,6 +74,7 @@ _trade_no     = 0
 _total_pnl    = 0.0
 _last_tick:   Dict[str, datetime]      = {}
 _quote:       Dict[str, tuple]         = {}   # symbol -> (best_bid, best_ask) from the feed
+_last_price:  Dict[str, float]         = {}   # last seen ltp per symbol (carry across quote-only ticks)
 _eod_done     = False
 _shutting_down = False
 _runner_state_path = "data/runner_state.json"
@@ -377,13 +378,25 @@ class TradingApp:
             except (TypeError, ValueError):
                 pass
 
-        lp = msg.get("lp") or msg.get("c")
         ft = msg.get("ft")
-        if not lp or not ft:
+        if not ft:
             return
+        lp = msg.get("lp") or msg.get("c")
+        has_lp = bool(lp)
+        if has_lp:
+            try:
+                price = float(lp)
+            except (ValueError, OSError):
+                return
+            _last_price[symbol] = price
+        else:
+            # quote-only tick (bid/ask changed, price unchanged): use last known price so
+            # retries/stops can still act on the fresh quote instead of waiting for a trade.
+            price = _last_price.get(symbol)
+            if price is None:
+                return
         try:
-            price = float(lp)
-            ts    = datetime.fromtimestamp(int(ft), tz=IST)
+            ts = datetime.fromtimestamp(int(ft), tz=IST)
         except (ValueError, OSError):
             return
 
@@ -426,13 +439,18 @@ class TradingApp:
         t = _open_trades.get(symbol)
         if t is not None and not t.get("exiting"):
             if t.get("exit_armed"):
-                # a prior exit order cancelled/rejected -> keep retrying until we're out
+                # a prior exit cancelled -> retry on EVERY tick (incl. quote-only) with the
+                # freshest bid/ask, so we're not waiting for the next trade to get out
                 self._do_exit(symbol, price, "retry", datetime.now(tz=IST).strftime("%H:%M"))
-            else:
+            elif has_lp:
+                # a real stop check only matters when the price actually moved (lp present)
                 exit_sig = inst["strategy"].check_stops(price)
                 if exit_sig:
                     self._do_exit(symbol, exit_sig["price"], exit_sig.get("reason", ""),
                                   datetime.now(tz=IST).strftime("%H:%M"))
+
+        if not has_lp:
+            return   # quote-only tick: no new candle to build
 
         vol    = float(msg.get("v", 0) or 0)
         tick   = Tick(ts=ts, symbol=token, ltp=price, volume=vol, raw=msg)
