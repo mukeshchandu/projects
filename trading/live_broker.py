@@ -80,14 +80,17 @@ class LiveBroker:
         # — NOT a fat %; if it still misses (price moved), the runner retries with the newer
         # bid/ask, so we chase with minimal slippage instead of pre-paying a wide buffer.
         cross = 2 if exit_order else 1
-        if quote and quote[0] > 0 and quote[1] > 0:
-            ref_buy, ref_sell = quote[1], quote[0]     # buy crosses the ask, sell hits the bid
-        else:
-            ref_buy = ref_sell = mid_price             # fallback only: no quote -> last price
+        bid = quote[0] if quote else 0.0
+        ask = quote[1] if quote else 0.0
+        # A BUY needs the ASK, a SELL needs the BID. Use that side's fresh quote; only if THAT
+        # side is genuinely missing/0 do we fall back to last price (a real illiquid gap — the
+        # retry keeps trying until a quote appears).
         if side.upper() == "BUY":
-            limit_price = round((math.ceil(round(ref_buy / t, 8)) + cross) * t, 4)
+            ref = ask if ask and ask > 0 else mid_price
+            limit_price = round((math.ceil(round(ref / t, 8)) + cross) * t, 4)
         else:
-            limit_price = round((math.floor(round(ref_sell / t, 8)) - cross) * t, 4)
+            ref = bid if bid and bid > 0 else mid_price
+            limit_price = round((math.floor(round(ref / t, 8)) - cross) * t, 4)
 
         # ── Capital check before BUY ───────────────────────────────────────
         if side.upper() == "BUY":

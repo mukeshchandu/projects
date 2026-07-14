@@ -369,14 +369,19 @@ class TradingApp:
         _tick_fh.write(json.dumps(msg) + "\n")
         _tick_fh.flush()
 
-        # Track best bid/ask (top of book) so orders are priced to actually cross the spread,
-        # not off last-price. Touchline 'tf' updates may omit these — keep the last known.
-        bid, ask = msg.get("bp1"), msg.get("sp1")
-        if bid and ask:
+        # Track best bid/ask (top of book) so orders are priced to cross the spread, not off
+        # last-price. bid (bp1) and ask (sp1) arrive INDEPENDENTLY and either can be blank/0 in
+        # a given 'tf' update — update each side only when it's a valid positive number and
+        # carry the last good value forward.
+        q = list(_quote.get(symbol, (0.0, 0.0)))
+        for i, v in ((0, msg.get("bp1")), (1, msg.get("sp1"))):
             try:
-                _quote[symbol] = (float(bid), float(ask))
+                if v and float(v) > 0:
+                    q[i] = float(v)
             except (TypeError, ValueError):
                 pass
+        if q[0] or q[1]:
+            _quote[symbol] = (q[0], q[1])
 
         ft = msg.get("ft")
         if not ft:
