@@ -67,26 +67,32 @@ class LiveBroker:
             return None
 
     def simulate_fill(self, symbol: str, side: str, qty: int,
-                      mid_price: float, reason: str = "", quote=None) -> Optional[PaperFill]:
+                      mid_price: float, reason: str = "", quote=None,
+                      exit_order: bool = False) -> Optional[PaperFill]:
         mode     = self.mode_map.get(symbol, "MIS")
         product  = "C" if mode == "CNC" else "I"
         tsym     = self.tsym_map.get(symbol, f"{symbol}-EQ")
         trantype = "B" if side.upper() == "BUY" else "S"
 
         t = self.ti_map.get(symbol) or _get_tick(mid_price)   # prefer real exchange tick size
-        CROSS = 1   # cross the opposite top-of-book by 1 tick so the IOC actually fills
+        # ENTRIES cross by 1 tick (tight; missing one is harmless). EXITS cross ~0.4% through
+        # the book so a stop fills even in a fast move — a missed stop is a real risk. Still a
+        # LIMIT, so a flash-crash print can't fill you at a crazy price.
+        EXIT_CROSS = 0.004
         if quote and quote[0] > 0 and quote[1] > 0:
-            bid, ask = quote
-            if side.upper() == "BUY":
-                limit_price = round((math.ceil(round(ask / t, 8)) + CROSS) * t, 4)   # take the ask
-            else:
-                limit_price = round((math.floor(round(bid / t, 8)) - CROSS) * t, 4)  # hit the bid
+            ref_buy, ref_sell = quote[1], quote[0]     # buy crosses the ask, sell hits the bid
         else:
-            # no live quote -> fall back to last-price ± 1 tick (may not cross a wide spread)
-            if side.upper() == "BUY":
-                limit_price = round((math.ceil(round(mid_price / t, 8)) + 1) * t, 4)
+            ref_buy = ref_sell = mid_price             # no quote -> off last price
+        if side.upper() == "BUY":
+            if exit_order:
+                limit_price = round(math.ceil(round(ref_buy * (1 + EXIT_CROSS) / t, 8)) * t, 4)
             else:
-                limit_price = round((math.floor(round(mid_price / t, 8)) - 1) * t, 4)
+                limit_price = round((math.ceil(round(ref_buy / t, 8)) + 1) * t, 4)
+        else:
+            if exit_order:
+                limit_price = round(math.floor(round(ref_sell * (1 - EXIT_CROSS) / t, 8)) * t, 4)
+            else:
+                limit_price = round((math.floor(round(ref_sell / t, 8)) - 1) * t, 4)
 
         # ── Capital check before BUY ───────────────────────────────────────
         if side.upper() == "BUY":

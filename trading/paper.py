@@ -52,7 +52,8 @@ class PaperBroker:
         self.daily_pnl: float                    = 0.0
 
     def simulate_fill(
-        self, symbol: str, side: str, qty: int, mid_price: float, reason: str = ""
+        self, symbol: str, side: str, qty: int, mid_price: float, reason: str = "",
+        quote=None, exit_order: bool = False
     ) -> PaperFill:
         t = _get_tick(mid_price)
         if side.upper() == "BUY":

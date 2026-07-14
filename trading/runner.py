@@ -306,45 +306,54 @@ def _flush_and_close() -> None:
 
 
 class TradingApp:
-    def _do_exit(self, symbol: str, px: float, reason: str, ts_str: str) -> bool:
-        """Close the open position for `symbol` at ~px. Shared by candle-close and
-        tick-level (real-time) stop paths. Returns True if a fill happened."""
+    def _book_exit(self, symbol, t, xp, qty, reason, exit_ts):
+        """Finalise a closed trade: realise NET PnL, log, CSV, clear the ledger. Called only
+        once the exit has actually FILLED (live: on confirmation; paper: immediately)."""
         global _total_pnl
-        t = _open_trades.get(symbol)
-        if not t:
-            return False
-        # Exits go straight through (no extra REST call on the hot path). We trust the WS
-        # order feed: rejected/cancelled entries are cleared when their notification arrives,
-        # and the EOD close verifies the real exchange position as the backstop.
-        side = "SELL" if t["side"] == "LONG" else "BUY"
-        fill = broker.simulate_fill(symbol, side, t["qty"], px, reason, quote=_quote.get(symbol))
-        if fill is None:
-            return False
-        gross = ((fill.price - t["entry"]) if t["side"] == "LONG"
-                 else (t["entry"] - fill.price)) * t["qty"]
-        cost  = _charges(t["entry"] * t["qty"], fill.price * t["qty"], MODES.get(symbol, "MIS"))
-        pnl   = gross - cost
-        if getattr(fill, "ordno", "") and hasattr(broker, "pending") and fill.ordno in broker.pending:
-            broker.pending[fill.ordno].update({
-                "kind": "exit", "entry": t["entry"], "side": t["side"],
-                "mode": MODES.get(symbol, "MIS"), "prov_net": pnl, "prov_qty": t["qty"]})
-        _total_pnl += pnl
+        mode = MODES.get(symbol, "MIS")
+        gross = ((xp - t["entry"]) if t["side"] == "LONG" else (t["entry"] - xp)) * qty
+        cost  = _charges(t["entry"] * qty, xp * qty, mode)
+        net   = gross - cost
+        _total_pnl += net
         _open_trades[symbol] = None
-        result = "WIN " if pnl >= 0 else "LOSS"
-        log.info("EXIT  #%-3d  %-12s  %s  net=Rs%+.2f (gross=Rs%+.2f cost=Rs%.2f)  "
-                 "entry=Rs%.2f@%s  exit=Rs%.2f  total=Rs%+.2f  [%s]",
-                 _trade_no, symbol, result, pnl, gross, cost, t["entry"], t["ts_str"], fill.price, _total_pnl, reason)
-        meta = _entry_meta.get(_trade_no, {})
-        _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
-                      f"{meta.get('entry_time','')},"
-                      f"{t['entry']:.2f},{ts_str},"
-                      f"{fill.price:.2f},{t['qty']},{gross:.2f},{cost:.2f},{pnl:.2f}\n")
+        result = "WIN " if net >= 0 else "LOSS"
+        log.info("EXIT  %-12s  %s  net=Rs%+.2f (gross=Rs%+.2f cost=Rs%.2f)  entry=Rs%.2f  "
+                 "exit=Rs%.4f  qty=%d  total=Rs%+.2f  [%s]",
+                 symbol, result, net, gross, cost, t["entry"], xp, qty, _total_pnl, reason)
+        _csv_fh.write(f"{t.get('trade_no','')},{symbol},{t['side']},{t.get('ts_str','')},"
+                      f"{t['entry']:.2f},{exit_ts},{xp:.2f},{qty},{gross:.2f},{cost:.2f},{net:.2f}\n")
         _csv_fh.flush()
         _save_runner_state()
+
+    def _do_exit(self, symbol: str, px: float, reason: str, ts_str: str) -> bool:
+        """Place an AGGRESSIVE exit order. LIVE: the trade is booked only when the fill
+        confirmation arrives (handle_order); if the order cancels it is RETRIED — an open
+        position is never abandoned. PAPER: the returned fill is final and booked now.
+        The 'exiting' flag prevents firing duplicate orders while one is in flight."""
+        t = _open_trades.get(symbol)
+        if not t or t.get("exiting"):
+            return False
+        side = "SELL" if t["side"] == "LONG" else "BUY"
+        fill = broker.simulate_fill(symbol, side, t["qty"], px, reason,
+                                    quote=_quote.get(symbol), exit_order=True)
+        if fill is None:
+            t["exit_armed"] = True          # placement failed -> retry next tick
+            return False
+        if hasattr(broker, "pending") and getattr(fill, "ordno", ""):
+            t["exiting"] = True
+            t["exit_armed"] = False
+            broker.pending[fill.ordno].update({
+                "kind": "exit", "symbol": symbol, "entry": t["entry"], "side": t["side"],
+                "mode": MODES.get(symbol, "MIS"), "qty": t["qty"],
+                "trade_no": t.get("trade_no", ""), "entry_time": t.get("ts_str", ""),
+                "exit_ts": ts_str, "reason": reason})
+            log.info("EXIT ORDER  %-12s  %s  qty=%d  [%s] — awaiting fill", symbol, side, t["qty"], reason)
+            return True
+        self._book_exit(symbol, t, fill.price, t["qty"], reason, ts_str)
         return True
 
     def handle_tick(self, msg: dict) -> None:
-        global _trade_no, _total_pnl, _eod_done
+        global _trade_no, _eod_done
 
         if msg.get("t") not in ("tk", "tf"):
             return
@@ -394,43 +403,17 @@ class TradingApp:
                     log.info("EOD  %-12s  [CNC] holding overnight  entry=Rs%.2f  qty=%d",
                              symbol, t["entry"], t["qty"])
                 else:
-                    # Verify the REAL position before closing — never sell what we don't hold.
-                    # A rejected/unfilled entry must not become a phantom SHORT at EOD.
+                    # Verify the REAL position first — if the exchange is flat (never-filled
+                    # entry, or already squared), clear the phantom and place NO order.
                     net = broker.net_position(symbol) if hasattr(broker, "net_position") else None
                     if net == 0:
-                        log.warning("EOD %s — ledger says open but exchange net=0 (phantom); clearing, NO order", symbol)
+                        log.warning("EOD %s — exchange net=0 (phantom/already flat); clearing, NO order", symbol)
                         _open_trades[symbol] = None
                         _save_runner_state()
                         return
-                    if net is not None and net != 0:
-                        exit_side = "SELL" if net > 0 else "BUY"
-                        close_qty = abs(net)
-                    else:  # positions() unavailable — best-effort from our ledger
-                        exit_side = "SELL" if t["side"] == "LONG" else "BUY"
-                        close_qty = t["qty"]
-                    fill = broker.simulate_fill(symbol, exit_side, close_qty, price, "EOD", quote=_quote.get(symbol))
-                    if fill is None:
-                        _open_trades[symbol] = None
-                        _save_runner_state()
-                        log.error("EOD close REJECTED/UNFILLED  %s — position may need manual check", symbol)
-                        return
-                    gross = ((fill.price - t["entry"]) if t["side"] == "LONG" else (t["entry"] - fill.price)) * close_qty
-                    cost  = _charges(t["entry"] * close_qty, fill.price * close_qty, "MIS")
-                    pnl   = gross - cost
-                    if getattr(fill, "ordno", "") and hasattr(broker, "pending") and fill.ordno in broker.pending:
-                        broker.pending[fill.ordno].update({
-                            "kind": "exit", "entry": t["entry"], "side": t["side"],
-                            "mode": "MIS", "prov_net": pnl, "prov_qty": close_qty})
-                    _total_pnl += pnl
-                    _open_trades[symbol] = None
-                    log.info("EOD EXIT  %-12s  net=Rs%+.2f (gross=Rs%+.2f cost=Rs%.2f)  total=Rs%+.2f",
-                             symbol, pnl, gross, cost, _total_pnl)
-                    meta = _entry_meta.get(_trade_no, {})
-                    _csv_fh.write(f"{_trade_no},{symbol},{t['side']},"
-                                  f"{meta.get('entry_time','')},"
-                                  f"{t['entry']:.2f},{ts.strftime('%H:%M')},"
-                                  f"{fill.price:.2f},{close_qty},{gross:.2f},{cost:.2f},{pnl:.2f}\n")
-                    _csv_fh.flush()
+                    # Aggressive EOD close via the confirm-before-book path; retries on cancel.
+                    if not t.get("exiting"):
+                        self._do_exit(symbol, price, "EOD", ts.strftime("%H:%M"))
             mis_open = any(_open_trades.get(s) for s in MODES if MODES[s] == "MIS")
             if not _eod_done and not mis_open:
                 _eod_done = True
@@ -441,11 +424,15 @@ class TradingApp:
         # ── Real-time stop management: evaluate stops on EVERY tick, not just candle close.
         # Entry/trend logic still runs only on closed candles (below).
         t = _open_trades.get(symbol)
-        if t is not None:
-            exit_sig = inst["strategy"].check_stops(price)
-            if exit_sig:
-                self._do_exit(symbol, exit_sig["price"], exit_sig.get("reason", ""),
-                              datetime.now(tz=IST).strftime("%H:%M"))
+        if t is not None and not t.get("exiting"):
+            if t.get("exit_armed"):
+                # a prior exit order cancelled/rejected -> keep retrying until we're out
+                self._do_exit(symbol, price, "retry", datetime.now(tz=IST).strftime("%H:%M"))
+            else:
+                exit_sig = inst["strategy"].check_stops(price)
+                if exit_sig:
+                    self._do_exit(symbol, exit_sig["price"], exit_sig.get("reason", ""),
+                                  datetime.now(tz=IST).strftime("%H:%M"))
 
         vol    = float(msg.get("v", 0) or 0)
         tick   = Tick(ts=ts, symbol=token, ltp=price, volume=vol, raw=msg)
@@ -471,7 +458,7 @@ class TradingApp:
                 if fill is None:
                     continue
                 _trade_no += 1
-                _open_trades[symbol] = {"side": "LONG", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False}
+                _open_trades[symbol] = {"side": "LONG", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False, "trade_no": _trade_no}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
                 log.info("ENTRY #%-3d  %-12s  LONG   Rs%.2f  qty=%d  [%s]",
                          _trade_no, symbol, fill.price, qty, reason)
@@ -485,7 +472,7 @@ class TradingApp:
                 if fill is None:
                     continue
                 _trade_no += 1
-                _open_trades[symbol] = {"side": "SHORT", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False}
+                _open_trades[symbol] = {"side": "SHORT", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False, "trade_no": _trade_no}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
                 log.info("ENTRY #%-3d  %-12s  SHORT  Rs%.2f  qty=%d  [%s]",
                          _trade_no, symbol, fill.price, qty, reason)
@@ -496,7 +483,6 @@ class TradingApp:
         _save_runner_state()
 
     def handle_order(self, msg: dict) -> None:
-        global _total_pnl
         rtype      = msg.get("reporttype", "")
         norenordno = msg.get("norenordno", "")
         tsym       = msg.get("tsym", "")
@@ -513,15 +499,21 @@ class TradingApp:
                 filled = max(1, min(filled, p["qty"]))
 
                 if p.get("kind") == "exit":
-                    # Correct the exit PnL from the provisional (limit-price) estimate to the
-                    # real average fill price and actually-filled qty.
-                    entry, side, mode = p["entry"], p["side"], p["mode"]
-                    a_gross = ((actual - entry) if side == "LONG" else (entry - actual)) * filled
-                    a_net = a_gross - _charges(entry * filled, actual * filled, mode)
-                    adj = a_net - p.get("prov_net", a_net)
-                    _total_pnl += adj
-                    log.info("EXIT CONFIRMED  %-12s  actual=Rs%.4f  filled=%d/%d  adj=Rs%+.2f  total=Rs%+.2f",
-                             p["symbol"], actual, filled, p.get("prov_qty", filled), adj, _total_pnl)
+                    # Exit CONFIRMED filled -> now (and only now) book the trade at the real
+                    # average fill price + actually-filled qty.
+                    sym = p["symbol"]
+                    t = _open_trades.get(sym)
+                    if not t:
+                        log.info("EXIT FILL %s but ledger already flat (avgprc=%.4f)", sym, actual)
+                    elif filled < t.get("qty", filled):
+                        booked = dict(t)
+                        self._book_exit(sym, booked, actual, filled, p.get("reason", "") + " (partial)", p.get("exit_ts", ""))
+                        t["qty"] = t["qty"] - filled
+                        t["exiting"] = False; t["exit_armed"] = True
+                        _open_trades[sym] = t
+                        log.warning("PARTIAL EXIT %s filled %d, %d remain — retrying", sym, filled, t["qty"])
+                    else:
+                        self._book_exit(sym, t, actual, filled, p.get("reason", ""), p.get("exit_ts", ""))
                 else:
                     slip = (actual - p["est"]) if p["side"] == "BUY" else (p["est"] - actual)
                     t = _open_trades.get(p["symbol"])
@@ -544,7 +536,17 @@ class TradingApp:
             # `pending` in the fill branch, so a later cancel finds nothing and is a no-op.)
             if hasattr(broker, "pending"):
                 p = broker.pending.pop(norenordno, None)
-                if p and p["side"].upper() == "BUY":
+                if p and p.get("kind") == "exit":
+                    # An exit that didn't fill: DO NOT abandon the position or book it —
+                    # re-arm so the next tick retries the exit (aggressively). Still holding.
+                    sym = p["symbol"]
+                    t = _open_trades.get(sym)
+                    if t:
+                        t["exiting"] = False
+                        t["exit_armed"] = True
+                        log.warning("EXIT UNFILLED  %s — %s; RETRYING (still holding, not booked)", sym, rtype)
+                        _save_runner_state()
+                elif p and p["side"].upper() == "BUY":
                     sym = p["symbol"]
                     if _open_trades.get(sym):
                         _open_trades[sym] = None
