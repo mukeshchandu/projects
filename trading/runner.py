@@ -335,10 +335,12 @@ class TradingApp:
         if not t or t.get("exiting"):
             return False
         side = "SELL" if t["side"] == "LONG" else "BUY"
+        # First attempt sits AT the bid/ask (0 ticks); each retry crosses one more tick.
+        cross = min(t.get("exit_tries", 0), 6)
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason,
-                                    quote=_quote.get(symbol), exit_order=True)
+                                    quote=_quote.get(symbol), cross_ticks=cross)
         if fill is None:
-            t["exit_armed"] = True          # placement failed -> retry next tick
+            t["exit_armed"] = True          # no quote / placement failed -> retry next tick
             return False
         if hasattr(broker, "pending") and getattr(fill, "ordno", ""):
             t["exiting"] = True
@@ -567,7 +569,9 @@ class TradingApp:
                     if t:
                         t["exiting"] = False
                         t["exit_armed"] = True
-                        log.warning("EXIT UNFILLED  %s — %s; RETRYING (still holding, not booked)", sym, rtype)
+                        t["exit_tries"] = t.get("exit_tries", 0) + 1   # next retry crosses 1 more tick
+                        log.warning("EXIT UNFILLED  %s — %s; RETRY #%d (still holding, not booked)",
+                                    sym, rtype, t["exit_tries"])
                         _save_runner_state()
                 elif p and p["side"].upper() == "BUY":
                     sym = p["symbol"]

@@ -53,7 +53,7 @@ class PaperBroker:
 
     def simulate_fill(
         self, symbol: str, side: str, qty: int, mid_price: float, reason: str = "",
-        quote=None, exit_order: bool = False
+        quote=None, cross_ticks: int = 0
     ) -> PaperFill:
         t = _get_tick(mid_price)
         if side.upper() == "BUY":

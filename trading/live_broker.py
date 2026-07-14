@@ -68,29 +68,29 @@ class LiveBroker:
 
     def simulate_fill(self, symbol: str, side: str, qty: int,
                       mid_price: float, reason: str = "", quote=None,
-                      exit_order: bool = False) -> Optional[PaperFill]:
+                      cross_ticks: int = 0) -> Optional[PaperFill]:
         mode     = self.mode_map.get(symbol, "MIS")
         product  = "C" if mode == "CNC" else "I"
         tsym     = self.tsym_map.get(symbol, f"{symbol}-EQ")
         trantype = "B" if side.upper() == "BUY" else "S"
 
-        t = self.ti_map.get(symbol) or _get_tick(mid_price)   # prefer real exchange tick size
-        # Price off the FRESH best bid/ask (never the last price), crossing by a couple of
-        # ticks so the IOC fills. Exits cross a hair more (want-out priority) but only ~2 ticks
-        # — NOT a fat %; if it still misses (price moved), the runner retries with the newer
-        # bid/ask, so we chase with minimal slippage instead of pre-paying a wide buffer.
-        cross = 2 if exit_order else 1
+        t = self.ti_map.get(symbol) or _get_tick(mid_price)   # tick size (real ti if we have it)
         bid = quote[0] if quote else 0.0
         ask = quote[1] if quote else 0.0
-        # A BUY needs the ASK, a SELL needs the BID. Use that side's fresh quote; only if THAT
-        # side is genuinely missing/0 do we fall back to last price (a real illiquid gap — the
-        # retry keeps trying until a quote appears).
+        # Price off the latest best bid/ask ONLY — never LTP. First attempt sits AT the quote
+        # (cross_ticks=0, no slippage given up); retries pass cross_ticks>0 to cross the book.
+        # A BUY needs the ASK, a SELL needs the BID; if that side has no quote yet, DON'T place
+        # (return None) so the caller waits/retries — we never guess a price from last-traded.
         if side.upper() == "BUY":
-            ref = ask if ask and ask > 0 else mid_price
-            limit_price = round((math.ceil(round(ref / t, 8)) + cross) * t, 4)
+            if not ask or ask <= 0:
+                log.warning("BUY %s not placed — no live ASK yet (never price off LTP); will retry", symbol)
+                return None
+            limit_price = round((math.ceil(round(ask / t, 8)) + cross_ticks) * t, 4)
         else:
-            ref = bid if bid and bid > 0 else mid_price
-            limit_price = round((math.floor(round(ref / t, 8)) - cross) * t, 4)
+            if not bid or bid <= 0:
+                log.warning("SELL %s not placed — no live BID yet (never price off LTP); will retry", symbol)
+                return None
+            limit_price = round((math.floor(round(bid / t, 8)) - cross_ticks) * t, 4)
 
         # ── Capital check before BUY ───────────────────────────────────────
         if side.upper() == "BUY":
