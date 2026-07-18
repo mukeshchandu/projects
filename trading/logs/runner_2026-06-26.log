@@ -1,0 +1,859 @@
+[Fri Jun 26 03:15:11 UTC 2026] Watchdog started
+[Fri Jun 26 03:15:11 UTC 2026] Starting runner...
+2026-06-26 03:15:11  INFO      ============================================================
+2026-06-26 03:15:11  INFO      STARTUP  date=2026-06-26  pid=166937
+2026-06-26 03:15:11  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-06-26 03:15:11  INFO      Resolving NSE tokens...
+2026-06-26 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:11  INFO      Resolved  IRFC             token=2029
+2026-06-26 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:12  INFO      Resolved  HFCL             token=21951
+2026-06-26 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:12  INFO      Resolved  JSWSTEEL         token=11723
+2026-06-26 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:13  INFO      Resolved  BANKBARODA       token=4668
+2026-06-26 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:13  INFO      Resolved  TATASTEEL        token=3499
+2026-06-26 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:13  INFO      Resolved  NMDC             token=15332
+2026-06-26 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:13  INFO      Resolved  IDEA             token=14366
+2026-06-26 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:13  INFO      Resolved  INDUSINDBK       token=5258
+2026-06-26 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:15:14  INFO      Resolved  SUZLON           token=12018
+2026-06-26 03:15:14  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-06-26 03:15:14  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:15:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-06-26 03:15:14  INFO      *** LIVE MODE  cash=Rs-24  4x=Rs-95  K=1  per_trade=Rs1000 ***
+2026-06-26 03:15:14  INFO      9 stocks | Rs1000/trade | K=1 | EOD 15:00 IST
+2026-06-26 03:15:14  INFO      ============================================================
+2026-06-26 03:15:15  INFO      Websocket connected
+2026-06-26 03:15:15  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-26 03:15:15  INFO      Ticks -> data/2026-06-26/ticks.jsonl
+2026-06-26 03:16:15  DEBUG     Sending ping
+2026-06-26 03:16:15  ERROR     WS ERROR  Connection to remote host was lost.
+2026-06-26 03:16:15  ERROR     Connection to remote host was lost. - goodbye
+2026-06-26 03:16:15  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Fri Jun 26 03:16:15 UTC 2026] Runner exited, restarting in 10s...
+[Fri Jun 26 03:16:25 UTC 2026] Starting runner...
+2026-06-26 03:16:25  INFO      ============================================================
+2026-06-26 03:16:25  INFO      STARTUP  date=2026-06-26  pid=166947
+2026-06-26 03:16:25  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-06-26 03:16:25  INFO      Resolving NSE tokens...
+2026-06-26 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:25  INFO      Resolved  IRFC             token=2029
+2026-06-26 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:25  INFO      Resolved  HFCL             token=21951
+2026-06-26 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:26  INFO      Resolved  JSWSTEEL         token=11723
+2026-06-26 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:26  INFO      Resolved  BANKBARODA       token=4668
+2026-06-26 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:26  INFO      Resolved  TATASTEEL        token=3499
+2026-06-26 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:26  INFO      Resolved  NMDC             token=15332
+2026-06-26 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:26  INFO      Resolved  IDEA             token=14366
+2026-06-26 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:27  INFO      Resolved  INDUSINDBK       token=5258
+2026-06-26 03:16:27  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-26 03:16:27  INFO      Resolved  SUZLON           token=12018
+2026-06-26 03:16:27  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-06-26 03:16:27  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-26 03:16:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-06-26 03:16:27  INFO      *** LIVE MODE  cash=Rs-24  4x=Rs-95  K=1  per_trade=Rs1000 ***
+2026-06-26 03:16:27  INFO      9 stocks | Rs1000/trade | K=1 | EOD 15:00 IST
+2026-06-26 03:16:27  INFO      ============================================================
+2026-06-26 03:16:28  INFO      Websocket connected
+2026-06-26 03:16:28  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-26 03:16:28  INFO      Ticks -> data/2026-06-26/ticks.jsonl
+2026-06-26 03:17:28  DEBUG     Sending ping
+2026-06-26 03:17:58  DEBUG     Sending ping
+2026-06-26 03:18:28  DEBUG     Sending ping
+2026-06-26 03:18:58  DEBUG     Sending ping
+2026-06-26 03:19:28  DEBUG     Sending ping
+2026-06-26 03:19:58  DEBUG     Sending ping
+2026-06-26 03:20:28  DEBUG     Sending ping
+2026-06-26 03:20:58  DEBUG     Sending ping
+2026-06-26 03:21:28  DEBUG     Sending ping
+2026-06-26 03:21:58  DEBUG     Sending ping
+2026-06-26 03:22:28  DEBUG     Sending ping
+2026-06-26 03:22:58  DEBUG     Sending ping
+2026-06-26 03:23:28  DEBUG     Sending ping
+2026-06-26 03:23:58  DEBUG     Sending ping
+2026-06-26 03:24:28  DEBUG     Sending ping
+2026-06-26 03:24:58  DEBUG     Sending ping
+2026-06-26 03:25:28  DEBUG     Sending ping
+2026-06-26 03:25:58  DEBUG     Sending ping
+2026-06-26 03:26:28  DEBUG     Sending ping
+2026-06-26 03:26:58  DEBUG     Sending ping
+2026-06-26 03:27:28  DEBUG     Sending ping
+2026-06-26 03:27:58  DEBUG     Sending ping
+2026-06-26 03:28:28  DEBUG     Sending ping
+2026-06-26 03:28:58  DEBUG     Sending ping
+2026-06-26 03:29:28  DEBUG     Sending ping
+2026-06-26 03:29:58  DEBUG     Sending ping
+2026-06-26 03:30:28  DEBUG     Sending ping
+2026-06-26 03:30:58  DEBUG     Sending ping
+2026-06-26 03:31:28  DEBUG     Sending ping
+2026-06-26 03:31:58  DEBUG     Sending ping
+2026-06-26 03:32:28  DEBUG     Sending ping
+2026-06-26 03:32:58  DEBUG     Sending ping
+2026-06-26 03:33:28  DEBUG     Sending ping
+2026-06-26 03:33:58  DEBUG     Sending ping
+2026-06-26 03:34:28  DEBUG     Sending ping
+2026-06-26 03:34:58  DEBUG     Sending ping
+2026-06-26 03:35:28  DEBUG     Sending ping
+2026-06-26 03:35:58  DEBUG     Sending ping
+2026-06-26 03:36:28  DEBUG     Sending ping
+2026-06-26 03:36:58  DEBUG     Sending ping
+2026-06-26 03:37:28  DEBUG     Sending ping
+2026-06-26 03:37:58  DEBUG     Sending ping
+2026-06-26 03:38:28  DEBUG     Sending ping
+2026-06-26 03:38:58  DEBUG     Sending ping
+2026-06-26 03:39:28  DEBUG     Sending ping
+2026-06-26 03:39:58  DEBUG     Sending ping
+2026-06-26 03:40:28  DEBUG     Sending ping
+2026-06-26 03:40:58  DEBUG     Sending ping
+2026-06-26 03:41:28  DEBUG     Sending ping
+2026-06-26 03:41:58  DEBUG     Sending ping
+2026-06-26 03:42:28  DEBUG     Sending ping
+2026-06-26 03:42:58  DEBUG     Sending ping
+2026-06-26 03:43:28  DEBUG     Sending ping
+2026-06-26 03:43:58  DEBUG     Sending ping
+2026-06-26 03:44:28  DEBUG     Sending ping
+2026-06-26 03:44:58  DEBUG     Sending ping
+2026-06-26 03:45:28  DEBUG     Sending ping
+2026-06-26 03:45:58  DEBUG     Sending ping
+2026-06-26 03:46:28  DEBUG     Sending ping
+2026-06-26 03:46:58  DEBUG     Sending ping
+2026-06-26 03:47:28  DEBUG     Sending ping
+2026-06-26 03:47:58  DEBUG     Sending ping
+2026-06-26 03:48:28  DEBUG     Sending ping
+2026-06-26 03:48:58  DEBUG     Sending ping
+2026-06-26 03:49:28  DEBUG     Sending ping
+2026-06-26 03:49:58  DEBUG     Sending ping
+2026-06-26 03:50:28  DEBUG     Sending ping
+2026-06-26 03:50:58  DEBUG     Sending ping
+2026-06-26 03:51:28  DEBUG     Sending ping
+2026-06-26 03:51:58  DEBUG     Sending ping
+2026-06-26 03:52:28  DEBUG     Sending ping
+2026-06-26 03:52:58  DEBUG     Sending ping
+2026-06-26 03:53:28  DEBUG     Sending ping
+2026-06-26 03:53:58  DEBUG     Sending ping
+2026-06-26 03:54:28  DEBUG     Sending ping
+2026-06-26 03:54:58  DEBUG     Sending ping
+2026-06-26 03:55:28  DEBUG     Sending ping
+2026-06-26 03:55:58  DEBUG     Sending ping
+2026-06-26 03:56:28  DEBUG     Sending ping
+2026-06-26 03:56:58  DEBUG     Sending ping
+2026-06-26 03:57:28  DEBUG     Sending ping
+2026-06-26 03:57:58  DEBUG     Sending ping
+2026-06-26 03:58:28  DEBUG     Sending ping
+2026-06-26 03:58:58  DEBUG     Sending ping
+2026-06-26 03:59:28  DEBUG     Sending ping
+2026-06-26 03:59:58  DEBUG     Sending ping
+2026-06-26 04:00:28  DEBUG     Sending ping
+2026-06-26 04:00:58  DEBUG     Sending ping
+2026-06-26 04:01:28  DEBUG     Sending ping
+2026-06-26 04:01:58  DEBUG     Sending ping
+2026-06-26 04:02:28  DEBUG     Sending ping
+2026-06-26 04:02:58  DEBUG     Sending ping
+2026-06-26 04:03:28  DEBUG     Sending ping
+2026-06-26 04:03:58  DEBUG     Sending ping
+2026-06-26 04:04:28  DEBUG     Sending ping
+2026-06-26 04:04:58  DEBUG     Sending ping
+2026-06-26 04:05:28  DEBUG     Sending ping
+2026-06-26 04:05:58  DEBUG     Sending ping
+2026-06-26 04:06:28  DEBUG     Sending ping
+2026-06-26 04:06:58  DEBUG     Sending ping
+2026-06-26 04:07:28  DEBUG     Sending ping
+2026-06-26 04:07:58  DEBUG     Sending ping
+2026-06-26 04:08:28  DEBUG     Sending ping
+2026-06-26 04:08:58  DEBUG     Sending ping
+2026-06-26 04:09:28  DEBUG     Sending ping
+2026-06-26 04:09:58  DEBUG     Sending ping
+2026-06-26 04:10:28  DEBUG     Sending ping
+2026-06-26 04:10:58  DEBUG     Sending ping
+2026-06-26 04:11:28  DEBUG     Sending ping
+2026-06-26 04:11:58  DEBUG     Sending ping
+2026-06-26 04:12:28  DEBUG     Sending ping
+2026-06-26 04:12:58  DEBUG     Sending ping
+2026-06-26 04:13:28  DEBUG     Sending ping
+2026-06-26 04:13:58  DEBUG     Sending ping
+2026-06-26 04:14:28  DEBUG     Sending ping
+2026-06-26 04:14:58  DEBUG     Sending ping
+2026-06-26 04:15:28  DEBUG     Sending ping
+2026-06-26 04:15:58  DEBUG     Sending ping
+2026-06-26 04:16:28  DEBUG     Sending ping
+2026-06-26 04:16:58  DEBUG     Sending ping
+2026-06-26 04:17:28  DEBUG     Sending ping
+2026-06-26 04:17:58  DEBUG     Sending ping
+2026-06-26 04:18:28  DEBUG     Sending ping
+2026-06-26 04:18:58  DEBUG     Sending ping
+2026-06-26 04:19:28  DEBUG     Sending ping
+2026-06-26 04:19:58  DEBUG     Sending ping
+2026-06-26 04:20:28  DEBUG     Sending ping
+2026-06-26 04:20:58  DEBUG     Sending ping
+2026-06-26 04:21:28  DEBUG     Sending ping
+2026-06-26 04:21:58  DEBUG     Sending ping
+2026-06-26 04:22:28  DEBUG     Sending ping
+2026-06-26 04:22:58  DEBUG     Sending ping
+2026-06-26 04:23:28  DEBUG     Sending ping
+2026-06-26 04:23:58  DEBUG     Sending ping
+2026-06-26 04:24:28  DEBUG     Sending ping
+2026-06-26 04:24:58  DEBUG     Sending ping
+2026-06-26 04:25:28  DEBUG     Sending ping
+2026-06-26 04:25:58  DEBUG     Sending ping
+2026-06-26 04:26:28  DEBUG     Sending ping
+2026-06-26 04:26:58  DEBUG     Sending ping
+2026-06-26 04:27:28  DEBUG     Sending ping
+2026-06-26 04:27:58  DEBUG     Sending ping
+2026-06-26 04:28:28  DEBUG     Sending ping
+2026-06-26 04:28:58  DEBUG     Sending ping
+2026-06-26 04:29:28  DEBUG     Sending ping
+2026-06-26 04:29:58  DEBUG     Sending ping
+2026-06-26 04:30:28  DEBUG     Sending ping
+2026-06-26 04:30:58  DEBUG     Sending ping
+2026-06-26 04:31:28  DEBUG     Sending ping
+2026-06-26 04:31:58  DEBUG     Sending ping
+2026-06-26 04:32:28  DEBUG     Sending ping
+2026-06-26 04:32:58  DEBUG     Sending ping
+2026-06-26 04:33:28  DEBUG     Sending ping
+2026-06-26 04:33:58  DEBUG     Sending ping
+2026-06-26 04:34:28  DEBUG     Sending ping
+2026-06-26 04:34:58  DEBUG     Sending ping
+2026-06-26 04:35:28  DEBUG     Sending ping
+2026-06-26 04:35:58  DEBUG     Sending ping
+2026-06-26 04:36:28  DEBUG     Sending ping
+2026-06-26 04:36:58  DEBUG     Sending ping
+2026-06-26 04:37:28  DEBUG     Sending ping
+2026-06-26 04:37:58  DEBUG     Sending ping
+2026-06-26 04:38:28  DEBUG     Sending ping
+2026-06-26 04:38:58  DEBUG     Sending ping
+2026-06-26 04:39:28  DEBUG     Sending ping
+2026-06-26 04:39:58  DEBUG     Sending ping
+2026-06-26 04:40:28  DEBUG     Sending ping
+2026-06-26 04:40:58  DEBUG     Sending ping
+2026-06-26 04:41:28  DEBUG     Sending ping
+2026-06-26 04:41:58  DEBUG     Sending ping
+2026-06-26 04:42:28  DEBUG     Sending ping
+2026-06-26 04:42:58  DEBUG     Sending ping
+2026-06-26 04:43:28  DEBUG     Sending ping
+2026-06-26 04:43:58  DEBUG     Sending ping
+2026-06-26 04:44:28  DEBUG     Sending ping
+2026-06-26 04:44:58  DEBUG     Sending ping
+2026-06-26 04:45:28  DEBUG     Sending ping
+2026-06-26 04:45:58  DEBUG     Sending ping
+2026-06-26 04:46:28  DEBUG     Sending ping
+2026-06-26 04:46:58  DEBUG     Sending ping
+2026-06-26 04:47:28  DEBUG     Sending ping
+2026-06-26 04:47:58  DEBUG     Sending ping
+2026-06-26 04:48:28  DEBUG     Sending ping
+2026-06-26 04:48:58  DEBUG     Sending ping
+2026-06-26 04:49:28  DEBUG     Sending ping
+2026-06-26 04:49:58  DEBUG     Sending ping
+2026-06-26 04:50:28  DEBUG     Sending ping
+2026-06-26 04:50:58  DEBUG     Sending ping
+2026-06-26 04:51:28  DEBUG     Sending ping
+2026-06-26 04:51:58  DEBUG     Sending ping
+2026-06-26 04:52:28  DEBUG     Sending ping
+2026-06-26 04:52:58  DEBUG     Sending ping
+2026-06-26 04:53:28  DEBUG     Sending ping
+2026-06-26 04:53:58  DEBUG     Sending ping
+2026-06-26 04:54:28  DEBUG     Sending ping
+2026-06-26 04:54:58  DEBUG     Sending ping
+2026-06-26 04:55:28  DEBUG     Sending ping
+2026-06-26 04:55:58  DEBUG     Sending ping
+2026-06-26 04:56:28  DEBUG     Sending ping
+2026-06-26 04:56:58  DEBUG     Sending ping
+2026-06-26 04:57:28  DEBUG     Sending ping
+2026-06-26 04:57:58  DEBUG     Sending ping
+2026-06-26 04:58:28  DEBUG     Sending ping
+2026-06-26 04:58:58  DEBUG     Sending ping
+2026-06-26 04:59:28  DEBUG     Sending ping
+2026-06-26 04:59:58  DEBUG     Sending ping
+2026-06-26 05:00:28  DEBUG     Sending ping
+2026-06-26 05:00:58  DEBUG     Sending ping
+2026-06-26 05:01:28  DEBUG     Sending ping
+2026-06-26 05:01:58  DEBUG     Sending ping
+2026-06-26 05:02:28  DEBUG     Sending ping
+2026-06-26 05:02:58  DEBUG     Sending ping
+2026-06-26 05:03:28  DEBUG     Sending ping
+2026-06-26 05:03:58  DEBUG     Sending ping
+2026-06-26 05:04:28  DEBUG     Sending ping
+2026-06-26 05:04:58  DEBUG     Sending ping
+2026-06-26 05:05:28  DEBUG     Sending ping
+2026-06-26 05:05:58  DEBUG     Sending ping
+2026-06-26 05:06:28  DEBUG     Sending ping
+2026-06-26 05:06:58  DEBUG     Sending ping
+2026-06-26 05:07:28  DEBUG     Sending ping
+2026-06-26 05:07:58  DEBUG     Sending ping
+2026-06-26 05:08:28  DEBUG     Sending ping
+2026-06-26 05:08:58  DEBUG     Sending ping
+2026-06-26 05:09:28  DEBUG     Sending ping
+2026-06-26 05:09:58  DEBUG     Sending ping
+2026-06-26 05:10:28  DEBUG     Sending ping
+2026-06-26 05:10:58  DEBUG     Sending ping
+2026-06-26 05:11:28  DEBUG     Sending ping
+2026-06-26 05:11:58  DEBUG     Sending ping
+2026-06-26 05:12:28  DEBUG     Sending ping
+2026-06-26 05:12:58  DEBUG     Sending ping
+2026-06-26 05:13:28  DEBUG     Sending ping
+2026-06-26 05:13:58  DEBUG     Sending ping
+2026-06-26 05:14:28  DEBUG     Sending ping
+2026-06-26 05:14:58  DEBUG     Sending ping
+2026-06-26 05:15:28  DEBUG     Sending ping
+2026-06-26 05:15:58  DEBUG     Sending ping
+2026-06-26 05:16:28  DEBUG     Sending ping
+2026-06-26 05:16:58  DEBUG     Sending ping
+2026-06-26 05:17:28  DEBUG     Sending ping
+2026-06-26 05:17:58  DEBUG     Sending ping
+2026-06-26 05:18:28  DEBUG     Sending ping
+2026-06-26 05:18:58  DEBUG     Sending ping
+2026-06-26 05:19:28  DEBUG     Sending ping
+2026-06-26 05:19:58  DEBUG     Sending ping
+2026-06-26 05:20:28  DEBUG     Sending ping
+2026-06-26 05:20:58  DEBUG     Sending ping
+2026-06-26 05:21:28  DEBUG     Sending ping
+2026-06-26 05:21:58  DEBUG     Sending ping
+2026-06-26 05:22:28  DEBUG     Sending ping
+2026-06-26 05:22:58  DEBUG     Sending ping
+2026-06-26 05:23:28  DEBUG     Sending ping
+2026-06-26 05:23:58  DEBUG     Sending ping
+2026-06-26 05:24:28  DEBUG     Sending ping
+2026-06-26 05:24:58  DEBUG     Sending ping
+2026-06-26 05:25:28  DEBUG     Sending ping
+2026-06-26 05:25:58  DEBUG     Sending ping
+2026-06-26 05:26:28  DEBUG     Sending ping
+2026-06-26 05:26:58  DEBUG     Sending ping
+2026-06-26 05:27:28  DEBUG     Sending ping
+2026-06-26 05:27:58  DEBUG     Sending ping
+2026-06-26 05:28:28  DEBUG     Sending ping
+2026-06-26 05:28:58  DEBUG     Sending ping
+2026-06-26 05:29:28  DEBUG     Sending ping
+2026-06-26 05:29:58  DEBUG     Sending ping
+2026-06-26 05:30:28  DEBUG     Sending ping
+2026-06-26 05:30:58  DEBUG     Sending ping
+2026-06-26 05:31:28  DEBUG     Sending ping
+2026-06-26 05:31:58  DEBUG     Sending ping
+2026-06-26 05:32:28  DEBUG     Sending ping
+2026-06-26 05:32:58  DEBUG     Sending ping
+2026-06-26 05:33:28  DEBUG     Sending ping
+2026-06-26 05:33:58  DEBUG     Sending ping
+2026-06-26 05:34:28  DEBUG     Sending ping
+2026-06-26 05:34:58  DEBUG     Sending ping
+2026-06-26 05:35:28  DEBUG     Sending ping
+2026-06-26 05:35:58  DEBUG     Sending ping
+2026-06-26 05:36:28  DEBUG     Sending ping
+2026-06-26 05:36:58  DEBUG     Sending ping
+2026-06-26 05:37:28  DEBUG     Sending ping
+2026-06-26 05:37:58  DEBUG     Sending ping
+2026-06-26 05:38:28  DEBUG     Sending ping
+2026-06-26 05:38:58  DEBUG     Sending ping
+2026-06-26 05:39:28  DEBUG     Sending ping
+2026-06-26 05:39:58  DEBUG     Sending ping
+2026-06-26 05:40:28  DEBUG     Sending ping
+2026-06-26 05:40:58  DEBUG     Sending ping
+2026-06-26 05:41:28  DEBUG     Sending ping
+2026-06-26 05:41:58  DEBUG     Sending ping
+2026-06-26 05:42:28  DEBUG     Sending ping
+2026-06-26 05:42:58  DEBUG     Sending ping
+2026-06-26 05:43:28  DEBUG     Sending ping
+2026-06-26 05:43:58  DEBUG     Sending ping
+2026-06-26 05:44:28  DEBUG     Sending ping
+2026-06-26 05:44:58  DEBUG     Sending ping
+2026-06-26 05:45:28  DEBUG     Sending ping
+2026-06-26 05:45:58  DEBUG     Sending ping
+2026-06-26 05:46:28  DEBUG     Sending ping
+2026-06-26 05:46:58  DEBUG     Sending ping
+2026-06-26 05:47:28  DEBUG     Sending ping
+2026-06-26 05:47:58  DEBUG     Sending ping
+2026-06-26 05:48:28  DEBUG     Sending ping
+2026-06-26 05:48:58  DEBUG     Sending ping
+2026-06-26 05:49:28  DEBUG     Sending ping
+2026-06-26 05:49:58  DEBUG     Sending ping
+2026-06-26 05:50:28  DEBUG     Sending ping
+2026-06-26 05:50:58  DEBUG     Sending ping
+2026-06-26 05:51:28  DEBUG     Sending ping
+2026-06-26 05:51:58  DEBUG     Sending ping
+2026-06-26 05:52:28  DEBUG     Sending ping
+2026-06-26 05:52:58  DEBUG     Sending ping
+2026-06-26 05:53:28  DEBUG     Sending ping
+2026-06-26 05:53:58  DEBUG     Sending ping
+2026-06-26 05:54:28  DEBUG     Sending ping
+2026-06-26 05:54:58  DEBUG     Sending ping
+2026-06-26 05:55:28  DEBUG     Sending ping
+2026-06-26 05:55:58  DEBUG     Sending ping
+2026-06-26 05:56:28  DEBUG     Sending ping
+2026-06-26 05:56:58  DEBUG     Sending ping
+2026-06-26 05:57:28  DEBUG     Sending ping
+2026-06-26 05:57:58  DEBUG     Sending ping
+2026-06-26 05:58:28  DEBUG     Sending ping
+2026-06-26 05:58:58  DEBUG     Sending ping
+2026-06-26 05:59:28  DEBUG     Sending ping
+2026-06-26 05:59:58  DEBUG     Sending ping
+2026-06-26 06:00:28  DEBUG     Sending ping
+2026-06-26 06:00:58  DEBUG     Sending ping
+2026-06-26 06:01:28  DEBUG     Sending ping
+2026-06-26 06:01:58  DEBUG     Sending ping
+2026-06-26 06:02:28  DEBUG     Sending ping
+2026-06-26 06:02:58  DEBUG     Sending ping
+2026-06-26 06:03:28  DEBUG     Sending ping
+2026-06-26 06:03:58  DEBUG     Sending ping
+2026-06-26 06:04:28  DEBUG     Sending ping
+2026-06-26 06:04:58  DEBUG     Sending ping
+2026-06-26 06:05:28  DEBUG     Sending ping
+2026-06-26 06:05:58  DEBUG     Sending ping
+2026-06-26 06:06:28  DEBUG     Sending ping
+2026-06-26 06:06:58  DEBUG     Sending ping
+2026-06-26 06:07:28  DEBUG     Sending ping
+2026-06-26 06:07:58  DEBUG     Sending ping
+2026-06-26 06:08:28  DEBUG     Sending ping
+2026-06-26 06:08:58  DEBUG     Sending ping
+2026-06-26 06:09:28  DEBUG     Sending ping
+2026-06-26 06:09:58  DEBUG     Sending ping
+2026-06-26 06:10:28  DEBUG     Sending ping
+2026-06-26 06:10:58  DEBUG     Sending ping
+2026-06-26 06:11:28  DEBUG     Sending ping
+2026-06-26 06:11:58  DEBUG     Sending ping
+2026-06-26 06:12:28  DEBUG     Sending ping
+2026-06-26 06:12:58  DEBUG     Sending ping
+2026-06-26 06:13:28  DEBUG     Sending ping
+2026-06-26 06:13:58  DEBUG     Sending ping
+2026-06-26 06:14:28  DEBUG     Sending ping
+2026-06-26 06:14:58  DEBUG     Sending ping
+2026-06-26 06:15:28  DEBUG     Sending ping
+2026-06-26 06:15:58  DEBUG     Sending ping
+2026-06-26 06:16:28  DEBUG     Sending ping
+2026-06-26 06:16:58  DEBUG     Sending ping
+2026-06-26 06:17:28  DEBUG     Sending ping
+2026-06-26 06:17:58  DEBUG     Sending ping
+2026-06-26 06:18:28  DEBUG     Sending ping
+2026-06-26 06:18:58  DEBUG     Sending ping
+2026-06-26 06:19:28  DEBUG     Sending ping
+2026-06-26 06:19:58  DEBUG     Sending ping
+2026-06-26 06:20:28  DEBUG     Sending ping
+2026-06-26 06:20:58  DEBUG     Sending ping
+2026-06-26 06:21:28  DEBUG     Sending ping
+2026-06-26 06:21:58  DEBUG     Sending ping
+2026-06-26 06:22:28  DEBUG     Sending ping
+2026-06-26 06:22:58  DEBUG     Sending ping
+2026-06-26 06:23:28  DEBUG     Sending ping
+2026-06-26 06:23:58  DEBUG     Sending ping
+2026-06-26 06:24:28  DEBUG     Sending ping
+2026-06-26 06:24:58  DEBUG     Sending ping
+2026-06-26 06:25:28  DEBUG     Sending ping
+2026-06-26 06:25:58  DEBUG     Sending ping
+2026-06-26 06:26:28  DEBUG     Sending ping
+2026-06-26 06:26:58  DEBUG     Sending ping
+2026-06-26 06:27:28  DEBUG     Sending ping
+2026-06-26 06:27:58  DEBUG     Sending ping
+2026-06-26 06:28:28  DEBUG     Sending ping
+2026-06-26 06:28:58  DEBUG     Sending ping
+2026-06-26 06:29:28  DEBUG     Sending ping
+2026-06-26 06:29:58  DEBUG     Sending ping
+2026-06-26 06:30:28  DEBUG     Sending ping
+2026-06-26 06:30:58  DEBUG     Sending ping
+2026-06-26 06:31:28  DEBUG     Sending ping
+2026-06-26 06:31:58  DEBUG     Sending ping
+2026-06-26 06:32:28  DEBUG     Sending ping
+2026-06-26 06:32:58  DEBUG     Sending ping
+2026-06-26 06:33:28  DEBUG     Sending ping
+2026-06-26 06:33:58  DEBUG     Sending ping
+2026-06-26 06:34:28  DEBUG     Sending ping
+2026-06-26 06:34:58  DEBUG     Sending ping
+2026-06-26 06:35:28  DEBUG     Sending ping
+2026-06-26 06:35:58  DEBUG     Sending ping
+2026-06-26 06:36:28  DEBUG     Sending ping
+2026-06-26 06:36:58  DEBUG     Sending ping
+2026-06-26 06:37:28  DEBUG     Sending ping
+2026-06-26 06:37:58  DEBUG     Sending ping
+2026-06-26 06:38:28  DEBUG     Sending ping
+2026-06-26 06:38:58  DEBUG     Sending ping
+2026-06-26 06:39:28  DEBUG     Sending ping
+2026-06-26 06:39:58  DEBUG     Sending ping
+2026-06-26 06:40:28  DEBUG     Sending ping
+2026-06-26 06:40:58  DEBUG     Sending ping
+2026-06-26 06:41:28  DEBUG     Sending ping
+2026-06-26 06:41:58  DEBUG     Sending ping
+2026-06-26 06:42:28  DEBUG     Sending ping
+2026-06-26 06:42:58  DEBUG     Sending ping
+2026-06-26 06:43:28  DEBUG     Sending ping
+2026-06-26 06:43:58  DEBUG     Sending ping
+2026-06-26 06:44:28  DEBUG     Sending ping
+2026-06-26 06:44:58  DEBUG     Sending ping
+2026-06-26 06:45:28  DEBUG     Sending ping
+2026-06-26 06:45:58  DEBUG     Sending ping
+2026-06-26 06:46:28  DEBUG     Sending ping
+2026-06-26 06:46:58  DEBUG     Sending ping
+2026-06-26 06:47:28  DEBUG     Sending ping
+2026-06-26 06:47:58  DEBUG     Sending ping
+2026-06-26 06:48:28  DEBUG     Sending ping
+2026-06-26 06:48:58  DEBUG     Sending ping
+2026-06-26 06:49:28  DEBUG     Sending ping
+2026-06-26 06:49:58  DEBUG     Sending ping
+2026-06-26 06:50:28  DEBUG     Sending ping
+2026-06-26 06:50:58  DEBUG     Sending ping
+2026-06-26 06:51:28  DEBUG     Sending ping
+2026-06-26 06:51:58  DEBUG     Sending ping
+2026-06-26 06:52:28  DEBUG     Sending ping
+2026-06-26 06:52:58  DEBUG     Sending ping
+2026-06-26 06:53:28  DEBUG     Sending ping
+2026-06-26 06:53:58  DEBUG     Sending ping
+2026-06-26 06:54:28  DEBUG     Sending ping
+2026-06-26 06:54:58  DEBUG     Sending ping
+2026-06-26 06:55:28  DEBUG     Sending ping
+2026-06-26 06:55:58  DEBUG     Sending ping
+2026-06-26 06:56:28  DEBUG     Sending ping
+2026-06-26 06:56:58  DEBUG     Sending ping
+2026-06-26 06:57:28  DEBUG     Sending ping
+2026-06-26 06:57:58  DEBUG     Sending ping
+2026-06-26 06:58:28  DEBUG     Sending ping
+2026-06-26 06:58:58  DEBUG     Sending ping
+2026-06-26 06:59:28  DEBUG     Sending ping
+2026-06-26 06:59:58  DEBUG     Sending ping
+2026-06-26 07:00:28  DEBUG     Sending ping
+2026-06-26 07:00:58  DEBUG     Sending ping
+2026-06-26 07:01:28  DEBUG     Sending ping
+2026-06-26 07:01:58  DEBUG     Sending ping
+2026-06-26 07:02:28  DEBUG     Sending ping
+2026-06-26 07:02:58  DEBUG     Sending ping
+2026-06-26 07:03:28  DEBUG     Sending ping
+2026-06-26 07:03:58  DEBUG     Sending ping
+2026-06-26 07:04:28  DEBUG     Sending ping
+2026-06-26 07:04:58  DEBUG     Sending ping
+2026-06-26 07:05:28  DEBUG     Sending ping
+2026-06-26 07:05:58  DEBUG     Sending ping
+2026-06-26 07:06:28  DEBUG     Sending ping
+2026-06-26 07:06:58  DEBUG     Sending ping
+2026-06-26 07:07:28  DEBUG     Sending ping
+2026-06-26 07:07:58  DEBUG     Sending ping
+2026-06-26 07:08:28  DEBUG     Sending ping
+2026-06-26 07:08:58  DEBUG     Sending ping
+2026-06-26 07:09:28  DEBUG     Sending ping
+2026-06-26 07:09:58  DEBUG     Sending ping
+2026-06-26 07:10:28  DEBUG     Sending ping
+2026-06-26 07:10:58  DEBUG     Sending ping
+2026-06-26 07:11:28  DEBUG     Sending ping
+2026-06-26 07:11:58  DEBUG     Sending ping
+2026-06-26 07:12:28  DEBUG     Sending ping
+2026-06-26 07:12:58  DEBUG     Sending ping
+2026-06-26 07:13:28  DEBUG     Sending ping
+2026-06-26 07:13:58  DEBUG     Sending ping
+2026-06-26 07:14:28  DEBUG     Sending ping
+2026-06-26 07:14:58  DEBUG     Sending ping
+2026-06-26 07:15:28  DEBUG     Sending ping
+2026-06-26 07:15:58  DEBUG     Sending ping
+2026-06-26 07:16:28  DEBUG     Sending ping
+2026-06-26 07:16:58  DEBUG     Sending ping
+2026-06-26 07:17:28  DEBUG     Sending ping
+2026-06-26 07:17:58  DEBUG     Sending ping
+2026-06-26 07:18:28  DEBUG     Sending ping
+2026-06-26 07:18:58  DEBUG     Sending ping
+2026-06-26 07:19:28  DEBUG     Sending ping
+2026-06-26 07:19:58  DEBUG     Sending ping
+2026-06-26 07:20:28  DEBUG     Sending ping
+2026-06-26 07:20:58  DEBUG     Sending ping
+2026-06-26 07:21:28  DEBUG     Sending ping
+2026-06-26 07:21:58  DEBUG     Sending ping
+2026-06-26 07:22:28  DEBUG     Sending ping
+2026-06-26 07:22:58  DEBUG     Sending ping
+2026-06-26 07:23:28  DEBUG     Sending ping
+2026-06-26 07:23:58  DEBUG     Sending ping
+2026-06-26 07:24:28  DEBUG     Sending ping
+2026-06-26 07:24:58  DEBUG     Sending ping
+2026-06-26 07:25:28  DEBUG     Sending ping
+2026-06-26 07:25:58  DEBUG     Sending ping
+2026-06-26 07:26:28  DEBUG     Sending ping
+2026-06-26 07:26:58  DEBUG     Sending ping
+2026-06-26 07:27:28  DEBUG     Sending ping
+2026-06-26 07:27:58  DEBUG     Sending ping
+2026-06-26 07:28:28  DEBUG     Sending ping
+2026-06-26 07:28:58  DEBUG     Sending ping
+2026-06-26 07:29:28  DEBUG     Sending ping
+2026-06-26 07:29:58  DEBUG     Sending ping
+2026-06-26 07:30:28  DEBUG     Sending ping
+2026-06-26 07:30:58  DEBUG     Sending ping
+2026-06-26 07:31:28  DEBUG     Sending ping
+2026-06-26 07:31:58  DEBUG     Sending ping
+2026-06-26 07:32:28  DEBUG     Sending ping
+2026-06-26 07:32:58  DEBUG     Sending ping
+2026-06-26 07:33:28  DEBUG     Sending ping
+2026-06-26 07:33:58  DEBUG     Sending ping
+2026-06-26 07:34:28  DEBUG     Sending ping
+2026-06-26 07:34:58  DEBUG     Sending ping
+2026-06-26 07:35:28  DEBUG     Sending ping
+2026-06-26 07:35:58  DEBUG     Sending ping
+2026-06-26 07:36:28  DEBUG     Sending ping
+2026-06-26 07:36:58  DEBUG     Sending ping
+2026-06-26 07:37:28  DEBUG     Sending ping
+2026-06-26 07:37:58  DEBUG     Sending ping
+2026-06-26 07:38:28  DEBUG     Sending ping
+2026-06-26 07:38:58  DEBUG     Sending ping
+2026-06-26 07:39:28  DEBUG     Sending ping
+2026-06-26 07:39:58  DEBUG     Sending ping
+2026-06-26 07:40:28  DEBUG     Sending ping
+2026-06-26 07:40:58  DEBUG     Sending ping
+2026-06-26 07:41:28  DEBUG     Sending ping
+2026-06-26 07:41:58  DEBUG     Sending ping
+2026-06-26 07:42:28  DEBUG     Sending ping
+2026-06-26 07:42:58  DEBUG     Sending ping
+2026-06-26 07:43:28  DEBUG     Sending ping
+2026-06-26 07:43:58  DEBUG     Sending ping
+2026-06-26 07:44:28  DEBUG     Sending ping
+2026-06-26 07:44:58  DEBUG     Sending ping
+2026-06-26 07:45:28  DEBUG     Sending ping
+2026-06-26 07:45:58  DEBUG     Sending ping
+2026-06-26 07:46:28  DEBUG     Sending ping
+2026-06-26 07:46:58  DEBUG     Sending ping
+2026-06-26 07:47:28  DEBUG     Sending ping
+2026-06-26 07:47:58  DEBUG     Sending ping
+2026-06-26 07:48:28  DEBUG     Sending ping
+2026-06-26 07:48:58  DEBUG     Sending ping
+2026-06-26 07:49:28  DEBUG     Sending ping
+2026-06-26 07:49:58  DEBUG     Sending ping
+2026-06-26 07:50:28  DEBUG     Sending ping
+2026-06-26 07:50:58  DEBUG     Sending ping
+2026-06-26 07:51:28  DEBUG     Sending ping
+2026-06-26 07:51:58  DEBUG     Sending ping
+2026-06-26 07:52:28  DEBUG     Sending ping
+2026-06-26 07:52:58  DEBUG     Sending ping
+2026-06-26 07:53:28  DEBUG     Sending ping
+2026-06-26 07:53:58  DEBUG     Sending ping
+2026-06-26 07:54:28  DEBUG     Sending ping
+2026-06-26 07:54:58  DEBUG     Sending ping
+2026-06-26 07:55:28  DEBUG     Sending ping
+2026-06-26 07:55:58  DEBUG     Sending ping
+2026-06-26 07:56:28  DEBUG     Sending ping
+2026-06-26 07:56:58  DEBUG     Sending ping
+2026-06-26 07:57:28  DEBUG     Sending ping
+2026-06-26 07:57:58  DEBUG     Sending ping
+2026-06-26 07:58:28  DEBUG     Sending ping
+2026-06-26 07:58:58  DEBUG     Sending ping
+2026-06-26 07:59:28  DEBUG     Sending ping
+2026-06-26 07:59:58  DEBUG     Sending ping
+2026-06-26 08:00:28  DEBUG     Sending ping
+2026-06-26 08:00:58  DEBUG     Sending ping
+2026-06-26 08:01:28  DEBUG     Sending ping
+2026-06-26 08:01:58  DEBUG     Sending ping
+2026-06-26 08:02:28  DEBUG     Sending ping
+2026-06-26 08:02:58  DEBUG     Sending ping
+2026-06-26 08:03:28  DEBUG     Sending ping
+2026-06-26 08:03:58  DEBUG     Sending ping
+2026-06-26 08:04:28  DEBUG     Sending ping
+2026-06-26 08:04:58  DEBUG     Sending ping
+2026-06-26 08:05:28  DEBUG     Sending ping
+2026-06-26 08:05:58  DEBUG     Sending ping
+2026-06-26 08:06:28  DEBUG     Sending ping
+2026-06-26 08:06:58  DEBUG     Sending ping
+2026-06-26 08:07:28  DEBUG     Sending ping
+2026-06-26 08:07:58  DEBUG     Sending ping
+2026-06-26 08:08:28  DEBUG     Sending ping
+2026-06-26 08:08:58  DEBUG     Sending ping
+2026-06-26 08:09:28  DEBUG     Sending ping
+2026-06-26 08:09:58  DEBUG     Sending ping
+2026-06-26 08:10:28  DEBUG     Sending ping
+2026-06-26 08:10:58  DEBUG     Sending ping
+2026-06-26 08:11:28  DEBUG     Sending ping
+2026-06-26 08:11:58  DEBUG     Sending ping
+2026-06-26 08:12:28  DEBUG     Sending ping
+2026-06-26 08:12:58  DEBUG     Sending ping
+2026-06-26 08:13:28  DEBUG     Sending ping
+2026-06-26 08:13:58  DEBUG     Sending ping
+2026-06-26 08:14:28  DEBUG     Sending ping
+2026-06-26 08:14:58  DEBUG     Sending ping
+2026-06-26 08:15:28  DEBUG     Sending ping
+2026-06-26 08:15:58  DEBUG     Sending ping
+2026-06-26 08:16:28  DEBUG     Sending ping
+2026-06-26 08:16:58  DEBUG     Sending ping
+2026-06-26 08:17:28  DEBUG     Sending ping
+2026-06-26 08:17:58  DEBUG     Sending ping
+2026-06-26 08:18:28  DEBUG     Sending ping
+2026-06-26 08:18:58  DEBUG     Sending ping
+2026-06-26 08:19:28  DEBUG     Sending ping
+2026-06-26 08:19:58  DEBUG     Sending ping
+2026-06-26 08:20:28  DEBUG     Sending ping
+2026-06-26 08:20:58  DEBUG     Sending ping
+2026-06-26 08:21:28  DEBUG     Sending ping
+2026-06-26 08:21:58  DEBUG     Sending ping
+2026-06-26 08:22:28  DEBUG     Sending ping
+2026-06-26 08:22:58  DEBUG     Sending ping
+2026-06-26 08:23:28  DEBUG     Sending ping
+2026-06-26 08:23:58  DEBUG     Sending ping
+2026-06-26 08:24:28  DEBUG     Sending ping
+2026-06-26 08:24:58  DEBUG     Sending ping
+2026-06-26 08:25:28  DEBUG     Sending ping
+2026-06-26 08:25:58  DEBUG     Sending ping
+2026-06-26 08:26:28  DEBUG     Sending ping
+2026-06-26 08:26:58  DEBUG     Sending ping
+2026-06-26 08:27:28  DEBUG     Sending ping
+2026-06-26 08:27:58  DEBUG     Sending ping
+2026-06-26 08:28:28  DEBUG     Sending ping
+2026-06-26 08:28:58  DEBUG     Sending ping
+2026-06-26 08:29:28  DEBUG     Sending ping
+2026-06-26 08:29:58  DEBUG     Sending ping
+2026-06-26 08:30:28  DEBUG     Sending ping
+2026-06-26 08:30:58  DEBUG     Sending ping
+2026-06-26 08:31:28  DEBUG     Sending ping
+2026-06-26 08:31:58  DEBUG     Sending ping
+2026-06-26 08:32:28  DEBUG     Sending ping
+2026-06-26 08:32:58  DEBUG     Sending ping
+2026-06-26 08:33:28  DEBUG     Sending ping
+2026-06-26 08:33:58  DEBUG     Sending ping
+2026-06-26 08:34:28  DEBUG     Sending ping
+2026-06-26 08:34:58  DEBUG     Sending ping
+2026-06-26 08:35:28  DEBUG     Sending ping
+2026-06-26 08:35:58  DEBUG     Sending ping
+2026-06-26 08:36:28  DEBUG     Sending ping
+2026-06-26 08:36:58  DEBUG     Sending ping
+2026-06-26 08:37:28  DEBUG     Sending ping
+2026-06-26 08:37:58  DEBUG     Sending ping
+2026-06-26 08:38:28  DEBUG     Sending ping
+2026-06-26 08:38:58  DEBUG     Sending ping
+2026-06-26 08:39:28  DEBUG     Sending ping
+2026-06-26 08:39:58  DEBUG     Sending ping
+2026-06-26 08:40:28  DEBUG     Sending ping
+2026-06-26 08:40:58  DEBUG     Sending ping
+2026-06-26 08:41:28  DEBUG     Sending ping
+2026-06-26 08:41:58  DEBUG     Sending ping
+2026-06-26 08:42:28  DEBUG     Sending ping
+2026-06-26 08:42:58  DEBUG     Sending ping
+2026-06-26 08:43:28  DEBUG     Sending ping
+2026-06-26 08:43:58  DEBUG     Sending ping
+2026-06-26 08:44:28  DEBUG     Sending ping
+2026-06-26 08:44:58  DEBUG     Sending ping
+2026-06-26 08:45:28  DEBUG     Sending ping
+2026-06-26 08:45:58  DEBUG     Sending ping
+2026-06-26 08:46:28  DEBUG     Sending ping
+2026-06-26 08:46:58  DEBUG     Sending ping
+2026-06-26 08:47:28  DEBUG     Sending ping
+2026-06-26 08:47:58  DEBUG     Sending ping
+2026-06-26 08:48:28  DEBUG     Sending ping
+2026-06-26 08:48:58  DEBUG     Sending ping
+2026-06-26 08:49:28  DEBUG     Sending ping
+2026-06-26 08:49:58  DEBUG     Sending ping
+2026-06-26 08:50:28  DEBUG     Sending ping
+2026-06-26 08:50:58  DEBUG     Sending ping
+2026-06-26 08:51:28  DEBUG     Sending ping
+2026-06-26 08:51:58  DEBUG     Sending ping
+2026-06-26 08:52:28  DEBUG     Sending ping
+2026-06-26 08:52:58  DEBUG     Sending ping
+2026-06-26 08:53:28  DEBUG     Sending ping
+2026-06-26 08:53:58  DEBUG     Sending ping
+2026-06-26 08:54:28  DEBUG     Sending ping
+2026-06-26 08:54:58  DEBUG     Sending ping
+2026-06-26 08:55:28  DEBUG     Sending ping
+2026-06-26 08:55:58  DEBUG     Sending ping
+2026-06-26 08:56:28  DEBUG     Sending ping
+2026-06-26 08:56:58  DEBUG     Sending ping
+2026-06-26 08:57:28  DEBUG     Sending ping
+2026-06-26 08:57:58  DEBUG     Sending ping
+2026-06-26 08:58:28  DEBUG     Sending ping
+2026-06-26 08:58:58  DEBUG     Sending ping
+2026-06-26 08:59:28  DEBUG     Sending ping
+2026-06-26 08:59:58  DEBUG     Sending ping
+2026-06-26 09:00:28  DEBUG     Sending ping
+2026-06-26 09:00:58  DEBUG     Sending ping
+2026-06-26 09:01:28  DEBUG     Sending ping
+2026-06-26 09:01:58  DEBUG     Sending ping
+2026-06-26 09:02:28  DEBUG     Sending ping
+2026-06-26 09:02:58  DEBUG     Sending ping
+2026-06-26 09:03:28  DEBUG     Sending ping
+2026-06-26 09:03:58  DEBUG     Sending ping
+2026-06-26 09:04:28  DEBUG     Sending ping
+2026-06-26 09:04:58  DEBUG     Sending ping
+2026-06-26 09:05:28  DEBUG     Sending ping
+2026-06-26 09:05:58  DEBUG     Sending ping
+2026-06-26 09:06:28  DEBUG     Sending ping
+2026-06-26 09:06:58  DEBUG     Sending ping
+2026-06-26 09:07:28  DEBUG     Sending ping
+2026-06-26 09:07:58  DEBUG     Sending ping
+2026-06-26 09:08:28  DEBUG     Sending ping
+2026-06-26 09:08:58  DEBUG     Sending ping
+2026-06-26 09:09:28  DEBUG     Sending ping
+2026-06-26 09:09:58  DEBUG     Sending ping
+2026-06-26 09:10:28  DEBUG     Sending ping
+2026-06-26 09:10:58  DEBUG     Sending ping
+2026-06-26 09:11:28  DEBUG     Sending ping
+2026-06-26 09:11:58  DEBUG     Sending ping
+2026-06-26 09:12:28  DEBUG     Sending ping
+2026-06-26 09:12:58  DEBUG     Sending ping
+2026-06-26 09:13:28  DEBUG     Sending ping
+2026-06-26 09:13:58  DEBUG     Sending ping
+2026-06-26 09:14:28  DEBUG     Sending ping
+2026-06-26 09:14:58  DEBUG     Sending ping
+2026-06-26 09:15:28  DEBUG     Sending ping
+2026-06-26 09:15:58  DEBUG     Sending ping
+2026-06-26 09:16:28  DEBUG     Sending ping
+2026-06-26 09:16:58  DEBUG     Sending ping
+2026-06-26 09:17:28  DEBUG     Sending ping
+2026-06-26 09:17:58  DEBUG     Sending ping
+2026-06-26 09:18:28  DEBUG     Sending ping
+2026-06-26 09:18:58  DEBUG     Sending ping
+2026-06-26 09:19:28  DEBUG     Sending ping
+2026-06-26 09:19:58  DEBUG     Sending ping
+2026-06-26 09:20:28  DEBUG     Sending ping
+2026-06-26 09:20:58  DEBUG     Sending ping
+2026-06-26 09:21:28  DEBUG     Sending ping
+2026-06-26 09:21:58  DEBUG     Sending ping
+2026-06-26 09:22:28  DEBUG     Sending ping
+2026-06-26 09:22:58  DEBUG     Sending ping
+2026-06-26 09:23:28  DEBUG     Sending ping
+2026-06-26 09:23:58  DEBUG     Sending ping
+2026-06-26 09:24:28  DEBUG     Sending ping
+2026-06-26 09:24:58  DEBUG     Sending ping
+2026-06-26 09:25:28  DEBUG     Sending ping
+2026-06-26 09:25:58  DEBUG     Sending ping
+2026-06-26 09:26:28  DEBUG     Sending ping
+2026-06-26 09:26:58  DEBUG     Sending ping
+2026-06-26 09:27:28  DEBUG     Sending ping
+2026-06-26 09:27:58  DEBUG     Sending ping
+2026-06-26 09:28:28  DEBUG     Sending ping
+2026-06-26 09:28:58  DEBUG     Sending ping
+2026-06-26 09:29:28  DEBUG     Sending ping
+2026-06-26 09:29:58  DEBUG     Sending ping
+2026-06-26 09:30:28  DEBUG     Sending ping
+2026-06-26 09:30:58  DEBUG     Sending ping
+2026-06-26 09:31:28  DEBUG     Sending ping
+2026-06-26 09:31:58  DEBUG     Sending ping
+2026-06-26 09:32:28  DEBUG     Sending ping
+2026-06-26 09:32:58  DEBUG     Sending ping
+2026-06-26 09:33:28  DEBUG     Sending ping
+2026-06-26 09:33:58  DEBUG     Sending ping
+2026-06-26 09:34:28  DEBUG     Sending ping
+2026-06-26 09:34:58  DEBUG     Sending ping
+2026-06-26 09:35:01  INFO      SIGINT received — flushing and shutting down
+2026-06-26 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-06-26 09:35:01  INFO      EOD SUMMARY  date=2026-06-26  trades=0  total_pnl=Rs0.00
+2026-06-26 09:35:01  INFO      All positions flat at EOD
+2026-06-26 09:35:01  INFO      Ticks  -> data/2026-06-26/ticks.jsonl
+2026-06-26 09:35:01  INFO      Trades -> logs/trades_2026-06-26.csv
+2026-06-26 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-06-26 09:35:01  ERROR     WS ERROR  0
+[Fri Jun 26 09:35:01 UTC 2026] Runner stopped
+2026-06-26 09:35:01  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+2026-06-26 09:35:01  ERROR     error from callback <bound method FlattradeClient._ws_close of <client.FlattradeClient object at 0x7f97dfb43670>>: I/O operation on closed file.
+2026-06-26 09:35:01  ERROR     WS ERROR  I/O operation on closed file.
+[Fri Jun 26 09:35:01 UTC 2026] Runner exited, restarting in 10s...

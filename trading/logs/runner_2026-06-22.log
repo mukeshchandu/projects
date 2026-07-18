@@ -1,0 +1,77 @@
+2026-06-22 07:25:22  INFO      ============================================================
+2026-06-22 07:25:22  INFO      STARTUP  date=2026-06-22  pid=5615
+2026-06-22 07:25:22  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | paper mode
+2026-06-22 07:25:22  INFO      Resolving NSE tokens...
+2026-06-22 07:25:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:23  INFO      Resolved  IDEA             token=14366
+2026-06-22 07:25:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:23  INFO      Resolved  SUZLON           token=12018
+2026-06-22 07:25:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:24  INFO      Resolved  YESBANK          token=11915
+2026-06-22 07:25:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:24  INFO      Resolved  NHPC             token=17400
+2026-06-22 07:25:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:24  INFO      Resolved  SAIL             token=2963
+2026-06-22 07:25:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:25  INFO      Resolved  PNB              token=10666
+2026-06-22 07:25:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:25  INFO      Resolved  RPOWER           token=15259
+2026-06-22 07:25:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:25  INFO      Resolved  TATASTEEL        token=3499
+2026-06-22 07:25:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-22 07:25:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-22 07:25:25  INFO      Resolved  IDFCFIRSTB       token=11184
+2026-06-22 07:25:25  INFO      9 stocks | Rs10000/stock | EOD 15:00 IST
+2026-06-22 07:25:25  INFO      ============================================================
+2026-06-22 07:25:26  INFO      Websocket connected
+2026-06-22 07:25:26  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-22 07:25:26  INFO      Ticks -> data/2026-06-22/ticks.jsonl
+2026-06-22 07:26:26  DEBUG     Sending ping
+2026-06-22 07:26:56  DEBUG     Sending ping
+2026-06-22 07:27:26  DEBUG     Sending ping
+2026-06-22 07:27:56  DEBUG     Sending ping
+2026-06-22 07:28:26  DEBUG     Sending ping
+2026-06-22 07:28:56  DEBUG     Sending ping
+2026-06-22 07:29:26  DEBUG     Sending ping
+2026-06-22 07:29:56  DEBUG     Sending ping
+2026-06-22 07:30:26  DEBUG     Sending ping
+2026-06-22 07:30:56  DEBUG     Sending ping
+2026-06-22 07:31:26  DEBUG     Sending ping
+2026-06-22 07:31:56  DEBUG     Sending ping
+2026-06-22 07:32:26  DEBUG     Sending ping
+2026-06-22 07:32:56  DEBUG     Sending ping
+2026-06-22 07:33:26  DEBUG     Sending ping
+2026-06-22 07:33:56  DEBUG     Sending ping
+2026-06-22 07:34:26  DEBUG     Sending ping
+2026-06-22 07:34:56  DEBUG     Sending ping
+2026-06-22 07:35:26  DEBUG     Sending ping
+2026-06-22 07:35:56  DEBUG     Sending ping
+2026-06-22 07:36:26  DEBUG     Sending ping
+2026-06-22 07:36:56  DEBUG     Sending ping
+2026-06-22 07:37:26  DEBUG     Sending ping
+2026-06-22 07:37:56  DEBUG     Sending ping
+2026-06-22 07:38:26  DEBUG     Sending ping
+2026-06-22 07:38:56  DEBUG     Sending ping
+2026-06-22 07:39:26  DEBUG     Sending ping
+2026-06-22 07:39:56  DEBUG     Sending ping
+2026-06-22 07:40:26  DEBUG     Sending ping
+2026-06-22 07:40:56  DEBUG     Sending ping
+2026-06-22 07:41:26  DEBUG     Sending ping
+2026-06-22 07:41:56  DEBUG     Sending ping
+2026-06-22 07:42:26  DEBUG     Sending ping
+2026-06-22 07:42:56  DEBUG     Sending ping
+2026-06-22 07:43:26  DEBUG     Sending ping
+2026-06-22 07:43:56  DEBUG     Sending ping
+2026-06-22 07:44:26  DEBUG     Sending ping
+2026-06-22 07:44:37  ERROR     WS ERROR  ping/pong timed out
+2026-06-22 07:44:39  ERROR     ping/pong timed out - goodbye
+2026-06-22 07:44:47  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Mon Jun 22 09:35:02 UTC 2026] Runner stopped

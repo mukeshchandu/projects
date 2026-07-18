@@ -1,0 +1,2065 @@
+[Fri Jul  3 03:15:12 UTC 2026] Watchdog started
+[Fri Jul  3 03:15:12 UTC 2026] Starting runner...
+2026-07-03 03:15:13  INFO      ============================================================
+2026-07-03 03:15:13  INFO      STARTUP  date=2026-07-03  pid=17520
+2026-07-03 03:15:13  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-03 03:15:13  INFO      Resolving NSE tokens...
+2026-07-03 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:13  INFO      Resolved  HFCL             token=21951
+2026-07-03 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:13  INFO      Resolved  BANKBARODA       token=4668
+2026-07-03 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:14  INFO      Resolved  NMDC             token=15332
+2026-07-03 03:15:14  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:14  INFO      Resolved  CESC             token=628
+2026-07-03 03:15:14  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:14  INFO      Resolved  ZEEL             token=3812
+2026-07-03 03:15:14  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:15  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-03 03:15:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:16  INFO      Resolved  GRANULES         token=11872
+2026-07-03 03:15:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 03:15:16  INFO      Resolved  SUZLON           token=12018
+2026-07-03 03:15:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-03 03:15:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:15:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-03 03:15:16  INFO      *** LIVE MODE  cash=Rs2755  4x=Rs11019  K=1  per_trade=Rs11018 ***
+2026-07-03 03:15:16  INFO      8 stocks | Rs11018/trade | K=1 | EOD 15:00 IST
+2026-07-03 03:15:16  INFO      ============================================================
+2026-07-03 03:15:17  INFO      Websocket connected
+2026-07-03 03:15:17  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-03 03:15:17  INFO      Ticks -> data/2026-07-03/ticks.jsonl
+2026-07-03 03:16:17  DEBUG     Sending ping
+2026-07-03 03:16:47  DEBUG     Sending ping
+2026-07-03 03:17:17  DEBUG     Sending ping
+2026-07-03 03:17:47  DEBUG     Sending ping
+2026-07-03 03:18:17  DEBUG     Sending ping
+2026-07-03 03:18:47  DEBUG     Sending ping
+2026-07-03 03:19:17  DEBUG     Sending ping
+2026-07-03 03:19:47  DEBUG     Sending ping
+2026-07-03 03:20:17  DEBUG     Sending ping
+2026-07-03 03:20:47  DEBUG     Sending ping
+2026-07-03 03:21:17  DEBUG     Sending ping
+2026-07-03 03:21:47  DEBUG     Sending ping
+2026-07-03 03:22:17  DEBUG     Sending ping
+2026-07-03 03:22:47  DEBUG     Sending ping
+2026-07-03 03:23:17  DEBUG     Sending ping
+2026-07-03 03:23:47  DEBUG     Sending ping
+2026-07-03 03:24:17  DEBUG     Sending ping
+2026-07-03 03:24:47  DEBUG     Sending ping
+2026-07-03 03:25:17  DEBUG     Sending ping
+2026-07-03 03:25:47  DEBUG     Sending ping
+2026-07-03 03:26:17  DEBUG     Sending ping
+2026-07-03 03:26:47  DEBUG     Sending ping
+2026-07-03 03:27:17  DEBUG     Sending ping
+2026-07-03 03:27:47  DEBUG     Sending ping
+2026-07-03 03:28:17  DEBUG     Sending ping
+2026-07-03 03:28:47  DEBUG     Sending ping
+2026-07-03 03:29:17  DEBUG     Sending ping
+2026-07-03 03:29:47  DEBUG     Sending ping
+2026-07-03 03:30:00  DEBUG     CANDLE  BANKBARODA    O=260.25  H=260.25  L=260.25  C=260.25
+2026-07-03 03:30:00  DEBUG     CANDLE  SUZLON        O=57.67  H=57.67  L=57.67  C=57.67
+2026-07-03 03:30:04  DEBUG     CANDLE  NMDC          O=85.57  H=85.57  L=85.57  C=85.57
+2026-07-03 03:30:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:30:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-03 03:30:04  ERROR     CNC SELL NMDC skipped — no holdings found in demat
+2026-07-03 03:30:17  DEBUG     Sending ping
+2026-07-03 03:30:47  DEBUG     Sending ping
+2026-07-03 03:31:17  DEBUG     Sending ping
+2026-07-03 03:31:47  DEBUG     Sending ping
+2026-07-03 03:32:17  DEBUG     Sending ping
+2026-07-03 03:32:47  DEBUG     Sending ping
+2026-07-03 03:33:17  DEBUG     Sending ping
+2026-07-03 03:33:47  DEBUG     Sending ping
+2026-07-03 03:34:17  DEBUG     Sending ping
+2026-07-03 03:34:47  DEBUG     Sending ping
+2026-07-03 03:35:17  DEBUG     Sending ping
+2026-07-03 03:35:47  DEBUG     Sending ping
+2026-07-03 03:36:17  DEBUG     Sending ping
+2026-07-03 03:36:47  DEBUG     Sending ping
+2026-07-03 03:37:17  DEBUG     Sending ping
+2026-07-03 03:37:47  DEBUG     Sending ping
+2026-07-03 03:38:17  DEBUG     Sending ping
+2026-07-03 03:38:47  DEBUG     Sending ping
+2026-07-03 03:39:17  DEBUG     Sending ping
+2026-07-03 03:39:47  DEBUG     Sending ping
+2026-07-03 03:40:17  DEBUG     Sending ping
+2026-07-03 03:40:47  DEBUG     Sending ping
+2026-07-03 03:41:17  DEBUG     Sending ping
+2026-07-03 03:41:47  DEBUG     Sending ping
+2026-07-03 03:42:17  DEBUG     Sending ping
+2026-07-03 03:42:47  DEBUG     Sending ping
+2026-07-03 03:43:17  DEBUG     Sending ping
+2026-07-03 03:43:47  DEBUG     Sending ping
+2026-07-03 03:44:17  DEBUG     Sending ping
+2026-07-03 03:44:47  DEBUG     Sending ping
+2026-07-03 03:45:00  DEBUG     CANDLE  BANKBARODA    O=259.85  H=259.85  L=258.25  C=258.25
+2026-07-03 03:45:00  DEBUG     CANDLE  SUZLON        O=57.70  H=57.93  L=57.70  C=57.93
+2026-07-03 03:45:00  INFO      ORDER  SUZLON        BUY   MIS  qty=190    price=Rs58.00  reason=flip UP | atr=0.19 st=57.52 sl=57.64
+2026-07-03 03:45:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:45:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 03:45:00  INFO      ACCEPTED  SUZLON  norenordno=26070300004388
+2026-07-03 03:45:00  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f867030a310>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 03:45:00  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 03:45:00  DEBUG     CANDLE  HFCL          O=206.00  H=206.00  L=205.43  C=205.43
+2026-07-03 03:45:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:45:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-03 03:45:01  WARNING   CNC BUY HFCL: available=Rs2203.73 < needed=Rs10891.50 — qty 53→10
+2026-07-03 03:45:01  INFO      ORDER  HFCL          BUY   CNC  qty=10     price=Rs205.50  reason=flip UP | atr=1.33 st=203.72 sl=203.44
+2026-07-03 03:45:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:45:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 03:45:01  INFO      ACCEPTED  HFCL  norenordno=26070300004429
+2026-07-03 03:45:01  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f867030a310>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 03:45:01  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 03:45:01  DEBUG     CANDLE  NMDC          O=85.75  H=86.52  L=85.75  C=86.52
+2026-07-03 03:45:01  DEBUG     CANDLE  ZEEL          O=106.92  H=107.56  L=106.92  C=107.56
+2026-07-03 03:45:01  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300004388
+2026-07-03 03:45:01  INFO      ORDER UPDATE  NewAck    HFCL-EQ  norenordno=26070300004429
+2026-07-03 03:45:01  ERROR     ORDER REJECTED  HFCL-EQ  norenordno=26070300004429  reason=RED:Margin Shortfall:INR 1992.62 Available:INR 2754.66 for C-FZ38545 [KAMBALA]
+2026-07-03 03:45:02  DEBUG     CANDLE  CESC          O=170.99  H=171.39  L=170.99  C=171.39
+2026-07-03 03:45:02  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:45:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-03 03:45:02  WARNING   CNC BUY CESC: available=Rs2203.73 < needed=Rs10972.80 — qty 64→12
+2026-07-03 03:45:02  INFO      ORDER  CESC          BUY   CNC  qty=12     price=Rs171.45  reason=flip UP | atr=0.54 st=170.38 sl=170.58
+2026-07-03 03:45:02  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 03:45:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 03:45:02  INFO      ACCEPTED  CESC  norenordno=26070300004554
+2026-07-03 03:45:02  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f867030a310>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 03:45:02  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 03:45:02  DEBUG     CANDLE  BALRAMCHIN    O=567.20  H=567.20  L=567.20  C=567.20
+2026-07-03 03:45:02  INFO      ORDER UPDATE  NewAck    CESC-EQ  norenordno=26070300004554
+2026-07-03 03:45:02  ERROR     ORDER REJECTED  CESC-EQ  norenordno=26070300004554  reason=RED:Margin Shortfall:INR 1995.02 Available:INR 2754.66 for C-FZ38545 [KAMBALA]
+2026-07-03 03:45:03  INFO      ORDER UPDATE  New       SUZLON-EQ  norenordno=26070300004388
+2026-07-03 03:45:03  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f867030a310>>: 'est'
+2026-07-03 03:45:03  ERROR     WS ERROR  'est'
+2026-07-03 03:45:03  DEBUG     CANDLE  GRANULES      O=822.90  H=828.90  L=822.90  C=828.90
+2026-07-03 03:45:17  DEBUG     Sending ping
+2026-07-03 03:45:47  DEBUG     Sending ping
+2026-07-03 03:46:17  DEBUG     Sending ping
+2026-07-03 03:46:47  DEBUG     Sending ping
+2026-07-03 03:47:17  DEBUG     Sending ping
+2026-07-03 03:47:47  DEBUG     Sending ping
+2026-07-03 03:48:17  DEBUG     Sending ping
+2026-07-03 03:48:47  DEBUG     Sending ping
+2026-07-03 03:49:17  DEBUG     Sending ping
+2026-07-03 03:49:47  DEBUG     Sending ping
+2026-07-03 03:50:17  DEBUG     Sending ping
+2026-07-03 03:50:47  DEBUG     Sending ping
+2026-07-03 03:51:17  DEBUG     Sending ping
+2026-07-03 03:51:47  DEBUG     Sending ping
+2026-07-03 03:52:17  DEBUG     Sending ping
+2026-07-03 03:52:47  DEBUG     Sending ping
+2026-07-03 03:53:17  DEBUG     Sending ping
+2026-07-03 03:53:47  DEBUG     Sending ping
+2026-07-03 03:54:17  DEBUG     Sending ping
+2026-07-03 03:54:47  DEBUG     Sending ping
+2026-07-03 03:55:17  DEBUG     Sending ping
+2026-07-03 03:55:47  DEBUG     Sending ping
+2026-07-03 03:56:17  DEBUG     Sending ping
+2026-07-03 03:56:47  DEBUG     Sending ping
+2026-07-03 03:57:17  DEBUG     Sending ping
+2026-07-03 03:57:47  DEBUG     Sending ping
+2026-07-03 03:58:17  DEBUG     Sending ping
+2026-07-03 03:58:47  DEBUG     Sending ping
+2026-07-03 03:59:17  DEBUG     Sending ping
+2026-07-03 03:59:47  DEBUG     Sending ping
+2026-07-03 04:00:00  DEBUG     CANDLE  HFCL          O=206.60  H=208.70  L=206.00  C=208.56
+2026-07-03 04:00:00  DEBUG     CANDLE  ZEEL          O=107.57  H=109.10  L=107.31  C=107.48
+2026-07-03 04:00:01  DEBUG     CANDLE  GRANULES      O=830.50  H=835.90  L=828.85  C=835.80
+2026-07-03 04:00:04  DEBUG     CANDLE  NMDC          O=86.61  H=86.87  L=86.21  C=86.48
+2026-07-03 04:00:06  DEBUG     CANDLE  BANKBARODA    O=257.00  H=257.00  L=254.60  C=255.30
+2026-07-03 04:00:06  DEBUG     CANDLE  SUZLON        O=57.85  H=58.01  L=57.11  C=57.13
+2026-07-03 04:00:07  DEBUG     CANDLE  CESC          O=171.00  H=171.30  L=169.85  C=170.46
+2026-07-03 04:00:07  DEBUG     CANDLE  BALRAMCHIN    O=568.00  H=571.50  L=563.15  C=565.30
+2026-07-03 04:00:17  DEBUG     Sending ping
+2026-07-03 04:00:47  DEBUG     Sending ping
+2026-07-03 04:01:17  DEBUG     Sending ping
+2026-07-03 04:01:47  DEBUG     Sending ping
+2026-07-03 04:02:17  DEBUG     Sending ping
+2026-07-03 04:02:47  DEBUG     Sending ping
+2026-07-03 04:03:17  DEBUG     Sending ping
+2026-07-03 04:03:47  DEBUG     Sending ping
+2026-07-03 04:04:17  DEBUG     Sending ping
+2026-07-03 04:04:47  DEBUG     Sending ping
+2026-07-03 04:05:17  DEBUG     Sending ping
+2026-07-03 04:05:47  DEBUG     Sending ping
+2026-07-03 04:06:17  DEBUG     Sending ping
+2026-07-03 04:06:47  DEBUG     Sending ping
+2026-07-03 04:07:17  DEBUG     Sending ping
+2026-07-03 04:07:47  DEBUG     Sending ping
+2026-07-03 04:08:17  DEBUG     Sending ping
+2026-07-03 04:08:47  DEBUG     Sending ping
+2026-07-03 04:09:17  DEBUG     Sending ping
+2026-07-03 04:09:47  DEBUG     Sending ping
+2026-07-03 04:10:17  DEBUG     Sending ping
+2026-07-03 04:10:47  DEBUG     Sending ping
+2026-07-03 04:11:17  DEBUG     Sending ping
+2026-07-03 04:11:47  DEBUG     Sending ping
+2026-07-03 04:12:17  DEBUG     Sending ping
+2026-07-03 04:12:47  DEBUG     Sending ping
+2026-07-03 04:13:17  DEBUG     Sending ping
+2026-07-03 04:13:47  DEBUG     Sending ping
+2026-07-03 04:14:17  DEBUG     Sending ping
+2026-07-03 04:14:47  DEBUG     Sending ping
+2026-07-03 04:15:00  DEBUG     CANDLE  ZEEL          O=107.49  H=107.75  L=106.70  C=106.70
+2026-07-03 04:15:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 04:15:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-03 04:15:00  ERROR     CNC SELL ZEEL skipped — no holdings found in demat
+2026-07-03 04:15:00  DEBUG     CANDLE  SUZLON        O=57.14  H=57.32  L=56.94  C=57.02
+2026-07-03 04:15:01  DEBUG     CANDLE  HFCL          O=208.52  H=211.80  L=208.51  C=209.50
+2026-07-03 04:15:01  DEBUG     CANDLE  BANKBARODA    O=255.20  H=255.50  L=252.70  C=252.70
+2026-07-03 04:15:03  DEBUG     CANDLE  GRANULES      O=835.90  H=839.75  L=835.20  C=837.05
+2026-07-03 04:15:04  DEBUG     CANDLE  CESC          O=170.52  H=170.59  L=170.05  C=170.17
+2026-07-03 04:15:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 04:15:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-03 04:15:04  ERROR     CNC SELL CESC skipped — no holdings found in demat
+2026-07-03 04:15:04  DEBUG     CANDLE  NMDC          O=86.49  H=86.65  L=86.29  C=86.35
+2026-07-03 04:15:09  DEBUG     CANDLE  BALRAMCHIN    O=565.95  H=568.85  L=565.00  C=565.85
+2026-07-03 04:15:17  DEBUG     Sending ping
+2026-07-03 04:15:47  DEBUG     Sending ping
+2026-07-03 04:16:17  DEBUG     Sending ping
+2026-07-03 04:16:47  DEBUG     Sending ping
+2026-07-03 04:17:17  DEBUG     Sending ping
+2026-07-03 04:17:47  DEBUG     Sending ping
+2026-07-03 04:18:17  DEBUG     Sending ping
+2026-07-03 04:18:47  DEBUG     Sending ping
+2026-07-03 04:19:17  DEBUG     Sending ping
+2026-07-03 04:19:47  DEBUG     Sending ping
+2026-07-03 04:20:17  DEBUG     Sending ping
+2026-07-03 04:20:47  DEBUG     Sending ping
+2026-07-03 04:21:17  DEBUG     Sending ping
+2026-07-03 04:21:47  DEBUG     Sending ping
+2026-07-03 04:22:17  DEBUG     Sending ping
+2026-07-03 04:22:47  DEBUG     Sending ping
+2026-07-03 04:23:17  DEBUG     Sending ping
+2026-07-03 04:23:47  DEBUG     Sending ping
+2026-07-03 04:24:17  DEBUG     Sending ping
+2026-07-03 04:24:47  DEBUG     Sending ping
+2026-07-03 04:25:17  DEBUG     Sending ping
+2026-07-03 04:25:47  DEBUG     Sending ping
+2026-07-03 04:26:17  DEBUG     Sending ping
+2026-07-03 04:26:47  DEBUG     Sending ping
+2026-07-03 04:27:17  DEBUG     Sending ping
+2026-07-03 04:27:47  DEBUG     Sending ping
+2026-07-03 04:28:17  DEBUG     Sending ping
+2026-07-03 04:28:47  DEBUG     Sending ping
+2026-07-03 04:29:17  DEBUG     Sending ping
+2026-07-03 04:29:47  DEBUG     Sending ping
+2026-07-03 04:30:00  DEBUG     CANDLE  BANKBARODA    O=252.80  H=252.85  L=250.10  C=251.25
+2026-07-03 04:30:01  DEBUG     CANDLE  ZEEL          O=106.74  H=107.85  L=106.60  C=107.70
+2026-07-03 04:30:01  DEBUG     CANDLE  SUZLON        O=57.04  H=57.19  L=56.95  C=57.18
+2026-07-03 04:30:01  DEBUG     CANDLE  HFCL          O=209.46  H=212.00  L=209.22  C=210.56
+2026-07-03 04:30:02  DEBUG     CANDLE  CESC          O=170.11  H=170.32  L=169.91  C=170.02
+2026-07-03 04:30:02  DEBUG     CANDLE  BALRAMCHIN    O=566.15  H=566.90  L=565.60  C=566.25
+2026-07-03 04:30:03  DEBUG     CANDLE  GRANULES      O=838.00  H=839.75  L=833.00  C=834.05
+2026-07-03 04:30:04  DEBUG     CANDLE  NMDC          O=86.32  H=86.74  L=86.18  C=86.60
+2026-07-03 04:30:17  DEBUG     Sending ping
+2026-07-03 04:30:47  DEBUG     Sending ping
+2026-07-03 04:31:17  DEBUG     Sending ping
+2026-07-03 04:31:47  DEBUG     Sending ping
+2026-07-03 04:32:17  DEBUG     Sending ping
+2026-07-03 04:32:47  DEBUG     Sending ping
+2026-07-03 04:33:17  DEBUG     Sending ping
+2026-07-03 04:33:47  DEBUG     Sending ping
+2026-07-03 04:34:17  DEBUG     Sending ping
+2026-07-03 04:34:47  DEBUG     Sending ping
+2026-07-03 04:35:17  DEBUG     Sending ping
+2026-07-03 04:35:47  DEBUG     Sending ping
+2026-07-03 04:36:17  DEBUG     Sending ping
+2026-07-03 04:36:47  DEBUG     Sending ping
+2026-07-03 04:37:17  DEBUG     Sending ping
+2026-07-03 04:37:47  DEBUG     Sending ping
+2026-07-03 04:38:17  DEBUG     Sending ping
+2026-07-03 04:38:47  DEBUG     Sending ping
+2026-07-03 04:39:17  DEBUG     Sending ping
+2026-07-03 04:39:47  DEBUG     Sending ping
+2026-07-03 04:40:17  DEBUG     Sending ping
+2026-07-03 04:40:47  DEBUG     Sending ping
+2026-07-03 04:41:17  DEBUG     Sending ping
+2026-07-03 04:41:47  DEBUG     Sending ping
+2026-07-03 04:42:17  DEBUG     Sending ping
+2026-07-03 04:42:47  DEBUG     Sending ping
+2026-07-03 04:43:17  DEBUG     Sending ping
+2026-07-03 04:43:47  DEBUG     Sending ping
+2026-07-03 04:44:17  DEBUG     Sending ping
+2026-07-03 04:44:47  DEBUG     Sending ping
+2026-07-03 04:45:00  DEBUG     CANDLE  BANKBARODA    O=251.20  H=254.05  L=251.15  C=253.35
+2026-07-03 04:45:01  DEBUG     CANDLE  GRANULES      O=834.10  H=834.10  L=831.05  C=832.50
+2026-07-03 04:45:01  DEBUG     CANDLE  NMDC          O=86.61  H=86.65  L=86.40  C=86.53
+2026-07-03 04:45:01  DEBUG     CANDLE  ZEEL          O=107.74  H=107.80  L=107.12  C=107.22
+2026-07-03 04:45:01  DEBUG     CANDLE  HFCL          O=210.60  H=212.00  L=210.10  C=210.81
+2026-07-03 04:45:02  DEBUG     CANDLE  BALRAMCHIN    O=566.90  H=567.05  L=563.05  C=564.50
+2026-07-03 04:45:04  DEBUG     CANDLE  SUZLON        O=57.19  H=57.30  L=57.13  C=57.17
+2026-07-03 04:45:17  DEBUG     Sending ping
+2026-07-03 04:45:20  DEBUG     CANDLE  CESC          O=170.05  H=170.15  L=169.83  C=170.01
+2026-07-03 04:45:47  DEBUG     Sending ping
+2026-07-03 04:46:17  DEBUG     Sending ping
+2026-07-03 04:46:47  DEBUG     Sending ping
+2026-07-03 04:47:17  DEBUG     Sending ping
+2026-07-03 04:47:47  DEBUG     Sending ping
+2026-07-03 04:48:17  DEBUG     Sending ping
+2026-07-03 04:48:47  DEBUG     Sending ping
+2026-07-03 04:49:17  DEBUG     Sending ping
+2026-07-03 04:49:47  DEBUG     Sending ping
+2026-07-03 04:50:17  DEBUG     Sending ping
+2026-07-03 04:50:47  DEBUG     Sending ping
+2026-07-03 04:51:17  DEBUG     Sending ping
+2026-07-03 04:51:47  DEBUG     Sending ping
+2026-07-03 04:52:17  DEBUG     Sending ping
+2026-07-03 04:52:47  DEBUG     Sending ping
+2026-07-03 04:53:17  DEBUG     Sending ping
+2026-07-03 04:53:47  DEBUG     Sending ping
+2026-07-03 04:54:17  DEBUG     Sending ping
+2026-07-03 04:54:47  DEBUG     Sending ping
+2026-07-03 04:55:17  DEBUG     Sending ping
+2026-07-03 04:55:47  DEBUG     Sending ping
+2026-07-03 04:56:17  DEBUG     Sending ping
+2026-07-03 04:56:47  DEBUG     Sending ping
+2026-07-03 04:57:17  DEBUG     Sending ping
+2026-07-03 04:57:47  DEBUG     Sending ping
+2026-07-03 04:58:17  DEBUG     Sending ping
+2026-07-03 04:58:47  DEBUG     Sending ping
+2026-07-03 04:59:17  DEBUG     Sending ping
+2026-07-03 04:59:47  DEBUG     Sending ping
+2026-07-03 05:00:00  DEBUG     CANDLE  HFCL          O=210.90  H=212.45  L=210.63  C=212.29
+2026-07-03 05:00:02  DEBUG     CANDLE  SUZLON        O=57.20  H=57.38  L=57.18  C=57.35
+2026-07-03 05:00:03  DEBUG     CANDLE  BANKBARODA    O=253.45  H=255.35  L=253.00  C=253.00
+2026-07-03 05:00:04  DEBUG     CANDLE  GRANULES      O=832.65  H=834.45  L=831.60  C=832.40
+2026-07-03 05:00:05  DEBUG     CANDLE  NMDC          O=86.54  H=86.55  L=86.20  C=86.21
+2026-07-03 05:00:08  DEBUG     CANDLE  ZEEL          O=107.06  H=107.40  L=106.94  C=107.25
+2026-07-03 05:00:09  DEBUG     CANDLE  BALRAMCHIN    O=564.65  H=567.00  L=563.90  C=566.50
+2026-07-03 05:00:14  DEBUG     CANDLE  CESC          O=170.00  H=170.06  L=169.69  C=169.91
+2026-07-03 05:00:17  DEBUG     Sending ping
+2026-07-03 05:00:47  DEBUG     Sending ping
+2026-07-03 05:01:17  DEBUG     Sending ping
+2026-07-03 05:01:47  DEBUG     Sending ping
+2026-07-03 05:02:17  DEBUG     Sending ping
+2026-07-03 05:02:47  DEBUG     Sending ping
+2026-07-03 05:03:17  DEBUG     Sending ping
+2026-07-03 05:03:47  DEBUG     Sending ping
+2026-07-03 05:04:17  DEBUG     Sending ping
+2026-07-03 05:04:47  DEBUG     Sending ping
+2026-07-03 05:05:17  DEBUG     Sending ping
+2026-07-03 05:05:47  DEBUG     Sending ping
+2026-07-03 05:06:17  DEBUG     Sending ping
+2026-07-03 05:06:47  DEBUG     Sending ping
+2026-07-03 05:07:17  DEBUG     Sending ping
+2026-07-03 05:07:47  DEBUG     Sending ping
+2026-07-03 05:08:17  DEBUG     Sending ping
+2026-07-03 05:08:47  DEBUG     Sending ping
+2026-07-03 05:09:17  DEBUG     Sending ping
+2026-07-03 05:09:47  DEBUG     Sending ping
+2026-07-03 05:10:17  DEBUG     Sending ping
+2026-07-03 05:10:47  DEBUG     Sending ping
+2026-07-03 05:11:17  DEBUG     Sending ping
+2026-07-03 05:11:47  DEBUG     Sending ping
+2026-07-03 05:12:17  DEBUG     Sending ping
+2026-07-03 05:12:47  DEBUG     Sending ping
+2026-07-03 05:13:17  DEBUG     Sending ping
+2026-07-03 05:13:47  DEBUG     Sending ping
+2026-07-03 05:14:17  DEBUG     Sending ping
+2026-07-03 05:14:47  DEBUG     Sending ping
+2026-07-03 05:15:00  DEBUG     CANDLE  BANKBARODA    O=253.05  H=253.70  L=251.65  C=251.80
+2026-07-03 05:15:00  DEBUG     CANDLE  GRANULES      O=832.50  H=835.00  L=830.90  C=833.80
+2026-07-03 05:15:01  DEBUG     CANDLE  NMDC          O=86.20  H=86.27  L=85.90  C=86.00
+2026-07-03 05:15:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 05:15:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-03 05:15:01  ERROR     CNC SELL NMDC skipped — no holdings found in demat
+2026-07-03 05:15:03  DEBUG     CANDLE  ZEEL          O=107.19  H=107.25  L=107.00  C=107.00
+2026-07-03 05:15:03  DEBUG     CANDLE  HFCL          O=212.25  H=212.45  L=211.64  C=212.16
+2026-07-03 05:15:07  DEBUG     CANDLE  SUZLON        O=57.36  H=57.36  L=57.18  C=57.21
+2026-07-03 05:15:12  DEBUG     CANDLE  BALRAMCHIN    O=566.40  H=566.65  L=563.55  C=564.35
+2026-07-03 05:15:17  DEBUG     Sending ping
+2026-07-03 05:15:47  DEBUG     Sending ping
+2026-07-03 05:16:01  DEBUG     CANDLE  CESC          O=169.90  H=169.99  L=169.66  C=169.88
+2026-07-03 05:16:17  DEBUG     Sending ping
+2026-07-03 05:16:47  DEBUG     Sending ping
+2026-07-03 05:17:17  DEBUG     Sending ping
+2026-07-03 05:17:47  DEBUG     Sending ping
+2026-07-03 05:18:17  DEBUG     Sending ping
+2026-07-03 05:18:47  DEBUG     Sending ping
+2026-07-03 05:19:17  DEBUG     Sending ping
+2026-07-03 05:19:47  DEBUG     Sending ping
+2026-07-03 05:20:17  DEBUG     Sending ping
+2026-07-03 05:20:47  DEBUG     Sending ping
+2026-07-03 05:21:17  DEBUG     Sending ping
+2026-07-03 05:21:47  DEBUG     Sending ping
+2026-07-03 05:22:17  DEBUG     Sending ping
+2026-07-03 05:22:47  DEBUG     Sending ping
+2026-07-03 05:23:17  DEBUG     Sending ping
+2026-07-03 05:23:47  DEBUG     Sending ping
+2026-07-03 05:24:17  DEBUG     Sending ping
+2026-07-03 05:24:47  DEBUG     Sending ping
+2026-07-03 05:25:17  DEBUG     Sending ping
+2026-07-03 05:25:47  DEBUG     Sending ping
+2026-07-03 05:26:17  DEBUG     Sending ping
+2026-07-03 05:26:47  DEBUG     Sending ping
+2026-07-03 05:27:17  DEBUG     Sending ping
+2026-07-03 05:27:47  DEBUG     Sending ping
+2026-07-03 05:28:17  DEBUG     Sending ping
+2026-07-03 05:28:47  DEBUG     Sending ping
+2026-07-03 05:29:17  DEBUG     Sending ping
+2026-07-03 05:29:47  DEBUG     Sending ping
+2026-07-03 05:30:00  DEBUG     CANDLE  CESC          O=169.80  H=169.98  L=169.61  C=169.72
+2026-07-03 05:30:01  DEBUG     CANDLE  GRANULES      O=833.75  H=834.90  L=832.60  C=834.60
+2026-07-03 05:30:02  DEBUG     CANDLE  HFCL          O=212.18  H=214.00  L=212.00  C=213.48
+2026-07-03 05:30:02  DEBUG     CANDLE  BANKBARODA    O=251.85  H=251.95  L=251.05  C=251.20
+2026-07-03 05:30:05  DEBUG     CANDLE  ZEEL          O=107.03  H=107.03  L=106.76  C=106.81
+2026-07-03 05:30:05  DEBUG     CANDLE  SUZLON        O=57.22  H=57.27  L=57.17  C=57.18
+2026-07-03 05:30:07  DEBUG     CANDLE  BALRAMCHIN    O=564.50  H=564.50  L=563.55  C=564.25
+2026-07-03 05:30:17  DEBUG     Sending ping
+2026-07-03 05:30:23  DEBUG     CANDLE  NMDC          O=86.01  H=86.07  L=85.90  C=85.95
+2026-07-03 05:30:47  DEBUG     Sending ping
+2026-07-03 05:31:17  DEBUG     Sending ping
+2026-07-03 05:31:47  DEBUG     Sending ping
+2026-07-03 05:32:17  DEBUG     Sending ping
+2026-07-03 05:32:47  DEBUG     Sending ping
+2026-07-03 05:33:17  DEBUG     Sending ping
+2026-07-03 05:33:47  DEBUG     Sending ping
+2026-07-03 05:34:17  DEBUG     Sending ping
+2026-07-03 05:34:47  DEBUG     Sending ping
+2026-07-03 05:35:17  DEBUG     Sending ping
+2026-07-03 05:35:47  DEBUG     Sending ping
+2026-07-03 05:36:17  DEBUG     Sending ping
+2026-07-03 05:36:47  DEBUG     Sending ping
+2026-07-03 05:37:17  DEBUG     Sending ping
+2026-07-03 05:37:47  DEBUG     Sending ping
+2026-07-03 05:38:17  DEBUG     Sending ping
+2026-07-03 05:38:47  DEBUG     Sending ping
+2026-07-03 05:39:17  DEBUG     Sending ping
+2026-07-03 05:39:47  DEBUG     Sending ping
+2026-07-03 05:40:17  DEBUG     Sending ping
+2026-07-03 05:40:47  DEBUG     Sending ping
+2026-07-03 05:41:17  DEBUG     Sending ping
+2026-07-03 05:41:47  DEBUG     Sending ping
+2026-07-03 05:42:17  DEBUG     Sending ping
+2026-07-03 05:42:47  DEBUG     Sending ping
+2026-07-03 05:43:17  DEBUG     Sending ping
+2026-07-03 05:43:47  DEBUG     Sending ping
+2026-07-03 05:44:17  DEBUG     Sending ping
+2026-07-03 05:44:47  DEBUG     Sending ping
+2026-07-03 05:45:01  DEBUG     CANDLE  BANKBARODA    O=251.25  H=251.40  L=251.05  C=251.05
+2026-07-03 05:45:01  DEBUG     CANDLE  SUZLON        O=57.17  H=57.21  L=57.03  C=57.04
+2026-07-03 05:45:01  DEBUG     CANDLE  HFCL          O=213.32  H=214.00  L=212.51  C=212.55
+2026-07-03 05:45:02  DEBUG     CANDLE  GRANULES      O=834.85  H=835.15  L=832.30  C=834.70
+2026-07-03 05:45:03  DEBUG     CANDLE  NMDC          O=85.92  H=86.03  L=85.86  C=85.91
+2026-07-03 05:45:04  DEBUG     CANDLE  ZEEL          O=106.83  H=106.90  L=106.70  C=106.85
+2026-07-03 05:45:17  DEBUG     Sending ping
+2026-07-03 05:45:17  DEBUG     CANDLE  BALRAMCHIN    O=564.45  H=564.45  L=563.05  C=563.25
+2026-07-03 05:45:47  DEBUG     Sending ping
+2026-07-03 05:46:11  DEBUG     CANDLE  CESC          O=169.77  H=169.77  L=169.61  C=169.61
+2026-07-03 05:46:17  DEBUG     Sending ping
+2026-07-03 05:46:47  DEBUG     Sending ping
+2026-07-03 05:47:17  DEBUG     Sending ping
+2026-07-03 05:47:47  DEBUG     Sending ping
+2026-07-03 05:48:17  DEBUG     Sending ping
+2026-07-03 05:48:47  DEBUG     Sending ping
+2026-07-03 05:49:17  DEBUG     Sending ping
+2026-07-03 05:49:47  DEBUG     Sending ping
+2026-07-03 05:50:17  DEBUG     Sending ping
+2026-07-03 05:50:47  DEBUG     Sending ping
+2026-07-03 05:51:17  DEBUG     Sending ping
+2026-07-03 05:51:47  DEBUG     Sending ping
+2026-07-03 05:52:17  DEBUG     Sending ping
+2026-07-03 05:52:47  DEBUG     Sending ping
+2026-07-03 05:53:17  DEBUG     Sending ping
+2026-07-03 05:53:47  DEBUG     Sending ping
+2026-07-03 05:54:17  DEBUG     Sending ping
+2026-07-03 05:54:47  DEBUG     Sending ping
+2026-07-03 05:55:17  DEBUG     Sending ping
+2026-07-03 05:55:47  DEBUG     Sending ping
+2026-07-03 05:56:17  DEBUG     Sending ping
+2026-07-03 05:56:47  DEBUG     Sending ping
+2026-07-03 05:57:17  DEBUG     Sending ping
+2026-07-03 05:57:47  DEBUG     Sending ping
+2026-07-03 05:58:17  DEBUG     Sending ping
+2026-07-03 05:58:47  DEBUG     Sending ping
+2026-07-03 05:59:17  DEBUG     Sending ping
+2026-07-03 05:59:47  DEBUG     Sending ping
+2026-07-03 06:00:01  DEBUG     CANDLE  BANKBARODA    O=251.10  H=251.10  L=250.20  C=250.55
+2026-07-03 06:00:06  DEBUG     CANDLE  NMDC          O=85.89  H=85.95  L=85.85  C=85.88
+2026-07-03 06:00:08  DEBUG     CANDLE  SUZLON        O=57.09  H=57.13  L=57.03  C=57.08
+2026-07-03 06:00:08  DEBUG     CANDLE  HFCL          O=212.62  H=212.90  L=212.31  C=212.90
+2026-07-03 06:00:14  DEBUG     CANDLE  CESC          O=169.68  H=169.84  L=169.60  C=169.75
+2026-07-03 06:00:17  DEBUG     Sending ping
+2026-07-03 06:00:18  DEBUG     CANDLE  GRANULES      O=834.85  H=835.85  L=833.90  C=835.00
+2026-07-03 06:00:19  DEBUG     CANDLE  ZEEL          O=106.81  H=107.14  L=106.60  C=106.94
+2026-07-03 06:00:47  DEBUG     Sending ping
+2026-07-03 06:01:11  DEBUG     CANDLE  BALRAMCHIN    O=563.50  H=564.95  L=562.00  C=562.00
+2026-07-03 06:01:11  INFO      ORDER  BALRAMCHIN    SELL  MIS  qty=19     price=Rs561.95  reason=flip DOWN | atr=2.81 st=567.69 sl=566.21
+2026-07-03 06:01:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:01:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 06:01:11  INFO      ACCEPTED  BALRAMCHIN  norenordno=26070300113029
+2026-07-03 06:01:11  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f867030a310>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 06:01:11  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 06:01:11  INFO      ORDER UPDATE  NewAck    BALRAMCHIN-EQ  norenordno=26070300113029
+2026-07-03 06:01:11  ERROR     ORDER REJECTED  BALRAMCHIN-EQ  norenordno=26070300113029  reason=RED:RULE:{Allowed Basket}in Basket NSE.MIS.NSEMIS for BALRAMCHIN-EQ for C-FZ38545 [KAMBALA]
+2026-07-03 06:01:17  DEBUG     Sending ping
+2026-07-03 06:01:47  DEBUG     Sending ping
+2026-07-03 06:02:17  DEBUG     Sending ping
+2026-07-03 06:02:47  DEBUG     Sending ping
+2026-07-03 06:03:17  DEBUG     Sending ping
+2026-07-03 06:03:47  DEBUG     Sending ping
+2026-07-03 06:04:17  DEBUG     Sending ping
+2026-07-03 06:04:47  DEBUG     Sending ping
+2026-07-03 06:05:17  DEBUG     Sending ping
+2026-07-03 06:05:47  DEBUG     Sending ping
+2026-07-03 06:06:17  DEBUG     Sending ping
+2026-07-03 06:06:47  DEBUG     Sending ping
+2026-07-03 06:07:17  DEBUG     Sending ping
+2026-07-03 06:07:47  DEBUG     Sending ping
+2026-07-03 06:08:17  DEBUG     Sending ping
+2026-07-03 06:08:47  DEBUG     Sending ping
+2026-07-03 06:09:17  DEBUG     Sending ping
+2026-07-03 06:09:47  DEBUG     Sending ping
+2026-07-03 06:10:17  DEBUG     Sending ping
+2026-07-03 06:10:47  DEBUG     Sending ping
+2026-07-03 06:11:17  DEBUG     Sending ping
+2026-07-03 06:11:47  DEBUG     Sending ping
+2026-07-03 06:12:17  DEBUG     Sending ping
+2026-07-03 06:12:47  DEBUG     Sending ping
+2026-07-03 06:13:17  DEBUG     Sending ping
+2026-07-03 06:13:47  DEBUG     Sending ping
+2026-07-03 06:14:17  DEBUG     Sending ping
+2026-07-03 06:14:47  DEBUG     Sending ping
+2026-07-03 06:15:01  DEBUG     CANDLE  BANKBARODA    O=250.45  H=252.40  L=250.45  C=252.20
+2026-07-03 06:15:01  DEBUG     CANDLE  GRANULES      O=834.90  H=835.50  L=832.00  C=832.80
+2026-07-03 06:15:03  DEBUG     CANDLE  HFCL          O=212.86  H=213.00  L=212.20  C=212.35
+2026-07-03 06:15:04  DEBUG     CANDLE  SUZLON        O=57.07  H=57.10  L=56.71  C=56.73
+2026-07-03 06:15:07  DEBUG     CANDLE  NMDC          O=85.90  H=86.04  L=85.85  C=85.90
+2026-07-03 06:15:12  DEBUG     CANDLE  ZEEL          O=106.89  H=107.01  L=106.57  C=106.70
+2026-07-03 06:15:15  DEBUG     CANDLE  CESC          O=169.74  H=169.86  L=169.74  C=169.74
+2026-07-03 06:15:17  DEBUG     Sending ping
+2026-07-03 06:15:47  DEBUG     Sending ping
+2026-07-03 06:16:17  DEBUG     Sending ping
+2026-07-03 06:16:47  DEBUG     Sending ping
+2026-07-03 06:17:12  DEBUG     CANDLE  BALRAMCHIN    O=561.95  H=563.85  L=561.20  C=563.00
+2026-07-03 06:17:17  DEBUG     Sending ping
+2026-07-03 06:17:47  DEBUG     Sending ping
+2026-07-03 06:18:17  DEBUG     Sending ping
+2026-07-03 06:18:47  DEBUG     Sending ping
+2026-07-03 06:19:17  DEBUG     Sending ping
+2026-07-03 06:19:47  DEBUG     Sending ping
+2026-07-03 06:20:17  DEBUG     Sending ping
+2026-07-03 06:20:47  DEBUG     Sending ping
+2026-07-03 06:21:17  DEBUG     Sending ping
+2026-07-03 06:21:47  DEBUG     Sending ping
+2026-07-03 06:22:17  DEBUG     Sending ping
+2026-07-03 06:22:47  DEBUG     Sending ping
+2026-07-03 06:23:17  DEBUG     Sending ping
+2026-07-03 06:23:47  DEBUG     Sending ping
+2026-07-03 06:24:17  DEBUG     Sending ping
+2026-07-03 06:24:47  DEBUG     Sending ping
+2026-07-03 06:25:17  DEBUG     Sending ping
+2026-07-03 06:25:47  DEBUG     Sending ping
+2026-07-03 06:26:17  DEBUG     Sending ping
+2026-07-03 06:26:47  DEBUG     Sending ping
+2026-07-03 06:27:17  DEBUG     Sending ping
+2026-07-03 06:27:47  DEBUG     Sending ping
+2026-07-03 06:28:17  DEBUG     Sending ping
+2026-07-03 06:28:47  DEBUG     Sending ping
+2026-07-03 06:29:17  DEBUG     Sending ping
+2026-07-03 06:29:47  DEBUG     Sending ping
+2026-07-03 06:30:00  DEBUG     CANDLE  SUZLON        O=56.72  H=56.96  L=56.72  C=56.92
+2026-07-03 06:30:00  DEBUG     CANDLE  HFCL          O=212.33  H=213.04  L=212.00  C=212.92
+2026-07-03 06:30:00  DEBUG     CANDLE  BANKBARODA    O=252.25  H=253.60  L=251.75  C=251.95
+2026-07-03 06:30:01  DEBUG     CANDLE  GRANULES      O=833.20  H=833.85  L=832.00  C=833.60
+2026-07-03 06:30:06  DEBUG     CANDLE  NMDC          O=85.92  H=86.13  L=85.87  C=86.12
+2026-07-03 06:30:09  DEBUG     CANDLE  ZEEL          O=106.72  H=107.05  L=106.55  C=106.82
+2026-07-03 06:30:17  DEBUG     Sending ping
+2026-07-03 06:30:19  DEBUG     CANDLE  BALRAMCHIN    O=562.85  H=563.70  L=562.25  C=562.50
+2026-07-03 06:30:21  DEBUG     CANDLE  CESC          O=169.83  H=169.86  L=169.60  C=169.60
+2026-07-03 06:30:47  DEBUG     Sending ping
+2026-07-03 06:31:17  DEBUG     Sending ping
+2026-07-03 06:31:47  DEBUG     Sending ping
+2026-07-03 06:32:17  DEBUG     Sending ping
+2026-07-03 06:32:47  DEBUG     Sending ping
+2026-07-03 06:33:17  DEBUG     Sending ping
+2026-07-03 06:33:47  DEBUG     Sending ping
+2026-07-03 06:34:17  DEBUG     Sending ping
+2026-07-03 06:34:47  DEBUG     Sending ping
+2026-07-03 06:35:17  DEBUG     Sending ping
+2026-07-03 06:35:47  DEBUG     Sending ping
+2026-07-03 06:36:17  DEBUG     Sending ping
+2026-07-03 06:36:47  DEBUG     Sending ping
+2026-07-03 06:37:17  DEBUG     Sending ping
+2026-07-03 06:37:47  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-03 06:37:47  ERROR     Connection to remote host was lost. - goodbye
+2026-07-03 06:37:47  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Fri Jul  3 06:37:47 UTC 2026] Runner exited, restarting in 10s...
+[Fri Jul  3 06:37:57 UTC 2026] Starting runner...
+2026-07-03 06:37:57  INFO      ============================================================
+2026-07-03 06:37:57  INFO      STARTUP  date=2026-07-03  pid=22852
+2026-07-03 06:37:57  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-03 06:37:57  INFO      Resolving NSE tokens...
+2026-07-03 06:37:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:57  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:57  INFO      Resolved  HFCL             token=21951
+2026-07-03 06:37:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:57  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:57  INFO      Resolved  BANKBARODA       token=4668
+2026-07-03 06:37:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:58  INFO      Resolved  NMDC             token=15332
+2026-07-03 06:37:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:58  INFO      Resolved  CESC             token=628
+2026-07-03 06:37:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:58  INFO      Resolved  ZEEL             token=3812
+2026-07-03 06:37:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:58  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-03 06:37:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:58  INFO      Resolved  GRANULES         token=11872
+2026-07-03 06:37:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:59  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 06:37:59  INFO      Resolved  SUZLON           token=12018
+2026-07-03 06:37:59  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:59  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-03 06:37:59  WARNING   POSITION RESUMED  SUZLON        LONG  qty=190  entry=Rs57.94
+2026-07-03 06:37:59  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 06:37:59  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-03 06:37:59  INFO      *** LIVE MODE  cash=Rs2855  4x=Rs11419  K=1  per_trade=Rs11418 ***
+2026-07-03 06:37:59  INFO      8 stocks | Rs11418/trade | K=1 | EOD 15:00 IST
+2026-07-03 06:37:59  INFO      ============================================================
+2026-07-03 06:38:00  INFO      Websocket connected
+2026-07-03 06:38:00  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-03 06:38:00  INFO      Ticks -> data/2026-07-03/ticks.jsonl
+2026-07-03 06:39:00  DEBUG     Sending ping
+2026-07-03 06:39:30  DEBUG     Sending ping
+2026-07-03 06:40:00  DEBUG     Sending ping
+2026-07-03 06:40:30  DEBUG     Sending ping
+2026-07-03 06:41:00  DEBUG     Sending ping
+2026-07-03 06:41:30  DEBUG     Sending ping
+2026-07-03 06:42:00  DEBUG     Sending ping
+2026-07-03 06:42:30  DEBUG     Sending ping
+2026-07-03 06:43:00  DEBUG     Sending ping
+2026-07-03 06:43:30  DEBUG     Sending ping
+2026-07-03 06:44:00  DEBUG     Sending ping
+2026-07-03 06:44:30  DEBUG     Sending ping
+2026-07-03 06:45:00  DEBUG     Sending ping
+2026-07-03 06:45:00  DEBUG     CANDLE  GRANULES      O=830.00  H=834.00  L=829.10  C=831.95
+2026-07-03 06:45:01  DEBUG     CANDLE  SUZLON        O=56.77  H=56.80  L=56.72  C=56.75
+2026-07-03 06:45:01  DEBUG     CANDLE  HFCL          O=213.22  H=213.48  L=212.94  C=213.26
+2026-07-03 06:45:02  DEBUG     CANDLE  BANKBARODA    O=251.40  H=251.65  L=251.35  C=251.55
+2026-07-03 06:45:06  DEBUG     CANDLE  CESC          O=169.87  H=169.95  L=169.75  C=169.87
+2026-07-03 06:45:07  DEBUG     CANDLE  ZEEL          O=106.80  H=107.05  L=106.78  C=106.99
+2026-07-03 06:45:08  DEBUG     CANDLE  BALRAMCHIN    O=561.15  H=562.20  L=561.10  C=562.00
+2026-07-03 06:45:08  DEBUG     CANDLE  NMDC          O=86.03  H=86.08  L=85.99  C=86.04
+2026-07-03 06:45:30  DEBUG     Sending ping
+2026-07-03 06:46:00  DEBUG     Sending ping
+2026-07-03 06:46:30  DEBUG     Sending ping
+2026-07-03 06:47:00  DEBUG     Sending ping
+2026-07-03 06:47:30  DEBUG     Sending ping
+2026-07-03 06:48:00  DEBUG     Sending ping
+2026-07-03 06:48:30  DEBUG     Sending ping
+2026-07-03 06:49:00  DEBUG     Sending ping
+2026-07-03 06:49:30  DEBUG     Sending ping
+2026-07-03 06:50:00  DEBUG     Sending ping
+2026-07-03 06:50:30  DEBUG     Sending ping
+2026-07-03 06:51:00  DEBUG     Sending ping
+2026-07-03 06:51:30  DEBUG     Sending ping
+2026-07-03 06:52:00  DEBUG     Sending ping
+2026-07-03 06:52:30  DEBUG     Sending ping
+2026-07-03 06:53:00  DEBUG     Sending ping
+2026-07-03 06:53:30  DEBUG     Sending ping
+2026-07-03 06:54:00  DEBUG     Sending ping
+2026-07-03 06:54:30  DEBUG     Sending ping
+2026-07-03 06:55:00  DEBUG     Sending ping
+2026-07-03 06:55:30  DEBUG     Sending ping
+2026-07-03 06:56:00  DEBUG     Sending ping
+2026-07-03 06:56:30  DEBUG     Sending ping
+2026-07-03 06:57:00  DEBUG     Sending ping
+2026-07-03 06:57:30  DEBUG     Sending ping
+2026-07-03 06:58:00  DEBUG     Sending ping
+2026-07-03 06:58:30  DEBUG     Sending ping
+2026-07-03 06:59:00  DEBUG     Sending ping
+2026-07-03 06:59:30  DEBUG     Sending ping
+2026-07-03 07:00:00  DEBUG     Sending ping
+2026-07-03 07:00:00  DEBUG     CANDLE  NMDC          O=86.00  H=86.06  L=85.94  C=86.01
+2026-07-03 07:00:01  DEBUG     CANDLE  BANKBARODA    O=251.45  H=252.30  L=251.40  C=251.70
+2026-07-03 07:00:01  DEBUG     CANDLE  SUZLON        O=56.78  H=56.89  L=56.63  C=56.74
+2026-07-03 07:00:01  DEBUG     CANDLE  HFCL          O=213.33  H=214.35  L=212.81  C=212.94
+2026-07-03 07:00:02  DEBUG     CANDLE  GRANULES      O=832.00  H=835.35  L=826.05  C=834.45
+2026-07-03 07:00:03  DEBUG     CANDLE  ZEEL          O=106.97  H=107.11  L=106.87  C=107.05
+2026-07-03 07:00:04  DEBUG     CANDLE  BALRAMCHIN    O=562.35  H=562.75  L=561.50  C=561.75
+2026-07-03 07:00:29  DEBUG     CANDLE  CESC          O=169.75  H=170.00  L=169.72  C=169.82
+2026-07-03 07:00:30  DEBUG     Sending ping
+2026-07-03 07:01:00  DEBUG     Sending ping
+2026-07-03 07:01:30  DEBUG     Sending ping
+2026-07-03 07:02:00  DEBUG     Sending ping
+2026-07-03 07:02:30  DEBUG     Sending ping
+2026-07-03 07:03:00  DEBUG     Sending ping
+2026-07-03 07:03:30  DEBUG     Sending ping
+2026-07-03 07:04:00  DEBUG     Sending ping
+2026-07-03 07:04:30  DEBUG     Sending ping
+2026-07-03 07:05:00  DEBUG     Sending ping
+2026-07-03 07:05:30  DEBUG     Sending ping
+2026-07-03 07:06:00  DEBUG     Sending ping
+2026-07-03 07:06:30  DEBUG     Sending ping
+2026-07-03 07:07:00  DEBUG     Sending ping
+2026-07-03 07:07:30  DEBUG     Sending ping
+2026-07-03 07:08:00  DEBUG     Sending ping
+2026-07-03 07:08:30  DEBUG     Sending ping
+2026-07-03 07:09:00  DEBUG     Sending ping
+2026-07-03 07:09:30  DEBUG     Sending ping
+2026-07-03 07:10:00  DEBUG     Sending ping
+2026-07-03 07:10:30  DEBUG     Sending ping
+2026-07-03 07:11:00  DEBUG     Sending ping
+2026-07-03 07:11:30  DEBUG     Sending ping
+2026-07-03 07:12:00  DEBUG     Sending ping
+2026-07-03 07:12:30  DEBUG     Sending ping
+2026-07-03 07:13:00  DEBUG     Sending ping
+2026-07-03 07:13:30  DEBUG     Sending ping
+2026-07-03 07:14:00  DEBUG     Sending ping
+2026-07-03 07:14:30  DEBUG     Sending ping
+2026-07-03 07:15:00  DEBUG     Sending ping
+2026-07-03 07:15:00  DEBUG     CANDLE  BANKBARODA    O=251.65  H=251.75  L=251.05  C=251.20
+2026-07-03 07:15:01  DEBUG     CANDLE  HFCL          O=212.80  H=212.80  L=211.80  C=212.17
+2026-07-03 07:15:02  DEBUG     CANDLE  GRANULES      O=834.35  H=835.00  L=833.10  C=834.00
+2026-07-03 07:15:04  DEBUG     CANDLE  SUZLON        O=56.79  H=56.81  L=56.53  C=56.60
+2026-07-03 07:15:08  DEBUG     CANDLE  NMDC          O=86.00  H=86.02  L=85.90  C=85.98
+2026-07-03 07:15:12  DEBUG     CANDLE  CESC          O=169.76  H=169.98  L=169.75  C=169.77
+2026-07-03 07:15:17  DEBUG     CANDLE  ZEEL          O=107.04  H=107.24  L=106.79  C=106.86
+2026-07-03 07:15:30  DEBUG     Sending ping
+2026-07-03 07:15:31  DEBUG     CANDLE  BALRAMCHIN    O=561.95  H=562.65  L=561.20  C=561.20
+2026-07-03 07:16:00  DEBUG     Sending ping
+2026-07-03 07:16:30  DEBUG     Sending ping
+2026-07-03 07:17:00  DEBUG     Sending ping
+2026-07-03 07:17:30  DEBUG     Sending ping
+2026-07-03 07:18:00  DEBUG     Sending ping
+2026-07-03 07:18:30  DEBUG     Sending ping
+2026-07-03 07:19:00  DEBUG     Sending ping
+2026-07-03 07:19:30  DEBUG     Sending ping
+2026-07-03 07:20:00  DEBUG     Sending ping
+2026-07-03 07:20:30  DEBUG     Sending ping
+2026-07-03 07:21:00  DEBUG     Sending ping
+2026-07-03 07:21:30  DEBUG     Sending ping
+2026-07-03 07:22:00  DEBUG     Sending ping
+2026-07-03 07:22:30  DEBUG     Sending ping
+2026-07-03 07:23:00  DEBUG     Sending ping
+2026-07-03 07:23:30  DEBUG     Sending ping
+2026-07-03 07:24:00  DEBUG     Sending ping
+2026-07-03 07:24:30  DEBUG     Sending ping
+2026-07-03 07:25:00  DEBUG     Sending ping
+2026-07-03 07:25:30  DEBUG     Sending ping
+2026-07-03 07:26:00  DEBUG     Sending ping
+2026-07-03 07:26:30  DEBUG     Sending ping
+2026-07-03 07:27:00  DEBUG     Sending ping
+2026-07-03 07:27:30  DEBUG     Sending ping
+2026-07-03 07:28:00  DEBUG     Sending ping
+2026-07-03 07:28:30  DEBUG     Sending ping
+2026-07-03 07:29:00  DEBUG     Sending ping
+2026-07-03 07:29:30  DEBUG     Sending ping
+2026-07-03 07:30:00  DEBUG     Sending ping
+2026-07-03 07:30:01  DEBUG     CANDLE  NMDC          O=85.97  H=86.23  L=85.97  C=86.17
+2026-07-03 07:30:01  DEBUG     CANDLE  BANKBARODA    O=251.25  H=251.60  L=250.90  C=251.20
+2026-07-03 07:30:01  DEBUG     CANDLE  SUZLON        O=56.59  H=56.73  L=56.55  C=56.59
+2026-07-03 07:30:01  DEBUG     CANDLE  HFCL          O=212.18  H=212.45  L=212.00  C=212.10
+2026-07-03 07:30:04  DEBUG     CANDLE  BALRAMCHIN    O=561.60  H=563.15  L=561.25  C=561.90
+2026-07-03 07:30:04  DEBUG     CANDLE  ZEEL          O=106.91  H=107.23  L=106.52  C=106.60
+2026-07-03 07:30:08  DEBUG     CANDLE  GRANULES      O=834.70  H=835.00  L=833.15  C=834.10
+2026-07-03 07:30:24  DEBUG     CANDLE  CESC          O=169.81  H=170.40  L=169.77  C=170.00
+2026-07-03 07:30:30  DEBUG     Sending ping
+2026-07-03 07:31:00  DEBUG     Sending ping
+2026-07-03 07:31:30  DEBUG     Sending ping
+2026-07-03 07:32:00  DEBUG     Sending ping
+2026-07-03 07:32:30  DEBUG     Sending ping
+2026-07-03 07:33:00  DEBUG     Sending ping
+2026-07-03 07:33:30  DEBUG     Sending ping
+2026-07-03 07:34:00  DEBUG     Sending ping
+2026-07-03 07:34:30  DEBUG     Sending ping
+2026-07-03 07:35:00  DEBUG     Sending ping
+2026-07-03 07:35:30  DEBUG     Sending ping
+2026-07-03 07:36:00  DEBUG     Sending ping
+2026-07-03 07:36:30  DEBUG     Sending ping
+2026-07-03 07:37:00  DEBUG     Sending ping
+2026-07-03 07:37:30  DEBUG     Sending ping
+2026-07-03 07:38:00  DEBUG     Sending ping
+2026-07-03 07:38:30  DEBUG     Sending ping
+2026-07-03 07:39:00  DEBUG     Sending ping
+2026-07-03 07:39:30  DEBUG     Sending ping
+2026-07-03 07:40:00  DEBUG     Sending ping
+2026-07-03 07:40:30  DEBUG     Sending ping
+2026-07-03 07:41:00  DEBUG     Sending ping
+2026-07-03 07:41:30  DEBUG     Sending ping
+2026-07-03 07:42:00  DEBUG     Sending ping
+2026-07-03 07:42:30  DEBUG     Sending ping
+2026-07-03 07:43:00  DEBUG     Sending ping
+2026-07-03 07:43:30  DEBUG     Sending ping
+2026-07-03 07:44:00  DEBUG     Sending ping
+2026-07-03 07:44:30  DEBUG     Sending ping
+2026-07-03 07:45:00  DEBUG     Sending ping
+2026-07-03 07:45:00  DEBUG     CANDLE  BANKBARODA    O=251.25  H=251.45  L=250.70  C=251.25
+2026-07-03 07:45:01  DEBUG     CANDLE  HFCL          O=212.17  H=212.49  L=211.61  C=212.00
+2026-07-03 07:45:02  DEBUG     CANDLE  GRANULES      O=834.15  H=834.15  L=832.80  C=832.85
+2026-07-03 07:45:06  DEBUG     CANDLE  ZEEL          O=106.59  H=106.60  L=105.86  C=105.96
+2026-07-03 07:45:10  DEBUG     CANDLE  SUZLON        O=56.58  H=56.74  L=56.50  C=56.56
+2026-07-03 07:45:12  DEBUG     CANDLE  CESC          O=169.87  H=169.99  L=169.75  C=169.78
+2026-07-03 07:45:13  DEBUG     CANDLE  NMDC          O=86.15  H=86.20  L=86.05  C=86.20
+2026-07-03 07:45:30  DEBUG     Sending ping
+2026-07-03 07:45:31  DEBUG     CANDLE  BALRAMCHIN    O=562.30  H=562.30  L=561.00  C=561.50
+2026-07-03 07:46:00  DEBUG     Sending ping
+2026-07-03 07:46:30  DEBUG     Sending ping
+2026-07-03 07:47:00  DEBUG     Sending ping
+2026-07-03 07:47:30  DEBUG     Sending ping
+2026-07-03 07:48:00  DEBUG     Sending ping
+2026-07-03 07:48:30  DEBUG     Sending ping
+2026-07-03 07:49:00  DEBUG     Sending ping
+2026-07-03 07:49:30  DEBUG     Sending ping
+2026-07-03 07:50:00  DEBUG     Sending ping
+2026-07-03 07:50:30  DEBUG     Sending ping
+2026-07-03 07:51:00  DEBUG     Sending ping
+2026-07-03 07:51:30  DEBUG     Sending ping
+2026-07-03 07:52:00  DEBUG     Sending ping
+2026-07-03 07:52:30  DEBUG     Sending ping
+2026-07-03 07:53:00  DEBUG     Sending ping
+2026-07-03 07:53:30  DEBUG     Sending ping
+2026-07-03 07:54:00  DEBUG     Sending ping
+2026-07-03 07:54:30  DEBUG     Sending ping
+2026-07-03 07:55:00  DEBUG     Sending ping
+2026-07-03 07:55:30  DEBUG     Sending ping
+2026-07-03 07:56:00  DEBUG     Sending ping
+2026-07-03 07:56:30  DEBUG     Sending ping
+2026-07-03 07:57:00  DEBUG     Sending ping
+2026-07-03 07:57:30  DEBUG     Sending ping
+2026-07-03 07:58:00  DEBUG     Sending ping
+2026-07-03 07:58:30  DEBUG     Sending ping
+2026-07-03 07:59:00  DEBUG     Sending ping
+2026-07-03 07:59:30  DEBUG     Sending ping
+2026-07-03 08:00:00  DEBUG     Sending ping
+2026-07-03 08:00:00  DEBUG     CANDLE  NMDC          O=86.19  H=86.20  L=86.03  C=86.10
+2026-07-03 08:00:03  DEBUG     CANDLE  BANKBARODA    O=251.30  H=251.40  L=250.90  C=251.20
+2026-07-03 08:00:03  DEBUG     CANDLE  HFCL          O=211.91  H=212.40  L=211.60  C=211.68
+2026-07-03 08:00:06  DEBUG     CANDLE  GRANULES      O=832.50  H=833.70  L=832.15  C=832.60
+2026-07-03 08:00:26  DEBUG     CANDLE  ZEEL          O=105.97  H=106.00  L=105.76  C=105.85
+2026-07-03 08:00:26  DEBUG     CANDLE  CESC          O=169.91  H=169.91  L=169.71  C=169.71
+2026-07-03 08:00:28  DEBUG     CANDLE  SUZLON        O=56.55  H=56.56  L=56.50  C=56.54
+2026-07-03 08:00:30  DEBUG     Sending ping
+2026-07-03 08:00:59  DEBUG     CANDLE  BALRAMCHIN    O=561.80  H=570.00  L=561.15  C=565.80
+2026-07-03 08:01:00  DEBUG     Sending ping
+2026-07-03 08:01:30  DEBUG     Sending ping
+2026-07-03 08:02:00  DEBUG     Sending ping
+2026-07-03 08:02:30  DEBUG     Sending ping
+2026-07-03 08:03:00  DEBUG     Sending ping
+2026-07-03 08:03:30  DEBUG     Sending ping
+2026-07-03 08:04:00  DEBUG     Sending ping
+2026-07-03 08:04:30  DEBUG     Sending ping
+2026-07-03 08:05:00  DEBUG     Sending ping
+2026-07-03 08:05:30  DEBUG     Sending ping
+2026-07-03 08:06:00  DEBUG     Sending ping
+2026-07-03 08:06:30  DEBUG     Sending ping
+2026-07-03 08:07:00  DEBUG     Sending ping
+2026-07-03 08:07:30  DEBUG     Sending ping
+2026-07-03 08:08:00  DEBUG     Sending ping
+2026-07-03 08:08:30  DEBUG     Sending ping
+2026-07-03 08:09:00  DEBUG     Sending ping
+2026-07-03 08:09:30  DEBUG     Sending ping
+2026-07-03 08:10:00  DEBUG     Sending ping
+2026-07-03 08:10:30  DEBUG     Sending ping
+2026-07-03 08:11:00  DEBUG     Sending ping
+2026-07-03 08:11:30  DEBUG     Sending ping
+2026-07-03 08:12:00  DEBUG     Sending ping
+2026-07-03 08:12:30  DEBUG     Sending ping
+2026-07-03 08:13:00  DEBUG     Sending ping
+2026-07-03 08:13:30  DEBUG     Sending ping
+2026-07-03 08:14:00  DEBUG     Sending ping
+2026-07-03 08:14:30  DEBUG     Sending ping
+2026-07-03 08:15:00  DEBUG     Sending ping
+2026-07-03 08:15:00  DEBUG     CANDLE  BANKBARODA    O=251.25  H=251.75  L=250.80  C=251.30
+2026-07-03 08:15:00  DEBUG     CANDLE  SUZLON        O=56.55  H=56.60  L=56.50  C=56.57
+2026-07-03 08:15:00  DEBUG     CANDLE  BALRAMCHIN    O=565.25  H=566.05  L=562.45  C=562.95
+2026-07-03 08:15:01  DEBUG     CANDLE  GRANULES      O=832.95  H=832.95  L=828.60  C=829.00
+2026-07-03 08:15:03  DEBUG     CANDLE  NMDC          O=86.12  H=86.16  L=86.00  C=86.08
+2026-07-03 08:15:04  DEBUG     CANDLE  HFCL          O=211.61  H=212.20  L=211.61  C=211.80
+2026-07-03 08:15:09  DEBUG     CANDLE  CESC          O=169.70  H=169.84  L=169.60  C=169.67
+2026-07-03 08:15:21  DEBUG     CANDLE  ZEEL          O=105.82  H=105.85  L=105.55  C=105.60
+2026-07-03 08:15:30  DEBUG     Sending ping
+2026-07-03 08:16:00  DEBUG     Sending ping
+2026-07-03 08:16:30  DEBUG     Sending ping
+2026-07-03 08:17:00  DEBUG     Sending ping
+2026-07-03 08:17:30  DEBUG     Sending ping
+2026-07-03 08:18:00  DEBUG     Sending ping
+2026-07-03 08:18:30  DEBUG     Sending ping
+2026-07-03 08:19:00  DEBUG     Sending ping
+2026-07-03 08:19:30  DEBUG     Sending ping
+2026-07-03 08:20:00  DEBUG     Sending ping
+2026-07-03 08:20:30  DEBUG     Sending ping
+2026-07-03 08:21:00  DEBUG     Sending ping
+2026-07-03 08:21:30  DEBUG     Sending ping
+2026-07-03 08:22:00  DEBUG     Sending ping
+2026-07-03 08:22:30  DEBUG     Sending ping
+2026-07-03 08:22:53  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-03 08:22:53  ERROR     Connection to remote host was lost. - goodbye
+2026-07-03 08:22:53  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Fri Jul  3 08:22:53 UTC 2026] Runner exited, restarting in 10s...
+[Fri Jul  3 08:23:03 UTC 2026] Starting runner...
+2026-07-03 08:23:03  INFO      ============================================================
+2026-07-03 08:23:03  INFO      STARTUP  date=2026-07-03  pid=25699
+2026-07-03 08:23:03  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-03 08:23:03  INFO      Resolving NSE tokens...
+2026-07-03 08:23:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:03  INFO      Resolved  HFCL             token=21951
+2026-07-03 08:23:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:03  INFO      Resolved  BANKBARODA       token=4668
+2026-07-03 08:23:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:04  INFO      Resolved  NMDC             token=15332
+2026-07-03 08:23:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:04  INFO      Resolved  CESC             token=628
+2026-07-03 08:23:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:04  INFO      Resolved  ZEEL             token=3812
+2026-07-03 08:23:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:04  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-03 08:23:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:05  INFO      Resolved  GRANULES         token=11872
+2026-07-03 08:23:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:23:05  INFO      Resolved  SUZLON           token=12018
+2026-07-03 08:23:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-03 08:23:05  WARNING   POSITION RESUMED  SUZLON        LONG  qty=190  entry=Rs57.94
+2026-07-03 08:23:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:23:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-03 08:23:05  INFO      *** LIVE MODE  cash=Rs2855  4x=Rs11419  K=1  per_trade=Rs11418 ***
+2026-07-03 08:23:05  INFO      8 stocks | Rs11418/trade | K=1 | EOD 15:00 IST
+2026-07-03 08:23:05  INFO      ============================================================
+2026-07-03 08:23:06  INFO      Websocket connected
+2026-07-03 08:23:06  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-03 08:23:06  INFO      Ticks -> data/2026-07-03/ticks.jsonl
+2026-07-03 08:24:06  DEBUG     Sending ping
+2026-07-03 08:24:36  DEBUG     Sending ping
+2026-07-03 08:25:06  DEBUG     Sending ping
+2026-07-03 08:25:36  DEBUG     Sending ping
+2026-07-03 08:26:06  DEBUG     Sending ping
+2026-07-03 08:26:36  DEBUG     Sending ping
+2026-07-03 08:27:06  DEBUG     Sending ping
+2026-07-03 08:27:36  DEBUG     Sending ping
+2026-07-03 08:28:06  DEBUG     Sending ping
+2026-07-03 08:28:36  DEBUG     Sending ping
+2026-07-03 08:29:06  DEBUG     Sending ping
+2026-07-03 08:29:36  DEBUG     Sending ping
+2026-07-03 08:30:01  DEBUG     CANDLE  NMDC          O=86.15  H=86.15  L=86.11  C=86.15
+2026-07-03 08:30:01  DEBUG     CANDLE  ZEEL          O=105.93  H=105.95  L=105.80  C=105.90
+2026-07-03 08:30:01  DEBUG     CANDLE  BANKBARODA    O=251.45  H=251.60  L=251.30  C=251.40
+2026-07-03 08:30:01  DEBUG     CANDLE  SUZLON        O=56.56  H=56.60  L=56.54  C=56.58
+2026-07-03 08:30:01  DEBUG     CANDLE  HFCL          O=211.71  H=211.75  L=211.50  C=211.50
+2026-07-03 08:30:02  DEBUG     CANDLE  CESC          O=169.46  H=169.55  L=169.44  C=169.45
+2026-07-03 08:30:02  DEBUG     CANDLE  BALRAMCHIN    O=564.00  H=564.75  L=564.00  C=564.40
+2026-07-03 08:30:05  DEBUG     CANDLE  GRANULES      O=829.00  H=832.20  L=828.85  C=831.85
+2026-07-03 08:30:06  DEBUG     Sending ping
+2026-07-03 08:30:36  DEBUG     Sending ping
+2026-07-03 08:31:06  DEBUG     Sending ping
+2026-07-03 08:31:36  DEBUG     Sending ping
+2026-07-03 08:32:06  DEBUG     Sending ping
+2026-07-03 08:32:36  DEBUG     Sending ping
+2026-07-03 08:33:06  DEBUG     Sending ping
+2026-07-03 08:33:36  DEBUG     Sending ping
+2026-07-03 08:34:06  DEBUG     Sending ping
+2026-07-03 08:34:36  DEBUG     Sending ping
+2026-07-03 08:35:06  DEBUG     Sending ping
+2026-07-03 08:35:36  DEBUG     Sending ping
+2026-07-03 08:36:06  DEBUG     Sending ping
+2026-07-03 08:36:36  DEBUG     Sending ping
+2026-07-03 08:37:06  DEBUG     Sending ping
+2026-07-03 08:37:36  DEBUG     Sending ping
+2026-07-03 08:38:06  DEBUG     Sending ping
+2026-07-03 08:38:36  DEBUG     Sending ping
+2026-07-03 08:39:06  DEBUG     Sending ping
+2026-07-03 08:39:36  DEBUG     Sending ping
+2026-07-03 08:40:06  DEBUG     Sending ping
+2026-07-03 08:40:36  DEBUG     Sending ping
+2026-07-03 08:41:06  DEBUG     Sending ping
+2026-07-03 08:41:36  DEBUG     Sending ping
+2026-07-03 08:42:06  DEBUG     Sending ping
+2026-07-03 08:42:36  DEBUG     Sending ping
+2026-07-03 08:43:06  DEBUG     Sending ping
+2026-07-03 08:43:36  DEBUG     Sending ping
+2026-07-03 08:44:06  DEBUG     Sending ping
+2026-07-03 08:44:36  DEBUG     Sending ping
+2026-07-03 08:45:02  DEBUG     CANDLE  SUZLON        O=56.57  H=56.59  L=56.40  C=56.41
+2026-07-03 08:45:02  DEBUG     CANDLE  HFCL          O=211.51  H=212.48  L=211.40  C=212.18
+2026-07-03 08:45:05  DEBUG     CANDLE  BANKBARODA    O=251.35  H=252.15  L=251.15  C=251.95
+2026-07-03 08:45:06  DEBUG     Sending ping
+2026-07-03 08:45:06  DEBUG     CANDLE  NMDC          O=86.10  H=86.30  L=86.07  C=86.19
+2026-07-03 08:45:14  DEBUG     CANDLE  CESC          O=169.42  H=169.89  L=169.40  C=169.71
+2026-07-03 08:45:14  DEBUG     CANDLE  ZEEL          O=105.93  H=106.11  L=105.80  C=105.89
+2026-07-03 08:45:15  DEBUG     CANDLE  GRANULES      O=832.00  H=834.00  L=831.20  C=834.00
+2026-07-03 08:45:36  DEBUG     Sending ping
+2026-07-03 08:46:03  DEBUG     CANDLE  BALRAMCHIN    O=564.45  H=565.90  L=563.00  C=563.70
+2026-07-03 08:46:06  DEBUG     Sending ping
+2026-07-03 08:46:36  DEBUG     Sending ping
+2026-07-03 08:47:06  DEBUG     Sending ping
+2026-07-03 08:47:36  DEBUG     Sending ping
+2026-07-03 08:48:06  DEBUG     Sending ping
+2026-07-03 08:48:36  DEBUG     Sending ping
+2026-07-03 08:49:06  DEBUG     Sending ping
+2026-07-03 08:49:36  DEBUG     Sending ping
+2026-07-03 08:50:04  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-03 08:50:04  ERROR     Connection to remote host was lost. - goodbye
+2026-07-03 08:50:04  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Fri Jul  3 08:50:04 UTC 2026] Runner exited, restarting in 10s...
+[Fri Jul  3 08:50:14 UTC 2026] Starting runner...
+2026-07-03 08:50:15  INFO      ============================================================
+2026-07-03 08:50:15  INFO      STARTUP  date=2026-07-03  pid=26728
+2026-07-03 08:50:15  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-03 08:50:15  INFO      Resolving NSE tokens...
+2026-07-03 08:50:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:15  INFO      Resolved  HFCL             token=21951
+2026-07-03 08:50:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:15  INFO      Resolved  BANKBARODA       token=4668
+2026-07-03 08:50:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:15  INFO      Resolved  NMDC             token=15332
+2026-07-03 08:50:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:15  INFO      Resolved  CESC             token=628
+2026-07-03 08:50:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:16  INFO      Resolved  ZEEL             token=3812
+2026-07-03 08:50:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:16  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-03 08:50:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:16  INFO      Resolved  GRANULES         token=11872
+2026-07-03 08:50:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-03 08:50:16  INFO      Resolved  SUZLON           token=12018
+2026-07-03 08:50:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-03 08:50:16  WARNING   POSITION RESUMED  SUZLON        LONG  qty=190  entry=Rs57.94
+2026-07-03 08:50:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 08:50:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-03 08:50:17  INFO      *** LIVE MODE  cash=Rs2855  4x=Rs11419  K=1  per_trade=Rs11418 ***
+2026-07-03 08:50:17  INFO      8 stocks | Rs11418/trade | K=1 | EOD 15:00 IST
+2026-07-03 08:50:17  INFO      ============================================================
+2026-07-03 08:50:17  INFO      Websocket connected
+2026-07-03 08:50:17  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-03 08:50:17  INFO      Ticks -> data/2026-07-03/ticks.jsonl
+2026-07-03 08:51:17  DEBUG     Sending ping
+2026-07-03 08:51:47  DEBUG     Sending ping
+2026-07-03 08:52:17  DEBUG     Sending ping
+2026-07-03 08:52:47  DEBUG     Sending ping
+2026-07-03 08:53:17  DEBUG     Sending ping
+2026-07-03 08:53:47  DEBUG     Sending ping
+2026-07-03 08:54:17  DEBUG     Sending ping
+2026-07-03 08:54:47  DEBUG     Sending ping
+2026-07-03 08:55:17  DEBUG     Sending ping
+2026-07-03 08:55:47  DEBUG     Sending ping
+2026-07-03 08:56:17  DEBUG     Sending ping
+2026-07-03 08:56:47  DEBUG     Sending ping
+2026-07-03 08:57:17  DEBUG     Sending ping
+2026-07-03 08:57:47  DEBUG     Sending ping
+2026-07-03 08:58:17  DEBUG     Sending ping
+2026-07-03 08:58:47  DEBUG     Sending ping
+2026-07-03 08:59:17  DEBUG     Sending ping
+2026-07-03 08:59:47  DEBUG     Sending ping
+2026-07-03 09:00:00  DEBUG     CANDLE  BANKBARODA    O=251.95  H=252.10  L=251.35  C=251.65
+2026-07-03 09:00:00  DEBUG     CANDLE  SUZLON        O=56.41  H=56.43  L=56.25  C=56.26
+2026-07-03 09:00:00  DEBUG     CANDLE  HFCL          O=212.15  H=212.22  L=211.30  C=211.70
+2026-07-03 09:00:01  DEBUG     CANDLE  CESC          O=169.82  H=169.95  L=169.70  C=169.83
+2026-07-03 09:00:01  DEBUG     CANDLE  GRANULES      O=834.15  H=834.95  L=832.75  C=834.90
+2026-07-03 09:00:02  DEBUG     CANDLE  ZEEL          O=105.99  H=105.99  L=105.80  C=105.87
+2026-07-03 09:00:03  DEBUG     CANDLE  BALRAMCHIN    O=563.80  H=563.90  L=562.15  C=562.25
+2026-07-03 09:00:05  DEBUG     CANDLE  NMDC          O=86.00  H=86.04  L=85.90  C=85.95
+2026-07-03 09:00:17  DEBUG     Sending ping
+2026-07-03 09:00:47  DEBUG     Sending ping
+2026-07-03 09:01:17  DEBUG     Sending ping
+2026-07-03 09:01:47  DEBUG     Sending ping
+2026-07-03 09:02:17  DEBUG     Sending ping
+2026-07-03 09:02:47  DEBUG     Sending ping
+2026-07-03 09:03:17  DEBUG     Sending ping
+2026-07-03 09:03:47  DEBUG     Sending ping
+2026-07-03 09:04:17  DEBUG     Sending ping
+2026-07-03 09:04:47  DEBUG     Sending ping
+2026-07-03 09:05:17  DEBUG     Sending ping
+2026-07-03 09:05:47  DEBUG     Sending ping
+2026-07-03 09:06:17  DEBUG     Sending ping
+2026-07-03 09:06:47  DEBUG     Sending ping
+2026-07-03 09:07:17  DEBUG     Sending ping
+2026-07-03 09:07:47  DEBUG     Sending ping
+2026-07-03 09:08:17  DEBUG     Sending ping
+2026-07-03 09:08:47  DEBUG     Sending ping
+2026-07-03 09:09:17  DEBUG     Sending ping
+2026-07-03 09:09:47  DEBUG     Sending ping
+2026-07-03 09:10:17  DEBUG     Sending ping
+2026-07-03 09:10:47  DEBUG     Sending ping
+2026-07-03 09:11:17  DEBUG     Sending ping
+2026-07-03 09:11:47  DEBUG     Sending ping
+2026-07-03 09:12:17  DEBUG     Sending ping
+2026-07-03 09:12:47  DEBUG     Sending ping
+2026-07-03 09:13:17  DEBUG     Sending ping
+2026-07-03 09:13:47  DEBUG     Sending ping
+2026-07-03 09:14:17  DEBUG     Sending ping
+2026-07-03 09:14:47  DEBUG     Sending ping
+2026-07-03 09:15:01  DEBUG     CANDLE  HFCL          O=211.80  H=213.30  L=211.31  C=212.94
+2026-07-03 09:15:02  DEBUG     CANDLE  BANKBARODA    O=251.55  H=251.80  L=251.30  C=251.40
+2026-07-03 09:15:03  DEBUG     CANDLE  SUZLON        O=56.27  H=56.57  L=56.24  C=56.48
+2026-07-03 09:15:07  DEBUG     CANDLE  ZEEL          O=105.90  H=106.04  L=105.81  C=105.94
+2026-07-03 09:15:08  DEBUG     CANDLE  GRANULES      O=834.35  H=835.00  L=833.60  C=834.80
+2026-07-03 09:15:13  DEBUG     CANDLE  NMDC          O=85.92  H=86.04  L=85.86  C=86.01
+2026-07-03 09:15:16  DEBUG     CANDLE  CESC          O=169.88  H=170.00  L=169.68  C=169.87
+2026-07-03 09:15:17  DEBUG     Sending ping
+2026-07-03 09:15:26  DEBUG     CANDLE  BALRAMCHIN    O=562.75  H=562.90  L=562.05  C=562.80
+2026-07-03 09:15:47  DEBUG     Sending ping
+2026-07-03 09:16:17  DEBUG     Sending ping
+2026-07-03 09:16:47  DEBUG     Sending ping
+2026-07-03 09:17:17  DEBUG     Sending ping
+2026-07-03 09:17:47  DEBUG     Sending ping
+2026-07-03 09:18:17  DEBUG     Sending ping
+2026-07-03 09:18:47  DEBUG     Sending ping
+2026-07-03 09:19:17  DEBUG     Sending ping
+2026-07-03 09:19:47  DEBUG     Sending ping
+2026-07-03 09:20:17  DEBUG     Sending ping
+2026-07-03 09:20:47  DEBUG     Sending ping
+2026-07-03 09:21:17  DEBUG     Sending ping
+2026-07-03 09:21:47  DEBUG     Sending ping
+2026-07-03 09:22:17  DEBUG     Sending ping
+2026-07-03 09:22:47  DEBUG     Sending ping
+2026-07-03 09:23:17  DEBUG     Sending ping
+2026-07-03 09:23:47  DEBUG     Sending ping
+2026-07-03 09:24:17  DEBUG     Sending ping
+2026-07-03 09:24:47  DEBUG     Sending ping
+2026-07-03 09:25:17  DEBUG     Sending ping
+2026-07-03 09:25:47  DEBUG     Sending ping
+2026-07-03 09:26:17  DEBUG     Sending ping
+2026-07-03 09:26:47  DEBUG     Sending ping
+2026-07-03 09:27:17  DEBUG     Sending ping
+2026-07-03 09:27:47  DEBUG     Sending ping
+2026-07-03 09:28:17  DEBUG     Sending ping
+2026-07-03 09:28:47  DEBUG     Sending ping
+2026-07-03 09:29:17  DEBUG     Sending ping
+2026-07-03 09:29:47  DEBUG     Sending ping
+2026-07-03 09:30:01  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:30:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:02  INFO      ACCEPTED  SUZLON  norenordno=26070300245640
+2026-07-03 09:30:02  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:02  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:02  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300245640
+2026-07-03 09:30:02  INFO      ORDER UPDATE  New       SUZLON-EQ  norenordno=26070300245640
+2026-07-03 09:30:02  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: 'est'
+2026-07-03 09:30:02  ERROR     WS ERROR  'est'
+2026-07-03 09:30:06  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:06  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:07  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:07  INFO      ACCEPTED  SUZLON  norenordno=26070300246007
+2026-07-03 09:30:07  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:07  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:07  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300246007
+2026-07-03 09:30:07  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300246007  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:09  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:30:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:09  INFO      ACCEPTED  SUZLON  norenordno=26070300246133
+2026-07-03 09:30:09  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:09  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:09  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300246133
+2026-07-03 09:30:09  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300246133  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:13  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:14  INFO      ACCEPTED  SUZLON  norenordno=26070300246327
+2026-07-03 09:30:14  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:14  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:14  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300246327
+2026-07-03 09:30:14  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300246327  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:15  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:15  INFO      ACCEPTED  SUZLON  norenordno=26070300246435
+2026-07-03 09:30:15  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:15  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:15  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300246435
+2026-07-03 09:30:15  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300246435  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:17  DEBUG     Sending ping
+2026-07-03 09:30:20  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:20  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:20  INFO      ACCEPTED  SUZLON  norenordno=26070300246655
+2026-07-03 09:30:20  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:20  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:20  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300246655
+2026-07-03 09:30:20  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300246655  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:21  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:21  INFO      ACCEPTED  SUZLON  norenordno=26070300246697
+2026-07-03 09:30:21  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:21  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:21  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300246697
+2026-07-03 09:30:21  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300246697  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:32  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:32  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:33  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:33  INFO      ACCEPTED  SUZLON  norenordno=26070300247100
+2026-07-03 09:30:33  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:33  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:33  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247100
+2026-07-03 09:30:33  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247100  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:33  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:33  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:33  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:33  INFO      ACCEPTED  SUZLON  norenordno=26070300247122
+2026-07-03 09:30:33  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:33  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:33  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247122
+2026-07-03 09:30:33  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247122  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:38  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:38  INFO      ACCEPTED  SUZLON  norenordno=26070300247282
+2026-07-03 09:30:38  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:38  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:38  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247282
+2026-07-03 09:30:38  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247282  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:45  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:45  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:45  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:45  INFO      ACCEPTED  SUZLON  norenordno=26070300247444
+2026-07-03 09:30:45  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:45  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:45  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247444
+2026-07-03 09:30:45  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247444  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:47  DEBUG     Sending ping
+2026-07-03 09:30:48  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:30:48  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:48  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:48  INFO      ACCEPTED  SUZLON  norenordno=26070300247538
+2026-07-03 09:30:48  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:48  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:48  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247538
+2026-07-03 09:30:48  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247538  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:51  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:30:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:51  INFO      ACCEPTED  SUZLON  norenordno=26070300247629
+2026-07-03 09:30:51  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:51  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:51  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247629
+2026-07-03 09:30:51  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247629  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:53  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:30:53  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:53  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:53  INFO      ACCEPTED  SUZLON  norenordno=26070300247679
+2026-07-03 09:30:53  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:53  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:53  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247679
+2026-07-03 09:30:53  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247679  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:57  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:30:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:58  INFO      ACCEPTED  SUZLON  norenordno=26070300247789
+2026-07-03 09:30:58  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:58  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:58  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247789
+2026-07-03 09:30:58  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247789  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:30:59  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:30:59  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:30:59  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:30:59  INFO      ACCEPTED  SUZLON  norenordno=26070300247836
+2026-07-03 09:30:59  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:59  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:30:59  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247836
+2026-07-03 09:30:59  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247836  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:04  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:31:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:04  INFO      ACCEPTED  SUZLON  norenordno=26070300247984
+2026-07-03 09:31:04  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:04  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:04  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300247984
+2026-07-03 09:31:04  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300247984  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:05  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:31:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:05  INFO      ACCEPTED  SUZLON  norenordno=26070300248012
+2026-07-03 09:31:05  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:05  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:05  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248012
+2026-07-03 09:31:05  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248012  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:10  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:31:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:11  INFO      ACCEPTED  SUZLON  norenordno=26070300248162
+2026-07-03 09:31:11  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:11  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:11  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248162
+2026-07-03 09:31:11  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248162  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:17  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.50  reason=EOD
+2026-07-03 09:31:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:17  INFO      ACCEPTED  SUZLON  norenordno=26070300248295
+2026-07-03 09:31:17  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:17  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:17  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248295
+2026-07-03 09:31:17  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248295  reason=RED:Margin Shortfall:INR 16.78 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:17  DEBUG     Sending ping
+2026-07-03 09:31:22  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:22  INFO      ACCEPTED  SUZLON  norenordno=26070300248369
+2026-07-03 09:31:22  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:22  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:22  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248369
+2026-07-03 09:31:22  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248369  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:29  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:29  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:29  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:29  INFO      ACCEPTED  SUZLON  norenordno=26070300248485
+2026-07-03 09:31:29  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:29  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:29  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248485
+2026-07-03 09:31:29  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248485  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:32  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:32  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:32  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:32  INFO      ACCEPTED  SUZLON  norenordno=26070300248530
+2026-07-03 09:31:32  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:32  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:32  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248530
+2026-07-03 09:31:32  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248530  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:35  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:35  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:35  INFO      ACCEPTED  SUZLON  norenordno=26070300248580
+2026-07-03 09:31:35  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:35  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:35  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248580
+2026-07-03 09:31:35  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248580  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:37  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:37  INFO      ACCEPTED  SUZLON  norenordno=26070300248602
+2026-07-03 09:31:37  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:37  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:37  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248602
+2026-07-03 09:31:37  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248602  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:41  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:41  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:41  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:41  INFO      ACCEPTED  SUZLON  norenordno=26070300248656
+2026-07-03 09:31:41  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:41  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:41  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248656
+2026-07-03 09:31:41  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248656  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:47  DEBUG     Sending ping
+2026-07-03 09:31:55  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:55  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:55  INFO      ACCEPTED  SUZLON  norenordno=26070300248845
+2026-07-03 09:31:55  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:55  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:55  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248845
+2026-07-03 09:31:55  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248845  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:55  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:55  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:55  INFO      ACCEPTED  SUZLON  norenordno=26070300248853
+2026-07-03 09:31:55  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:55  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:55  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248853
+2026-07-03 09:31:55  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248853  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:57  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:57  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:57  INFO      ACCEPTED  SUZLON  norenordno=26070300248882
+2026-07-03 09:31:57  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:57  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:57  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248882
+2026-07-03 09:31:57  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248882  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:31:58  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:31:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:31:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:31:58  INFO      ACCEPTED  SUZLON  norenordno=26070300248909
+2026-07-03 09:31:58  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:58  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:31:58  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248909
+2026-07-03 09:31:58  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248909  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:00  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:32:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:00  INFO      ACCEPTED  SUZLON  norenordno=26070300248960
+2026-07-03 09:32:00  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:00  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:00  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248960
+2026-07-03 09:32:00  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248960  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:01  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:32:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:01  INFO      ACCEPTED  SUZLON  norenordno=26070300248982
+2026-07-03 09:32:01  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:01  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:01  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300248982
+2026-07-03 09:32:01  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300248982  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:04  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:32:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:04  INFO      ACCEPTED  SUZLON  norenordno=26070300249040
+2026-07-03 09:32:04  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:04  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:04  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:04  INFO      ACCEPTED  SUZLON  norenordno=26070300249042
+2026-07-03 09:32:04  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:04  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:04  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249040
+2026-07-03 09:32:04  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249040  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:04  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249042
+2026-07-03 09:32:04  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249042  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:05  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:32:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:05  INFO      ACCEPTED  SUZLON  norenordno=26070300249057
+2026-07-03 09:32:05  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:05  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:05  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249057
+2026-07-03 09:32:05  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249057  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:05  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:32:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:05  INFO      ACCEPTED  SUZLON  norenordno=26070300249060
+2026-07-03 09:32:05  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:05  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:05  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249060
+2026-07-03 09:32:05  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249060  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:07  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:07  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:07  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:07  INFO      ACCEPTED  SUZLON  norenordno=26070300249101
+2026-07-03 09:32:07  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:07  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:07  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249101
+2026-07-03 09:32:07  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249101  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:08  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.55  reason=EOD
+2026-07-03 09:32:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:08  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:08  INFO      ACCEPTED  SUZLON  norenordno=26070300249121
+2026-07-03 09:32:08  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:08  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:08  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249121
+2026-07-03 09:32:08  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249121  reason=RED:Margin Shortfall:INR 19.10 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:08  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:09  INFO      ACCEPTED  SUZLON  norenordno=26070300249127
+2026-07-03 09:32:09  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:09  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:09  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249127
+2026-07-03 09:32:09  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249127  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:10  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:10  INFO      ACCEPTED  SUZLON  norenordno=26070300249178
+2026-07-03 09:32:10  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:10  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:10  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249178
+2026-07-03 09:32:10  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249178  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:11  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:11  INFO      ACCEPTED  SUZLON  norenordno=26070300249206
+2026-07-03 09:32:11  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:11  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:11  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249206
+2026-07-03 09:32:11  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249206  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:11  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:12  INFO      ACCEPTED  SUZLON  norenordno=26070300249209
+2026-07-03 09:32:12  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:12  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:12  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249209
+2026-07-03 09:32:12  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249209  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:13  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:13  INFO      ACCEPTED  SUZLON  norenordno=26070300249233
+2026-07-03 09:32:13  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:13  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:13  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249233
+2026-07-03 09:32:13  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249233  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:14  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:14  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:14  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:14  INFO      ACCEPTED  SUZLON  norenordno=26070300249246
+2026-07-03 09:32:14  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:14  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:14  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249246
+2026-07-03 09:32:14  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249246  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:17  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:17  INFO      ACCEPTED  SUZLON  norenordno=26070300249313
+2026-07-03 09:32:17  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:17  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:17  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249313
+2026-07-03 09:32:17  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249313  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:17  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:17  INFO      ACCEPTED  SUZLON  norenordno=26070300249327
+2026-07-03 09:32:17  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:17  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:17  DEBUG     Sending ping
+2026-07-03 09:32:17  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249327
+2026-07-03 09:32:17  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249327  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:19  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:19  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:20  INFO      ACCEPTED  SUZLON  norenordno=26070300249438
+2026-07-03 09:32:20  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:20  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:20  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249438
+2026-07-03 09:32:20  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249438  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:21  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:21  INFO      ACCEPTED  SUZLON  norenordno=26070300249487
+2026-07-03 09:32:21  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:21  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:21  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249487
+2026-07-03 09:32:21  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249487  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:22  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:22  INFO      ACCEPTED  SUZLON  norenordno=26070300249511
+2026-07-03 09:32:22  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:22  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:22  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249511
+2026-07-03 09:32:22  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249511  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:22  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:23  INFO      ACCEPTED  SUZLON  norenordno=26070300249525
+2026-07-03 09:32:23  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:23  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:23  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249525
+2026-07-03 09:32:23  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249525  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:23  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:23  INFO      ACCEPTED  SUZLON  norenordno=26070300249540
+2026-07-03 09:32:23  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:23  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:23  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249540
+2026-07-03 09:32:23  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249540  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:24  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:25  INFO      ACCEPTED  SUZLON  norenordno=26070300249563
+2026-07-03 09:32:25  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:25  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:25  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249563
+2026-07-03 09:32:25  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249563  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:26  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:26  INFO      ACCEPTED  SUZLON  norenordno=26070300249597
+2026-07-03 09:32:26  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:26  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:26  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249597
+2026-07-03 09:32:26  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249597  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:26  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:26  INFO      ACCEPTED  SUZLON  norenordno=26070300249610
+2026-07-03 09:32:26  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:26  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:26  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249610
+2026-07-03 09:32:26  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249610  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:27  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:27  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:27  INFO      ACCEPTED  SUZLON  norenordno=26070300249623
+2026-07-03 09:32:27  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:27  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:27  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249623
+2026-07-03 09:32:27  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249623  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:27  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:27  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:27  INFO      ACCEPTED  SUZLON  norenordno=26070300249631
+2026-07-03 09:32:27  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:27  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:27  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249631
+2026-07-03 09:32:27  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249631  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:28  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:28  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:28  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:28  INFO      ACCEPTED  SUZLON  norenordno=26070300249642
+2026-07-03 09:32:28  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:28  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:28  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249642
+2026-07-03 09:32:28  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249642  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:29  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:29  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:29  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:29  INFO      ACCEPTED  SUZLON  norenordno=26070300249673
+2026-07-03 09:32:29  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:29  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:29  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249673
+2026-07-03 09:32:29  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249673  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:30  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:30  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:30  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:30  INFO      ACCEPTED  SUZLON  norenordno=26070300249699
+2026-07-03 09:32:30  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:30  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:30  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249699
+2026-07-03 09:32:30  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249699  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:32  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:32  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:32  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:32  INFO      ACCEPTED  SUZLON  norenordno=26070300249739
+2026-07-03 09:32:32  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:32  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:32  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249739
+2026-07-03 09:32:32  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249739  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:33  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:33  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:33  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:33  INFO      ACCEPTED  SUZLON  norenordno=26070300249749
+2026-07-03 09:32:33  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:33  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:33  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249749
+2026-07-03 09:32:33  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249749  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:34  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:34  INFO      ACCEPTED  SUZLON  norenordno=26070300249773
+2026-07-03 09:32:34  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:34  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:34  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:34  INFO      ACCEPTED  SUZLON  norenordno=26070300249778
+2026-07-03 09:32:34  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:34  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:34  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249773
+2026-07-03 09:32:34  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249773  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:34  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249778
+2026-07-03 09:32:34  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249778  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:35  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:35  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:35  INFO      ACCEPTED  SUZLON  norenordno=26070300249807
+2026-07-03 09:32:35  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:35  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:35  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249807
+2026-07-03 09:32:35  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249807  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:36  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:36  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:36  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:36  INFO      ACCEPTED  SUZLON  norenordno=26070300249829
+2026-07-03 09:32:36  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:36  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:36  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249829
+2026-07-03 09:32:36  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249829  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:37  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:37  INFO      ACCEPTED  SUZLON  norenordno=26070300249861
+2026-07-03 09:32:37  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:37  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:37  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249861
+2026-07-03 09:32:37  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249861  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:38  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:38  INFO      ACCEPTED  SUZLON  norenordno=26070300249875
+2026-07-03 09:32:38  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:38  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:38  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249875
+2026-07-03 09:32:38  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249875  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:40  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:40  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:40  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:40  INFO      ACCEPTED  SUZLON  norenordno=26070300249921
+2026-07-03 09:32:40  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:40  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:40  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249921
+2026-07-03 09:32:40  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249921  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:41  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:41  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:41  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:41  INFO      ACCEPTED  SUZLON  norenordno=26070300249946
+2026-07-03 09:32:41  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:41  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:41  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249946
+2026-07-03 09:32:41  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249946  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:42  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:42  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:42  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:42  INFO      ACCEPTED  SUZLON  norenordno=26070300249970
+2026-07-03 09:32:42  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:42  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:42  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249970
+2026-07-03 09:32:42  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249970  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:43  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:43  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:43  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:43  INFO      ACCEPTED  SUZLON  norenordno=26070300249994
+2026-07-03 09:32:43  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:43  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:43  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300249994
+2026-07-03 09:32:43  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300249994  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:44  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:44  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:44  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:44  INFO      ACCEPTED  SUZLON  norenordno=26070300250008
+2026-07-03 09:32:44  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:44  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:44  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250008
+2026-07-03 09:32:44  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250008  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:45  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:45  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:45  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:45  INFO      ACCEPTED  SUZLON  norenordno=26070300250028
+2026-07-03 09:32:45  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:45  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:45  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250028
+2026-07-03 09:32:45  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250028  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:47  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:47  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:47  DEBUG     Sending ping
+2026-07-03 09:32:47  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:47  INFO      ACCEPTED  SUZLON  norenordno=26070300250077
+2026-07-03 09:32:47  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:47  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:47  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250077
+2026-07-03 09:32:47  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250077  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:47  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:47  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:47  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:47  INFO      ACCEPTED  SUZLON  norenordno=26070300250082
+2026-07-03 09:32:47  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:47  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:47  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250082
+2026-07-03 09:32:47  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250082  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:49  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.60  reason=EOD
+2026-07-03 09:32:49  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:49  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:49  INFO      ACCEPTED  SUZLON  norenordno=26070300250122
+2026-07-03 09:32:49  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:49  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:49  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250122
+2026-07-03 09:32:49  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250122  reason=RED:Margin Shortfall:INR 21.42 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:50  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:50  INFO      ACCEPTED  SUZLON  norenordno=26070300250138
+2026-07-03 09:32:50  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:50  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:50  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:50  INFO      ACCEPTED  SUZLON  norenordno=26070300250145
+2026-07-03 09:32:50  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:50  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:50  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250138
+2026-07-03 09:32:50  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250138  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:50  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250145
+2026-07-03 09:32:50  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250145  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:51  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:51  INFO      ACCEPTED  SUZLON  norenordno=26070300250168
+2026-07-03 09:32:51  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:51  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:51  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250168
+2026-07-03 09:32:51  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250168  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:32:57  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:32:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:32:57  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:32:57  INFO      ACCEPTED  SUZLON  norenordno=26070300250306
+2026-07-03 09:32:57  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:57  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:32:57  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250306
+2026-07-03 09:32:57  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250306  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:00  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:00  INFO      ACCEPTED  SUZLON  norenordno=26070300250371
+2026-07-03 09:33:00  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:00  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:00  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250371
+2026-07-03 09:33:00  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250371  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:07  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:07  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:07  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:07  INFO      ACCEPTED  SUZLON  norenordno=26070300250519
+2026-07-03 09:33:07  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:07  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:07  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250519
+2026-07-03 09:33:07  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250519  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:09  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:09  INFO      ACCEPTED  SUZLON  norenordno=26070300250569
+2026-07-03 09:33:09  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:09  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:09  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250569
+2026-07-03 09:33:09  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250569  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:15  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:15  INFO      ACCEPTED  SUZLON  norenordno=26070300250717
+2026-07-03 09:33:15  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:15  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:15  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250717
+2026-07-03 09:33:15  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250717  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:17  DEBUG     Sending ping
+2026-07-03 09:33:20  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:20  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:20  INFO      ACCEPTED  SUZLON  norenordno=26070300250809
+2026-07-03 09:33:20  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:20  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:20  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250809
+2026-07-03 09:33:20  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250809  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:21  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:21  INFO      ACCEPTED  SUZLON  norenordno=26070300250846
+2026-07-03 09:33:21  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:21  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:21  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250846
+2026-07-03 09:33:21  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250846  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:26  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:26  INFO      ACCEPTED  SUZLON  norenordno=26070300250953
+2026-07-03 09:33:26  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:26  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:26  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250953
+2026-07-03 09:33:26  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250953  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:27  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:27  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:27  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:27  INFO      ACCEPTED  SUZLON  norenordno=26070300250971
+2026-07-03 09:33:27  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:27  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:27  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300250971
+2026-07-03 09:33:27  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300250971  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:32  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:32  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:32  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:32  INFO      ACCEPTED  SUZLON  norenordno=26070300251063
+2026-07-03 09:33:32  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:32  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:32  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251063
+2026-07-03 09:33:32  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251063  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:37  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:37  INFO      ACCEPTED  SUZLON  norenordno=26070300251148
+2026-07-03 09:33:37  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:37  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:37  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251148
+2026-07-03 09:33:37  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251148  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:38  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:38  INFO      ACCEPTED  SUZLON  norenordno=26070300251155
+2026-07-03 09:33:38  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:38  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:38  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251155
+2026-07-03 09:33:38  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251155  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:44  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.65  reason=EOD
+2026-07-03 09:33:44  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:44  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:44  INFO      ACCEPTED  SUZLON  norenordno=26070300251237
+2026-07-03 09:33:44  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:44  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:44  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251237
+2026-07-03 09:33:44  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251237  reason=RED:Margin Shortfall:INR 23.74 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:47  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:47  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:47  DEBUG     Sending ping
+2026-07-03 09:33:47  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:47  INFO      ACCEPTED  SUZLON  norenordno=26070300251274
+2026-07-03 09:33:47  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:47  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:47  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251274
+2026-07-03 09:33:47  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251274  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:50  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:50  INFO      ACCEPTED  SUZLON  norenordno=26070300251321
+2026-07-03 09:33:50  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:50  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:50  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251321
+2026-07-03 09:33:50  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251321  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:52  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.70  reason=EOD
+2026-07-03 09:33:52  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:52  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:52  INFO      ACCEPTED  SUZLON  norenordno=26070300251362
+2026-07-03 09:33:52  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:52  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:52  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251362
+2026-07-03 09:33:52  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251362  reason=RED:Margin Shortfall:INR 26.07 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:56  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.75  reason=EOD
+2026-07-03 09:33:56  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:56  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:56  INFO      ACCEPTED  SUZLON  norenordno=26070300251402
+2026-07-03 09:33:56  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:56  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:56  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251402
+2026-07-03 09:33:56  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251402  reason=RED:Margin Shortfall:INR 28.39 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:33:58  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.75  reason=EOD
+2026-07-03 09:33:58  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:33:58  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:33:58  INFO      ACCEPTED  SUZLON  norenordno=26070300251443
+2026-07-03 09:33:58  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:58  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:33:58  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251443
+2026-07-03 09:33:58  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251443  reason=RED:Margin Shortfall:INR 28.39 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:02  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.75  reason=EOD
+2026-07-03 09:34:02  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:02  INFO      ACCEPTED  SUZLON  norenordno=26070300251509
+2026-07-03 09:34:02  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:02  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:02  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251509
+2026-07-03 09:34:02  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251509  reason=RED:Margin Shortfall:INR 28.39 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:04  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.75  reason=EOD
+2026-07-03 09:34:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:04  INFO      ACCEPTED  SUZLON  norenordno=26070300251548
+2026-07-03 09:34:04  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:04  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:04  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251548
+2026-07-03 09:34:04  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251548  reason=RED:Margin Shortfall:INR 28.39 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:08  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:08  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:08  INFO      ACCEPTED  SUZLON  norenordno=26070300251651
+2026-07-03 09:34:08  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:08  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:09  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251651
+2026-07-03 09:34:09  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251651  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:15  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:15  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:15  INFO      ACCEPTED  SUZLON  norenordno=26070300251844
+2026-07-03 09:34:15  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:15  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:15  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251844
+2026-07-03 09:34:15  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251844  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:16  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:16  INFO      ACCEPTED  SUZLON  norenordno=26070300251860
+2026-07-03 09:34:16  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:16  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:16  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251860
+2026-07-03 09:34:16  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251860  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:17  DEBUG     Sending ping
+2026-07-03 09:34:22  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:22  INFO      ACCEPTED  SUZLON  norenordno=26070300251964
+2026-07-03 09:34:22  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:22  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:22  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300251964
+2026-07-03 09:34:22  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300251964  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:28  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:28  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:28  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:28  INFO      ACCEPTED  SUZLON  norenordno=26070300252023
+2026-07-03 09:34:28  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:28  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:28  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252023
+2026-07-03 09:34:28  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252023  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:28  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:28  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:28  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:28  INFO      ACCEPTED  SUZLON  norenordno=26070300252031
+2026-07-03 09:34:28  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:28  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:28  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252031
+2026-07-03 09:34:28  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252031  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:40  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:40  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:40  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:40  INFO      ACCEPTED  SUZLON  norenordno=26070300252209
+2026-07-03 09:34:40  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:40  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:40  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252209
+2026-07-03 09:34:40  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252209  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:42  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:42  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:42  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:42  INFO      ACCEPTED  SUZLON  norenordno=26070300252242
+2026-07-03 09:34:42  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:42  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:42  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252242
+2026-07-03 09:34:42  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252242  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:46  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:46  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:46  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:46  INFO      ACCEPTED  SUZLON  norenordno=26070300252300
+2026-07-03 09:34:46  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:46  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:46  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252300
+2026-07-03 09:34:46  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252300  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:47  DEBUG     Sending ping
+2026-07-03 09:34:49  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:49  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:49  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:49  INFO      ACCEPTED  SUZLON  norenordno=26070300252334
+2026-07-03 09:34:49  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:49  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:49  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252334
+2026-07-03 09:34:49  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252334  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:52  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:52  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:52  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:52  INFO      ACCEPTED  SUZLON  norenordno=26070300252367
+2026-07-03 09:34:52  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:52  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:52  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252367
+2026-07-03 09:34:52  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252367  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:34:56  INFO      ORDER  SUZLON        SELL  MIS  qty=190    price=Rs56.80  reason=EOD
+2026-07-03 09:34:56  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-03 09:34:56  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-03 09:34:56  INFO      ACCEPTED  SUZLON  norenordno=26070300252446
+2026-07-03 09:34:56  ERROR     error from callback <bound method FlattradeClient._ws_message of <client.FlattradeClient object at 0x7f8bf16c3f10>>: cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:56  ERROR     WS ERROR  cannot import name 'Fill' from 'paper' (/home/ec2-user/projects/trading/paper.py)
+2026-07-03 09:34:56  INFO      ORDER UPDATE  NewAck    SUZLON-EQ  norenordno=26070300252446
+2026-07-03 09:34:56  ERROR     ORDER REJECTED  SUZLON-EQ  norenordno=26070300252446  reason=RED:Margin Shortfall:INR 30.71 Available:INR 2854.66 for C-FZ38545 [KAMBALA]
+2026-07-03 09:35:01  INFO      SIGINT received — flushing and shutting down
+2026-07-03 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-07-03 09:35:01  INFO      EOD SUMMARY  date=2026-07-03  trades=0  total_pnl=Rs0.00
+2026-07-03 09:35:01  WARNING   STILL OPEN  SUZLON  LONG  entry=Rs57.94  qty=190
+2026-07-03 09:35:01  INFO      Ticks  -> data/2026-07-03/ticks.jsonl
+2026-07-03 09:35:01  INFO      Trades -> logs/trades_2026-07-03.csv
+2026-07-03 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-07-03 09:35:01  ERROR     WS ERROR  0
+[Fri Jul  3 09:35:01 UTC 2026] Runner stopped
+2026-07-03 09:35:02  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+2026-07-03 09:35:02  ERROR     error from callback <bound method FlattradeClient._ws_close of <client.FlattradeClient object at 0x7f8bf16c3f10>>: I/O operation on closed file.
+2026-07-03 09:35:02  ERROR     WS ERROR  I/O operation on closed file.
+[Fri Jul  3 09:35:02 UTC 2026] Runner exited, restarting in 10s...

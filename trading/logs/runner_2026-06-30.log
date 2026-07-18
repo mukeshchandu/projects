@@ -1,0 +1,1264 @@
+[Tue Jun 30 03:15:10 UTC 2026] Watchdog started
+[Tue Jun 30 03:15:10 UTC 2026] Starting runner...
+2026-06-30 03:15:10  INFO      ============================================================
+2026-06-30 03:15:10  INFO      STARTUP  date=2026-06-30  pid=322216
+2026-06-30 03:15:10  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-06-30 03:15:10  INFO      Resolving NSE tokens...
+2026-06-30 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:10  INFO      Resolved  IRFC             token=2029
+2026-06-30 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:11  INFO      Resolved  HFCL             token=21951
+2026-06-30 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:11  INFO      Resolved  JSWSTEEL         token=11723
+2026-06-30 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:11  INFO      Resolved  BANKBARODA       token=4668
+2026-06-30 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:11  INFO      Resolved  TATASTEEL        token=3499
+2026-06-30 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:11  INFO      Resolved  NMDC             token=15332
+2026-06-30 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:12  INFO      Resolved  IDEA             token=14366
+2026-06-30 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:12  INFO      Resolved  INDUSINDBK       token=5258
+2026-06-30 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:15:12  INFO      Resolved  SUZLON           token=12018
+2026-06-30 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-06-30 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-06-30 03:15:12  INFO      *** LIVE MODE  cash=Rs955  4x=Rs3819  K=1  per_trade=Rs3818 ***
+2026-06-30 03:15:12  INFO      9 stocks | Rs3818/trade | K=1 | EOD 15:00 IST
+2026-06-30 03:15:12  INFO      ============================================================
+2026-06-30 03:15:13  INFO      Websocket connected
+2026-06-30 03:15:13  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-30 03:15:13  INFO      Ticks -> data/2026-06-30/ticks.jsonl
+2026-06-30 03:16:13  ERROR     WS ERROR  Connection to remote host was lost.
+2026-06-30 03:16:13  ERROR     Connection to remote host was lost. - goodbye
+2026-06-30 03:16:13  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Tue Jun 30 03:16:13 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jun 30 03:16:23 UTC 2026] Starting runner...
+2026-06-30 03:16:23  INFO      ============================================================
+2026-06-30 03:16:23  INFO      STARTUP  date=2026-06-30  pid=322231
+2026-06-30 03:16:23  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-06-30 03:16:23  INFO      Resolving NSE tokens...
+2026-06-30 03:16:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:23  INFO      Resolved  IRFC             token=2029
+2026-06-30 03:16:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:23  INFO      Resolved  HFCL             token=21951
+2026-06-30 03:16:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:24  INFO      Resolved  JSWSTEEL         token=11723
+2026-06-30 03:16:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:24  INFO      Resolved  BANKBARODA       token=4668
+2026-06-30 03:16:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:24  INFO      Resolved  TATASTEEL        token=3499
+2026-06-30 03:16:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:24  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:24  INFO      Resolved  NMDC             token=15332
+2026-06-30 03:16:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:25  INFO      Resolved  IDEA             token=14366
+2026-06-30 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:25  INFO      Resolved  INDUSINDBK       token=5258
+2026-06-30 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:16:25  INFO      Resolved  SUZLON           token=12018
+2026-06-30 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-06-30 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-06-30 03:16:25  INFO      *** LIVE MODE  cash=Rs955  4x=Rs3819  K=1  per_trade=Rs3818 ***
+2026-06-30 03:16:25  INFO      9 stocks | Rs3818/trade | K=1 | EOD 15:00 IST
+2026-06-30 03:16:25  INFO      ============================================================
+2026-06-30 03:16:26  INFO      Websocket connected
+2026-06-30 03:16:26  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-30 03:16:26  INFO      Ticks -> data/2026-06-30/ticks.jsonl
+2026-06-30 03:17:26  DEBUG     Sending ping
+2026-06-30 03:17:26  ERROR     WS ERROR  Connection to remote host was lost.
+2026-06-30 03:17:26  ERROR     Connection to remote host was lost. - goodbye
+2026-06-30 03:17:26  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Tue Jun 30 03:17:26 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jun 30 03:17:36 UTC 2026] Starting runner...
+2026-06-30 03:17:36  INFO      ============================================================
+2026-06-30 03:17:36  INFO      STARTUP  date=2026-06-30  pid=322287
+2026-06-30 03:17:36  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-06-30 03:17:36  INFO      Resolving NSE tokens...
+2026-06-30 03:17:36  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:36  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:36  INFO      Resolved  IRFC             token=2029
+2026-06-30 03:17:36  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:36  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:36  INFO      Resolved  HFCL             token=21951
+2026-06-30 03:17:36  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:37  INFO      Resolved  JSWSTEEL         token=11723
+2026-06-30 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:37  INFO      Resolved  BANKBARODA       token=4668
+2026-06-30 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:37  INFO      Resolved  TATASTEEL        token=3499
+2026-06-30 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:37  INFO      Resolved  NMDC             token=15332
+2026-06-30 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:37  INFO      Resolved  IDEA             token=14366
+2026-06-30 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:38  INFO      Resolved  INDUSINDBK       token=5258
+2026-06-30 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:17:38  INFO      Resolved  SUZLON           token=12018
+2026-06-30 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-06-30 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-06-30 03:17:38  INFO      *** LIVE MODE  cash=Rs955  4x=Rs3819  K=1  per_trade=Rs3818 ***
+2026-06-30 03:17:38  INFO      9 stocks | Rs3818/trade | K=1 | EOD 15:00 IST
+2026-06-30 03:17:38  INFO      ============================================================
+2026-06-30 03:17:39  INFO      Websocket connected
+2026-06-30 03:17:39  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-30 03:17:39  INFO      Ticks -> data/2026-06-30/ticks.jsonl
+2026-06-30 03:18:39  DEBUG     Sending ping
+2026-06-30 03:18:39  ERROR     WS ERROR  Connection to remote host was lost.
+2026-06-30 03:18:39  ERROR     Connection to remote host was lost. - goodbye
+2026-06-30 03:18:39  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Tue Jun 30 03:18:39 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jun 30 03:18:49 UTC 2026] Starting runner...
+2026-06-30 03:18:49  INFO      ============================================================
+2026-06-30 03:18:49  INFO      STARTUP  date=2026-06-30  pid=322345
+2026-06-30 03:18:49  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-06-30 03:18:49  INFO      Resolving NSE tokens...
+2026-06-30 03:18:49  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:49  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:49  INFO      Resolved  IRFC             token=2029
+2026-06-30 03:18:49  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:49  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:49  INFO      Resolved  HFCL             token=21951
+2026-06-30 03:18:49  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:49  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:49  INFO      Resolved  JSWSTEEL         token=11723
+2026-06-30 03:18:49  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:50  INFO      Resolved  BANKBARODA       token=4668
+2026-06-30 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:50  INFO      Resolved  TATASTEEL        token=3499
+2026-06-30 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:50  INFO      Resolved  NMDC             token=15332
+2026-06-30 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:50  INFO      Resolved  IDEA             token=14366
+2026-06-30 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:50  INFO      Resolved  INDUSINDBK       token=5258
+2026-06-30 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-06-30 03:18:51  INFO      Resolved  SUZLON           token=12018
+2026-06-30 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-06-30 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-06-30 03:18:51  INFO      *** LIVE MODE  cash=Rs955  4x=Rs3819  K=1  per_trade=Rs3818 ***
+2026-06-30 03:18:51  INFO      9 stocks | Rs3818/trade | K=1 | EOD 15:00 IST
+2026-06-30 03:18:51  INFO      ============================================================
+2026-06-30 03:18:52  INFO      Websocket connected
+2026-06-30 03:18:52  INFO      WS CONNECTED  subscribed=9 instruments
+2026-06-30 03:18:52  INFO      Ticks -> data/2026-06-30/ticks.jsonl
+2026-06-30 03:19:52  DEBUG     Sending ping
+2026-06-30 03:20:22  DEBUG     Sending ping
+2026-06-30 03:20:52  DEBUG     Sending ping
+2026-06-30 03:21:22  DEBUG     Sending ping
+2026-06-30 03:21:52  DEBUG     Sending ping
+2026-06-30 03:22:22  DEBUG     Sending ping
+2026-06-30 03:22:52  DEBUG     Sending ping
+2026-06-30 03:23:22  DEBUG     Sending ping
+2026-06-30 03:23:52  DEBUG     Sending ping
+2026-06-30 03:24:22  DEBUG     Sending ping
+2026-06-30 03:24:52  DEBUG     Sending ping
+2026-06-30 03:25:22  DEBUG     Sending ping
+2026-06-30 03:25:52  DEBUG     Sending ping
+2026-06-30 03:26:22  DEBUG     Sending ping
+2026-06-30 03:26:52  DEBUG     Sending ping
+2026-06-30 03:27:22  DEBUG     Sending ping
+2026-06-30 03:27:52  DEBUG     Sending ping
+2026-06-30 03:28:22  DEBUG     Sending ping
+2026-06-30 03:28:52  DEBUG     Sending ping
+2026-06-30 03:29:22  DEBUG     Sending ping
+2026-06-30 03:29:52  DEBUG     Sending ping
+2026-06-30 03:30:00  DEBUG     CANDLE  SUZLON        O=57.21  H=57.21  L=57.21  C=57.21
+2026-06-30 03:30:00  DEBUG     CANDLE  TATASTEEL     O=189.57  H=189.57  L=189.57  C=189.57
+2026-06-30 03:30:01  DEBUG     CANDLE  BANKBARODA    O=272.80  H=272.80  L=272.80  C=272.80
+2026-06-30 03:30:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 03:30:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 03:30:01  INFO      ORDER OK  [CNC] SELL BANKBARODA qty=13  norenordno=26063000001408  Rs272.7500
+2026-06-30 03:30:01  WARNING   CNC SAME-DAY EXIT BANKBARODA — check Flattrade dashboard, convert to MIS if needed
+2026-06-30 03:30:01  INFO      ENTRY #1    BANKBARODA    SHORT  Rs272.80  qty=13  [flip DOWN | atr=0.90 st=274.15]
+2026-06-30 03:30:01  DEBUG     CANDLE  NMDC          O=85.45  H=85.45  L=85.45  C=85.45
+2026-06-30 03:30:01  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000001408
+2026-06-30 03:30:01  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000001408  reason=RED:RULE:{Check Holdings Including BTST}No Holdings uploaded for C-FZ38545 [KAMBALA]
+2026-06-30 03:30:03  DEBUG     CANDLE  IDEA          O=14.43  H=14.43  L=14.43  C=14.43
+2026-06-30 03:30:03  DEBUG     CANDLE  IRFC          O=90.61  H=90.61  L=90.61  C=90.61
+2026-06-30 03:30:04  DEBUG     CANDLE  INDUSINDBK    O=915.40  H=915.40  L=915.40  C=915.40
+2026-06-30 03:30:05  DEBUG     CANDLE  JSWSTEEL      O=1232.40  H=1232.40  L=1232.40  C=1232.40
+2026-06-30 03:30:22  DEBUG     Sending ping
+2026-06-30 03:30:52  DEBUG     Sending ping
+2026-06-30 03:31:22  DEBUG     Sending ping
+2026-06-30 03:31:52  DEBUG     Sending ping
+2026-06-30 03:32:22  DEBUG     Sending ping
+2026-06-30 03:32:52  DEBUG     Sending ping
+2026-06-30 03:33:22  DEBUG     Sending ping
+2026-06-30 03:33:52  DEBUG     Sending ping
+2026-06-30 03:34:22  DEBUG     Sending ping
+2026-06-30 03:34:52  DEBUG     Sending ping
+2026-06-30 03:35:22  DEBUG     Sending ping
+2026-06-30 03:35:52  DEBUG     Sending ping
+2026-06-30 03:36:22  DEBUG     Sending ping
+2026-06-30 03:36:52  DEBUG     Sending ping
+2026-06-30 03:37:22  DEBUG     Sending ping
+2026-06-30 03:37:52  DEBUG     Sending ping
+2026-06-30 03:38:22  DEBUG     Sending ping
+2026-06-30 03:38:52  DEBUG     Sending ping
+2026-06-30 03:39:22  DEBUG     Sending ping
+2026-06-30 03:39:52  DEBUG     Sending ping
+2026-06-30 03:40:22  DEBUG     Sending ping
+2026-06-30 03:40:52  DEBUG     Sending ping
+2026-06-30 03:41:22  DEBUG     Sending ping
+2026-06-30 03:41:52  DEBUG     Sending ping
+2026-06-30 03:42:22  DEBUG     Sending ping
+2026-06-30 03:42:52  DEBUG     Sending ping
+2026-06-30 03:43:22  DEBUG     Sending ping
+2026-06-30 03:43:52  DEBUG     Sending ping
+2026-06-30 03:44:22  DEBUG     Sending ping
+2026-06-30 03:44:52  DEBUG     Sending ping
+2026-06-30 03:45:00  DEBUG     CANDLE  IRFC          O=90.66  H=90.95  L=90.66  C=90.95
+2026-06-30 03:45:00  DEBUG     CANDLE  IDEA          O=14.38  H=14.45  L=14.38  C=14.45
+2026-06-30 03:45:00  DEBUG     CANDLE  SUZLON        O=57.40  H=57.46  L=57.40  C=57.46
+2026-06-30 03:45:00  DEBUG     CANDLE  HFCL          O=212.25  H=213.00  L=212.25  C=213.00
+2026-06-30 03:45:00  DEBUG     CANDLE  BANKBARODA    O=273.65  H=273.80  L=273.65  C=273.80
+2026-06-30 03:45:01  DEBUG     CANDLE  TATASTEEL     O=189.90  H=189.90  L=189.50  C=189.50
+2026-06-30 03:45:01  DEBUG     CANDLE  NMDC          O=85.40  H=85.45  L=85.40  C=85.45
+2026-06-30 03:45:05  DEBUG     CANDLE  INDUSINDBK    O=912.05  H=916.45  L=912.05  C=916.45
+2026-06-30 03:45:07  DEBUG     CANDLE  JSWSTEEL      O=1231.40  H=1232.00  L=1231.40  C=1232.00
+2026-06-30 03:45:22  DEBUG     Sending ping
+2026-06-30 03:45:52  DEBUG     Sending ping
+2026-06-30 03:46:22  DEBUG     Sending ping
+2026-06-30 03:46:52  DEBUG     Sending ping
+2026-06-30 03:47:22  DEBUG     Sending ping
+2026-06-30 03:47:52  DEBUG     Sending ping
+2026-06-30 03:48:22  DEBUG     Sending ping
+2026-06-30 03:48:52  DEBUG     Sending ping
+2026-06-30 03:49:22  DEBUG     Sending ping
+2026-06-30 03:49:52  DEBUG     Sending ping
+2026-06-30 03:50:22  DEBUG     Sending ping
+2026-06-30 03:50:52  DEBUG     Sending ping
+2026-06-30 03:51:22  DEBUG     Sending ping
+2026-06-30 03:51:52  DEBUG     Sending ping
+2026-06-30 03:52:22  DEBUG     Sending ping
+2026-06-30 03:52:52  DEBUG     Sending ping
+2026-06-30 03:53:22  DEBUG     Sending ping
+2026-06-30 03:53:52  DEBUG     Sending ping
+2026-06-30 03:54:22  DEBUG     Sending ping
+2026-06-30 03:54:52  DEBUG     Sending ping
+2026-06-30 03:55:22  DEBUG     Sending ping
+2026-06-30 03:55:52  DEBUG     Sending ping
+2026-06-30 03:56:22  DEBUG     Sending ping
+2026-06-30 03:56:52  DEBUG     Sending ping
+2026-06-30 03:57:22  DEBUG     Sending ping
+2026-06-30 03:57:52  DEBUG     Sending ping
+2026-06-30 03:58:22  DEBUG     Sending ping
+2026-06-30 03:58:52  DEBUG     Sending ping
+2026-06-30 03:59:22  DEBUG     Sending ping
+2026-06-30 03:59:52  DEBUG     Sending ping
+2026-06-30 04:00:00  DEBUG     CANDLE  INDUSINDBK    O=917.00  H=927.45  L=917.00  C=919.80
+2026-06-30 04:00:00  DEBUG     CANDLE  IDEA          O=14.44  H=14.45  L=14.29  C=14.34
+2026-06-30 04:00:00  DEBUG     CANDLE  HFCL          O=212.85  H=219.92  L=212.85  C=218.56
+2026-06-30 04:00:01  DEBUG     CANDLE  SUZLON        O=57.56  H=57.76  L=57.36  C=57.55
+2026-06-30 04:00:01  DEBUG     CANDLE  TATASTEEL     O=189.44  H=190.29  L=187.32  C=188.00
+2026-06-30 04:00:02  DEBUG     CANDLE  NMDC          O=85.49  H=86.05  L=85.01  C=85.02
+2026-06-30 04:00:04  DEBUG     CANDLE  IRFC          O=90.99  H=91.37  L=90.40  C=90.78
+2026-06-30 04:00:06  DEBUG     CANDLE  JSWSTEEL      O=1235.90  H=1235.90  L=1229.30  C=1231.70
+2026-06-30 04:00:09  DEBUG     CANDLE  BANKBARODA    O=273.90  H=274.65  L=273.20  C=273.35
+2026-06-30 04:00:22  DEBUG     Sending ping
+2026-06-30 04:00:52  DEBUG     Sending ping
+2026-06-30 04:01:22  DEBUG     Sending ping
+2026-06-30 04:01:52  DEBUG     Sending ping
+2026-06-30 04:02:22  DEBUG     Sending ping
+2026-06-30 04:02:52  DEBUG     Sending ping
+2026-06-30 04:03:22  DEBUG     Sending ping
+2026-06-30 04:03:52  DEBUG     Sending ping
+2026-06-30 04:04:22  DEBUG     Sending ping
+2026-06-30 04:04:52  DEBUG     Sending ping
+2026-06-30 04:05:22  DEBUG     Sending ping
+2026-06-30 04:05:52  DEBUG     Sending ping
+2026-06-30 04:06:22  DEBUG     Sending ping
+2026-06-30 04:06:52  DEBUG     Sending ping
+2026-06-30 04:07:22  DEBUG     Sending ping
+2026-06-30 04:07:52  DEBUG     Sending ping
+2026-06-30 04:08:22  DEBUG     Sending ping
+2026-06-30 04:08:52  DEBUG     Sending ping
+2026-06-30 04:09:22  DEBUG     Sending ping
+2026-06-30 04:09:52  DEBUG     Sending ping
+2026-06-30 04:10:22  DEBUG     Sending ping
+2026-06-30 04:10:52  DEBUG     Sending ping
+2026-06-30 04:11:22  DEBUG     Sending ping
+2026-06-30 04:11:52  DEBUG     Sending ping
+2026-06-30 04:12:22  DEBUG     Sending ping
+2026-06-30 04:12:52  DEBUG     Sending ping
+2026-06-30 04:13:22  DEBUG     Sending ping
+2026-06-30 04:13:52  DEBUG     Sending ping
+2026-06-30 04:14:22  DEBUG     Sending ping
+2026-06-30 04:14:52  DEBUG     Sending ping
+2026-06-30 04:15:00  DEBUG     CANDLE  IDEA          O=14.35  H=14.62  L=14.33  C=14.57
+2026-06-30 04:15:00  DEBUG     CANDLE  INDUSINDBK    O=919.85  H=920.90  L=917.40  C=919.15
+2026-06-30 04:15:00  DEBUG     CANDLE  IRFC          O=90.73  H=90.75  L=90.43  C=90.57
+2026-06-30 04:15:00  DEBUG     CANDLE  BANKBARODA    O=273.30  H=273.95  L=272.95  C=273.40
+2026-06-30 04:15:00  DEBUG     CANDLE  NMDC          O=84.95  H=85.00  L=84.75  C=84.82
+2026-06-30 04:15:01  DEBUG     CANDLE  HFCL          O=218.73  H=219.35  L=216.36  C=216.50
+2026-06-30 04:15:01  DEBUG     CANDLE  JSWSTEEL      O=1232.30  H=1237.90  L=1232.30  C=1237.20
+2026-06-30 04:15:01  DEBUG     CANDLE  TATASTEEL     O=188.02  H=188.20  L=187.05  C=187.73
+2026-06-30 04:15:09  DEBUG     CANDLE  SUZLON        O=57.56  H=57.62  L=57.42  C=57.54
+2026-06-30 04:15:22  DEBUG     Sending ping
+2026-06-30 04:15:52  DEBUG     Sending ping
+2026-06-30 04:16:22  DEBUG     Sending ping
+2026-06-30 04:16:52  DEBUG     Sending ping
+2026-06-30 04:17:22  DEBUG     Sending ping
+2026-06-30 04:17:52  DEBUG     Sending ping
+2026-06-30 04:18:22  DEBUG     Sending ping
+2026-06-30 04:18:52  DEBUG     Sending ping
+2026-06-30 04:19:22  DEBUG     Sending ping
+2026-06-30 04:19:52  DEBUG     Sending ping
+2026-06-30 04:20:22  DEBUG     Sending ping
+2026-06-30 04:20:52  DEBUG     Sending ping
+2026-06-30 04:21:22  DEBUG     Sending ping
+2026-06-30 04:21:52  DEBUG     Sending ping
+2026-06-30 04:22:22  DEBUG     Sending ping
+2026-06-30 04:22:52  DEBUG     Sending ping
+2026-06-30 04:23:22  DEBUG     Sending ping
+2026-06-30 04:23:52  DEBUG     Sending ping
+2026-06-30 04:24:22  DEBUG     Sending ping
+2026-06-30 04:24:52  DEBUG     Sending ping
+2026-06-30 04:25:22  DEBUG     Sending ping
+2026-06-30 04:25:52  DEBUG     Sending ping
+2026-06-30 04:26:22  DEBUG     Sending ping
+2026-06-30 04:26:52  DEBUG     Sending ping
+2026-06-30 04:27:22  DEBUG     Sending ping
+2026-06-30 04:27:52  DEBUG     Sending ping
+2026-06-30 04:28:22  DEBUG     Sending ping
+2026-06-30 04:28:52  DEBUG     Sending ping
+2026-06-30 04:29:22  DEBUG     Sending ping
+2026-06-30 04:29:52  DEBUG     Sending ping
+2026-06-30 04:30:00  DEBUG     CANDLE  INDUSINDBK    O=919.30  H=924.30  L=918.50  C=923.95
+2026-06-30 04:30:00  DEBUG     CANDLE  IDEA          O=14.56  H=14.61  L=14.46  C=14.51
+2026-06-30 04:30:00  DEBUG     CANDLE  HFCL          O=216.48  H=216.68  L=212.40  C=212.55
+2026-06-30 04:30:00  DEBUG     CANDLE  NMDC          O=84.78  H=84.95  L=84.70  C=84.92
+2026-06-30 04:30:03  DEBUG     CANDLE  JSWSTEEL      O=1236.50  H=1238.70  L=1235.20  C=1236.10
+2026-06-30 04:30:05  DEBUG     CANDLE  TATASTEEL     O=187.70  H=188.09  L=187.52  C=187.97
+2026-06-30 04:30:05  DEBUG     CANDLE  SUZLON        O=57.53  H=57.90  L=57.43  C=57.72
+2026-06-30 04:30:11  DEBUG     CANDLE  BANKBARODA    O=273.35  H=275.50  L=273.35  C=275.30
+2026-06-30 04:30:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 04:30:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 04:30:12  INFO      ORDER OK  [CNC] BUY BANKBARODA qty=13  norenordno=26063000085882  Rs272.9500
+2026-06-30 04:30:12  INFO      EXIT  #1    BANKBARODA    LOSS  Rs-0.94  entry=Rs272.80@06:00  exit=Rs272.87  total=Rs-0.94
+2026-06-30 04:30:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 04:30:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 04:30:12  INFO      ORDER OK  [CNC] BUY BANKBARODA qty=13  norenordno=26063000085888  Rs275.3500
+2026-06-30 04:30:12  INFO      ENTRY #2    BANKBARODA    LONG   Rs275.30  qty=13  [flip UP | atr=1.04 st=272.87]
+2026-06-30 04:30:12  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000085882
+2026-06-30 04:30:12  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000085882  reason=RED:Margin Shortfall:INR 2594.02 Available:INR 954.66 for C-FZ38545 [KAMBALA]
+2026-06-30 04:30:12  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000085888
+2026-06-30 04:30:12  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000085888  reason=RED:Margin Shortfall:INR 2625.22 Available:INR 954.66 for C-FZ38545 [KAMBALA]
+2026-06-30 04:30:16  DEBUG     CANDLE  IRFC          O=90.53  H=90.80  L=90.47  C=90.70
+2026-06-30 04:30:22  DEBUG     Sending ping
+2026-06-30 04:30:52  DEBUG     Sending ping
+2026-06-30 04:31:22  DEBUG     Sending ping
+2026-06-30 04:31:52  DEBUG     Sending ping
+2026-06-30 04:32:22  DEBUG     Sending ping
+2026-06-30 04:32:52  DEBUG     Sending ping
+2026-06-30 04:33:22  DEBUG     Sending ping
+2026-06-30 04:33:52  DEBUG     Sending ping
+2026-06-30 04:34:22  DEBUG     Sending ping
+2026-06-30 04:34:52  DEBUG     Sending ping
+2026-06-30 04:35:22  DEBUG     Sending ping
+2026-06-30 04:35:52  DEBUG     Sending ping
+2026-06-30 04:36:22  DEBUG     Sending ping
+2026-06-30 04:36:52  DEBUG     Sending ping
+2026-06-30 04:37:22  DEBUG     Sending ping
+2026-06-30 04:37:52  DEBUG     Sending ping
+2026-06-30 04:38:22  DEBUG     Sending ping
+2026-06-30 04:38:52  DEBUG     Sending ping
+2026-06-30 04:39:22  DEBUG     Sending ping
+2026-06-30 04:39:52  DEBUG     Sending ping
+2026-06-30 04:40:22  DEBUG     Sending ping
+2026-06-30 04:40:52  DEBUG     Sending ping
+2026-06-30 04:41:22  DEBUG     Sending ping
+2026-06-30 04:41:52  DEBUG     Sending ping
+2026-06-30 04:42:22  DEBUG     Sending ping
+2026-06-30 04:42:52  DEBUG     Sending ping
+2026-06-30 04:43:22  DEBUG     Sending ping
+2026-06-30 04:43:52  DEBUG     Sending ping
+2026-06-30 04:44:22  DEBUG     Sending ping
+2026-06-30 04:44:52  DEBUG     Sending ping
+2026-06-30 04:45:00  DEBUG     CANDLE  IDEA          O=14.52  H=14.53  L=14.45  C=14.51
+2026-06-30 04:45:00  DEBUG     CANDLE  HFCL          O=212.65  H=214.40  L=211.42  C=211.57
+2026-06-30 04:45:00  DEBUG     CANDLE  INDUSINDBK    O=923.80  H=927.20  L=923.30  C=927.20
+2026-06-30 04:45:01  DEBUG     CANDLE  TATASTEEL     O=188.00  H=188.02  L=187.20  C=187.73
+2026-06-30 04:45:01  DEBUG     CANDLE  SUZLON        O=57.74  H=57.78  L=57.61  C=57.73
+2026-06-30 04:45:02  DEBUG     CANDLE  NMDC          O=84.95  H=85.15  L=84.81  C=85.15
+2026-06-30 04:45:04  DEBUG     CANDLE  IRFC          O=90.72  H=90.86  L=90.58  C=90.68
+2026-06-30 04:45:06  DEBUG     CANDLE  BANKBARODA    O=275.20  H=275.85  L=274.35  C=275.65
+2026-06-30 04:45:11  DEBUG     CANDLE  JSWSTEEL      O=1235.80  H=1238.40  L=1233.80  C=1235.40
+2026-06-30 04:45:22  DEBUG     Sending ping
+2026-06-30 04:45:52  DEBUG     Sending ping
+2026-06-30 04:46:22  DEBUG     Sending ping
+2026-06-30 04:46:52  DEBUG     Sending ping
+2026-06-30 04:47:22  DEBUG     Sending ping
+2026-06-30 04:47:52  DEBUG     Sending ping
+2026-06-30 04:48:22  DEBUG     Sending ping
+2026-06-30 04:48:52  DEBUG     Sending ping
+2026-06-30 04:49:22  DEBUG     Sending ping
+2026-06-30 04:49:52  DEBUG     Sending ping
+2026-06-30 04:50:22  DEBUG     Sending ping
+2026-06-30 04:50:52  DEBUG     Sending ping
+2026-06-30 04:51:22  DEBUG     Sending ping
+2026-06-30 04:51:52  DEBUG     Sending ping
+2026-06-30 04:52:22  DEBUG     Sending ping
+2026-06-30 04:52:52  DEBUG     Sending ping
+2026-06-30 04:53:22  DEBUG     Sending ping
+2026-06-30 04:53:52  DEBUG     Sending ping
+2026-06-30 04:54:22  DEBUG     Sending ping
+2026-06-30 04:54:52  DEBUG     Sending ping
+2026-06-30 04:55:22  DEBUG     Sending ping
+2026-06-30 04:55:52  DEBUG     Sending ping
+2026-06-30 04:56:22  DEBUG     Sending ping
+2026-06-30 04:56:52  DEBUG     Sending ping
+2026-06-30 04:57:22  DEBUG     Sending ping
+2026-06-30 04:57:52  DEBUG     Sending ping
+2026-06-30 04:58:22  DEBUG     Sending ping
+2026-06-30 04:58:52  DEBUG     Sending ping
+2026-06-30 04:59:22  DEBUG     Sending ping
+2026-06-30 04:59:52  DEBUG     Sending ping
+2026-06-30 05:00:00  DEBUG     CANDLE  SUZLON        O=57.71  H=57.74  L=57.44  C=57.59
+2026-06-30 05:00:00  DEBUG     CANDLE  NMDC          O=85.13  H=85.13  L=84.85  C=84.97
+2026-06-30 05:00:01  DEBUG     CANDLE  HFCL          O=211.70  H=212.47  L=211.12  C=212.11
+2026-06-30 05:00:01  DEBUG     CANDLE  INDUSINDBK    O=926.95  H=927.95  L=925.05  C=925.95
+2026-06-30 05:00:02  DEBUG     CANDLE  JSWSTEEL      O=1234.70  H=1234.70  L=1231.40  C=1233.10
+2026-06-30 05:00:04  DEBUG     CANDLE  TATASTEEL     O=187.74  H=188.14  L=187.44  C=188.10
+2026-06-30 05:00:04  DEBUG     CANDLE  IRFC          O=90.71  H=90.74  L=90.45  C=90.49
+2026-06-30 05:00:10  DEBUG     CANDLE  IDEA          O=14.50  H=14.51  L=14.43  C=14.46
+2026-06-30 05:00:17  DEBUG     CANDLE  BANKBARODA    O=275.60  H=275.70  L=273.85  C=274.25
+2026-06-30 05:00:22  DEBUG     Sending ping
+2026-06-30 05:00:52  DEBUG     Sending ping
+2026-06-30 05:01:22  DEBUG     Sending ping
+2026-06-30 05:01:52  DEBUG     Sending ping
+2026-06-30 05:02:22  DEBUG     Sending ping
+2026-06-30 05:02:52  DEBUG     Sending ping
+2026-06-30 05:03:22  DEBUG     Sending ping
+2026-06-30 05:03:52  DEBUG     Sending ping
+2026-06-30 05:04:22  DEBUG     Sending ping
+2026-06-30 05:04:52  DEBUG     Sending ping
+2026-06-30 05:05:22  DEBUG     Sending ping
+2026-06-30 05:05:52  DEBUG     Sending ping
+2026-06-30 05:06:22  DEBUG     Sending ping
+2026-06-30 05:06:52  DEBUG     Sending ping
+2026-06-30 05:07:22  DEBUG     Sending ping
+2026-06-30 05:07:52  DEBUG     Sending ping
+2026-06-30 05:08:22  DEBUG     Sending ping
+2026-06-30 05:08:52  DEBUG     Sending ping
+2026-06-30 05:09:22  DEBUG     Sending ping
+2026-06-30 05:09:52  DEBUG     Sending ping
+2026-06-30 05:10:22  DEBUG     Sending ping
+2026-06-30 05:10:52  DEBUG     Sending ping
+2026-06-30 05:11:22  DEBUG     Sending ping
+2026-06-30 05:11:52  DEBUG     Sending ping
+2026-06-30 05:12:22  DEBUG     Sending ping
+2026-06-30 05:12:52  DEBUG     Sending ping
+2026-06-30 05:13:22  DEBUG     Sending ping
+2026-06-30 05:13:52  DEBUG     Sending ping
+2026-06-30 05:14:22  DEBUG     Sending ping
+2026-06-30 05:14:52  DEBUG     Sending ping
+2026-06-30 05:15:00  DEBUG     CANDLE  TATASTEEL     O=188.03  H=188.42  L=187.76  C=187.81
+2026-06-30 05:15:00  DEBUG     CANDLE  JSWSTEEL      O=1233.50  H=1234.90  L=1231.60  C=1232.30
+2026-06-30 05:15:01  DEBUG     CANDLE  INDUSINDBK    O=926.00  H=927.00  L=922.10  C=926.65
+2026-06-30 05:15:01  DEBUG     CANDLE  HFCL          O=212.10  H=213.01  L=211.64  C=211.91
+2026-06-30 05:15:01  DEBUG     CANDLE  SUZLON        O=57.58  H=57.60  L=57.46  C=57.50
+2026-06-30 05:15:01  DEBUG     CANDLE  NMDC          O=84.92  H=85.02  L=84.83  C=84.90
+2026-06-30 05:15:07  DEBUG     CANDLE  BANKBARODA    O=274.15  H=274.45  L=273.85  C=274.35
+2026-06-30 05:15:08  DEBUG     CANDLE  IRFC          O=90.48  H=90.53  L=90.35  C=90.40
+2026-06-30 05:15:21  DEBUG     CANDLE  IDEA          O=14.45  H=14.56  L=14.43  C=14.50
+2026-06-30 05:15:22  DEBUG     Sending ping
+2026-06-30 05:15:52  DEBUG     Sending ping
+2026-06-30 05:16:22  DEBUG     Sending ping
+2026-06-30 05:16:52  DEBUG     Sending ping
+2026-06-30 05:17:22  DEBUG     Sending ping
+2026-06-30 05:17:52  DEBUG     Sending ping
+2026-06-30 05:18:22  DEBUG     Sending ping
+2026-06-30 05:18:52  DEBUG     Sending ping
+2026-06-30 05:19:22  DEBUG     Sending ping
+2026-06-30 05:19:52  DEBUG     Sending ping
+2026-06-30 05:20:22  DEBUG     Sending ping
+2026-06-30 05:20:52  DEBUG     Sending ping
+2026-06-30 05:21:22  DEBUG     Sending ping
+2026-06-30 05:21:52  DEBUG     Sending ping
+2026-06-30 05:22:22  DEBUG     Sending ping
+2026-06-30 05:22:52  DEBUG     Sending ping
+2026-06-30 05:23:22  DEBUG     Sending ping
+2026-06-30 05:23:52  DEBUG     Sending ping
+2026-06-30 05:24:22  DEBUG     Sending ping
+2026-06-30 05:24:52  DEBUG     Sending ping
+2026-06-30 05:25:22  DEBUG     Sending ping
+2026-06-30 05:25:52  DEBUG     Sending ping
+2026-06-30 05:26:22  DEBUG     Sending ping
+2026-06-30 05:26:52  DEBUG     Sending ping
+2026-06-30 05:27:22  DEBUG     Sending ping
+2026-06-30 05:27:52  DEBUG     Sending ping
+2026-06-30 05:28:22  DEBUG     Sending ping
+2026-06-30 05:28:52  DEBUG     Sending ping
+2026-06-30 05:29:22  DEBUG     Sending ping
+2026-06-30 05:29:52  DEBUG     Sending ping
+2026-06-30 05:30:00  DEBUG     CANDLE  SUZLON        O=57.51  H=57.53  L=57.40  C=57.42
+2026-06-30 05:30:01  DEBUG     CANDLE  BANKBARODA    O=274.40  H=274.95  L=273.70  C=273.70
+2026-06-30 05:30:01  DEBUG     CANDLE  NMDC          O=84.88  H=84.93  L=84.61  C=84.61
+2026-06-30 05:30:02  DEBUG     CANDLE  IDEA          O=14.51  H=14.52  L=14.48  C=14.51
+2026-06-30 05:30:03  DEBUG     CANDLE  IRFC          O=90.39  H=90.67  L=90.35  C=90.54
+2026-06-30 05:30:04  DEBUG     CANDLE  JSWSTEEL      O=1232.20  H=1234.70  L=1231.90  C=1232.40
+2026-06-30 05:30:06  DEBUG     CANDLE  TATASTEEL     O=187.74  H=188.19  L=187.72  C=187.87
+2026-06-30 05:30:08  DEBUG     CANDLE  INDUSINDBK    O=926.95  H=931.20  L=924.65  C=930.00
+2026-06-30 05:30:12  DEBUG     CANDLE  HFCL          O=211.86  H=213.48  L=211.86  C=213.17
+2026-06-30 05:30:22  DEBUG     Sending ping
+2026-06-30 05:30:52  DEBUG     Sending ping
+2026-06-30 05:31:22  DEBUG     Sending ping
+2026-06-30 05:31:52  DEBUG     Sending ping
+2026-06-30 05:32:22  DEBUG     Sending ping
+2026-06-30 05:32:52  DEBUG     Sending ping
+2026-06-30 05:33:22  DEBUG     Sending ping
+2026-06-30 05:33:52  DEBUG     Sending ping
+2026-06-30 05:34:22  DEBUG     Sending ping
+2026-06-30 05:34:52  DEBUG     Sending ping
+2026-06-30 05:35:22  DEBUG     Sending ping
+2026-06-30 05:35:52  DEBUG     Sending ping
+2026-06-30 05:36:22  DEBUG     Sending ping
+2026-06-30 05:36:52  DEBUG     Sending ping
+2026-06-30 05:37:22  DEBUG     Sending ping
+2026-06-30 05:37:52  DEBUG     Sending ping
+2026-06-30 05:38:22  DEBUG     Sending ping
+2026-06-30 05:38:52  DEBUG     Sending ping
+2026-06-30 05:39:22  DEBUG     Sending ping
+2026-06-30 05:39:52  DEBUG     Sending ping
+2026-06-30 05:40:22  DEBUG     Sending ping
+2026-06-30 05:40:52  DEBUG     Sending ping
+2026-06-30 05:41:22  DEBUG     Sending ping
+2026-06-30 05:41:52  DEBUG     Sending ping
+2026-06-30 05:42:22  DEBUG     Sending ping
+2026-06-30 05:42:52  DEBUG     Sending ping
+2026-06-30 05:43:22  DEBUG     Sending ping
+2026-06-30 05:43:52  DEBUG     Sending ping
+2026-06-30 05:44:22  DEBUG     Sending ping
+2026-06-30 05:44:52  DEBUG     Sending ping
+2026-06-30 05:45:00  DEBUG     CANDLE  TATASTEEL     O=187.89  H=188.17  L=187.32  C=188.09
+2026-06-30 05:45:00  DEBUG     CANDLE  IDEA          O=14.52  H=14.57  L=14.48  C=14.57
+2026-06-30 05:45:00  DEBUG     CANDLE  SUZLON        O=57.43  H=57.54  L=57.31  C=57.49
+2026-06-30 05:45:00  DEBUG     CANDLE  BANKBARODA    O=273.80  H=275.10  L=273.55  C=274.80
+2026-06-30 05:45:00  DEBUG     CANDLE  NMDC          O=84.63  H=85.30  L=84.52  C=85.07
+2026-06-30 05:45:01  DEBUG     CANDLE  IRFC          O=90.50  H=90.73  L=90.40  C=90.70
+2026-06-30 05:45:02  DEBUG     CANDLE  HFCL          O=213.20  H=213.26  L=212.60  C=212.68
+2026-06-30 05:45:05  DEBUG     CANDLE  JSWSTEEL      O=1232.30  H=1233.90  L=1228.00  C=1232.70
+2026-06-30 05:45:10  DEBUG     CANDLE  INDUSINDBK    O=929.80  H=930.75  L=928.55  C=930.15
+2026-06-30 05:45:22  DEBUG     Sending ping
+2026-06-30 05:45:52  DEBUG     Sending ping
+2026-06-30 05:46:22  DEBUG     Sending ping
+2026-06-30 05:46:52  DEBUG     Sending ping
+2026-06-30 05:47:22  DEBUG     Sending ping
+2026-06-30 05:47:52  DEBUG     Sending ping
+2026-06-30 05:48:22  DEBUG     Sending ping
+2026-06-30 05:48:52  DEBUG     Sending ping
+2026-06-30 05:49:22  DEBUG     Sending ping
+2026-06-30 05:49:52  DEBUG     Sending ping
+2026-06-30 05:50:22  DEBUG     Sending ping
+2026-06-30 05:50:52  DEBUG     Sending ping
+2026-06-30 05:51:22  DEBUG     Sending ping
+2026-06-30 05:51:52  DEBUG     Sending ping
+2026-06-30 05:52:22  DEBUG     Sending ping
+2026-06-30 05:52:52  DEBUG     Sending ping
+2026-06-30 05:53:22  DEBUG     Sending ping
+2026-06-30 05:53:52  DEBUG     Sending ping
+2026-06-30 05:54:22  DEBUG     Sending ping
+2026-06-30 05:54:52  DEBUG     Sending ping
+2026-06-30 05:55:22  DEBUG     Sending ping
+2026-06-30 05:55:52  DEBUG     Sending ping
+2026-06-30 05:56:22  DEBUG     Sending ping
+2026-06-30 05:56:52  DEBUG     Sending ping
+2026-06-30 05:57:22  DEBUG     Sending ping
+2026-06-30 05:57:52  DEBUG     Sending ping
+2026-06-30 05:58:22  DEBUG     Sending ping
+2026-06-30 05:58:52  DEBUG     Sending ping
+2026-06-30 05:59:22  DEBUG     Sending ping
+2026-06-30 05:59:52  DEBUG     Sending ping
+2026-06-30 06:00:00  DEBUG     CANDLE  TATASTEEL     O=188.06  H=188.70  L=187.84  C=188.30
+2026-06-30 06:00:01  DEBUG     CANDLE  SUZLON        O=57.51  H=57.69  L=57.36  C=57.66
+2026-06-30 06:00:01  DEBUG     CANDLE  BANKBARODA    O=274.85  H=275.05  L=274.45  C=274.95
+2026-06-30 06:00:01  DEBUG     CANDLE  NMDC          O=85.11  H=85.45  L=84.94  C=85.01
+2026-06-30 06:00:03  DEBUG     CANDLE  IDEA          O=14.56  H=14.57  L=14.51  C=14.53
+2026-06-30 06:00:03  DEBUG     CANDLE  IRFC          O=90.68  H=90.88  L=90.62  C=90.85
+2026-06-30 06:00:03  DEBUG     CANDLE  HFCL          O=212.70  H=212.88  L=211.20  C=211.52
+2026-06-30 06:00:16  DEBUG     CANDLE  INDUSINDBK    O=930.45  H=931.40  L=929.50  C=929.55
+2026-06-30 06:00:22  DEBUG     Sending ping
+2026-06-30 06:00:22  DEBUG     CANDLE  JSWSTEEL      O=1232.90  H=1236.00  L=1229.80  C=1232.90
+2026-06-30 06:00:52  DEBUG     Sending ping
+2026-06-30 06:01:22  DEBUG     Sending ping
+2026-06-30 06:01:52  DEBUG     Sending ping
+2026-06-30 06:02:22  DEBUG     Sending ping
+2026-06-30 06:02:52  DEBUG     Sending ping
+2026-06-30 06:03:22  DEBUG     Sending ping
+2026-06-30 06:03:52  DEBUG     Sending ping
+2026-06-30 06:04:22  DEBUG     Sending ping
+2026-06-30 06:04:52  DEBUG     Sending ping
+2026-06-30 06:05:22  DEBUG     Sending ping
+2026-06-30 06:05:52  DEBUG     Sending ping
+2026-06-30 06:06:22  DEBUG     Sending ping
+2026-06-30 06:06:52  DEBUG     Sending ping
+2026-06-30 06:07:22  DEBUG     Sending ping
+2026-06-30 06:07:52  DEBUG     Sending ping
+2026-06-30 06:08:22  DEBUG     Sending ping
+2026-06-30 06:08:52  DEBUG     Sending ping
+2026-06-30 06:09:22  DEBUG     Sending ping
+2026-06-30 06:09:52  DEBUG     Sending ping
+2026-06-30 06:10:22  DEBUG     Sending ping
+2026-06-30 06:10:52  DEBUG     Sending ping
+2026-06-30 06:11:22  DEBUG     Sending ping
+2026-06-30 06:11:52  DEBUG     Sending ping
+2026-06-30 06:12:22  DEBUG     Sending ping
+2026-06-30 06:12:52  DEBUG     Sending ping
+2026-06-30 06:13:22  DEBUG     Sending ping
+2026-06-30 06:13:52  DEBUG     Sending ping
+2026-06-30 06:14:22  DEBUG     Sending ping
+2026-06-30 06:14:52  DEBUG     Sending ping
+2026-06-30 06:15:00  DEBUG     CANDLE  SUZLON        O=57.65  H=57.84  L=57.55  C=57.74
+2026-06-30 06:15:00  DEBUG     CANDLE  JSWSTEEL      O=1232.20  H=1232.20  L=1225.80  C=1226.40
+2026-06-30 06:15:01  DEBUG     CANDLE  BANKBARODA    O=274.90  H=275.10  L=273.65  C=273.65
+2026-06-30 06:15:01  DEBUG     CANDLE  NMDC          O=85.04  H=85.04  L=84.20  C=84.25
+2026-06-30 06:15:02  DEBUG     CANDLE  INDUSINDBK    O=929.80  H=931.20  L=929.30  C=929.45
+2026-06-30 06:15:04  DEBUG     CANDLE  TATASTEEL     O=188.37  H=188.50  L=188.01  C=188.22
+2026-06-30 06:15:05  DEBUG     CANDLE  IDEA          O=14.54  H=14.54  L=14.42  C=14.43
+2026-06-30 06:15:05  DEBUG     CANDLE  IRFC          O=90.81  H=90.85  L=90.60  C=90.65
+2026-06-30 06:15:08  DEBUG     CANDLE  HFCL          O=211.57  H=211.80  L=210.93  C=211.40
+2026-06-30 06:15:22  DEBUG     Sending ping
+2026-06-30 06:15:52  DEBUG     Sending ping
+2026-06-30 06:16:22  DEBUG     Sending ping
+2026-06-30 06:16:52  DEBUG     Sending ping
+2026-06-30 06:17:22  DEBUG     Sending ping
+2026-06-30 06:17:52  DEBUG     Sending ping
+2026-06-30 06:18:22  DEBUG     Sending ping
+2026-06-30 06:18:52  DEBUG     Sending ping
+2026-06-30 06:19:22  DEBUG     Sending ping
+2026-06-30 06:19:52  DEBUG     Sending ping
+2026-06-30 06:20:22  DEBUG     Sending ping
+2026-06-30 06:20:52  DEBUG     Sending ping
+2026-06-30 06:21:22  DEBUG     Sending ping
+2026-06-30 06:21:52  DEBUG     Sending ping
+2026-06-30 06:22:22  DEBUG     Sending ping
+2026-06-30 06:22:52  DEBUG     Sending ping
+2026-06-30 06:23:22  DEBUG     Sending ping
+2026-06-30 06:23:52  DEBUG     Sending ping
+2026-06-30 06:24:22  DEBUG     Sending ping
+2026-06-30 06:24:52  DEBUG     Sending ping
+2026-06-30 06:25:22  DEBUG     Sending ping
+2026-06-30 06:25:52  DEBUG     Sending ping
+2026-06-30 06:26:22  DEBUG     Sending ping
+2026-06-30 06:26:52  DEBUG     Sending ping
+2026-06-30 06:27:22  DEBUG     Sending ping
+2026-06-30 06:27:52  DEBUG     Sending ping
+2026-06-30 06:28:22  DEBUG     Sending ping
+2026-06-30 06:28:52  DEBUG     Sending ping
+2026-06-30 06:29:22  DEBUG     Sending ping
+2026-06-30 06:29:52  DEBUG     Sending ping
+2026-06-30 06:30:00  DEBUG     CANDLE  NMDC          O=84.28  H=84.72  L=84.19  C=84.59
+2026-06-30 06:30:00  DEBUG     CANDLE  SUZLON        O=57.72  H=58.15  L=57.69  C=58.13
+2026-06-30 06:30:00  DEBUG     CANDLE  INDUSINDBK    O=929.60  H=929.90  L=927.00  C=927.25
+2026-06-30 06:30:00  DEBUG     CANDLE  HFCL          O=211.45  H=211.80  L=210.93  C=211.72
+2026-06-30 06:30:00  DEBUG     CANDLE  IRFC          O=90.69  H=90.71  L=90.60  C=90.69
+2026-06-30 06:30:00  DEBUG     CANDLE  JSWSTEEL      O=1226.50  H=1229.80  L=1226.40  C=1229.50
+2026-06-30 06:30:02  DEBUG     CANDLE  BANKBARODA    O=273.70  H=274.45  L=273.60  C=274.35
+2026-06-30 06:30:11  DEBUG     CANDLE  TATASTEEL     O=188.15  H=188.40  L=188.05  C=188.40
+2026-06-30 06:30:11  DEBUG     CANDLE  IDEA          O=14.42  H=14.49  L=14.42  C=14.47
+2026-06-30 06:30:22  DEBUG     Sending ping
+2026-06-30 06:30:52  DEBUG     Sending ping
+2026-06-30 06:31:22  DEBUG     Sending ping
+2026-06-30 06:31:52  DEBUG     Sending ping
+2026-06-30 06:32:22  DEBUG     Sending ping
+2026-06-30 06:32:52  DEBUG     Sending ping
+2026-06-30 06:33:22  DEBUG     Sending ping
+2026-06-30 06:33:52  DEBUG     Sending ping
+2026-06-30 06:34:22  DEBUG     Sending ping
+2026-06-30 06:34:52  DEBUG     Sending ping
+2026-06-30 06:35:22  DEBUG     Sending ping
+2026-06-30 06:35:52  DEBUG     Sending ping
+2026-06-30 06:36:22  DEBUG     Sending ping
+2026-06-30 06:36:52  DEBUG     Sending ping
+2026-06-30 06:37:22  DEBUG     Sending ping
+2026-06-30 06:37:52  DEBUG     Sending ping
+2026-06-30 06:38:22  DEBUG     Sending ping
+2026-06-30 06:38:52  DEBUG     Sending ping
+2026-06-30 06:39:22  DEBUG     Sending ping
+2026-06-30 06:39:52  DEBUG     Sending ping
+2026-06-30 06:40:22  DEBUG     Sending ping
+2026-06-30 06:40:52  DEBUG     Sending ping
+2026-06-30 06:41:22  DEBUG     Sending ping
+2026-06-30 06:41:52  DEBUG     Sending ping
+2026-06-30 06:42:22  DEBUG     Sending ping
+2026-06-30 06:42:52  DEBUG     Sending ping
+2026-06-30 06:43:22  DEBUG     Sending ping
+2026-06-30 06:43:52  DEBUG     Sending ping
+2026-06-30 06:44:22  DEBUG     Sending ping
+2026-06-30 06:44:52  DEBUG     Sending ping
+2026-06-30 06:45:00  DEBUG     CANDLE  INDUSINDBK    O=927.60  H=927.85  L=925.95  C=926.90
+2026-06-30 06:45:00  DEBUG     CANDLE  HFCL          O=211.80  H=211.80  L=211.02  C=211.23
+2026-06-30 06:45:01  DEBUG     CANDLE  SUZLON        O=58.14  H=58.14  L=57.83  C=57.83
+2026-06-30 06:45:01  DEBUG     CANDLE  NMDC          O=84.58  H=84.61  L=84.35  C=84.51
+2026-06-30 06:45:02  DEBUG     CANDLE  IDEA          O=14.46  H=14.50  L=14.46  C=14.47
+2026-06-30 06:45:02  DEBUG     CANDLE  TATASTEEL     O=188.39  H=188.74  L=188.30  C=188.60
+2026-06-30 06:45:03  DEBUG     CANDLE  JSWSTEEL      O=1229.30  H=1232.60  L=1229.00  C=1231.20
+2026-06-30 06:45:07  DEBUG     CANDLE  BANKBARODA    O=274.25  H=274.55  L=273.70  C=274.25
+2026-06-30 06:45:08  DEBUG     CANDLE  IRFC          O=90.70  H=90.78  L=90.50  C=90.58
+2026-06-30 06:45:22  DEBUG     Sending ping
+2026-06-30 06:45:52  DEBUG     Sending ping
+2026-06-30 06:46:22  DEBUG     Sending ping
+2026-06-30 06:46:52  DEBUG     Sending ping
+2026-06-30 06:47:22  DEBUG     Sending ping
+2026-06-30 06:47:52  DEBUG     Sending ping
+2026-06-30 06:48:22  DEBUG     Sending ping
+2026-06-30 06:48:52  DEBUG     Sending ping
+2026-06-30 06:49:22  DEBUG     Sending ping
+2026-06-30 06:49:52  DEBUG     Sending ping
+2026-06-30 06:50:22  DEBUG     Sending ping
+2026-06-30 06:50:52  DEBUG     Sending ping
+2026-06-30 06:51:22  DEBUG     Sending ping
+2026-06-30 06:51:52  DEBUG     Sending ping
+2026-06-30 06:52:22  DEBUG     Sending ping
+2026-06-30 06:52:52  DEBUG     Sending ping
+2026-06-30 06:53:22  DEBUG     Sending ping
+2026-06-30 06:53:52  DEBUG     Sending ping
+2026-06-30 06:54:22  DEBUG     Sending ping
+2026-06-30 06:54:52  DEBUG     Sending ping
+2026-06-30 06:55:22  DEBUG     Sending ping
+2026-06-30 06:55:52  DEBUG     Sending ping
+2026-06-30 06:56:22  DEBUG     Sending ping
+2026-06-30 06:56:52  DEBUG     Sending ping
+2026-06-30 06:57:22  DEBUG     Sending ping
+2026-06-30 06:57:52  DEBUG     Sending ping
+2026-06-30 06:58:22  DEBUG     Sending ping
+2026-06-30 06:58:52  DEBUG     Sending ping
+2026-06-30 06:59:22  DEBUG     Sending ping
+2026-06-30 06:59:52  DEBUG     Sending ping
+2026-06-30 07:00:00  DEBUG     CANDLE  SUZLON        O=57.84  H=57.89  L=57.75  C=57.81
+2026-06-30 07:00:01  DEBUG     CANDLE  TATASTEEL     O=188.57  H=189.04  L=188.55  C=189.00
+2026-06-30 07:00:01  DEBUG     CANDLE  NMDC          O=84.48  H=84.57  L=83.93  C=84.30
+2026-06-30 07:00:01  DEBUG     CANDLE  IDEA          O=14.46  H=14.49  L=14.46  C=14.48
+2026-06-30 07:00:01  DEBUG     CANDLE  IRFC          O=90.55  H=90.65  L=90.50  C=90.60
+2026-06-30 07:00:01  DEBUG     CANDLE  HFCL          O=211.12  H=211.50  L=210.93  C=210.95
+2026-06-30 07:00:04  DEBUG     CANDLE  INDUSINDBK    O=927.25  H=928.70  L=926.60  C=928.15
+2026-06-30 07:00:04  DEBUG     CANDLE  JSWSTEEL      O=1231.40  H=1234.50  L=1230.30  C=1234.00
+2026-06-30 07:00:15  DEBUG     CANDLE  BANKBARODA    O=274.15  H=274.40  L=273.80  C=274.00
+2026-06-30 07:00:22  DEBUG     Sending ping
+2026-06-30 07:00:52  DEBUG     Sending ping
+2026-06-30 07:01:22  DEBUG     Sending ping
+2026-06-30 07:01:52  DEBUG     Sending ping
+2026-06-30 07:02:22  DEBUG     Sending ping
+2026-06-30 07:02:52  DEBUG     Sending ping
+2026-06-30 07:03:22  DEBUG     Sending ping
+2026-06-30 07:03:52  DEBUG     Sending ping
+2026-06-30 07:04:22  DEBUG     Sending ping
+2026-06-30 07:04:52  DEBUG     Sending ping
+2026-06-30 07:05:22  DEBUG     Sending ping
+2026-06-30 07:05:52  DEBUG     Sending ping
+2026-06-30 07:06:22  DEBUG     Sending ping
+2026-06-30 07:06:52  DEBUG     Sending ping
+2026-06-30 07:07:22  DEBUG     Sending ping
+2026-06-30 07:07:52  DEBUG     Sending ping
+2026-06-30 07:08:22  DEBUG     Sending ping
+2026-06-30 07:08:52  DEBUG     Sending ping
+2026-06-30 07:09:22  DEBUG     Sending ping
+2026-06-30 07:09:52  DEBUG     Sending ping
+2026-06-30 07:10:22  DEBUG     Sending ping
+2026-06-30 07:10:52  DEBUG     Sending ping
+2026-06-30 07:11:22  DEBUG     Sending ping
+2026-06-30 07:11:52  DEBUG     Sending ping
+2026-06-30 07:12:22  DEBUG     Sending ping
+2026-06-30 07:12:52  DEBUG     Sending ping
+2026-06-30 07:13:22  DEBUG     Sending ping
+2026-06-30 07:13:52  DEBUG     Sending ping
+2026-06-30 07:14:22  DEBUG     Sending ping
+2026-06-30 07:14:52  DEBUG     Sending ping
+2026-06-30 07:15:00  DEBUG     CANDLE  BANKBARODA    O=273.95  H=274.00  L=273.50  C=273.90
+2026-06-30 07:15:00  DEBUG     CANDLE  NMDC          O=84.32  H=84.59  L=84.26  C=84.56
+2026-06-30 07:15:00  DEBUG     CANDLE  HFCL          O=210.98  H=211.09  L=210.64  C=210.64
+2026-06-30 07:15:00  DEBUG     CANDLE  JSWSTEEL      O=1234.10  H=1235.90  L=1228.70  C=1229.30
+2026-06-30 07:15:00  DEBUG     CANDLE  INDUSINDBK    O=928.20  H=930.00  L=926.00  C=929.45
+2026-06-30 07:15:00  DEBUG     CANDLE  IRFC          O=90.62  H=90.62  L=90.36  C=90.40
+2026-06-30 07:15:00  DEBUG     CANDLE  TATASTEEL     O=189.02  H=189.04  L=188.54  C=188.84
+2026-06-30 07:15:01  DEBUG     CANDLE  IDEA          O=14.47  H=14.50  L=14.45  C=14.50
+2026-06-30 07:15:03  DEBUG     CANDLE  SUZLON        O=57.82  H=57.99  L=57.71  C=57.95
+2026-06-30 07:15:22  DEBUG     Sending ping
+2026-06-30 07:15:52  DEBUG     Sending ping
+2026-06-30 07:16:22  DEBUG     Sending ping
+2026-06-30 07:16:52  DEBUG     Sending ping
+2026-06-30 07:17:22  DEBUG     Sending ping
+2026-06-30 07:17:52  DEBUG     Sending ping
+2026-06-30 07:18:22  DEBUG     Sending ping
+2026-06-30 07:18:52  DEBUG     Sending ping
+2026-06-30 07:19:22  DEBUG     Sending ping
+2026-06-30 07:19:52  DEBUG     Sending ping
+2026-06-30 07:20:22  DEBUG     Sending ping
+2026-06-30 07:20:52  DEBUG     Sending ping
+2026-06-30 07:21:22  DEBUG     Sending ping
+2026-06-30 07:21:52  DEBUG     Sending ping
+2026-06-30 07:22:22  DEBUG     Sending ping
+2026-06-30 07:22:52  DEBUG     Sending ping
+2026-06-30 07:23:22  DEBUG     Sending ping
+2026-06-30 07:23:52  DEBUG     Sending ping
+2026-06-30 07:24:22  DEBUG     Sending ping
+2026-06-30 07:24:52  DEBUG     Sending ping
+2026-06-30 07:25:22  DEBUG     Sending ping
+2026-06-30 07:25:52  DEBUG     Sending ping
+2026-06-30 07:26:22  DEBUG     Sending ping
+2026-06-30 07:26:52  DEBUG     Sending ping
+2026-06-30 07:27:22  DEBUG     Sending ping
+2026-06-30 07:27:52  DEBUG     Sending ping
+2026-06-30 07:28:22  DEBUG     Sending ping
+2026-06-30 07:28:52  DEBUG     Sending ping
+2026-06-30 07:29:22  DEBUG     Sending ping
+2026-06-30 07:29:52  DEBUG     Sending ping
+2026-06-30 07:30:00  DEBUG     CANDLE  IRFC          O=90.44  H=90.45  L=90.21  C=90.30
+2026-06-30 07:30:01  DEBUG     CANDLE  IDEA          O=14.49  H=14.52  L=14.47  C=14.50
+2026-06-30 07:30:01  DEBUG     CANDLE  INDUSINDBK    O=929.90  H=932.80  L=928.90  C=931.85
+2026-06-30 07:30:01  DEBUG     CANDLE  HFCL          O=210.61  H=210.86  L=210.05  C=210.11
+2026-06-30 07:30:02  DEBUG     CANDLE  SUZLON        O=57.93  H=58.05  L=57.91  C=57.97
+2026-06-30 07:30:02  DEBUG     CANDLE  NMDC          O=84.55  H=84.60  L=84.42  C=84.56
+2026-06-30 07:30:03  DEBUG     CANDLE  BANKBARODA    O=273.65  H=273.95  L=273.30  C=273.40
+2026-06-30 07:30:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 07:30:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 07:30:04  INFO      ORDER OK  [CNC] SELL BANKBARODA qty=13  norenordno=26063000337806  Rs275.0000
+2026-06-30 07:30:04  WARNING   CNC SAME-DAY EXIT BANKBARODA — check Flattrade dashboard, convert to MIS if needed
+2026-06-30 07:30:04  INFO      EXIT  #2    BANKBARODA    LOSS  Rs-2.62  entry=Rs275.30@09:45  exit=Rs275.10  total=Rs-3.56
+2026-06-30 07:30:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 07:30:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 07:30:04  INFO      ORDER OK  [CNC] SELL BANKBARODA qty=13  norenordno=26063000337809  Rs273.3500
+2026-06-30 07:30:04  WARNING   CNC SAME-DAY EXIT BANKBARODA — check Flattrade dashboard, convert to MIS if needed
+2026-06-30 07:30:04  INFO      ENTRY #3    BANKBARODA    SHORT  Rs273.40  qty=13  [flip DOWN | atr=0.98 st=275.10]
+2026-06-30 07:30:04  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000337806
+2026-06-30 07:30:04  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000337806  reason=RED:RULE:{Check Holdings Including BTST}No Holdings uploaded for C-FZ38545 [KAMBALA]
+2026-06-30 07:30:04  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000337809
+2026-06-30 07:30:04  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000337809  reason=RED:RULE:{Check Holdings Including BTST}No Holdings uploaded for C-FZ38545 [KAMBALA]
+2026-06-30 07:30:05  DEBUG     CANDLE  JSWSTEEL      O=1229.10  H=1235.00  L=1228.50  C=1233.20
+2026-06-30 07:30:14  DEBUG     CANDLE  TATASTEEL     O=188.85  H=189.35  L=188.73  C=189.05
+2026-06-30 07:30:22  DEBUG     Sending ping
+2026-06-30 07:30:52  DEBUG     Sending ping
+2026-06-30 07:31:22  DEBUG     Sending ping
+2026-06-30 07:31:52  DEBUG     Sending ping
+2026-06-30 07:32:22  DEBUG     Sending ping
+2026-06-30 07:32:52  DEBUG     Sending ping
+2026-06-30 07:33:22  DEBUG     Sending ping
+2026-06-30 07:33:52  DEBUG     Sending ping
+2026-06-30 07:34:22  DEBUG     Sending ping
+2026-06-30 07:34:52  DEBUG     Sending ping
+2026-06-30 07:35:22  DEBUG     Sending ping
+2026-06-30 07:35:52  DEBUG     Sending ping
+2026-06-30 07:36:22  DEBUG     Sending ping
+2026-06-30 07:36:52  DEBUG     Sending ping
+2026-06-30 07:37:22  DEBUG     Sending ping
+2026-06-30 07:37:52  DEBUG     Sending ping
+2026-06-30 07:38:22  DEBUG     Sending ping
+2026-06-30 07:38:52  DEBUG     Sending ping
+2026-06-30 07:39:22  DEBUG     Sending ping
+2026-06-30 07:39:52  DEBUG     Sending ping
+2026-06-30 07:40:22  DEBUG     Sending ping
+2026-06-30 07:40:52  DEBUG     Sending ping
+2026-06-30 07:41:22  DEBUG     Sending ping
+2026-06-30 07:41:52  DEBUG     Sending ping
+2026-06-30 07:42:22  DEBUG     Sending ping
+2026-06-30 07:42:52  DEBUG     Sending ping
+2026-06-30 07:43:22  DEBUG     Sending ping
+2026-06-30 07:43:52  DEBUG     Sending ping
+2026-06-30 07:44:22  DEBUG     Sending ping
+2026-06-30 07:44:52  DEBUG     Sending ping
+2026-06-30 07:45:00  DEBUG     CANDLE  TATASTEEL     O=189.03  H=189.16  L=188.81  C=189.06
+2026-06-30 07:45:00  DEBUG     CANDLE  BANKBARODA    O=273.25  H=273.45  L=272.85  C=272.90
+2026-06-30 07:45:00  DEBUG     CANDLE  NMDC          O=84.57  H=84.69  L=84.50  C=84.61
+2026-06-30 07:45:00  DEBUG     CANDLE  INDUSINDBK    O=931.95  H=932.85  L=930.10  C=930.65
+2026-06-30 07:45:02  DEBUG     CANDLE  JSWSTEEL      O=1233.10  H=1233.10  L=1230.30  C=1230.30
+2026-06-30 07:45:02  DEBUG     CANDLE  IDEA          O=14.51  H=14.52  L=14.49  C=14.51
+2026-06-30 07:45:02  DEBUG     CANDLE  SUZLON        O=57.98  H=58.10  L=57.91  C=57.91
+2026-06-30 07:45:07  DEBUG     CANDLE  HFCL          O=210.22  H=210.40  L=209.53  C=210.15
+2026-06-30 07:45:13  DEBUG     CANDLE  IRFC          O=90.31  H=90.32  L=90.20  C=90.27
+2026-06-30 07:45:22  DEBUG     Sending ping
+2026-06-30 07:45:52  DEBUG     Sending ping
+2026-06-30 07:46:22  DEBUG     Sending ping
+2026-06-30 07:46:52  DEBUG     Sending ping
+2026-06-30 07:47:22  DEBUG     Sending ping
+2026-06-30 07:47:52  DEBUG     Sending ping
+2026-06-30 07:48:22  DEBUG     Sending ping
+2026-06-30 07:48:52  DEBUG     Sending ping
+2026-06-30 07:49:22  DEBUG     Sending ping
+2026-06-30 07:49:52  DEBUG     Sending ping
+2026-06-30 07:50:22  DEBUG     Sending ping
+2026-06-30 07:50:52  DEBUG     Sending ping
+2026-06-30 07:51:22  DEBUG     Sending ping
+2026-06-30 07:51:52  DEBUG     Sending ping
+2026-06-30 07:52:22  DEBUG     Sending ping
+2026-06-30 07:52:52  DEBUG     Sending ping
+2026-06-30 07:53:22  DEBUG     Sending ping
+2026-06-30 07:53:52  DEBUG     Sending ping
+2026-06-30 07:54:22  DEBUG     Sending ping
+2026-06-30 07:54:52  DEBUG     Sending ping
+2026-06-30 07:55:22  DEBUG     Sending ping
+2026-06-30 07:55:52  DEBUG     Sending ping
+2026-06-30 07:56:22  DEBUG     Sending ping
+2026-06-30 07:56:52  DEBUG     Sending ping
+2026-06-30 07:57:22  DEBUG     Sending ping
+2026-06-30 07:57:52  DEBUG     Sending ping
+2026-06-30 07:58:22  DEBUG     Sending ping
+2026-06-30 07:58:52  DEBUG     Sending ping
+2026-06-30 07:59:22  DEBUG     Sending ping
+2026-06-30 07:59:52  DEBUG     Sending ping
+2026-06-30 08:00:00  DEBUG     CANDLE  HFCL          O=210.12  H=210.66  L=209.37  C=210.13
+2026-06-30 08:00:00  DEBUG     CANDLE  NMDC          O=84.64  H=84.99  L=84.61  C=84.97
+2026-06-30 08:00:01  DEBUG     CANDLE  IDEA          O=14.50  H=14.55  L=14.48  C=14.53
+2026-06-30 08:00:02  DEBUG     CANDLE  BANKBARODA    O=273.00  H=273.25  L=272.55  C=273.00
+2026-06-30 08:00:02  DEBUG     CANDLE  IRFC          O=90.25  H=90.35  L=90.21  C=90.25
+2026-06-30 08:00:03  DEBUG     CANDLE  TATASTEEL     O=189.11  H=189.35  L=188.97  C=189.30
+2026-06-30 08:00:04  DEBUG     CANDLE  SUZLON        O=57.93  H=57.97  L=57.85  C=57.92
+2026-06-30 08:00:05  DEBUG     CANDLE  INDUSINDBK    O=931.00  H=931.75  L=929.20  C=931.10
+2026-06-30 08:00:05  DEBUG     CANDLE  JSWSTEEL      O=1230.10  H=1232.40  L=1229.40  C=1230.50
+2026-06-30 08:00:22  DEBUG     Sending ping
+2026-06-30 08:00:52  DEBUG     Sending ping
+2026-06-30 08:01:22  DEBUG     Sending ping
+2026-06-30 08:01:52  DEBUG     Sending ping
+2026-06-30 08:02:22  DEBUG     Sending ping
+2026-06-30 08:02:52  DEBUG     Sending ping
+2026-06-30 08:03:22  DEBUG     Sending ping
+2026-06-30 08:03:52  DEBUG     Sending ping
+2026-06-30 08:04:22  DEBUG     Sending ping
+2026-06-30 08:04:52  DEBUG     Sending ping
+2026-06-30 08:05:22  DEBUG     Sending ping
+2026-06-30 08:05:52  DEBUG     Sending ping
+2026-06-30 08:06:22  DEBUG     Sending ping
+2026-06-30 08:06:52  DEBUG     Sending ping
+2026-06-30 08:07:22  DEBUG     Sending ping
+2026-06-30 08:07:52  DEBUG     Sending ping
+2026-06-30 08:08:22  DEBUG     Sending ping
+2026-06-30 08:08:52  DEBUG     Sending ping
+2026-06-30 08:09:22  DEBUG     Sending ping
+2026-06-30 08:09:52  DEBUG     Sending ping
+2026-06-30 08:10:22  DEBUG     Sending ping
+2026-06-30 08:10:52  DEBUG     Sending ping
+2026-06-30 08:11:22  DEBUG     Sending ping
+2026-06-30 08:11:52  DEBUG     Sending ping
+2026-06-30 08:12:22  DEBUG     Sending ping
+2026-06-30 08:12:52  DEBUG     Sending ping
+2026-06-30 08:13:22  DEBUG     Sending ping
+2026-06-30 08:13:52  DEBUG     Sending ping
+2026-06-30 08:14:22  DEBUG     Sending ping
+2026-06-30 08:14:52  DEBUG     Sending ping
+2026-06-30 08:15:01  DEBUG     CANDLE  INDUSINDBK    O=931.05  H=932.35  L=927.35  C=928.25
+2026-06-30 08:15:02  DEBUG     CANDLE  BANKBARODA    O=273.10  H=273.20  L=272.25  C=272.55
+2026-06-30 08:15:02  DEBUG     CANDLE  NMDC          O=84.99  H=85.05  L=84.91  C=85.01
+2026-06-30 08:15:03  DEBUG     CANDLE  IDEA          O=14.52  H=14.58  L=14.52  C=14.57
+2026-06-30 08:15:03  DEBUG     CANDLE  IRFC          O=90.23  H=90.48  L=90.22  C=90.43
+2026-06-30 08:15:04  DEBUG     CANDLE  HFCL          O=210.12  H=210.49  L=209.40  C=209.93
+2026-06-30 08:15:04  DEBUG     CANDLE  JSWSTEEL      O=1231.00  H=1231.60  L=1229.10  C=1230.60
+2026-06-30 08:15:05  DEBUG     CANDLE  SUZLON        O=57.91  H=57.98  L=57.89  C=57.94
+2026-06-30 08:15:05  DEBUG     CANDLE  TATASTEEL     O=189.29  H=189.35  L=188.99  C=189.04
+2026-06-30 08:15:22  DEBUG     Sending ping
+2026-06-30 08:15:52  DEBUG     Sending ping
+2026-06-30 08:16:22  DEBUG     Sending ping
+2026-06-30 08:16:52  DEBUG     Sending ping
+2026-06-30 08:17:22  DEBUG     Sending ping
+2026-06-30 08:17:52  DEBUG     Sending ping
+2026-06-30 08:18:22  DEBUG     Sending ping
+2026-06-30 08:18:52  DEBUG     Sending ping
+2026-06-30 08:19:22  DEBUG     Sending ping
+2026-06-30 08:19:52  DEBUG     Sending ping
+2026-06-30 08:20:22  DEBUG     Sending ping
+2026-06-30 08:20:52  DEBUG     Sending ping
+2026-06-30 08:21:22  DEBUG     Sending ping
+2026-06-30 08:21:52  DEBUG     Sending ping
+2026-06-30 08:22:22  DEBUG     Sending ping
+2026-06-30 08:22:52  DEBUG     Sending ping
+2026-06-30 08:23:22  DEBUG     Sending ping
+2026-06-30 08:23:52  DEBUG     Sending ping
+2026-06-30 08:24:22  DEBUG     Sending ping
+2026-06-30 08:24:52  DEBUG     Sending ping
+2026-06-30 08:25:22  DEBUG     Sending ping
+2026-06-30 08:25:52  DEBUG     Sending ping
+2026-06-30 08:26:22  DEBUG     Sending ping
+2026-06-30 08:26:52  DEBUG     Sending ping
+2026-06-30 08:27:22  DEBUG     Sending ping
+2026-06-30 08:27:52  DEBUG     Sending ping
+2026-06-30 08:28:22  DEBUG     Sending ping
+2026-06-30 08:28:52  DEBUG     Sending ping
+2026-06-30 08:29:22  DEBUG     Sending ping
+2026-06-30 08:29:52  DEBUG     Sending ping
+2026-06-30 08:30:00  DEBUG     CANDLE  HFCL          O=209.99  H=210.88  L=209.65  C=210.87
+2026-06-30 08:30:00  DEBUG     CANDLE  INDUSINDBK    O=928.70  H=929.80  L=927.10  C=927.70
+2026-06-30 08:30:02  DEBUG     CANDLE  IRFC          O=90.41  H=90.49  L=90.38  C=90.45
+2026-06-30 08:30:02  DEBUG     CANDLE  SUZLON        O=57.95  H=57.96  L=57.88  C=57.91
+2026-06-30 08:30:02  DEBUG     CANDLE  TATASTEEL     O=189.00  H=189.07  L=188.55  C=188.59
+2026-06-30 08:30:02  DEBUG     CANDLE  BANKBARODA    O=272.60  H=272.80  L=272.00  C=272.35
+2026-06-30 08:30:02  DEBUG     CANDLE  NMDC          O=85.03  H=85.03  L=84.70  C=84.91
+2026-06-30 08:30:03  DEBUG     CANDLE  IDEA          O=14.56  H=14.58  L=14.53  C=14.55
+2026-06-30 08:30:20  DEBUG     CANDLE  JSWSTEEL      O=1230.70  H=1231.00  L=1229.00  C=1229.70
+2026-06-30 08:30:22  DEBUG     Sending ping
+2026-06-30 08:30:52  DEBUG     Sending ping
+2026-06-30 08:31:22  DEBUG     Sending ping
+2026-06-30 08:31:52  DEBUG     Sending ping
+2026-06-30 08:32:22  DEBUG     Sending ping
+2026-06-30 08:32:52  DEBUG     Sending ping
+2026-06-30 08:33:22  DEBUG     Sending ping
+2026-06-30 08:33:52  DEBUG     Sending ping
+2026-06-30 08:34:22  DEBUG     Sending ping
+2026-06-30 08:34:52  DEBUG     Sending ping
+2026-06-30 08:35:22  DEBUG     Sending ping
+2026-06-30 08:35:52  DEBUG     Sending ping
+2026-06-30 08:36:22  DEBUG     Sending ping
+2026-06-30 08:36:52  DEBUG     Sending ping
+2026-06-30 08:37:22  DEBUG     Sending ping
+2026-06-30 08:37:52  DEBUG     Sending ping
+2026-06-30 08:38:22  DEBUG     Sending ping
+2026-06-30 08:38:52  DEBUG     Sending ping
+2026-06-30 08:39:22  DEBUG     Sending ping
+2026-06-30 08:39:52  DEBUG     Sending ping
+2026-06-30 08:40:22  DEBUG     Sending ping
+2026-06-30 08:40:52  DEBUG     Sending ping
+2026-06-30 08:41:22  DEBUG     Sending ping
+2026-06-30 08:41:52  DEBUG     Sending ping
+2026-06-30 08:42:22  DEBUG     Sending ping
+2026-06-30 08:42:52  DEBUG     Sending ping
+2026-06-30 08:43:22  DEBUG     Sending ping
+2026-06-30 08:43:52  DEBUG     Sending ping
+2026-06-30 08:44:22  DEBUG     Sending ping
+2026-06-30 08:44:52  DEBUG     Sending ping
+2026-06-30 08:45:00  DEBUG     CANDLE  SUZLON        O=57.97  H=58.35  L=57.94  C=58.19
+2026-06-30 08:45:00  DEBUG     CANDLE  IDEA          O=14.57  H=14.60  L=14.55  C=14.56
+2026-06-30 08:45:01  DEBUG     CANDLE  TATASTEEL     O=188.64  H=188.66  L=188.14  C=188.37
+2026-06-30 08:45:01  DEBUG     CANDLE  BANKBARODA    O=272.40  H=273.15  L=272.00  C=273.05
+2026-06-30 08:45:01  DEBUG     CANDLE  INDUSINDBK    O=927.75  H=928.80  L=926.00  C=927.75
+2026-06-30 08:45:01  DEBUG     CANDLE  HFCL          O=210.85  H=211.48  L=210.51  C=210.96
+2026-06-30 08:45:01  DEBUG     CANDLE  JSWSTEEL      O=1229.60  H=1230.30  L=1226.60  C=1228.10
+2026-06-30 08:45:01  DEBUG     CANDLE  NMDC          O=84.94  H=85.05  L=84.85  C=85.02
+2026-06-30 08:45:08  DEBUG     CANDLE  IRFC          O=90.46  H=90.50  L=90.25  C=90.29
+2026-06-30 08:45:22  DEBUG     Sending ping
+2026-06-30 08:45:52  DEBUG     Sending ping
+2026-06-30 08:46:22  DEBUG     Sending ping
+2026-06-30 08:46:52  DEBUG     Sending ping
+2026-06-30 08:47:22  DEBUG     Sending ping
+2026-06-30 08:47:52  DEBUG     Sending ping
+2026-06-30 08:48:22  DEBUG     Sending ping
+2026-06-30 08:48:52  DEBUG     Sending ping
+2026-06-30 08:49:22  DEBUG     Sending ping
+2026-06-30 08:49:52  DEBUG     Sending ping
+2026-06-30 08:50:22  DEBUG     Sending ping
+2026-06-30 08:50:52  DEBUG     Sending ping
+2026-06-30 08:51:22  DEBUG     Sending ping
+2026-06-30 08:51:52  DEBUG     Sending ping
+2026-06-30 08:52:22  DEBUG     Sending ping
+2026-06-30 08:52:52  DEBUG     Sending ping
+2026-06-30 08:53:22  DEBUG     Sending ping
+2026-06-30 08:53:52  DEBUG     Sending ping
+2026-06-30 08:54:22  DEBUG     Sending ping
+2026-06-30 08:54:52  DEBUG     Sending ping
+2026-06-30 08:55:22  DEBUG     Sending ping
+2026-06-30 08:55:52  DEBUG     Sending ping
+2026-06-30 08:56:22  DEBUG     Sending ping
+2026-06-30 08:56:52  DEBUG     Sending ping
+2026-06-30 08:57:22  DEBUG     Sending ping
+2026-06-30 08:57:52  DEBUG     Sending ping
+2026-06-30 08:58:22  DEBUG     Sending ping
+2026-06-30 08:58:52  DEBUG     Sending ping
+2026-06-30 08:59:22  DEBUG     Sending ping
+2026-06-30 08:59:52  DEBUG     Sending ping
+2026-06-30 09:00:00  DEBUG     CANDLE  HFCL          O=210.95  H=212.30  L=210.80  C=211.42
+2026-06-30 09:00:00  DEBUG     CANDLE  IRFC          O=90.26  H=90.72  L=90.25  C=90.58
+2026-06-30 09:00:00  DEBUG     CANDLE  INDUSINDBK    O=927.70  H=930.00  L=926.00  C=929.20
+2026-06-30 09:00:01  DEBUG     CANDLE  JSWSTEEL      O=1228.00  H=1233.50  L=1224.20  C=1230.60
+2026-06-30 09:00:03  DEBUG     CANDLE  IDEA          O=14.57  H=14.59  L=14.54  C=14.58
+2026-06-30 09:00:04  DEBUG     CANDLE  SUZLON        O=58.17  H=58.28  L=58.08  C=58.25
+2026-06-30 09:00:04  DEBUG     CANDLE  TATASTEEL     O=188.36  H=189.07  L=188.16  C=188.76
+2026-06-30 09:00:05  DEBUG     CANDLE  BANKBARODA    O=273.15  H=274.40  L=272.85  C=273.80
+2026-06-30 09:00:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 09:00:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 09:00:05  INFO      ORDER OK  [CNC] BUY BANKBARODA qty=13  norenordno=26063000492129  Rs272.2000
+2026-06-30 09:00:05  INFO      EXIT  #3    BANKBARODA    WIN   Rs+16.32  entry=Rs273.40@12:45  exit=Rs272.14  total=Rs+12.76
+2026-06-30 09:00:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-06-30 09:00:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-06-30 09:00:05  INFO      ORDER OK  [CNC] BUY BANKBARODA qty=13  norenordno=26063000492142  Rs273.8500
+2026-06-30 09:00:05  INFO      ENTRY #4    BANKBARODA    LONG   Rs273.80  qty=13  [flip UP | atr=0.99 st=272.14]
+2026-06-30 09:00:05  DEBUG     CANDLE  NMDC          O=85.04  H=85.45  L=85.00  C=85.37
+2026-06-30 09:00:05  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000492129
+2026-06-30 09:00:05  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000492129  reason=RED:Margin Shortfall:INR 2584.27 Available:INR 954.66 for C-FZ38545 [KAMBALA]
+2026-06-30 09:00:05  INFO      ORDER UPDATE  NewAck    BANKBARODA-EQ  norenordno=26063000492142
+2026-06-30 09:00:05  ERROR     ORDER REJECTED  BANKBARODA-EQ  norenordno=26063000492142  reason=RED:Margin Shortfall:INR 2605.72 Available:INR 954.66 for C-FZ38545 [KAMBALA]
+2026-06-30 09:00:22  DEBUG     Sending ping
+2026-06-30 09:00:52  DEBUG     Sending ping
+2026-06-30 09:01:22  DEBUG     Sending ping
+2026-06-30 09:01:52  DEBUG     Sending ping
+2026-06-30 09:02:22  DEBUG     Sending ping
+2026-06-30 09:02:52  DEBUG     Sending ping
+2026-06-30 09:03:22  DEBUG     Sending ping
+2026-06-30 09:03:52  DEBUG     Sending ping
+2026-06-30 09:04:22  DEBUG     Sending ping
+2026-06-30 09:04:52  DEBUG     Sending ping
+2026-06-30 09:05:22  DEBUG     Sending ping
+2026-06-30 09:05:52  DEBUG     Sending ping
+2026-06-30 09:06:22  DEBUG     Sending ping
+2026-06-30 09:06:52  DEBUG     Sending ping
+2026-06-30 09:07:22  DEBUG     Sending ping
+2026-06-30 09:07:52  DEBUG     Sending ping
+2026-06-30 09:08:22  DEBUG     Sending ping
+2026-06-30 09:08:52  DEBUG     Sending ping
+2026-06-30 09:09:22  DEBUG     Sending ping
+2026-06-30 09:09:52  DEBUG     Sending ping
+2026-06-30 09:10:22  DEBUG     Sending ping
+2026-06-30 09:10:52  DEBUG     Sending ping
+2026-06-30 09:11:22  DEBUG     Sending ping
+2026-06-30 09:11:52  DEBUG     Sending ping
+2026-06-30 09:12:22  DEBUG     Sending ping
+2026-06-30 09:12:52  DEBUG     Sending ping
+2026-06-30 09:13:22  DEBUG     Sending ping
+2026-06-30 09:13:52  DEBUG     Sending ping
+2026-06-30 09:14:22  DEBUG     Sending ping
+2026-06-30 09:14:52  DEBUG     Sending ping
+2026-06-30 09:15:00  DEBUG     CANDLE  HFCL          O=211.44  H=213.01  L=211.00  C=212.66
+2026-06-30 09:15:00  DEBUG     CANDLE  BANKBARODA    O=273.75  H=274.20  L=273.55  C=273.85
+2026-06-30 09:15:01  DEBUG     CANDLE  IRFC          O=90.59  H=90.85  L=90.44  C=90.72
+2026-06-30 09:15:01  DEBUG     CANDLE  TATASTEEL     O=188.72  H=188.75  L=188.36  C=188.60
+2026-06-30 09:15:04  DEBUG     CANDLE  SUZLON        O=58.23  H=58.66  L=58.23  C=58.64
+2026-06-30 09:15:04  DEBUG     CANDLE  NMDC          O=85.35  H=85.43  L=85.24  C=85.34
+2026-06-30 09:15:10  DEBUG     CANDLE  INDUSINDBK    O=928.80  H=930.35  L=927.75  C=929.20
+2026-06-30 09:15:22  DEBUG     CANDLE  JSWSTEEL      O=1230.00  H=1230.30  L=1228.10  C=1228.70
+2026-06-30 09:15:22  DEBUG     Sending ping
+2026-06-30 09:15:33  DEBUG     CANDLE  IDEA          O=14.57  H=14.58  L=14.48  C=14.50
+2026-06-30 09:15:52  DEBUG     Sending ping
+2026-06-30 09:16:22  DEBUG     Sending ping
+2026-06-30 09:16:52  DEBUG     Sending ping
+2026-06-30 09:17:22  DEBUG     Sending ping
+2026-06-30 09:17:52  DEBUG     Sending ping
+2026-06-30 09:18:22  DEBUG     Sending ping
+2026-06-30 09:18:52  DEBUG     Sending ping
+2026-06-30 09:19:22  DEBUG     Sending ping
+2026-06-30 09:19:52  DEBUG     Sending ping
+2026-06-30 09:20:22  DEBUG     Sending ping
+2026-06-30 09:20:52  DEBUG     Sending ping
+2026-06-30 09:21:22  DEBUG     Sending ping
+2026-06-30 09:21:52  DEBUG     Sending ping
+2026-06-30 09:22:22  DEBUG     Sending ping
+2026-06-30 09:22:52  DEBUG     Sending ping
+2026-06-30 09:23:22  DEBUG     Sending ping
+2026-06-30 09:23:52  DEBUG     Sending ping
+2026-06-30 09:24:22  DEBUG     Sending ping
+2026-06-30 09:24:52  DEBUG     Sending ping
+2026-06-30 09:25:22  DEBUG     Sending ping
+2026-06-30 09:25:52  DEBUG     Sending ping
+2026-06-30 09:26:22  DEBUG     Sending ping
+2026-06-30 09:26:52  DEBUG     Sending ping
+2026-06-30 09:27:22  DEBUG     Sending ping
+2026-06-30 09:27:52  DEBUG     Sending ping
+2026-06-30 09:28:22  DEBUG     Sending ping
+2026-06-30 09:28:52  DEBUG     Sending ping
+2026-06-30 09:29:22  DEBUG     Sending ping
+2026-06-30 09:29:52  DEBUG     Sending ping
+2026-06-30 09:30:00  INFO      ────────────────────────────────────────────────────────────
+2026-06-30 09:30:00  INFO      EOD SUMMARY  date=2026-06-30  trades=4  total_pnl=Rs12.76
+2026-06-30 09:30:00  INFO      CNC OVERNIGHT  BANKBARODA  LONG  entry=Rs273.80  qty=13
+2026-06-30 09:30:00  INFO      Ticks  -> data/2026-06-30/ticks.jsonl
+2026-06-30 09:30:00  INFO      Trades -> logs/trades_2026-06-30.csv
+2026-06-30 09:30:00  INFO      ────────────────────────────────────────────────────────────
+2026-06-30 09:30:00  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:03  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:08  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:13  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:22  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:22  DEBUG     Sending ping
+2026-06-30 09:30:32  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:40  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:42  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:48  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:52  DEBUG     Sending ping
+2026-06-30 09:30:54  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:30:56  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:01  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:04  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:07  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:13  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:20  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:22  DEBUG     Sending ping
+2026-06-30 09:31:26  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:39  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:44  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:52  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:31:52  DEBUG     Sending ping
+2026-06-30 09:31:58  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:00  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:04  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:16  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:17  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:22  DEBUG     Sending ping
+2026-06-30 09:32:24  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:24  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:30  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:32  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:41  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:50  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:32:52  DEBUG     Sending ping
+2026-06-30 09:33:02  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:05  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:09  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:21  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:22  DEBUG     Sending ping
+2026-06-30 09:33:29  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:34  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:40  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:45  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:47  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:33:52  DEBUG     Sending ping
+2026-06-30 09:33:53  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:09  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:17  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:22  DEBUG     Sending ping
+2026-06-30 09:34:25  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:33  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:37  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:41  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:43  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:49  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:50  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:34:52  DEBUG     Sending ping
+2026-06-30 09:34:56  INFO      EOD  BANKBARODA    [CNC] holding overnight  entry=Rs273.80  qty=13
+2026-06-30 09:35:01  INFO      SIGINT received — flushing and shutting down
+2026-06-30 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-06-30 09:35:01  INFO      EOD SUMMARY  date=2026-06-30  trades=4  total_pnl=Rs12.76
+2026-06-30 09:35:01  INFO      CNC OVERNIGHT  BANKBARODA  LONG  entry=Rs273.80  qty=13
+2026-06-30 09:35:01  INFO      Ticks  -> data/2026-06-30/ticks.jsonl
+2026-06-30 09:35:01  INFO      Trades -> logs/trades_2026-06-30.csv
+2026-06-30 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-06-30 09:35:01  ERROR     WS ERROR  0
+[Tue Jun 30 09:35:01 UTC 2026] Runner stopped
+2026-06-30 09:35:01  WARNING   WS DISCONNECTED  code=None  reason=None  trades=4  pnl=Rs+12.76
+2026-06-30 09:35:01  ERROR     error from callback <bound method FlattradeClient._ws_close of <client.FlattradeClient object at 0x7fd025e6e670>>: I/O operation on closed file.
+2026-06-30 09:35:01  ERROR     WS ERROR  I/O operation on closed file.
+[Tue Jun 30 09:35:01 UTC 2026] Runner exited, restarting in 10s...

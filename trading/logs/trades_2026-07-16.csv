@@ -1,0 +1,4 @@
+trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,gross_pnl,cost,net_pnl
+13,LODHA,LONG,09:00,1167.75,09:28,1156.10,2,-23.30,0.82,-24.12
+14,LODHA,SHORT,09:15,1156.50,09:40,1157.35,2,-1.70,0.82,-2.52
+16,LODHA,LONG,09:45,1176.70,11:27,1181.40,2,9.40,0.84,8.56

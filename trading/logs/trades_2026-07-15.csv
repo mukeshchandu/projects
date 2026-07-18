@@ -1,0 +1,5 @@
+trade_no,symbol,side,entry_time,entry_price,exit_time,exit_price,qty,gross_pnl,cost,net_pnl
+7,ADANIENSOL,LONG,09:00,1701.50,09:15,1686.00,1,-15.50,0.60,-16.10
+8,LODHA,LONG,09:15,1171.00,09:43,1170.40,2,-1.20,0.83,-2.03
+9,JIOFIN,SHORT,10:45,237.35,11:27,238.25,10,-9.00,0.84,-9.84
+11,HCLTECH,SHORT,12:15,1166.40,13:18,1166.50,2,-0.20,0.83,-1.03

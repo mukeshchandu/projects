@@ -1,0 +1,1139 @@
+[Tue Jul 14 03:15:10 UTC 2026] Watchdog started
+[Tue Jul 14 03:15:10 UTC 2026] Starting runner...
+2026-07-14 03:15:10  INFO      ============================================================
+2026-07-14 03:15:10  INFO      STARTUP  date=2026-07-14  pid=455566
+2026-07-14 03:15:10  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-14 03:15:10  INFO      DYNAMIC BASKET (5): HCLTECH,UNIONBANK,ADANIENSOL,JIOFIN,DRREDDY | EMA filter=50
+2026-07-14 03:15:10  INFO      Resolving NSE tokens...
+2026-07-14 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:15:10  INFO      Resolved  HCLTECH          token=7229  tick=0.1
+2026-07-14 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:15:10  INFO      Resolved  UNIONBANK        token=10753  tick=0.01
+2026-07-14 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:15:10  INFO      Resolved  ADANIENSOL       token=10217  tick=0.1
+2026-07-14 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:15:11  INFO      Resolved  JIOFIN           token=18143  tick=0.01
+2026-07-14 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:15:11  INFO      Resolved  DRREDDY          token=881  tick=0.1
+2026-07-14 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-14 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 03:15:11  INFO      *** LIVE MODE  cash=Rs1515  deploy(85%)=Rs1288  K=2  cap/stock=Rs643 (MIS notional 4x, CNC 1x) ***
+2026-07-14 03:15:11  INFO      5 stocks | Rs643/trade | K=2 | EOD 15:00 IST
+2026-07-14 03:15:11  INFO      ============================================================
+2026-07-14 03:15:12  INFO      Websocket connected
+2026-07-14 03:15:12  INFO      WS CONNECTED  subscribed=5 instruments
+2026-07-14 03:15:12  INFO      Ticks -> data/2026-07-14/ticks.jsonl
+2026-07-14 03:16:12  DEBUG     Sending ping
+2026-07-14 03:16:12  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-14 03:16:12  ERROR     Connection to remote host was lost. - goodbye
+2026-07-14 03:16:12  WARNING   WS DISCONNECTED  code=None  reason=None  trades=3  pnl=Rs+15.59
+[Tue Jul 14 03:16:12 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jul 14 03:16:22 UTC 2026] Starting runner...
+2026-07-14 03:16:22  INFO      ============================================================
+2026-07-14 03:16:22  INFO      STARTUP  date=2026-07-14  pid=455574
+2026-07-14 03:16:22  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-14 03:16:22  INFO      DYNAMIC BASKET (5): HCLTECH,UNIONBANK,ADANIENSOL,JIOFIN,DRREDDY | EMA filter=50
+2026-07-14 03:16:22  INFO      Resolving NSE tokens...
+2026-07-14 03:16:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:16:22  INFO      Resolved  HCLTECH          token=7229  tick=0.1
+2026-07-14 03:16:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:16:22  INFO      Resolved  UNIONBANK        token=10753  tick=0.01
+2026-07-14 03:16:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:16:22  INFO      Resolved  ADANIENSOL       token=10217  tick=0.1
+2026-07-14 03:16:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:16:23  INFO      Resolved  JIOFIN           token=18143  tick=0.01
+2026-07-14 03:16:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 03:16:23  INFO      Resolved  DRREDDY          token=881  tick=0.1
+2026-07-14 03:16:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-14 03:16:23  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 03:16:23  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 03:16:23  INFO      *** LIVE MODE  cash=Rs1515  deploy(85%)=Rs1288  K=2  cap/stock=Rs643 (MIS notional 4x, CNC 1x) ***
+2026-07-14 03:16:23  INFO      5 stocks | Rs643/trade | K=2 | EOD 15:00 IST
+2026-07-14 03:16:23  INFO      ============================================================
+2026-07-14 03:16:24  INFO      Websocket connected
+2026-07-14 03:16:24  INFO      WS CONNECTED  subscribed=5 instruments
+2026-07-14 03:16:24  INFO      Ticks -> data/2026-07-14/ticks.jsonl
+2026-07-14 03:17:24  DEBUG     Sending ping
+2026-07-14 03:17:54  DEBUG     Sending ping
+2026-07-14 03:18:24  DEBUG     Sending ping
+2026-07-14 03:18:54  DEBUG     Sending ping
+2026-07-14 03:19:24  DEBUG     Sending ping
+2026-07-14 03:19:54  DEBUG     Sending ping
+2026-07-14 03:20:24  DEBUG     Sending ping
+2026-07-14 03:20:54  DEBUG     Sending ping
+2026-07-14 03:21:24  DEBUG     Sending ping
+2026-07-14 03:21:54  DEBUG     Sending ping
+2026-07-14 03:22:24  DEBUG     Sending ping
+2026-07-14 03:22:54  DEBUG     Sending ping
+2026-07-14 03:23:24  DEBUG     Sending ping
+2026-07-14 03:23:54  DEBUG     Sending ping
+2026-07-14 03:24:24  DEBUG     Sending ping
+2026-07-14 03:24:54  DEBUG     Sending ping
+2026-07-14 03:25:24  DEBUG     Sending ping
+2026-07-14 03:25:54  DEBUG     Sending ping
+2026-07-14 03:26:24  DEBUG     Sending ping
+2026-07-14 03:26:54  DEBUG     Sending ping
+2026-07-14 03:27:24  DEBUG     Sending ping
+2026-07-14 03:27:54  DEBUG     Sending ping
+2026-07-14 03:28:24  DEBUG     Sending ping
+2026-07-14 03:28:54  DEBUG     Sending ping
+2026-07-14 03:29:24  DEBUG     Sending ping
+2026-07-14 03:29:54  DEBUG     Sending ping
+2026-07-14 03:30:00  DEBUG     CANDLE  HCLTECH       O=1221.20  H=1221.20  L=1221.20  C=1221.20
+2026-07-14 03:30:00  DEBUG     CANDLE  JIOFIN        O=241.41  H=241.41  L=241.41  C=241.41
+2026-07-14 03:30:00  DEBUG     CANDLE  DRREDDY       O=1234.50  H=1234.50  L=1234.50  C=1234.50
+2026-07-14 03:30:00  DEBUG     CANDLE  ADANIENSOL    O=1644.60  H=1644.60  L=1644.60  C=1644.60
+2026-07-14 03:30:01  DEBUG     CANDLE  UNIONBANK     O=170.39  H=170.39  L=170.39  C=170.39
+2026-07-14 03:30:24  DEBUG     Sending ping
+2026-07-14 03:30:54  DEBUG     Sending ping
+2026-07-14 03:31:24  DEBUG     Sending ping
+2026-07-14 03:31:54  DEBUG     Sending ping
+2026-07-14 03:32:24  DEBUG     Sending ping
+2026-07-14 03:32:54  DEBUG     Sending ping
+2026-07-14 03:33:24  DEBUG     Sending ping
+2026-07-14 03:33:54  DEBUG     Sending ping
+2026-07-14 03:34:24  DEBUG     Sending ping
+2026-07-14 03:34:54  DEBUG     Sending ping
+2026-07-14 03:35:24  DEBUG     Sending ping
+2026-07-14 03:35:54  DEBUG     Sending ping
+2026-07-14 03:36:24  DEBUG     Sending ping
+2026-07-14 03:36:54  DEBUG     Sending ping
+2026-07-14 03:37:24  DEBUG     Sending ping
+2026-07-14 03:37:54  DEBUG     Sending ping
+2026-07-14 03:38:24  DEBUG     Sending ping
+2026-07-14 03:38:54  DEBUG     Sending ping
+2026-07-14 03:39:24  DEBUG     Sending ping
+2026-07-14 03:39:54  DEBUG     Sending ping
+2026-07-14 03:40:24  DEBUG     Sending ping
+2026-07-14 03:40:54  DEBUG     Sending ping
+2026-07-14 03:41:24  DEBUG     Sending ping
+2026-07-14 03:41:54  DEBUG     Sending ping
+2026-07-14 03:42:24  DEBUG     Sending ping
+2026-07-14 03:42:54  DEBUG     Sending ping
+2026-07-14 03:43:24  DEBUG     Sending ping
+2026-07-14 03:43:54  DEBUG     Sending ping
+2026-07-14 03:44:24  DEBUG     Sending ping
+2026-07-14 03:44:54  DEBUG     Sending ping
+2026-07-14 03:45:00  DEBUG     CANDLE  DRREDDY       O=1236.00  H=1236.00  L=1234.50  C=1234.50
+2026-07-14 03:45:00  DEBUG     CANDLE  ADANIENSOL    O=1641.70  H=1644.10  L=1641.70  C=1644.10
+2026-07-14 03:45:00  DEBUG     CANDLE  HCLTECH       O=1224.00  H=1224.00  L=1200.00  C=1200.00
+2026-07-14 03:45:00  DEBUG     CANDLE  UNIONBANK     O=170.70  H=170.70  L=170.00  C=170.00
+2026-07-14 03:45:00  DEBUG     CANDLE  JIOFIN        O=241.24  H=241.24  L=239.70  C=239.70
+2026-07-14 03:45:24  DEBUG     Sending ping
+2026-07-14 03:45:54  DEBUG     Sending ping
+2026-07-14 03:46:24  DEBUG     Sending ping
+2026-07-14 03:46:54  DEBUG     Sending ping
+2026-07-14 03:47:24  DEBUG     Sending ping
+2026-07-14 03:47:54  DEBUG     Sending ping
+2026-07-14 03:48:24  DEBUG     Sending ping
+2026-07-14 03:48:54  DEBUG     Sending ping
+2026-07-14 03:49:24  DEBUG     Sending ping
+2026-07-14 03:49:54  DEBUG     Sending ping
+2026-07-14 03:50:24  DEBUG     Sending ping
+2026-07-14 03:50:54  DEBUG     Sending ping
+2026-07-14 03:51:24  DEBUG     Sending ping
+2026-07-14 03:51:54  DEBUG     Sending ping
+2026-07-14 03:52:24  DEBUG     Sending ping
+2026-07-14 03:52:54  DEBUG     Sending ping
+2026-07-14 03:53:24  DEBUG     Sending ping
+2026-07-14 03:53:54  DEBUG     Sending ping
+2026-07-14 03:54:24  DEBUG     Sending ping
+2026-07-14 03:54:54  DEBUG     Sending ping
+2026-07-14 03:55:24  DEBUG     Sending ping
+2026-07-14 03:55:54  DEBUG     Sending ping
+2026-07-14 03:56:24  DEBUG     Sending ping
+2026-07-14 03:56:54  DEBUG     Sending ping
+2026-07-14 03:57:24  DEBUG     Sending ping
+2026-07-14 03:57:54  DEBUG     Sending ping
+2026-07-14 03:58:24  DEBUG     Sending ping
+2026-07-14 03:58:54  DEBUG     Sending ping
+2026-07-14 03:59:24  DEBUG     Sending ping
+2026-07-14 03:59:54  DEBUG     Sending ping
+2026-07-14 04:00:00  DEBUG     CANDLE  HCLTECH       O=1193.80  H=1209.00  L=1183.00  C=1199.20
+2026-07-14 04:00:02  DEBUG     CANDLE  JIOFIN        O=239.60  H=239.74  L=238.58  C=239.26
+2026-07-14 04:00:02  DEBUG     CANDLE  DRREDDY       O=1239.60  H=1243.60  L=1231.60  C=1241.50
+2026-07-14 04:00:02  DEBUG     CANDLE  ADANIENSOL    O=1643.80  H=1661.50  L=1636.60  C=1639.60
+2026-07-14 04:00:06  DEBUG     CANDLE  UNIONBANK     O=169.60  H=171.42  L=168.10  C=169.06
+2026-07-14 04:00:24  DEBUG     Sending ping
+2026-07-14 04:00:54  DEBUG     Sending ping
+2026-07-14 04:01:24  DEBUG     Sending ping
+2026-07-14 04:01:54  DEBUG     Sending ping
+2026-07-14 04:02:24  DEBUG     Sending ping
+2026-07-14 04:02:54  DEBUG     Sending ping
+2026-07-14 04:03:24  DEBUG     Sending ping
+2026-07-14 04:03:54  DEBUG     Sending ping
+2026-07-14 04:04:24  DEBUG     Sending ping
+2026-07-14 04:04:54  DEBUG     Sending ping
+2026-07-14 04:05:24  DEBUG     Sending ping
+2026-07-14 04:05:54  DEBUG     Sending ping
+2026-07-14 04:06:24  DEBUG     Sending ping
+2026-07-14 04:06:54  DEBUG     Sending ping
+2026-07-14 04:07:24  DEBUG     Sending ping
+2026-07-14 04:07:54  DEBUG     Sending ping
+2026-07-14 04:08:24  DEBUG     Sending ping
+2026-07-14 04:08:54  DEBUG     Sending ping
+2026-07-14 04:09:24  DEBUG     Sending ping
+2026-07-14 04:09:54  DEBUG     Sending ping
+2026-07-14 04:10:24  DEBUG     Sending ping
+2026-07-14 04:10:54  DEBUG     Sending ping
+2026-07-14 04:11:24  DEBUG     Sending ping
+2026-07-14 04:11:54  DEBUG     Sending ping
+2026-07-14 04:12:24  DEBUG     Sending ping
+2026-07-14 04:12:54  DEBUG     Sending ping
+2026-07-14 04:13:24  DEBUG     Sending ping
+2026-07-14 04:13:54  DEBUG     Sending ping
+2026-07-14 04:14:24  DEBUG     Sending ping
+2026-07-14 04:14:54  DEBUG     Sending ping
+2026-07-14 04:15:00  DEBUG     CANDLE  JIOFIN        O=239.24  H=239.42  L=237.70  C=237.91
+2026-07-14 04:15:00  DEBUG     CANDLE  UNIONBANK     O=169.05  H=169.39  L=168.10  C=168.73
+2026-07-14 04:15:00  DEBUG     CANDLE  DRREDDY       O=1243.00  H=1246.30  L=1242.80  C=1245.90
+2026-07-14 04:15:00  DEBUG     CANDLE  ADANIENSOL    O=1638.70  H=1649.00  L=1638.10  C=1640.00
+2026-07-14 04:15:01  DEBUG     CANDLE  HCLTECH       O=1199.10  H=1199.60  L=1191.10  C=1198.20
+2026-07-14 04:15:24  DEBUG     Sending ping
+2026-07-14 04:15:54  DEBUG     Sending ping
+2026-07-14 04:16:24  DEBUG     Sending ping
+2026-07-14 04:16:54  DEBUG     Sending ping
+2026-07-14 04:17:24  DEBUG     Sending ping
+2026-07-14 04:17:54  DEBUG     Sending ping
+2026-07-14 04:18:24  DEBUG     Sending ping
+2026-07-14 04:18:54  DEBUG     Sending ping
+2026-07-14 04:19:24  DEBUG     Sending ping
+2026-07-14 04:19:54  DEBUG     Sending ping
+2026-07-14 04:20:24  DEBUG     Sending ping
+2026-07-14 04:20:54  DEBUG     Sending ping
+2026-07-14 04:21:24  DEBUG     Sending ping
+2026-07-14 04:21:54  DEBUG     Sending ping
+2026-07-14 04:22:24  DEBUG     Sending ping
+2026-07-14 04:22:54  DEBUG     Sending ping
+2026-07-14 04:23:24  DEBUG     Sending ping
+2026-07-14 04:23:54  DEBUG     Sending ping
+2026-07-14 04:24:24  DEBUG     Sending ping
+2026-07-14 04:24:54  DEBUG     Sending ping
+2026-07-14 04:25:24  DEBUG     Sending ping
+2026-07-14 04:25:54  DEBUG     Sending ping
+2026-07-14 04:26:24  DEBUG     Sending ping
+2026-07-14 04:26:54  DEBUG     Sending ping
+2026-07-14 04:27:24  DEBUG     Sending ping
+2026-07-14 04:27:54  DEBUG     Sending ping
+2026-07-14 04:28:24  DEBUG     Sending ping
+2026-07-14 04:28:54  DEBUG     Sending ping
+2026-07-14 04:29:24  DEBUG     Sending ping
+2026-07-14 04:29:54  DEBUG     Sending ping
+2026-07-14 04:30:00  DEBUG     CANDLE  UNIONBANK     O=168.69  H=168.73  L=167.38  C=167.55
+2026-07-14 04:30:01  DEBUG     CANDLE  ADANIENSOL    O=1639.30  H=1649.00  L=1636.90  C=1640.00
+2026-07-14 04:30:02  DEBUG     CANDLE  HCLTECH       O=1198.40  H=1198.40  L=1190.40  C=1192.70
+2026-07-14 04:30:03  DEBUG     CANDLE  JIOFIN        O=237.92  H=238.24  L=237.75  C=238.18
+2026-07-14 04:30:04  DEBUG     CANDLE  DRREDDY       O=1245.80  H=1246.30  L=1243.10  C=1245.10
+2026-07-14 04:30:24  DEBUG     Sending ping
+2026-07-14 04:30:54  DEBUG     Sending ping
+2026-07-14 04:31:24  DEBUG     Sending ping
+2026-07-14 04:31:54  DEBUG     Sending ping
+2026-07-14 04:32:24  DEBUG     Sending ping
+2026-07-14 04:32:54  DEBUG     Sending ping
+2026-07-14 04:33:24  DEBUG     Sending ping
+2026-07-14 04:33:54  DEBUG     Sending ping
+2026-07-14 04:34:24  DEBUG     Sending ping
+2026-07-14 04:34:54  DEBUG     Sending ping
+2026-07-14 04:35:24  DEBUG     Sending ping
+2026-07-14 04:35:54  DEBUG     Sending ping
+2026-07-14 04:36:24  DEBUG     Sending ping
+2026-07-14 04:36:54  DEBUG     Sending ping
+2026-07-14 04:37:24  DEBUG     Sending ping
+2026-07-14 04:37:54  DEBUG     Sending ping
+2026-07-14 04:38:24  DEBUG     Sending ping
+2026-07-14 04:38:54  DEBUG     Sending ping
+2026-07-14 04:39:24  DEBUG     Sending ping
+2026-07-14 04:39:54  DEBUG     Sending ping
+2026-07-14 04:40:24  DEBUG     Sending ping
+2026-07-14 04:40:54  DEBUG     Sending ping
+2026-07-14 04:41:24  DEBUG     Sending ping
+2026-07-14 04:41:54  DEBUG     Sending ping
+2026-07-14 04:42:24  DEBUG     Sending ping
+2026-07-14 04:42:54  DEBUG     Sending ping
+2026-07-14 04:43:24  DEBUG     Sending ping
+2026-07-14 04:43:54  DEBUG     Sending ping
+2026-07-14 04:44:24  DEBUG     Sending ping
+2026-07-14 04:44:54  DEBUG     Sending ping
+2026-07-14 04:45:00  DEBUG     CANDLE  HCLTECH       O=1192.80  H=1196.90  L=1188.60  C=1190.30
+2026-07-14 04:45:01  DEBUG     CANDLE  ADANIENSOL    O=1641.00  H=1662.50  L=1638.70  C=1661.10
+2026-07-14 04:45:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 04:45:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 04:45:01  INFO      ORDER  ADANIENSOL    BUY    MIS   qty=1       price=Rs1661.70  reason=flip UP | atr=10.05 st=1639.53 sl=1646.02
+2026-07-14 04:45:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 04:45:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 04:45:01  INFO      ACCEPTED  ADANIENSOL  norenordno=26071400120892
+2026-07-14 04:45:01  INFO      CAPITAL  committed=Rs415.43  (added Rs415.43 for MIS ADANIENSOL)
+2026-07-14 04:45:01  INFO      ENTRY #4    ADANIENSOL    LONG   Rs1661.70  qty=1  [flip UP | atr=10.05 st=1639.53 sl=1646.02]
+2026-07-14 04:45:01  DEBUG     CANDLE  JIOFIN        O=238.15  H=238.44  L=237.89  C=238.27
+2026-07-14 04:45:01  DEBUG     CANDLE  DRREDDY       O=1245.00  H=1245.70  L=1241.30  C=1244.50
+2026-07-14 04:45:01  INFO      ORDER UPDATE  NewAck    ADANIENSOL-EQ  norenordno=26071400120892
+2026-07-14 04:45:01  INFO      ORDER UPDATE  New       ADANIENSOL-EQ  norenordno=26071400120892
+2026-07-14 04:45:01  INFO      FILL CONFIRMED  ADANIENSOL    BUY  actual=Rs1661.5000  est=Rs1661.7000  slippage=Rs-0.2000
+2026-07-14 04:45:06  DEBUG     CANDLE  UNIONBANK     O=167.50  H=168.50  L=167.18  C=168.11
+2026-07-14 04:45:24  DEBUG     Sending ping
+2026-07-14 04:45:54  DEBUG     Sending ping
+2026-07-14 04:46:24  DEBUG     Sending ping
+2026-07-14 04:46:54  DEBUG     Sending ping
+2026-07-14 04:47:24  DEBUG     Sending ping
+2026-07-14 04:47:54  DEBUG     Sending ping
+2026-07-14 04:48:24  DEBUG     Sending ping
+2026-07-14 04:48:54  DEBUG     Sending ping
+2026-07-14 04:49:24  DEBUG     Sending ping
+2026-07-14 04:49:54  DEBUG     Sending ping
+2026-07-14 04:50:24  DEBUG     Sending ping
+2026-07-14 04:50:54  DEBUG     Sending ping
+2026-07-14 04:51:24  DEBUG     Sending ping
+2026-07-14 04:51:54  DEBUG     Sending ping
+2026-07-14 04:52:24  DEBUG     Sending ping
+2026-07-14 04:52:54  DEBUG     Sending ping
+2026-07-14 04:53:24  DEBUG     Sending ping
+2026-07-14 04:53:54  DEBUG     Sending ping
+2026-07-14 04:54:24  DEBUG     Sending ping
+2026-07-14 04:54:54  DEBUG     Sending ping
+2026-07-14 04:55:24  DEBUG     Sending ping
+2026-07-14 04:55:54  DEBUG     Sending ping
+2026-07-14 04:56:24  DEBUG     Sending ping
+2026-07-14 04:56:54  DEBUG     Sending ping
+2026-07-14 04:57:24  DEBUG     Sending ping
+2026-07-14 04:57:54  DEBUG     Sending ping
+2026-07-14 04:58:24  DEBUG     Sending ping
+2026-07-14 04:58:54  DEBUG     Sending ping
+2026-07-14 04:59:24  DEBUG     Sending ping
+2026-07-14 04:59:54  DEBUG     Sending ping
+2026-07-14 05:00:00  DEBUG     CANDLE  ADANIENSOL    O=1661.20  H=1662.60  L=1648.80  C=1650.50
+2026-07-14 05:00:00  DEBUG     CANDLE  JIOFIN        O=238.25  H=238.36  L=237.32  C=237.43
+2026-07-14 05:00:00  DEBUG     CANDLE  DRREDDY       O=1244.60  H=1245.60  L=1242.30  C=1243.70
+2026-07-14 05:00:00  DEBUG     CANDLE  HCLTECH       O=1190.50  H=1198.80  L=1185.60  C=1197.90
+2026-07-14 05:00:00  DEBUG     CANDLE  UNIONBANK     O=168.06  H=168.16  L=167.40  C=167.44
+2026-07-14 05:00:24  DEBUG     Sending ping
+2026-07-14 05:00:54  DEBUG     Sending ping
+2026-07-14 05:01:24  DEBUG     Sending ping
+2026-07-14 05:01:54  DEBUG     Sending ping
+2026-07-14 05:02:24  DEBUG     Sending ping
+2026-07-14 05:02:54  DEBUG     Sending ping
+2026-07-14 05:03:24  DEBUG     Sending ping
+2026-07-14 05:03:54  DEBUG     Sending ping
+2026-07-14 05:04:24  DEBUG     Sending ping
+2026-07-14 05:04:54  DEBUG     Sending ping
+2026-07-14 05:05:24  DEBUG     Sending ping
+2026-07-14 05:05:54  DEBUG     Sending ping
+2026-07-14 05:06:24  DEBUG     Sending ping
+2026-07-14 05:06:54  DEBUG     Sending ping
+2026-07-14 05:07:24  DEBUG     Sending ping
+2026-07-14 05:07:54  DEBUG     Sending ping
+2026-07-14 05:08:24  DEBUG     Sending ping
+2026-07-14 05:08:54  DEBUG     Sending ping
+2026-07-14 05:09:24  DEBUG     Sending ping
+2026-07-14 05:09:54  DEBUG     Sending ping
+2026-07-14 05:10:24  DEBUG     Sending ping
+2026-07-14 05:10:54  DEBUG     Sending ping
+2026-07-14 05:11:24  DEBUG     Sending ping
+2026-07-14 05:11:54  DEBUG     Sending ping
+2026-07-14 05:12:24  DEBUG     Sending ping
+2026-07-14 05:12:54  DEBUG     Sending ping
+2026-07-14 05:13:24  DEBUG     Sending ping
+2026-07-14 05:13:54  DEBUG     Sending ping
+2026-07-14 05:14:24  DEBUG     Sending ping
+2026-07-14 05:14:54  DEBUG     Sending ping
+2026-07-14 05:15:01  DEBUG     CANDLE  HCLTECH       O=1198.00  H=1198.80  L=1183.00  C=1183.40
+2026-07-14 05:15:01  DEBUG     CANDLE  JIOFIN        O=237.45  H=238.00  L=237.30  C=237.56
+2026-07-14 05:15:01  DEBUG     CANDLE  DRREDDY       O=1243.90  H=1246.20  L=1243.80  C=1245.20
+2026-07-14 05:15:01  DEBUG     CANDLE  UNIONBANK     O=167.41  H=168.26  L=167.40  C=167.79
+2026-07-14 05:15:04  DEBUG     CANDLE  ADANIENSOL    O=1651.50  H=1658.60  L=1650.30  C=1653.40
+2026-07-14 05:15:24  DEBUG     Sending ping
+2026-07-14 05:15:54  DEBUG     Sending ping
+2026-07-14 05:16:24  DEBUG     Sending ping
+2026-07-14 05:16:54  DEBUG     Sending ping
+2026-07-14 05:17:24  DEBUG     Sending ping
+2026-07-14 05:17:54  DEBUG     Sending ping
+2026-07-14 05:18:24  DEBUG     Sending ping
+2026-07-14 05:18:54  DEBUG     Sending ping
+2026-07-14 05:19:24  DEBUG     Sending ping
+2026-07-14 05:19:54  DEBUG     Sending ping
+2026-07-14 05:20:24  DEBUG     Sending ping
+2026-07-14 05:20:54  DEBUG     Sending ping
+2026-07-14 05:21:24  DEBUG     Sending ping
+2026-07-14 05:21:54  DEBUG     Sending ping
+2026-07-14 05:22:24  DEBUG     Sending ping
+2026-07-14 05:22:54  DEBUG     Sending ping
+2026-07-14 05:23:24  DEBUG     Sending ping
+2026-07-14 05:23:54  DEBUG     Sending ping
+2026-07-14 05:24:24  DEBUG     Sending ping
+2026-07-14 05:24:54  DEBUG     Sending ping
+2026-07-14 05:25:24  DEBUG     Sending ping
+2026-07-14 05:25:54  DEBUG     Sending ping
+2026-07-14 05:26:24  DEBUG     Sending ping
+2026-07-14 05:26:54  DEBUG     Sending ping
+2026-07-14 05:27:24  DEBUG     Sending ping
+2026-07-14 05:27:54  DEBUG     Sending ping
+2026-07-14 05:28:24  DEBUG     Sending ping
+2026-07-14 05:28:54  DEBUG     Sending ping
+2026-07-14 05:29:24  DEBUG     Sending ping
+2026-07-14 05:29:54  DEBUG     Sending ping
+2026-07-14 05:30:00  DEBUG     CANDLE  ADANIENSOL    O=1654.40  H=1666.60  L=1651.80  C=1664.90
+2026-07-14 05:30:00  DEBUG     CANDLE  DRREDDY       O=1245.60  H=1247.80  L=1245.00  C=1246.10
+2026-07-14 05:30:00  DEBUG     CANDLE  HCLTECH       O=1183.50  H=1186.20  L=1180.10  C=1183.90
+2026-07-14 05:30:04  DEBUG     CANDLE  UNIONBANK     O=167.78  H=168.00  L=167.50  C=167.81
+2026-07-14 05:30:08  DEBUG     CANDLE  JIOFIN        O=237.55  H=238.19  L=237.51  C=238.11
+2026-07-14 05:30:24  DEBUG     Sending ping
+2026-07-14 05:30:54  DEBUG     Sending ping
+2026-07-14 05:31:24  DEBUG     Sending ping
+2026-07-14 05:31:54  DEBUG     Sending ping
+2026-07-14 05:32:24  DEBUG     Sending ping
+2026-07-14 05:32:54  DEBUG     Sending ping
+2026-07-14 05:33:24  DEBUG     Sending ping
+2026-07-14 05:33:54  DEBUG     Sending ping
+2026-07-14 05:34:24  DEBUG     Sending ping
+2026-07-14 05:34:54  DEBUG     Sending ping
+2026-07-14 05:35:24  DEBUG     Sending ping
+2026-07-14 05:35:54  DEBUG     Sending ping
+2026-07-14 05:36:24  DEBUG     Sending ping
+2026-07-14 05:36:54  DEBUG     Sending ping
+2026-07-14 05:37:24  DEBUG     Sending ping
+2026-07-14 05:37:54  DEBUG     Sending ping
+2026-07-14 05:38:24  DEBUG     Sending ping
+2026-07-14 05:38:54  DEBUG     Sending ping
+2026-07-14 05:39:24  DEBUG     Sending ping
+2026-07-14 05:39:54  DEBUG     Sending ping
+2026-07-14 05:40:24  DEBUG     Sending ping
+2026-07-14 05:40:54  DEBUG     Sending ping
+2026-07-14 05:41:24  DEBUG     Sending ping
+2026-07-14 05:41:54  DEBUG     Sending ping
+2026-07-14 05:42:24  DEBUG     Sending ping
+2026-07-14 05:42:54  DEBUG     Sending ping
+2026-07-14 05:43:24  DEBUG     Sending ping
+2026-07-14 05:43:54  DEBUG     Sending ping
+2026-07-14 05:44:24  DEBUG     Sending ping
+2026-07-14 05:44:54  DEBUG     Sending ping
+2026-07-14 05:45:00  DEBUG     CANDLE  ADANIENSOL    O=1664.10  H=1710.00  L=1664.10  C=1705.00
+2026-07-14 05:45:00  DEBUG     CANDLE  HCLTECH       O=1183.70  H=1186.40  L=1180.10  C=1185.50
+2026-07-14 05:45:01  DEBUG     CANDLE  JIOFIN        O=238.15  H=238.36  L=237.97  C=238.28
+2026-07-14 05:45:01  DEBUG     CANDLE  DRREDDY       O=1246.30  H=1246.30  L=1240.40  C=1243.20
+2026-07-14 05:45:04  DEBUG     CANDLE  UNIONBANK     O=167.79  H=168.36  L=167.79  C=168.22
+2026-07-14 05:45:24  DEBUG     Sending ping
+2026-07-14 05:45:54  DEBUG     Sending ping
+2026-07-14 05:46:24  DEBUG     Sending ping
+2026-07-14 05:46:54  DEBUG     Sending ping
+2026-07-14 05:47:24  DEBUG     Sending ping
+2026-07-14 05:47:54  DEBUG     Sending ping
+2026-07-14 05:48:24  DEBUG     Sending ping
+2026-07-14 05:48:54  DEBUG     Sending ping
+2026-07-14 05:49:24  DEBUG     Sending ping
+2026-07-14 05:49:54  DEBUG     Sending ping
+2026-07-14 05:50:24  DEBUG     Sending ping
+2026-07-14 05:50:54  DEBUG     Sending ping
+2026-07-14 05:51:24  DEBUG     Sending ping
+2026-07-14 05:51:54  DEBUG     Sending ping
+2026-07-14 05:52:24  DEBUG     Sending ping
+2026-07-14 05:52:54  DEBUG     Sending ping
+2026-07-14 05:53:24  DEBUG     Sending ping
+2026-07-14 05:53:54  DEBUG     Sending ping
+2026-07-14 05:54:24  DEBUG     Sending ping
+2026-07-14 05:54:54  DEBUG     Sending ping
+2026-07-14 05:55:24  DEBUG     Sending ping
+2026-07-14 05:55:54  DEBUG     Sending ping
+2026-07-14 05:56:24  DEBUG     Sending ping
+2026-07-14 05:56:54  DEBUG     Sending ping
+2026-07-14 05:57:24  DEBUG     Sending ping
+2026-07-14 05:57:54  DEBUG     Sending ping
+2026-07-14 05:58:24  DEBUG     Sending ping
+2026-07-14 05:58:54  DEBUG     Sending ping
+2026-07-14 05:59:24  DEBUG     Sending ping
+2026-07-14 05:59:54  DEBUG     Sending ping
+2026-07-14 06:00:01  DEBUG     CANDLE  DRREDDY       O=1243.50  H=1246.50  L=1243.50  C=1244.90
+2026-07-14 06:00:01  DEBUG     CANDLE  ADANIENSOL    O=1704.50  H=1712.80  L=1695.00  C=1697.20
+2026-07-14 06:00:01  DEBUG     CANDLE  JIOFIN        O=238.20  H=238.32  L=237.80  C=237.96
+2026-07-14 06:00:01  DEBUG     CANDLE  UNIONBANK     O=168.21  H=168.90  L=168.10  C=168.75
+2026-07-14 06:00:02  DEBUG     CANDLE  HCLTECH       O=1186.00  H=1186.30  L=1182.50  C=1183.60
+2026-07-14 06:00:24  DEBUG     Sending ping
+2026-07-14 06:00:54  DEBUG     Sending ping
+2026-07-14 06:01:24  DEBUG     Sending ping
+2026-07-14 06:01:54  DEBUG     Sending ping
+2026-07-14 06:02:24  DEBUG     Sending ping
+2026-07-14 06:02:54  DEBUG     Sending ping
+2026-07-14 06:03:24  DEBUG     Sending ping
+2026-07-14 06:03:54  DEBUG     Sending ping
+2026-07-14 06:04:24  DEBUG     Sending ping
+2026-07-14 06:04:54  DEBUG     Sending ping
+2026-07-14 06:05:24  DEBUG     Sending ping
+2026-07-14 06:05:54  DEBUG     Sending ping
+2026-07-14 06:06:24  DEBUG     Sending ping
+2026-07-14 06:06:54  DEBUG     Sending ping
+2026-07-14 06:07:24  DEBUG     Sending ping
+2026-07-14 06:07:54  DEBUG     Sending ping
+2026-07-14 06:08:24  DEBUG     Sending ping
+2026-07-14 06:08:54  DEBUG     Sending ping
+2026-07-14 06:09:24  DEBUG     Sending ping
+2026-07-14 06:09:54  DEBUG     Sending ping
+2026-07-14 06:10:24  DEBUG     Sending ping
+2026-07-14 06:10:54  DEBUG     Sending ping
+2026-07-14 06:11:18  INFO      ORDER  ADANIENSOL    SELL   MIS   qty=1       price=Rs1685.90  reason=trail SL | st=1683.84
+2026-07-14 06:11:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 06:11:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 06:11:18  INFO      ACCEPTED  ADANIENSOL  norenordno=26071400237408
+2026-07-14 06:11:18  INFO      CAPITAL  committed=Rs0.00  (released Rs421.48 for MIS ADANIENSOL)
+2026-07-14 06:11:18  INFO      EXIT  #4    ADANIENSOL    WIN   net=Rs+23.80 (gross=Rs+24.40 cost=Rs0.60)  entry=Rs1661.50@10:00  exit=Rs1685.90  total=Rs+39.40  [trail SL | st=1683.84]
+2026-07-14 06:11:18  INFO      ORDER UPDATE  NewAck    ADANIENSOL-EQ  norenordno=26071400237408
+2026-07-14 06:11:18  INFO      ORDER UPDATE  New       ADANIENSOL-EQ  norenordno=26071400237408
+2026-07-14 06:11:18  WARNING   ORDER CANCELED  ADANIENSOL-EQ  norenordno=26071400237408  reason=16388: cancelled by Exchange
+2026-07-14 06:11:24  DEBUG     Sending ping
+2026-07-14 06:11:54  DEBUG     Sending ping
+2026-07-14 06:12:24  DEBUG     Sending ping
+2026-07-14 06:12:54  DEBUG     Sending ping
+2026-07-14 06:13:24  DEBUG     Sending ping
+2026-07-14 06:13:54  DEBUG     Sending ping
+2026-07-14 06:14:01  INFO      ORDER UPDATE  NewAck    ADANIENSOL-EQ  norenordno=26071400242598
+2026-07-14 06:14:01  INFO      ORDER UPDATE  New       ADANIENSOL-EQ  norenordno=26071400242598
+2026-07-14 06:14:01  INFO      FILL  ADANIENSOL-EQ  norenordno=26071400242598  avgprc=1686.80
+2026-07-14 06:14:24  DEBUG     Sending ping
+2026-07-14 06:14:54  DEBUG     Sending ping
+2026-07-14 06:15:00  DEBUG     CANDLE  HCLTECH       O=1183.90  H=1185.00  L=1181.00  C=1183.30
+2026-07-14 06:15:00  DEBUG     CANDLE  ADANIENSOL    O=1697.60  H=1697.60  L=1683.70  C=1687.60
+2026-07-14 06:15:01  DEBUG     CANDLE  JIOFIN        O=237.82  H=237.92  L=236.70  C=236.91
+2026-07-14 06:15:01  DEBUG     CANDLE  UNIONBANK     O=168.66  H=169.00  L=167.99  C=168.46
+2026-07-14 06:15:09  DEBUG     CANDLE  DRREDDY       O=1244.50  H=1245.10  L=1242.00  C=1244.40
+2026-07-14 06:15:24  DEBUG     Sending ping
+2026-07-14 06:15:54  DEBUG     Sending ping
+2026-07-14 06:16:24  DEBUG     Sending ping
+2026-07-14 06:16:54  DEBUG     Sending ping
+2026-07-14 06:17:24  DEBUG     Sending ping
+2026-07-14 06:17:54  DEBUG     Sending ping
+2026-07-14 06:18:24  DEBUG     Sending ping
+2026-07-14 06:18:54  DEBUG     Sending ping
+2026-07-14 06:19:24  DEBUG     Sending ping
+2026-07-14 06:19:54  DEBUG     Sending ping
+2026-07-14 06:20:24  DEBUG     Sending ping
+2026-07-14 06:20:54  DEBUG     Sending ping
+2026-07-14 06:21:24  DEBUG     Sending ping
+2026-07-14 06:21:54  DEBUG     Sending ping
+2026-07-14 06:22:24  DEBUG     Sending ping
+2026-07-14 06:22:54  DEBUG     Sending ping
+2026-07-14 06:23:24  DEBUG     Sending ping
+2026-07-14 06:23:54  DEBUG     Sending ping
+2026-07-14 06:24:24  DEBUG     Sending ping
+2026-07-14 06:24:54  DEBUG     Sending ping
+2026-07-14 06:25:24  DEBUG     Sending ping
+2026-07-14 06:25:54  DEBUG     Sending ping
+2026-07-14 06:26:24  DEBUG     Sending ping
+2026-07-14 06:26:54  DEBUG     Sending ping
+2026-07-14 06:27:24  DEBUG     Sending ping
+2026-07-14 06:27:54  DEBUG     Sending ping
+2026-07-14 06:28:24  DEBUG     Sending ping
+2026-07-14 06:28:54  DEBUG     Sending ping
+2026-07-14 06:29:24  DEBUG     Sending ping
+2026-07-14 06:29:54  DEBUG     Sending ping
+2026-07-14 06:30:00  DEBUG     CANDLE  HCLTECH       O=1183.50  H=1184.50  L=1177.00  C=1181.10
+2026-07-14 06:30:01  DEBUG     CANDLE  JIOFIN        O=236.94  H=237.08  L=236.65  C=236.80
+2026-07-14 06:30:01  DEBUG     CANDLE  DRREDDY       O=1244.00  H=1245.00  L=1243.70  C=1244.00
+2026-07-14 06:30:01  DEBUG     CANDLE  UNIONBANK     O=168.45  H=168.72  L=168.05  C=168.43
+2026-07-14 06:30:03  DEBUG     CANDLE  ADANIENSOL    O=1687.10  H=1691.40  L=1685.20  C=1690.00
+2026-07-14 06:30:24  DEBUG     Sending ping
+2026-07-14 06:30:54  DEBUG     Sending ping
+2026-07-14 06:31:24  DEBUG     Sending ping
+2026-07-14 06:31:54  DEBUG     Sending ping
+2026-07-14 06:32:24  DEBUG     Sending ping
+2026-07-14 06:32:54  DEBUG     Sending ping
+2026-07-14 06:33:24  DEBUG     Sending ping
+2026-07-14 06:33:54  DEBUG     Sending ping
+2026-07-14 06:34:24  DEBUG     Sending ping
+2026-07-14 06:34:54  DEBUG     Sending ping
+2026-07-14 06:35:24  DEBUG     Sending ping
+2026-07-14 06:35:54  DEBUG     Sending ping
+2026-07-14 06:36:24  DEBUG     Sending ping
+2026-07-14 06:36:54  DEBUG     Sending ping
+2026-07-14 06:37:24  DEBUG     Sending ping
+2026-07-14 06:37:54  DEBUG     Sending ping
+2026-07-14 06:38:24  DEBUG     Sending ping
+2026-07-14 06:38:54  DEBUG     Sending ping
+2026-07-14 06:39:24  DEBUG     Sending ping
+2026-07-14 06:39:54  DEBUG     Sending ping
+2026-07-14 06:40:24  DEBUG     Sending ping
+2026-07-14 06:40:54  DEBUG     Sending ping
+2026-07-14 06:41:24  DEBUG     Sending ping
+2026-07-14 06:41:54  DEBUG     Sending ping
+2026-07-14 06:42:24  DEBUG     Sending ping
+2026-07-14 06:42:54  DEBUG     Sending ping
+2026-07-14 06:43:24  DEBUG     Sending ping
+2026-07-14 06:43:54  DEBUG     Sending ping
+2026-07-14 06:44:24  DEBUG     Sending ping
+2026-07-14 06:44:54  DEBUG     Sending ping
+2026-07-14 06:45:00  DEBUG     CANDLE  JIOFIN        O=236.82  H=237.29  L=236.69  C=236.72
+2026-07-14 06:45:00  DEBUG     CANDLE  HCLTECH       O=1181.00  H=1182.90  L=1179.40  C=1180.20
+2026-07-14 06:45:00  DEBUG     CANDLE  UNIONBANK     O=168.38  H=168.93  L=168.00  C=168.58
+2026-07-14 06:45:01  DEBUG     CANDLE  DRREDDY       O=1244.20  H=1245.90  L=1242.60  C=1245.10
+2026-07-14 06:45:03  DEBUG     CANDLE  ADANIENSOL    O=1689.80  H=1698.00  L=1689.20  C=1695.20
+2026-07-14 06:45:24  DEBUG     Sending ping
+2026-07-14 06:45:54  DEBUG     Sending ping
+2026-07-14 06:46:24  DEBUG     Sending ping
+2026-07-14 06:46:54  DEBUG     Sending ping
+2026-07-14 06:47:24  DEBUG     Sending ping
+2026-07-14 06:47:54  DEBUG     Sending ping
+2026-07-14 06:48:24  DEBUG     Sending ping
+2026-07-14 06:48:54  DEBUG     Sending ping
+2026-07-14 06:49:24  DEBUG     Sending ping
+2026-07-14 06:49:54  DEBUG     Sending ping
+2026-07-14 06:50:24  DEBUG     Sending ping
+2026-07-14 06:50:54  DEBUG     Sending ping
+2026-07-14 06:51:24  DEBUG     Sending ping
+2026-07-14 06:51:54  DEBUG     Sending ping
+2026-07-14 06:52:24  DEBUG     Sending ping
+2026-07-14 06:52:54  DEBUG     Sending ping
+2026-07-14 06:53:24  DEBUG     Sending ping
+2026-07-14 06:53:54  DEBUG     Sending ping
+2026-07-14 06:54:24  DEBUG     Sending ping
+2026-07-14 06:54:54  DEBUG     Sending ping
+2026-07-14 06:55:24  DEBUG     Sending ping
+2026-07-14 06:55:54  DEBUG     Sending ping
+2026-07-14 06:56:24  DEBUG     Sending ping
+2026-07-14 06:56:54  DEBUG     Sending ping
+2026-07-14 06:57:24  DEBUG     Sending ping
+2026-07-14 06:57:54  DEBUG     Sending ping
+2026-07-14 06:58:24  DEBUG     Sending ping
+2026-07-14 06:58:54  DEBUG     Sending ping
+2026-07-14 06:59:24  DEBUG     Sending ping
+2026-07-14 06:59:54  DEBUG     Sending ping
+2026-07-14 07:00:00  DEBUG     CANDLE  HCLTECH       O=1180.60  H=1182.40  L=1178.40  C=1180.20
+2026-07-14 07:00:00  DEBUG     CANDLE  DRREDDY       O=1245.20  H=1245.20  L=1243.00  C=1243.60
+2026-07-14 07:00:00  DEBUG     CANDLE  ADANIENSOL    O=1695.50  H=1704.40  L=1695.00  C=1696.00
+2026-07-14 07:00:04  DEBUG     CANDLE  UNIONBANK     O=168.54  H=169.57  L=168.40  C=169.15
+2026-07-14 07:00:23  DEBUG     CANDLE  JIOFIN        O=236.73  H=236.85  L=236.29  C=236.40
+2026-07-14 07:00:24  DEBUG     Sending ping
+2026-07-14 07:00:54  DEBUG     Sending ping
+2026-07-14 07:01:24  DEBUG     Sending ping
+2026-07-14 07:01:54  DEBUG     Sending ping
+2026-07-14 07:02:24  DEBUG     Sending ping
+2026-07-14 07:02:54  DEBUG     Sending ping
+2026-07-14 07:03:24  DEBUG     Sending ping
+2026-07-14 07:03:54  DEBUG     Sending ping
+2026-07-14 07:04:24  DEBUG     Sending ping
+2026-07-14 07:04:54  DEBUG     Sending ping
+2026-07-14 07:05:24  DEBUG     Sending ping
+2026-07-14 07:05:54  DEBUG     Sending ping
+2026-07-14 07:06:24  DEBUG     Sending ping
+2026-07-14 07:06:54  DEBUG     Sending ping
+2026-07-14 07:07:24  DEBUG     Sending ping
+2026-07-14 07:07:54  DEBUG     Sending ping
+2026-07-14 07:08:24  DEBUG     Sending ping
+2026-07-14 07:08:54  DEBUG     Sending ping
+2026-07-14 07:09:24  DEBUG     Sending ping
+2026-07-14 07:09:54  DEBUG     Sending ping
+2026-07-14 07:10:24  DEBUG     Sending ping
+2026-07-14 07:10:54  DEBUG     Sending ping
+2026-07-14 07:11:24  DEBUG     Sending ping
+2026-07-14 07:11:54  DEBUG     Sending ping
+2026-07-14 07:12:24  DEBUG     Sending ping
+2026-07-14 07:12:54  DEBUG     Sending ping
+2026-07-14 07:13:24  DEBUG     Sending ping
+2026-07-14 07:13:54  DEBUG     Sending ping
+2026-07-14 07:14:24  DEBUG     Sending ping
+2026-07-14 07:14:54  DEBUG     Sending ping
+2026-07-14 07:15:00  DEBUG     CANDLE  ADANIENSOL    O=1695.20  H=1696.90  L=1685.20  C=1688.70
+2026-07-14 07:15:00  DEBUG     CANDLE  JIOFIN        O=236.36  H=236.70  L=236.31  C=236.60
+2026-07-14 07:15:00  DEBUG     CANDLE  DRREDDY       O=1243.70  H=1244.60  L=1242.70  C=1243.10
+2026-07-14 07:15:00  DEBUG     CANDLE  UNIONBANK     O=169.24  H=169.49  L=168.90  C=168.98
+2026-07-14 07:15:01  DEBUG     CANDLE  HCLTECH       O=1180.90  H=1181.90  L=1178.00  C=1179.20
+2026-07-14 07:15:24  DEBUG     Sending ping
+2026-07-14 07:15:54  DEBUG     Sending ping
+2026-07-14 07:16:24  DEBUG     Sending ping
+2026-07-14 07:16:54  DEBUG     Sending ping
+2026-07-14 07:17:24  DEBUG     Sending ping
+2026-07-14 07:17:54  DEBUG     Sending ping
+2026-07-14 07:18:24  DEBUG     Sending ping
+2026-07-14 07:18:54  DEBUG     Sending ping
+2026-07-14 07:19:24  DEBUG     Sending ping
+2026-07-14 07:19:54  DEBUG     Sending ping
+2026-07-14 07:20:24  DEBUG     Sending ping
+2026-07-14 07:20:54  DEBUG     Sending ping
+2026-07-14 07:21:24  DEBUG     Sending ping
+2026-07-14 07:21:54  DEBUG     Sending ping
+2026-07-14 07:22:24  DEBUG     Sending ping
+2026-07-14 07:22:54  DEBUG     Sending ping
+2026-07-14 07:23:24  DEBUG     Sending ping
+2026-07-14 07:23:54  DEBUG     Sending ping
+2026-07-14 07:24:24  DEBUG     Sending ping
+2026-07-14 07:24:54  DEBUG     Sending ping
+2026-07-14 07:25:24  DEBUG     Sending ping
+2026-07-14 07:25:54  DEBUG     Sending ping
+2026-07-14 07:26:24  DEBUG     Sending ping
+2026-07-14 07:26:54  DEBUG     Sending ping
+2026-07-14 07:27:24  DEBUG     Sending ping
+2026-07-14 07:27:54  DEBUG     Sending ping
+2026-07-14 07:28:24  DEBUG     Sending ping
+2026-07-14 07:28:54  DEBUG     Sending ping
+2026-07-14 07:29:24  DEBUG     Sending ping
+2026-07-14 07:29:54  DEBUG     Sending ping
+2026-07-14 07:30:00  DEBUG     CANDLE  HCLTECH       O=1178.60  H=1179.90  L=1177.80  C=1178.00
+2026-07-14 07:30:00  DEBUG     CANDLE  JIOFIN        O=236.65  H=236.87  L=236.59  C=236.64
+2026-07-14 07:30:00  DEBUG     CANDLE  DRREDDY       O=1243.50  H=1243.50  L=1241.20  C=1241.20
+2026-07-14 07:30:02  DEBUG     CANDLE  UNIONBANK     O=168.97  H=170.59  L=168.82  C=169.75
+2026-07-14 07:30:02  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:30:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 07:30:03  INFO      ORDER  UNIONBANK     BUY    MIS   qty=15      price=Rs169.76   reason=flip UP | atr=1.03 st=168.16 sl=168.20
+2026-07-14 07:30:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:30:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 07:30:03  INFO      ACCEPTED  UNIONBANK  norenordno=26071400338316
+2026-07-14 07:30:03  INFO      CAPITAL  committed=Rs636.60  (added Rs636.60 for MIS UNIONBANK)
+2026-07-14 07:30:03  INFO      ENTRY #5    UNIONBANK     LONG   Rs169.76  qty=15  [flip UP | atr=1.03 st=168.16 sl=168.20]
+2026-07-14 07:30:03  INFO      ORDER UPDATE  NewAck    UNIONBANK-EQ  norenordno=26071400338316
+2026-07-14 07:30:03  INFO      ORDER UPDATE  New       UNIONBANK-EQ  norenordno=26071400338316
+2026-07-14 07:30:03  INFO      FILL CONFIRMED  UNIONBANK     BUY  actual=Rs169.7100  est=Rs169.7600  slippage=Rs-0.0500
+2026-07-14 07:30:03  DEBUG     CANDLE  ADANIENSOL    O=1688.10  H=1688.80  L=1682.40  C=1687.20
+2026-07-14 07:30:24  DEBUG     Sending ping
+2026-07-14 07:30:54  DEBUG     Sending ping
+2026-07-14 07:31:24  DEBUG     Sending ping
+2026-07-14 07:31:54  DEBUG     Sending ping
+2026-07-14 07:32:24  DEBUG     Sending ping
+2026-07-14 07:32:54  DEBUG     Sending ping
+2026-07-14 07:33:24  DEBUG     Sending ping
+2026-07-14 07:33:54  DEBUG     Sending ping
+2026-07-14 07:34:24  DEBUG     Sending ping
+2026-07-14 07:34:54  DEBUG     Sending ping
+2026-07-14 07:35:24  DEBUG     Sending ping
+2026-07-14 07:35:54  DEBUG     Sending ping
+2026-07-14 07:36:24  DEBUG     Sending ping
+2026-07-14 07:36:54  DEBUG     Sending ping
+2026-07-14 07:37:24  DEBUG     Sending ping
+2026-07-14 07:37:54  DEBUG     Sending ping
+2026-07-14 07:38:24  DEBUG     Sending ping
+2026-07-14 07:38:54  DEBUG     Sending ping
+2026-07-14 07:39:24  DEBUG     Sending ping
+2026-07-14 07:39:54  DEBUG     Sending ping
+2026-07-14 07:40:24  DEBUG     Sending ping
+2026-07-14 07:40:54  DEBUG     Sending ping
+2026-07-14 07:41:24  DEBUG     Sending ping
+2026-07-14 07:41:54  DEBUG     Sending ping
+2026-07-14 07:42:24  DEBUG     Sending ping
+2026-07-14 07:42:54  DEBUG     Sending ping
+2026-07-14 07:43:24  DEBUG     Sending ping
+2026-07-14 07:43:54  DEBUG     Sending ping
+2026-07-14 07:44:24  DEBUG     Sending ping
+2026-07-14 07:44:54  DEBUG     Sending ping
+2026-07-14 07:45:01  DEBUG     CANDLE  HCLTECH       O=1178.10  H=1178.10  L=1173.70  C=1176.80
+2026-07-14 07:45:01  DEBUG     CANDLE  JIOFIN        O=236.63  H=236.71  L=236.25  C=236.65
+2026-07-14 07:45:01  DEBUG     CANDLE  DRREDDY       O=1241.40  H=1245.60  L=1241.10  C=1244.40
+2026-07-14 07:45:01  DEBUG     CANDLE  ADANIENSOL    O=1687.60  H=1687.60  L=1684.00  C=1684.00
+2026-07-14 07:45:02  DEBUG     CANDLE  UNIONBANK     O=169.71  H=170.69  L=169.41  C=170.34
+2026-07-14 07:45:24  DEBUG     Sending ping
+2026-07-14 07:45:54  DEBUG     Sending ping
+2026-07-14 07:46:24  DEBUG     Sending ping
+2026-07-14 07:46:54  DEBUG     Sending ping
+2026-07-14 07:47:24  DEBUG     Sending ping
+2026-07-14 07:47:54  DEBUG     Sending ping
+2026-07-14 07:47:54  ERROR     WS ERROR  fin=1 opcode=8 data=b'\x03\xe9CloudFlare WebSocket proxy restarting'
+2026-07-14 07:47:54  ERROR     fin=1 opcode=8 data=b'\x03\xe9CloudFlare WebSocket proxy restarting' - goodbye
+2026-07-14 07:47:54  WARNING   WS DISCONNECTED  code=None  reason=None  trades=5  pnl=Rs+39.40
+[Tue Jul 14 07:47:54 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jul 14 07:48:04 UTC 2026] Starting runner...
+2026-07-14 07:48:04  INFO      ============================================================
+2026-07-14 07:48:04  INFO      STARTUP  date=2026-07-14  pid=463193
+2026-07-14 07:48:04  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-14 07:48:04  INFO      DYNAMIC BASKET (5): HCLTECH,UNIONBANK,ADANIENSOL,JIOFIN,DRREDDY | EMA filter=50
+2026-07-14 07:48:04  INFO      Resolving NSE tokens...
+2026-07-14 07:48:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 07:48:05  INFO      Resolved  HCLTECH          token=7229  tick=0.1
+2026-07-14 07:48:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 07:48:05  INFO      Resolved  UNIONBANK        token=10753  tick=0.01
+2026-07-14 07:48:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 07:48:05  INFO      Resolved  ADANIENSOL       token=10217  tick=0.1
+2026-07-14 07:48:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 07:48:05  INFO      Resolved  JIOFIN           token=18143  tick=0.01
+2026-07-14 07:48:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:06  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 07:48:06  INFO      Resolved  DRREDDY          token=881  tick=0.1
+2026-07-14 07:48:06  WARNING   STATE RESTORED  UNIONBANK     LONG  entry=Rs169.71  qty=15  (saved 2026-07-14)
+2026-07-14 07:48:06  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:06  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-14 07:48:06  INFO      ALIGN  UNIONBANK     strat.position=1  entry=Rs169.75
+2026-07-14 07:48:06  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 07:48:06  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 07:48:06  INFO      *** LIVE MODE  cash=Rs1515  deploy(85%)=Rs1288  K=2  cap/stock=Rs643 (MIS notional 4x, CNC 1x) ***
+2026-07-14 07:48:06  INFO      5 stocks | Rs643/trade | K=2 | EOD 15:00 IST
+2026-07-14 07:48:06  INFO      ============================================================
+2026-07-14 07:48:06  INFO      Websocket connected
+2026-07-14 07:48:07  INFO      WS CONNECTED  subscribed=5 instruments
+2026-07-14 07:48:07  INFO      Ticks -> data/2026-07-14/ticks.jsonl
+2026-07-14 07:49:06  DEBUG     Sending ping
+2026-07-14 07:49:36  DEBUG     Sending ping
+2026-07-14 07:50:06  DEBUG     Sending ping
+2026-07-14 07:50:36  DEBUG     Sending ping
+2026-07-14 07:51:06  DEBUG     Sending ping
+2026-07-14 07:51:36  DEBUG     Sending ping
+2026-07-14 07:52:06  DEBUG     Sending ping
+2026-07-14 07:52:36  DEBUG     Sending ping
+2026-07-14 07:53:06  DEBUG     Sending ping
+2026-07-14 07:53:36  DEBUG     Sending ping
+2026-07-14 07:54:06  DEBUG     Sending ping
+2026-07-14 07:54:36  DEBUG     Sending ping
+2026-07-14 07:55:06  DEBUG     Sending ping
+2026-07-14 07:55:36  DEBUG     Sending ping
+2026-07-14 07:56:06  DEBUG     Sending ping
+2026-07-14 07:56:36  DEBUG     Sending ping
+2026-07-14 07:57:06  DEBUG     Sending ping
+2026-07-14 07:57:36  DEBUG     Sending ping
+2026-07-14 07:58:06  DEBUG     Sending ping
+2026-07-14 07:58:36  DEBUG     Sending ping
+2026-07-14 07:59:06  DEBUG     Sending ping
+2026-07-14 07:59:36  DEBUG     Sending ping
+2026-07-14 08:00:00  DEBUG     CANDLE  JIOFIN        O=236.60  H=236.85  L=236.52  C=236.67
+2026-07-14 08:00:00  DEBUG     CANDLE  DRREDDY       O=1244.50  H=1245.50  L=1244.10  C=1244.60
+2026-07-14 08:00:00  DEBUG     CANDLE  ADANIENSOL    O=1682.70  H=1687.50  L=1681.50  C=1686.30
+2026-07-14 08:00:01  DEBUG     CANDLE  HCLTECH       O=1175.70  H=1176.90  L=1174.00  C=1176.00
+2026-07-14 08:00:06  DEBUG     Sending ping
+2026-07-14 08:00:07  DEBUG     CANDLE  UNIONBANK     O=170.07  H=170.84  L=169.69  C=170.76
+2026-07-14 08:00:36  DEBUG     Sending ping
+2026-07-14 08:01:06  DEBUG     Sending ping
+2026-07-14 08:01:36  DEBUG     Sending ping
+2026-07-14 08:02:06  DEBUG     Sending ping
+2026-07-14 08:02:36  DEBUG     Sending ping
+2026-07-14 08:03:06  DEBUG     Sending ping
+2026-07-14 08:03:36  DEBUG     Sending ping
+2026-07-14 08:04:06  DEBUG     Sending ping
+2026-07-14 08:04:36  DEBUG     Sending ping
+2026-07-14 08:05:06  DEBUG     Sending ping
+2026-07-14 08:05:36  DEBUG     Sending ping
+2026-07-14 08:06:06  DEBUG     Sending ping
+2026-07-14 08:06:36  DEBUG     Sending ping
+2026-07-14 08:07:06  DEBUG     Sending ping
+2026-07-14 08:07:36  DEBUG     Sending ping
+2026-07-14 08:08:06  DEBUG     Sending ping
+2026-07-14 08:08:36  DEBUG     Sending ping
+2026-07-14 08:09:06  DEBUG     Sending ping
+2026-07-14 08:09:36  DEBUG     Sending ping
+2026-07-14 08:10:06  DEBUG     Sending ping
+2026-07-14 08:10:19  INFO      ORDER  UNIONBANK     SELL   MIS   qty=15      price=Rs169.74   reason=BREAKEVEN | entry=169.75
+2026-07-14 08:10:19  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:10:19  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:10:19  INFO      ACCEPTED  UNIONBANK  norenordno=26071400394135
+2026-07-14 08:10:19  INFO      CAPITAL  committed=Rs0.00  (released Rs636.53 for MIS UNIONBANK)
+2026-07-14 08:10:19  INFO      EXIT ORDER  UNIONBANK     SELL  qty=15  [BREAKEVEN | entry=169.75] — awaiting fill
+2026-07-14 08:10:19  INFO      ORDER UPDATE  NewAck    UNIONBANK-EQ  norenordno=26071400394135
+2026-07-14 08:10:19  INFO      ORDER UPDATE  New       UNIONBANK-EQ  norenordno=26071400394135
+2026-07-14 08:10:19  WARNING   ORDER CANCELED  UNIONBANK-EQ  norenordno=26071400394135  reason=16388: cancelled by Exchange
+2026-07-14 08:10:19  WARNING   EXIT UNFILLED  UNIONBANK — Canceled; RETRYING (still holding, not booked)
+2026-07-14 08:10:20  INFO      ORDER  UNIONBANK     SELL   MIS   qty=15      price=Rs169.69   reason=retry
+2026-07-14 08:10:20  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:10:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:10:20  INFO      ACCEPTED  UNIONBANK  norenordno=26071400394159
+2026-07-14 08:10:20  INFO      CAPITAL  committed=Rs0.00  (released Rs636.34 for MIS UNIONBANK)
+2026-07-14 08:10:20  INFO      EXIT ORDER  UNIONBANK     SELL  qty=15  [retry] — awaiting fill
+2026-07-14 08:10:20  INFO      ORDER UPDATE  NewAck    UNIONBANK-EQ  norenordno=26071400394159
+2026-07-14 08:10:20  INFO      ORDER UPDATE  New       UNIONBANK-EQ  norenordno=26071400394159
+2026-07-14 08:10:20  INFO      EXIT  UNIONBANK     LOSS  net=Rs-0.36 (gross=Rs+0.00 cost=Rs0.36)  entry=Rs169.71  exit=Rs169.7100  qty=6  total=Rs+39.04  [retry (partial)]
+2026-07-14 08:10:20  WARNING   PARTIAL EXIT UNIONBANK filled 6, 9 remain — retrying
+2026-07-14 08:10:20  INFO      FILL  UNIONBANK-EQ  norenordno=26071400394159  avgprc=169.70
+2026-07-14 08:10:21  INFO      ORDER  UNIONBANK     SELL   MIS   qty=9       price=Rs169.68   reason=retry
+2026-07-14 08:10:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:10:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:10:21  INFO      ACCEPTED  UNIONBANK  norenordno=26071400394198
+2026-07-14 08:10:21  INFO      CAPITAL  committed=Rs0.00  (released Rs381.78 for MIS UNIONBANK)
+2026-07-14 08:10:21  INFO      EXIT ORDER  UNIONBANK     SELL  qty=9  [retry] — awaiting fill
+2026-07-14 08:10:21  INFO      ORDER UPDATE  NewAck    UNIONBANK-EQ  norenordno=26071400394198
+2026-07-14 08:10:21  INFO      ORDER UPDATE  New       UNIONBANK-EQ  norenordno=26071400394198
+2026-07-14 08:10:21  INFO      EXIT  UNIONBANK     LOSS  net=Rs-0.63 (gross=Rs-0.09 cost=Rs0.54)  entry=Rs169.71  exit=Rs169.7000  qty=9  total=Rs+38.41  [retry]
+2026-07-14 08:10:36  DEBUG     Sending ping
+2026-07-14 08:11:06  DEBUG     Sending ping
+2026-07-14 08:11:36  DEBUG     Sending ping
+2026-07-14 08:12:06  DEBUG     Sending ping
+2026-07-14 08:12:36  DEBUG     Sending ping
+2026-07-14 08:13:06  DEBUG     Sending ping
+2026-07-14 08:13:36  DEBUG     Sending ping
+2026-07-14 08:14:06  DEBUG     Sending ping
+2026-07-14 08:14:36  DEBUG     Sending ping
+2026-07-14 08:15:00  DEBUG     CANDLE  HCLTECH       O=1175.90  H=1176.10  L=1170.50  C=1171.30
+2026-07-14 08:15:00  DEBUG     CANDLE  JIOFIN        O=236.65  H=236.77  L=235.90  C=236.16
+2026-07-14 08:15:00  DEBUG     CANDLE  ADANIENSOL    O=1685.70  H=1688.20  L=1678.30  C=1682.90
+2026-07-14 08:15:01  DEBUG     CANDLE  DRREDDY       O=1244.70  H=1245.50  L=1243.40  C=1244.40
+2026-07-14 08:15:03  DEBUG     CANDLE  UNIONBANK     O=170.71  H=170.89  L=169.16  C=169.34
+2026-07-14 08:15:06  DEBUG     Sending ping
+2026-07-14 08:15:36  DEBUG     Sending ping
+2026-07-14 08:16:06  DEBUG     Sending ping
+2026-07-14 08:16:36  DEBUG     Sending ping
+2026-07-14 08:17:06  DEBUG     Sending ping
+2026-07-14 08:17:36  DEBUG     Sending ping
+2026-07-14 08:18:06  DEBUG     Sending ping
+2026-07-14 08:18:36  DEBUG     Sending ping
+2026-07-14 08:19:06  DEBUG     Sending ping
+2026-07-14 08:19:36  DEBUG     Sending ping
+2026-07-14 08:20:06  DEBUG     Sending ping
+2026-07-14 08:20:36  DEBUG     Sending ping
+2026-07-14 08:21:06  DEBUG     Sending ping
+2026-07-14 08:21:36  DEBUG     Sending ping
+2026-07-14 08:22:06  DEBUG     Sending ping
+2026-07-14 08:22:36  DEBUG     Sending ping
+2026-07-14 08:23:06  DEBUG     Sending ping
+2026-07-14 08:23:36  DEBUG     Sending ping
+2026-07-14 08:24:06  DEBUG     Sending ping
+2026-07-14 08:24:36  DEBUG     Sending ping
+2026-07-14 08:25:06  DEBUG     Sending ping
+2026-07-14 08:25:07  ERROR     WS ERROR  fin=1 opcode=8 data=b'\x03\xe9CloudFlare WebSocket proxy restarting'
+2026-07-14 08:25:07  ERROR     fin=1 opcode=8 data=b'\x03\xe9CloudFlare WebSocket proxy restarting' - goodbye
+2026-07-14 08:25:07  WARNING   WS DISCONNECTED  code=None  reason=None  trades=5  pnl=Rs+38.41
+[Tue Jul 14 08:25:07 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jul 14 08:25:17 UTC 2026] Starting runner...
+2026-07-14 08:25:17  INFO      ============================================================
+2026-07-14 08:25:17  INFO      STARTUP  date=2026-07-14  pid=464128
+2026-07-14 08:25:17  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-14 08:25:17  INFO      DYNAMIC BASKET (5): HCLTECH,UNIONBANK,ADANIENSOL,JIOFIN,DRREDDY | EMA filter=50
+2026-07-14 08:25:17  INFO      Resolving NSE tokens...
+2026-07-14 08:25:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 08:25:17  INFO      Resolved  HCLTECH          token=7229  tick=0.1
+2026-07-14 08:25:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 08:25:17  INFO      Resolved  UNIONBANK        token=10753  tick=0.01
+2026-07-14 08:25:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 08:25:18  INFO      Resolved  ADANIENSOL       token=10217  tick=0.1
+2026-07-14 08:25:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 08:25:18  INFO      Resolved  JIOFIN           token=18143  tick=0.01
+2026-07-14 08:25:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-14 08:25:18  INFO      Resolved  DRREDDY          token=881  tick=0.1
+2026-07-14 08:25:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-14 08:25:18  WARNING   POSITION RESUMED  UNIONBANK     SHORT  qty=9  entry=Rs169.70
+2026-07-14 08:25:18  INFO      ALIGN  UNIONBANK     strat.position=-1  entry=Rs169.70
+2026-07-14 08:25:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 08:25:18  INFO      *** LIVE MODE  cash=Rs1515  deploy(85%)=Rs1288  K=2  cap/stock=Rs643 (MIS notional 4x, CNC 1x) ***
+2026-07-14 08:25:18  INFO      5 stocks | Rs643/trade | K=2 | EOD 15:00 IST
+2026-07-14 08:25:18  INFO      ============================================================
+2026-07-14 08:25:19  INFO      Websocket connected
+2026-07-14 08:25:19  INFO      WS CONNECTED  subscribed=5 instruments
+2026-07-14 08:25:19  INFO      Ticks -> data/2026-07-14/ticks.jsonl
+2026-07-14 08:25:19  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 08:25:20  INFO      ORDER  UNIONBANK     BUY    MIS   qty=9       price=Rs170.62   reason=trail SL | st=168.68
+2026-07-14 08:25:20  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:25:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:25:20  INFO      ACCEPTED  UNIONBANK  norenordno=26071400416032
+2026-07-14 08:25:20  INFO      CAPITAL  committed=Rs383.89  (added Rs383.89 for MIS UNIONBANK)
+2026-07-14 08:25:20  INFO      EXIT ORDER  UNIONBANK     BUY  qty=9  [trail SL | st=168.68] — awaiting fill
+2026-07-14 08:25:20  INFO      ORDER UPDATE  NewAck    UNIONBANK-EQ  norenordno=26071400416032
+2026-07-14 08:25:20  INFO      ORDER UPDATE  New       UNIONBANK-EQ  norenordno=26071400416032
+2026-07-14 08:25:20  INFO      EXIT  UNIONBANK     LOSS  net=Rs-8.55 (gross=Rs-8.01 cost=Rs0.54)  entry=Rs169.70  exit=Rs170.5900  qty=9  total=Rs+29.85  [trail SL | st=168.68]
+2026-07-14 08:26:19  DEBUG     Sending ping
+2026-07-14 08:26:49  DEBUG     Sending ping
+2026-07-14 08:27:19  DEBUG     Sending ping
+2026-07-14 08:27:49  DEBUG     Sending ping
+2026-07-14 08:28:19  DEBUG     Sending ping
+2026-07-14 08:28:49  DEBUG     Sending ping
+2026-07-14 08:29:19  DEBUG     Sending ping
+2026-07-14 08:29:49  DEBUG     Sending ping
+2026-07-14 08:30:00  DEBUG     CANDLE  HCLTECH       O=1169.80  H=1171.60  L=1167.90  C=1170.50
+2026-07-14 08:30:01  DEBUG     CANDLE  DRREDDY       O=1238.70  H=1239.70  L=1238.20  C=1238.50
+2026-07-14 08:30:01  INFO      ORDER  DRREDDY       SELL   MIS   qty=2       price=Rs1238.10  reason=flip DOWN | atr=3.33 st=1243.95 sl=1243.50
+2026-07-14 08:30:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:30:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:30:01  INFO      ACCEPTED  DRREDDY  norenordno=26071400422296
+2026-07-14 08:30:01  INFO      CAPITAL  committed=Rs0.00  (released Rs619.05 for MIS DRREDDY)
+2026-07-14 08:30:01  INFO      ENTRY #6    DRREDDY       SHORT  Rs1238.10  qty=2  [flip DOWN | atr=3.33 st=1243.95 sl=1243.50]
+2026-07-14 08:30:01  INFO      ORDER UPDATE  NewAck    DRREDDY-EQ  norenordno=26071400422296
+2026-07-14 08:30:01  INFO      ORDER UPDATE  New       DRREDDY-EQ  norenordno=26071400422296
+2026-07-14 08:30:01  INFO      FILL CONFIRMED  DRREDDY       SELL  actual=Rs1239.0000  est=Rs1238.1000  slippage=Rs-0.9000
+2026-07-14 08:30:03  DEBUG     CANDLE  UNIONBANK     O=170.56  H=170.63  L=170.17  C=170.24
+2026-07-14 08:30:08  DEBUG     CANDLE  ADANIENSOL    O=1686.80  H=1686.80  L=1681.30  C=1685.70
+2026-07-14 08:30:09  DEBUG     CANDLE  JIOFIN        O=236.36  H=236.45  L=236.25  C=236.30
+2026-07-14 08:30:19  DEBUG     Sending ping
+2026-07-14 08:30:49  DEBUG     Sending ping
+2026-07-14 08:31:19  DEBUG     Sending ping
+2026-07-14 08:31:49  DEBUG     Sending ping
+2026-07-14 08:32:19  DEBUG     Sending ping
+2026-07-14 08:32:49  DEBUG     Sending ping
+2026-07-14 08:33:19  DEBUG     Sending ping
+2026-07-14 08:33:49  DEBUG     Sending ping
+2026-07-14 08:34:19  DEBUG     Sending ping
+2026-07-14 08:34:49  DEBUG     Sending ping
+2026-07-14 08:35:19  DEBUG     Sending ping
+2026-07-14 08:35:49  DEBUG     Sending ping
+2026-07-14 08:36:19  DEBUG     Sending ping
+2026-07-14 08:36:49  DEBUG     Sending ping
+2026-07-14 08:37:19  DEBUG     Sending ping
+2026-07-14 08:37:49  DEBUG     Sending ping
+2026-07-14 08:38:19  DEBUG     Sending ping
+2026-07-14 08:38:49  DEBUG     Sending ping
+2026-07-14 08:39:19  DEBUG     Sending ping
+2026-07-14 08:39:49  DEBUG     Sending ping
+2026-07-14 08:40:19  DEBUG     Sending ping
+2026-07-14 08:40:49  DEBUG     Sending ping
+2026-07-14 08:41:19  DEBUG     Sending ping
+2026-07-14 08:41:49  DEBUG     Sending ping
+2026-07-14 08:42:19  DEBUG     Sending ping
+2026-07-14 08:42:49  DEBUG     Sending ping
+2026-07-14 08:43:19  DEBUG     Sending ping
+2026-07-14 08:43:49  DEBUG     Sending ping
+2026-07-14 08:44:19  DEBUG     Sending ping
+2026-07-14 08:44:49  DEBUG     Sending ping
+2026-07-14 08:45:00  DEBUG     CANDLE  HCLTECH       O=1171.00  H=1173.50  L=1168.80  C=1172.50
+2026-07-14 08:45:02  DEBUG     CANDLE  JIOFIN        O=236.28  H=236.41  L=235.71  C=235.89
+2026-07-14 08:45:02  DEBUG     CANDLE  UNIONBANK     O=170.30  H=170.32  L=170.00  C=170.04
+2026-07-14 08:45:02  DEBUG     CANDLE  ADANIENSOL    O=1685.20  H=1688.30  L=1683.30  C=1688.30
+2026-07-14 08:45:04  DEBUG     CANDLE  DRREDDY       O=1239.20  H=1242.00  L=1238.80  C=1241.80
+2026-07-14 08:45:19  DEBUG     Sending ping
+2026-07-14 08:45:49  DEBUG     Sending ping
+2026-07-14 08:46:19  DEBUG     Sending ping
+2026-07-14 08:46:49  DEBUG     Sending ping
+2026-07-14 08:47:19  DEBUG     Sending ping
+2026-07-14 08:47:49  DEBUG     Sending ping
+2026-07-14 08:48:19  DEBUG     Sending ping
+2026-07-14 08:48:49  DEBUG     Sending ping
+2026-07-14 08:49:19  DEBUG     Sending ping
+2026-07-14 08:49:49  DEBUG     Sending ping
+2026-07-14 08:50:19  DEBUG     Sending ping
+2026-07-14 08:50:49  DEBUG     Sending ping
+2026-07-14 08:51:19  DEBUG     Sending ping
+2026-07-14 08:51:49  DEBUG     Sending ping
+2026-07-14 08:52:19  DEBUG     Sending ping
+2026-07-14 08:52:49  DEBUG     Sending ping
+2026-07-14 08:53:19  DEBUG     Sending ping
+2026-07-14 08:53:49  DEBUG     Sending ping
+2026-07-14 08:54:19  DEBUG     Sending ping
+2026-07-14 08:54:49  DEBUG     Sending ping
+2026-07-14 08:55:19  DEBUG     Sending ping
+2026-07-14 08:55:49  DEBUG     Sending ping
+2026-07-14 08:56:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:56:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 08:56:10  INFO      ORDER  DRREDDY       BUY    MIS   qty=2       price=Rs1243.40  reason=HARD SL | entry=1238.50 atr=3.33
+2026-07-14 08:56:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:56:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:56:11  INFO      ACCEPTED  DRREDDY  norenordno=26071400454130
+2026-07-14 08:56:11  INFO      CAPITAL  committed=Rs621.70  (added Rs621.70 for MIS DRREDDY)
+2026-07-14 08:56:11  INFO      EXIT ORDER  DRREDDY       BUY  qty=2  [HARD SL | entry=1238.50 atr=3.33] — awaiting fill
+2026-07-14 08:56:11  INFO      ORDER UPDATE  NewAck    DRREDDY-EQ  norenordno=26071400454130
+2026-07-14 08:56:11  INFO      ORDER UPDATE  New       DRREDDY-EQ  norenordno=26071400454130
+2026-07-14 08:56:11  WARNING   ORDER CANCELED  DRREDDY-EQ  norenordno=26071400454130  reason=16388: cancelled by Exchange
+2026-07-14 08:56:11  WARNING   EXIT UNFILLED  DRREDDY — Canceled; RETRYING (still holding, not booked)
+2026-07-14 08:56:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:56:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-14 08:56:11  INFO      ORDER  DRREDDY       BUY    MIS   qty=2       price=Rs1244.00  reason=retry
+2026-07-14 08:56:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-14 08:56:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-14 08:56:11  INFO      ACCEPTED  DRREDDY  norenordno=26071400454142
+2026-07-14 08:56:11  INFO      CAPITAL  committed=Rs1243.70  (added Rs622.00 for MIS DRREDDY)
+2026-07-14 08:56:11  INFO      EXIT ORDER  DRREDDY       BUY  qty=2  [retry] — awaiting fill
+2026-07-14 08:56:11  INFO      ORDER UPDATE  NewAck    DRREDDY-EQ  norenordno=26071400454142
+2026-07-14 08:56:11  INFO      ORDER UPDATE  New       DRREDDY-EQ  norenordno=26071400454142
+2026-07-14 08:56:11  INFO      EXIT  DRREDDY       LOSS  net=Rs-10.48 (gross=Rs-9.60 cost=Rs0.88)  entry=Rs1239.00  exit=Rs1243.8000  qty=2  total=Rs+19.37  [retry]
+2026-07-14 08:56:19  DEBUG     Sending ping
+2026-07-14 08:56:49  DEBUG     Sending ping
+2026-07-14 08:57:19  DEBUG     Sending ping
+2026-07-14 08:57:49  DEBUG     Sending ping
+2026-07-14 08:58:19  DEBUG     Sending ping
+2026-07-14 08:58:49  DEBUG     Sending ping
+2026-07-14 08:59:19  DEBUG     Sending ping
+2026-07-14 08:59:49  DEBUG     Sending ping
+2026-07-14 09:00:00  DEBUG     CANDLE  HCLTECH       O=1172.90  H=1173.30  L=1170.00  C=1170.10
+2026-07-14 09:00:01  DEBUG     CANDLE  UNIONBANK     O=170.00  H=170.32  L=169.82  C=169.94
+2026-07-14 09:00:01  DEBUG     CANDLE  ADANIENSOL    O=1689.00  H=1696.30  L=1688.70  C=1693.40
+2026-07-14 09:00:01  DEBUG     CANDLE  JIOFIN        O=235.88  H=235.94  L=235.32  C=235.56
+2026-07-14 09:00:01  DEBUG     CANDLE  DRREDDY       O=1241.60  H=1244.30  L=1241.10  C=1243.20
+2026-07-14 09:00:19  DEBUG     Sending ping
+2026-07-14 09:00:49  DEBUG     Sending ping
+2026-07-14 09:01:19  DEBUG     Sending ping
+2026-07-14 09:01:49  DEBUG     Sending ping
+2026-07-14 09:02:19  DEBUG     Sending ping
+2026-07-14 09:02:49  DEBUG     Sending ping
+2026-07-14 09:03:19  DEBUG     Sending ping
+2026-07-14 09:03:49  DEBUG     Sending ping
+2026-07-14 09:04:19  DEBUG     Sending ping
+2026-07-14 09:04:49  DEBUG     Sending ping
+2026-07-14 09:05:19  DEBUG     Sending ping
+2026-07-14 09:05:49  DEBUG     Sending ping
+2026-07-14 09:06:19  DEBUG     Sending ping
+2026-07-14 09:06:49  DEBUG     Sending ping
+2026-07-14 09:07:19  DEBUG     Sending ping
+2026-07-14 09:07:49  DEBUG     Sending ping
+2026-07-14 09:08:19  DEBUG     Sending ping
+2026-07-14 09:08:49  DEBUG     Sending ping
+2026-07-14 09:09:19  DEBUG     Sending ping
+2026-07-14 09:09:49  DEBUG     Sending ping
+2026-07-14 09:10:19  DEBUG     Sending ping
+2026-07-14 09:10:49  DEBUG     Sending ping
+2026-07-14 09:11:19  DEBUG     Sending ping
+2026-07-14 09:11:49  DEBUG     Sending ping
+2026-07-14 09:12:19  DEBUG     Sending ping
+2026-07-14 09:12:49  DEBUG     Sending ping
+2026-07-14 09:13:19  DEBUG     Sending ping
+2026-07-14 09:13:49  DEBUG     Sending ping
+2026-07-14 09:14:19  DEBUG     Sending ping
+2026-07-14 09:14:49  DEBUG     Sending ping
+2026-07-14 09:15:01  DEBUG     CANDLE  HCLTECH       O=1170.30  H=1171.10  L=1168.30  C=1168.90
+2026-07-14 09:15:02  DEBUG     CANDLE  ADANIENSOL    O=1693.50  H=1699.50  L=1691.80  C=1693.80
+2026-07-14 09:15:02  DEBUG     CANDLE  JIOFIN        O=235.59  H=235.81  L=235.34  C=235.57
+2026-07-14 09:15:03  DEBUG     CANDLE  UNIONBANK     O=169.95  H=170.62  L=169.75  C=170.39
+2026-07-14 09:15:06  DEBUG     CANDLE  DRREDDY       O=1243.40  H=1245.80  L=1243.10  C=1245.00
+2026-07-14 09:15:19  DEBUG     Sending ping
+2026-07-14 09:15:49  DEBUG     Sending ping
+2026-07-14 09:16:19  DEBUG     Sending ping
+2026-07-14 09:16:49  DEBUG     Sending ping
+2026-07-14 09:17:19  DEBUG     Sending ping
+2026-07-14 09:17:49  DEBUG     Sending ping
+2026-07-14 09:18:19  DEBUG     Sending ping
+2026-07-14 09:18:49  DEBUG     Sending ping
+2026-07-14 09:19:19  DEBUG     Sending ping
+2026-07-14 09:19:49  DEBUG     Sending ping
+2026-07-14 09:20:19  DEBUG     Sending ping
+2026-07-14 09:20:49  DEBUG     Sending ping
+2026-07-14 09:21:19  DEBUG     Sending ping
+2026-07-14 09:21:49  DEBUG     Sending ping
+2026-07-14 09:22:19  DEBUG     Sending ping
+2026-07-14 09:22:49  DEBUG     Sending ping
+2026-07-14 09:23:19  DEBUG     Sending ping
+2026-07-14 09:23:49  DEBUG     Sending ping
+2026-07-14 09:24:19  DEBUG     Sending ping
+2026-07-14 09:24:49  DEBUG     Sending ping
+2026-07-14 09:25:19  DEBUG     Sending ping
+2026-07-14 09:25:49  DEBUG     Sending ping
+2026-07-14 09:26:19  DEBUG     Sending ping
+2026-07-14 09:26:49  DEBUG     Sending ping
+2026-07-14 09:27:19  DEBUG     Sending ping
+2026-07-14 09:27:49  DEBUG     Sending ping
+2026-07-14 09:28:19  DEBUG     Sending ping
+2026-07-14 09:28:49  DEBUG     Sending ping
+2026-07-14 09:29:19  DEBUG     Sending ping
+2026-07-14 09:29:49  DEBUG     Sending ping
+2026-07-14 09:30:00  INFO      ────────────────────────────────────────────────────────────
+2026-07-14 09:30:00  INFO      EOD SUMMARY  date=2026-07-14  trades=6  total_pnl=Rs19.37
+2026-07-14 09:30:00  INFO      All positions flat at EOD
+2026-07-14 09:30:00  INFO      Ticks  -> data/2026-07-14/ticks.jsonl
+2026-07-14 09:30:00  INFO      Trades -> logs/trades_2026-07-14.csv
+2026-07-14 09:30:00  INFO      ────────────────────────────────────────────────────────────
+2026-07-14 09:30:19  DEBUG     Sending ping
+2026-07-14 09:30:49  DEBUG     Sending ping
+2026-07-14 09:31:19  DEBUG     Sending ping
+2026-07-14 09:31:49  DEBUG     Sending ping
+2026-07-14 09:32:19  DEBUG     Sending ping
+2026-07-14 09:32:49  DEBUG     Sending ping
+2026-07-14 09:33:19  DEBUG     Sending ping
+2026-07-14 09:33:49  DEBUG     Sending ping
+2026-07-14 09:34:19  DEBUG     Sending ping
+2026-07-14 09:34:49  DEBUG     Sending ping
+2026-07-14 09:35:01  INFO      SIGINT received — saving state and shutting down
+2026-07-14 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-07-14 09:35:01  INFO      EOD SUMMARY  date=2026-07-14  trades=6  total_pnl=Rs19.37
+2026-07-14 09:35:01  INFO      All positions flat at EOD
+2026-07-14 09:35:01  INFO      Ticks  -> data/2026-07-14/ticks.jsonl
+2026-07-14 09:35:01  INFO      Trades -> logs/trades_2026-07-14.csv
+2026-07-14 09:35:01  INFO      ────────────────────────────────────────────────────────────
+[Tue Jul 14 09:35:01 UTC 2026] STOP flag set + SIGINT sent — runner stopping, watchdog will not restart
+2026-07-14 09:35:01  WARNING   WS DISCONNECTED  code=None  reason=None  trades=6  pnl=Rs+19.37
+[Tue Jul 14 09:35:01 UTC 2026] Runner exited, restarting in 10s...
+[Tue Jul 14 09:35:11 UTC 2026] STOP flag detected — watchdog exiting, no restart

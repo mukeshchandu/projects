@@ -1,0 +1,1641 @@
+[Wed Jul  8 03:15:10 UTC 2026] Watchdog started
+[Wed Jul  8 03:15:10 UTC 2026] Starting runner...
+2026-07-08 03:15:10  INFO      ============================================================
+2026-07-08 03:15:10  INFO      STARTUP  date=2026-07-08  pid=211833
+2026-07-08 03:15:10  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:15:10  INFO      Resolving NSE tokens...
+2026-07-08 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:11  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:11  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:12  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:12  INFO      Resolved  CESC             token=628
+2026-07-08 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:12  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:12  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:13  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:15:13  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:15:13  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:15:13  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:15:13  INFO      ============================================================
+2026-07-08 03:15:14  INFO      Websocket connected
+2026-07-08 03:15:14  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:15:14  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:16:14  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:16:14  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:16:14  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:16:14 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:16:24 UTC 2026] Starting runner...
+2026-07-08 03:16:24  INFO      ============================================================
+2026-07-08 03:16:24  INFO      STARTUP  date=2026-07-08  pid=211842
+2026-07-08 03:16:24  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:16:24  INFO      Resolving NSE tokens...
+2026-07-08 03:16:24  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:25  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:25  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:25  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:25  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:25  INFO      Resolved  CESC             token=628
+2026-07-08 03:16:25  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:26  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:26  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:26  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:16:26  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:16:26  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:16:26  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:16:26  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:16:26  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:16:26  INFO      ============================================================
+2026-07-08 03:16:27  INFO      Websocket connected
+2026-07-08 03:16:27  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:16:27  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:17:27  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:17:27  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:17:27  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:17:27 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:17:37 UTC 2026] Starting runner...
+2026-07-08 03:17:37  INFO      ============================================================
+2026-07-08 03:17:37  INFO      STARTUP  date=2026-07-08  pid=211901
+2026-07-08 03:17:37  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:17:37  INFO      Resolving NSE tokens...
+2026-07-08 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:37  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:17:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:38  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:38  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:38  INFO      Resolved  CESC             token=628
+2026-07-08 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:38  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:38  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:17:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:39  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:17:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:17:39  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:17:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:17:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:17:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:17:39  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:17:39  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:17:39  INFO      ============================================================
+2026-07-08 03:17:39  INFO      Websocket connected
+2026-07-08 03:17:39  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:17:39  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:18:39  DEBUG     Sending ping
+2026-07-08 03:18:39  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:18:39  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:18:39  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:18:39 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:18:49 UTC 2026] Starting runner...
+2026-07-08 03:18:50  INFO      ============================================================
+2026-07-08 03:18:50  INFO      STARTUP  date=2026-07-08  pid=211910
+2026-07-08 03:18:50  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:18:50  INFO      Resolving NSE tokens...
+2026-07-08 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:50  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:50  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:50  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:50  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:50  INFO      Resolved  CESC             token=628
+2026-07-08 03:18:50  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:51  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:51  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:51  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:18:51  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:51  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:18:51  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:18:52  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:18:52  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:18:52  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:18:52  INFO      ============================================================
+2026-07-08 03:18:52  INFO      Websocket connected
+2026-07-08 03:18:52  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:18:52  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:19:52  DEBUG     Sending ping
+2026-07-08 03:19:52  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:19:52  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:19:52  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:19:52 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:20:02 UTC 2026] Starting runner...
+2026-07-08 03:20:03  INFO      ============================================================
+2026-07-08 03:20:03  INFO      STARTUP  date=2026-07-08  pid=211966
+2026-07-08 03:20:03  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:20:03  INFO      Resolving NSE tokens...
+2026-07-08 03:20:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:03  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:20:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:03  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:20:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:03  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:03  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:20:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:04  INFO      Resolved  CESC             token=628
+2026-07-08 03:20:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:04  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:20:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:04  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:20:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:04  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:20:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:20:04  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:20:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:20:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:20:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:20:05  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:20:05  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:20:05  INFO      ============================================================
+2026-07-08 03:20:05  INFO      Websocket connected
+2026-07-08 03:20:05  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:20:05  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:21:05  DEBUG     Sending ping
+2026-07-08 03:21:05  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:21:05  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:21:05  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:21:05 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:21:15 UTC 2026] Starting runner...
+2026-07-08 03:21:15  INFO      ============================================================
+2026-07-08 03:21:15  INFO      STARTUP  date=2026-07-08  pid=212029
+2026-07-08 03:21:15  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:21:15  INFO      Resolving NSE tokens...
+2026-07-08 03:21:15  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:16  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:21:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:16  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:21:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:16  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:21:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:16  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:16  INFO      Resolved  CESC             token=628
+2026-07-08 03:21:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:17  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:21:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:17  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:21:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:17  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:21:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:21:17  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:21:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:21:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:21:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:21:18  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:21:18  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:21:18  INFO      ============================================================
+2026-07-08 03:21:18  INFO      Websocket connected
+2026-07-08 03:21:18  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:21:18  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:22:18  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:22:18  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:22:18  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:22:18 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:22:28 UTC 2026] Starting runner...
+2026-07-08 03:22:29  INFO      ============================================================
+2026-07-08 03:22:29  INFO      STARTUP  date=2026-07-08  pid=212088
+2026-07-08 03:22:29  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:22:29  INFO      Resolving NSE tokens...
+2026-07-08 03:22:29  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:29  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:29  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:22:29  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:29  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:29  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:22:29  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:30  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:30  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:22:30  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:30  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:30  INFO      Resolved  CESC             token=628
+2026-07-08 03:22:30  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:30  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:30  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:22:30  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:30  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:30  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:22:30  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:31  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:31  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:22:31  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:31  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:22:31  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:22:31  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:31  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:22:31  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:22:31  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:22:31  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:22:31  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:22:31  INFO      ============================================================
+2026-07-08 03:22:32  INFO      Websocket connected
+2026-07-08 03:22:32  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:22:32  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:23:32  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:23:32  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:23:32  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:23:32 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:23:42 UTC 2026] Starting runner...
+2026-07-08 03:23:42  INFO      ============================================================
+2026-07-08 03:23:42  INFO      STARTUP  date=2026-07-08  pid=212096
+2026-07-08 03:23:42  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:23:42  INFO      Resolving NSE tokens...
+2026-07-08 03:23:42  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:42  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:42  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:23:42  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:42  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:42  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:23:42  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:43  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:43  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:23:43  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:43  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:43  INFO      Resolved  CESC             token=628
+2026-07-08 03:23:43  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:43  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:43  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:23:43  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:43  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:43  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:23:43  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:43  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:43  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:23:43  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:44  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:23:44  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:23:44  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:44  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:23:44  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:23:44  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:23:44  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:23:44  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:23:44  INFO      ============================================================
+2026-07-08 03:23:44  INFO      Websocket connected
+2026-07-08 03:23:45  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:23:45  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:24:44  DEBUG     Sending ping
+2026-07-08 03:24:44  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:24:44  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:24:44  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:24:44 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:24:54 UTC 2026] Starting runner...
+2026-07-08 03:24:55  INFO      ============================================================
+2026-07-08 03:24:55  INFO      STARTUP  date=2026-07-08  pid=212152
+2026-07-08 03:24:55  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:24:55  INFO      Resolving NSE tokens...
+2026-07-08 03:24:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:55  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:55  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:24:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:55  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:55  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:24:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:55  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:55  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:24:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:55  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:55  INFO      Resolved  CESC             token=628
+2026-07-08 03:24:55  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:56  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:56  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:24:56  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:56  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:56  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:24:56  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:56  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:56  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:24:56  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:56  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:24:56  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:24:56  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:57  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:24:57  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:24:57  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:24:57  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:24:57  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:24:57  INFO      ============================================================
+2026-07-08 03:24:57  INFO      Websocket connected
+2026-07-08 03:24:57  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:24:57  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:25:57  DEBUG     Sending ping
+2026-07-08 03:25:57  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:25:57  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:25:57  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:25:57 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:26:07 UTC 2026] Starting runner...
+2026-07-08 03:26:07  INFO      ============================================================
+2026-07-08 03:26:07  INFO      STARTUP  date=2026-07-08  pid=212211
+2026-07-08 03:26:07  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:26:07  INFO      Resolving NSE tokens...
+2026-07-08 03:26:07  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:08  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:08  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:26:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:08  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:08  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:26:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:08  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:08  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:26:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:08  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:08  INFO      Resolved  CESC             token=628
+2026-07-08 03:26:08  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:09  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:26:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:09  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:26:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:09  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:26:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:26:09  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:26:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:09  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:26:09  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:26:10  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:26:10  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:26:10  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:26:10  INFO      ============================================================
+2026-07-08 03:26:10  INFO      Websocket connected
+2026-07-08 03:26:10  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:26:10  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:27:10  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:27:10  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:27:10  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:27:10 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:27:20 UTC 2026] Starting runner...
+2026-07-08 03:27:20  INFO      ============================================================
+2026-07-08 03:27:20  INFO      STARTUP  date=2026-07-08  pid=212220
+2026-07-08 03:27:20  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:27:20  INFO      Resolving NSE tokens...
+2026-07-08 03:27:20  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:21  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:27:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:21  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:27:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:21  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:27:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:21  INFO      Resolved  CESC             token=628
+2026-07-08 03:27:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:21  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:21  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:27:21  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:22  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:27:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:22  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:27:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:27:22  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:27:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:27:22  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:27:22  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:27:22  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:27:22  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:27:22  INFO      ============================================================
+2026-07-08 03:27:23  INFO      Websocket connected
+2026-07-08 03:27:23  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:27:23  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:28:23  DEBUG     Sending ping
+2026-07-08 03:28:23  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 03:28:23  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 03:28:23  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 03:28:23 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 03:28:33 UTC 2026] Starting runner...
+2026-07-08 03:28:33  INFO      ============================================================
+2026-07-08 03:28:33  INFO      STARTUP  date=2026-07-08  pid=212278
+2026-07-08 03:28:33  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 03:28:33  INFO      Resolving NSE tokens...
+2026-07-08 03:28:33  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:34  INFO      Resolved  HFCL             token=21951
+2026-07-08 03:28:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:34  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 03:28:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:34  INFO      Resolved  NMDC             token=15332
+2026-07-08 03:28:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:34  INFO      Resolved  CESC             token=628
+2026-07-08 03:28:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:34  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:34  INFO      Resolved  ZEEL             token=3812
+2026-07-08 03:28:34  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:35  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 03:28:35  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:35  INFO      Resolved  GRANULES         token=11872
+2026-07-08 03:28:35  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 03:28:35  INFO      Resolved  SUZLON           token=12018
+2026-07-08 03:28:35  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 03:28:35  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:28:35  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 03:28:35  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 03:28:35  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 03:28:35  INFO      ============================================================
+2026-07-08 03:28:36  INFO      Websocket connected
+2026-07-08 03:28:36  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 03:28:36  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 03:29:36  DEBUG     Sending ping
+2026-07-08 03:30:00  DEBUG     CANDLE  NMDC          O=84.35  H=84.35  L=84.35  C=84.35
+2026-07-08 03:30:00  DEBUG     CANDLE  BANKBARODA    O=247.85  H=247.85  L=247.85  C=247.85
+2026-07-08 03:30:02  DEBUG     CANDLE  SUZLON        O=54.38  H=54.38  L=54.38  C=54.38
+2026-07-08 03:30:06  DEBUG     Sending ping
+2026-07-08 03:30:36  DEBUG     Sending ping
+2026-07-08 03:31:06  DEBUG     Sending ping
+2026-07-08 03:31:36  DEBUG     Sending ping
+2026-07-08 03:32:06  DEBUG     Sending ping
+2026-07-08 03:32:36  DEBUG     Sending ping
+2026-07-08 03:33:06  DEBUG     Sending ping
+2026-07-08 03:33:36  DEBUG     Sending ping
+2026-07-08 03:34:06  DEBUG     Sending ping
+2026-07-08 03:34:36  DEBUG     Sending ping
+2026-07-08 03:35:06  DEBUG     Sending ping
+2026-07-08 03:35:36  DEBUG     Sending ping
+2026-07-08 03:36:06  DEBUG     Sending ping
+2026-07-08 03:36:36  DEBUG     Sending ping
+2026-07-08 03:37:06  DEBUG     Sending ping
+2026-07-08 03:37:36  DEBUG     Sending ping
+2026-07-08 03:38:06  DEBUG     Sending ping
+2026-07-08 03:38:36  DEBUG     Sending ping
+2026-07-08 03:39:06  DEBUG     Sending ping
+2026-07-08 03:39:36  DEBUG     Sending ping
+2026-07-08 03:40:06  DEBUG     Sending ping
+2026-07-08 03:40:36  DEBUG     Sending ping
+2026-07-08 03:41:06  DEBUG     Sending ping
+2026-07-08 03:41:36  DEBUG     Sending ping
+2026-07-08 03:42:06  DEBUG     Sending ping
+2026-07-08 03:42:36  DEBUG     Sending ping
+2026-07-08 03:43:06  DEBUG     Sending ping
+2026-07-08 03:43:36  DEBUG     Sending ping
+2026-07-08 03:44:06  DEBUG     Sending ping
+2026-07-08 03:44:36  DEBUG     Sending ping
+2026-07-08 03:45:00  DEBUG     CANDLE  SUZLON        O=54.40  H=54.40  L=54.30  C=54.30
+2026-07-08 03:45:00  DEBUG     CANDLE  BANKBARODA    O=247.70  H=247.70  L=244.95  C=244.95
+2026-07-08 03:45:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:45:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 03:45:00  ERROR     CNC SELL BANKBARODA skipped — no holdings found in demat
+2026-07-08 03:45:00  DEBUG     CANDLE  NMDC          O=84.34  H=84.34  L=83.50  C=83.50
+2026-07-08 03:45:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:45:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 03:45:01  ERROR     CNC SELL NMDC skipped — no holdings found in demat
+2026-07-08 03:45:01  DEBUG     CANDLE  HFCL          O=223.50  H=223.50  L=220.00  C=220.00
+2026-07-08 03:45:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 03:45:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 03:45:02  ERROR     CNC SELL HFCL skipped — no holdings found in demat
+2026-07-08 03:45:02  DEBUG     CANDLE  CESC          O=166.76  H=166.76  L=165.00  C=165.00
+2026-07-08 03:45:02  DEBUG     CANDLE  GRANULES      O=863.30  H=863.30  L=863.30  C=863.30
+2026-07-08 03:45:02  DEBUG     CANDLE  ZEEL          O=101.90  H=101.90  L=101.70  C=101.70
+2026-07-08 03:45:02  DEBUG     CANDLE  BALRAMCHIN    O=573.00  H=573.00  L=571.00  C=571.00
+2026-07-08 03:45:06  DEBUG     Sending ping
+2026-07-08 03:45:36  DEBUG     Sending ping
+2026-07-08 03:46:06  DEBUG     Sending ping
+2026-07-08 03:46:36  DEBUG     Sending ping
+2026-07-08 03:47:06  DEBUG     Sending ping
+2026-07-08 03:47:36  DEBUG     Sending ping
+2026-07-08 03:48:06  DEBUG     Sending ping
+2026-07-08 03:48:36  DEBUG     Sending ping
+2026-07-08 03:49:06  DEBUG     Sending ping
+2026-07-08 03:49:36  DEBUG     Sending ping
+2026-07-08 03:50:06  DEBUG     Sending ping
+2026-07-08 03:50:36  DEBUG     Sending ping
+2026-07-08 03:51:06  DEBUG     Sending ping
+2026-07-08 03:51:36  DEBUG     Sending ping
+2026-07-08 03:52:06  DEBUG     Sending ping
+2026-07-08 03:52:36  DEBUG     Sending ping
+2026-07-08 03:53:06  DEBUG     Sending ping
+2026-07-08 03:53:36  DEBUG     Sending ping
+2026-07-08 03:54:06  DEBUG     Sending ping
+2026-07-08 03:54:36  DEBUG     Sending ping
+2026-07-08 03:55:06  DEBUG     Sending ping
+2026-07-08 03:55:36  DEBUG     Sending ping
+2026-07-08 03:56:06  DEBUG     Sending ping
+2026-07-08 03:56:36  DEBUG     Sending ping
+2026-07-08 03:57:06  DEBUG     Sending ping
+2026-07-08 03:57:36  DEBUG     Sending ping
+2026-07-08 03:58:06  DEBUG     Sending ping
+2026-07-08 03:58:36  DEBUG     Sending ping
+2026-07-08 03:59:06  DEBUG     Sending ping
+2026-07-08 03:59:36  DEBUG     Sending ping
+2026-07-08 04:00:02  DEBUG     CANDLE  HFCL          O=220.14  H=223.74  L=219.89  C=221.81
+2026-07-08 04:00:03  DEBUG     CANDLE  BANKBARODA    O=245.30  H=245.70  L=244.10  C=244.55
+2026-07-08 04:00:03  DEBUG     CANDLE  GRANULES      O=861.00  H=872.00  L=861.00  C=868.50
+2026-07-08 04:00:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 04:00:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 04:00:04  ERROR     MIS BUY GRANULES skipped — no capital left (committed=Rs0.00)
+2026-07-08 04:00:04  DEBUG     CANDLE  ZEEL          O=101.72  H=101.72  L=100.33  C=100.56
+2026-07-08 04:00:04  DEBUG     CANDLE  SUZLON        O=54.12  H=54.27  L=53.91  C=54.08
+2026-07-08 04:00:04  DEBUG     CANDLE  NMDC          O=83.79  H=84.31  L=83.40  C=84.27
+2026-07-08 04:00:04  DEBUG     CANDLE  BALRAMCHIN    O=568.80  H=571.90  L=566.50  C=570.50
+2026-07-08 04:00:05  DEBUG     CANDLE  CESC          O=164.99  H=165.99  L=164.50  C=165.65
+2026-07-08 04:00:06  DEBUG     Sending ping
+2026-07-08 04:00:36  DEBUG     Sending ping
+2026-07-08 04:01:06  DEBUG     Sending ping
+2026-07-08 04:01:36  DEBUG     Sending ping
+2026-07-08 04:02:06  DEBUG     Sending ping
+2026-07-08 04:02:36  DEBUG     Sending ping
+2026-07-08 04:03:06  DEBUG     Sending ping
+2026-07-08 04:03:36  DEBUG     Sending ping
+2026-07-08 04:04:06  DEBUG     Sending ping
+2026-07-08 04:04:36  DEBUG     Sending ping
+2026-07-08 04:05:06  DEBUG     Sending ping
+2026-07-08 04:05:36  DEBUG     Sending ping
+2026-07-08 04:06:06  DEBUG     Sending ping
+2026-07-08 04:06:36  DEBUG     Sending ping
+2026-07-08 04:07:06  DEBUG     Sending ping
+2026-07-08 04:07:36  DEBUG     Sending ping
+2026-07-08 04:08:06  DEBUG     Sending ping
+2026-07-08 04:08:36  DEBUG     Sending ping
+2026-07-08 04:09:06  DEBUG     Sending ping
+2026-07-08 04:09:36  DEBUG     Sending ping
+2026-07-08 04:10:06  DEBUG     Sending ping
+2026-07-08 04:10:36  DEBUG     Sending ping
+2026-07-08 04:11:06  DEBUG     Sending ping
+2026-07-08 04:11:36  DEBUG     Sending ping
+2026-07-08 04:12:06  DEBUG     Sending ping
+2026-07-08 04:12:36  DEBUG     Sending ping
+2026-07-08 04:13:06  DEBUG     Sending ping
+2026-07-08 04:13:36  DEBUG     Sending ping
+2026-07-08 04:14:06  DEBUG     Sending ping
+2026-07-08 04:14:36  DEBUG     Sending ping
+2026-07-08 04:15:00  DEBUG     CANDLE  NMDC          O=84.25  H=84.52  L=84.01  C=84.40
+2026-07-08 04:15:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 04:15:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 04:15:00  ERROR     CNC BUY NMDC skipped — no capital left (committed=Rs0.00)
+2026-07-08 04:15:00  DEBUG     CANDLE  CESC          O=165.69  H=165.70  L=165.26  C=165.39
+2026-07-08 04:15:01  DEBUG     CANDLE  SUZLON        O=54.06  H=54.35  L=53.96  C=54.33
+2026-07-08 04:15:03  DEBUG     CANDLE  HFCL          O=221.87  H=222.57  L=220.45  C=221.12
+2026-07-08 04:15:03  DEBUG     CANDLE  BANKBARODA    O=244.45  H=244.45  L=243.20  C=244.10
+2026-07-08 04:15:04  DEBUG     CANDLE  ZEEL          O=100.55  H=101.15  L=100.37  C=101.05
+2026-07-08 04:15:05  DEBUG     CANDLE  BALRAMCHIN    O=570.15  H=573.00  L=567.55  C=568.50
+2026-07-08 04:15:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 04:15:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 04:15:05  ERROR     CNC SELL BALRAMCHIN skipped — no holdings found in demat
+2026-07-08 04:15:06  DEBUG     Sending ping
+2026-07-08 04:15:14  DEBUG     CANDLE  GRANULES      O=868.00  H=868.05  L=861.75  C=863.45
+2026-07-08 04:15:36  DEBUG     Sending ping
+2026-07-08 04:16:06  DEBUG     Sending ping
+2026-07-08 04:16:36  DEBUG     Sending ping
+2026-07-08 04:17:06  DEBUG     Sending ping
+2026-07-08 04:17:36  DEBUG     Sending ping
+2026-07-08 04:18:06  DEBUG     Sending ping
+2026-07-08 04:18:36  DEBUG     Sending ping
+2026-07-08 04:19:06  DEBUG     Sending ping
+2026-07-08 04:19:36  DEBUG     Sending ping
+2026-07-08 04:20:06  DEBUG     Sending ping
+2026-07-08 04:20:36  DEBUG     Sending ping
+2026-07-08 04:21:06  DEBUG     Sending ping
+2026-07-08 04:21:36  DEBUG     Sending ping
+2026-07-08 04:22:06  DEBUG     Sending ping
+2026-07-08 04:22:36  DEBUG     Sending ping
+2026-07-08 04:23:06  DEBUG     Sending ping
+2026-07-08 04:23:36  DEBUG     Sending ping
+2026-07-08 04:24:06  DEBUG     Sending ping
+2026-07-08 04:24:36  DEBUG     Sending ping
+2026-07-08 04:25:06  DEBUG     Sending ping
+2026-07-08 04:25:36  DEBUG     Sending ping
+2026-07-08 04:26:06  DEBUG     Sending ping
+2026-07-08 04:26:36  DEBUG     Sending ping
+2026-07-08 04:27:06  DEBUG     Sending ping
+2026-07-08 04:27:36  DEBUG     Sending ping
+2026-07-08 04:28:06  DEBUG     Sending ping
+2026-07-08 04:28:36  DEBUG     Sending ping
+2026-07-08 04:29:06  DEBUG     Sending ping
+2026-07-08 04:29:36  DEBUG     Sending ping
+2026-07-08 04:30:00  DEBUG     CANDLE  BANKBARODA    O=244.15  H=244.45  L=242.30  C=242.65
+2026-07-08 04:30:00  DEBUG     CANDLE  NMDC          O=84.41  H=84.49  L=84.22  C=84.40
+2026-07-08 04:30:00  DEBUG     CANDLE  HFCL          O=221.11  H=221.49  L=220.50  C=220.81
+2026-07-08 04:30:01  DEBUG     CANDLE  SUZLON        O=54.34  H=54.38  L=53.96  C=54.04
+2026-07-08 04:30:01  DEBUG     CANDLE  GRANULES      O=863.50  H=863.50  L=860.10  C=861.65
+2026-07-08 04:30:05  DEBUG     CANDLE  ZEEL          O=101.06  H=101.06  L=100.28  C=100.28
+2026-07-08 04:30:06  DEBUG     Sending ping
+2026-07-08 04:30:06  DEBUG     CANDLE  BALRAMCHIN    O=568.00  H=569.50  L=565.95  C=567.65
+2026-07-08 04:30:36  DEBUG     Sending ping
+2026-07-08 04:30:56  DEBUG     CANDLE  CESC          O=165.30  H=166.25  L=165.30  C=166.00
+2026-07-08 04:31:06  DEBUG     Sending ping
+2026-07-08 04:31:36  DEBUG     Sending ping
+2026-07-08 04:32:06  DEBUG     Sending ping
+2026-07-08 04:32:36  DEBUG     Sending ping
+2026-07-08 04:33:06  DEBUG     Sending ping
+2026-07-08 04:33:36  DEBUG     Sending ping
+2026-07-08 04:34:06  DEBUG     Sending ping
+2026-07-08 04:34:36  DEBUG     Sending ping
+2026-07-08 04:35:06  DEBUG     Sending ping
+2026-07-08 04:35:36  DEBUG     Sending ping
+2026-07-08 04:36:06  DEBUG     Sending ping
+2026-07-08 04:36:36  DEBUG     Sending ping
+2026-07-08 04:37:06  DEBUG     Sending ping
+2026-07-08 04:37:36  DEBUG     Sending ping
+2026-07-08 04:38:06  DEBUG     Sending ping
+2026-07-08 04:38:36  DEBUG     Sending ping
+2026-07-08 04:39:06  DEBUG     Sending ping
+2026-07-08 04:39:36  DEBUG     Sending ping
+2026-07-08 04:40:06  DEBUG     Sending ping
+2026-07-08 04:40:36  DEBUG     Sending ping
+2026-07-08 04:41:06  DEBUG     Sending ping
+2026-07-08 04:41:36  DEBUG     Sending ping
+2026-07-08 04:42:06  DEBUG     Sending ping
+2026-07-08 04:42:36  DEBUG     Sending ping
+2026-07-08 04:43:06  DEBUG     Sending ping
+2026-07-08 04:43:36  DEBUG     Sending ping
+2026-07-08 04:44:06  DEBUG     Sending ping
+2026-07-08 04:44:36  DEBUG     Sending ping
+2026-07-08 04:45:00  DEBUG     CANDLE  NMDC          O=84.44  H=84.99  L=84.44  C=84.85
+2026-07-08 04:45:00  DEBUG     CANDLE  BANKBARODA    O=242.60  H=245.20  L=242.60  C=244.75
+2026-07-08 04:45:01  DEBUG     CANDLE  HFCL          O=220.75  H=220.79  L=219.75  C=219.82
+2026-07-08 04:45:02  DEBUG     CANDLE  ZEEL          O=100.33  H=100.71  L=100.28  C=100.70
+2026-07-08 04:45:02  DEBUG     CANDLE  SUZLON        O=54.05  H=54.14  L=54.01  C=54.10
+2026-07-08 04:45:02  DEBUG     CANDLE  BALRAMCHIN    O=567.70  H=569.35  L=566.05  C=568.70
+2026-07-08 04:45:06  DEBUG     Sending ping
+2026-07-08 04:45:09  DEBUG     CANDLE  GRANULES      O=861.80  H=863.15  L=860.50  C=860.80
+2026-07-08 04:45:19  DEBUG     CANDLE  CESC          O=166.01  H=166.51  L=166.01  C=166.17
+2026-07-08 04:45:36  DEBUG     Sending ping
+2026-07-08 04:46:06  DEBUG     Sending ping
+2026-07-08 04:46:36  DEBUG     Sending ping
+2026-07-08 04:47:06  DEBUG     Sending ping
+2026-07-08 04:47:36  DEBUG     Sending ping
+2026-07-08 04:48:06  DEBUG     Sending ping
+2026-07-08 04:48:36  DEBUG     Sending ping
+2026-07-08 04:49:06  DEBUG     Sending ping
+2026-07-08 04:49:36  DEBUG     Sending ping
+2026-07-08 04:50:06  DEBUG     Sending ping
+2026-07-08 04:50:36  DEBUG     Sending ping
+2026-07-08 04:51:06  DEBUG     Sending ping
+2026-07-08 04:51:36  DEBUG     Sending ping
+2026-07-08 04:52:06  DEBUG     Sending ping
+2026-07-08 04:52:36  DEBUG     Sending ping
+2026-07-08 04:53:06  DEBUG     Sending ping
+2026-07-08 04:53:36  DEBUG     Sending ping
+2026-07-08 04:54:06  DEBUG     Sending ping
+2026-07-08 04:54:36  DEBUG     Sending ping
+2026-07-08 04:55:06  DEBUG     Sending ping
+2026-07-08 04:55:36  DEBUG     Sending ping
+2026-07-08 04:56:06  DEBUG     Sending ping
+2026-07-08 04:56:36  DEBUG     Sending ping
+2026-07-08 04:57:06  DEBUG     Sending ping
+2026-07-08 04:57:36  DEBUG     Sending ping
+2026-07-08 04:58:06  DEBUG     Sending ping
+2026-07-08 04:58:36  DEBUG     Sending ping
+2026-07-08 04:59:06  DEBUG     Sending ping
+2026-07-08 04:59:36  DEBUG     Sending ping
+2026-07-08 05:00:01  DEBUG     CANDLE  SUZLON        O=54.09  H=54.18  L=54.03  C=54.17
+2026-07-08 05:00:03  DEBUG     CANDLE  HFCL          O=219.81  H=220.39  L=219.25  C=220.39
+2026-07-08 05:00:03  DEBUG     CANDLE  NMDC          O=84.87  H=84.92  L=84.47  C=84.69
+2026-07-08 05:00:03  DEBUG     CANDLE  BANKBARODA    O=244.65  H=245.00  L=244.10  C=244.40
+2026-07-08 05:00:05  DEBUG     CANDLE  GRANULES      O=860.65  H=863.60  L=857.10  C=857.65
+2026-07-08 05:00:05  INFO      ORDER  GRANULES      SELL   MIS   qty=1       price=Rs857.60   reason=flip DOWN | atr=4.76 st=867.49 sl=864.79
+2026-07-08 05:00:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 05:00:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-08 05:00:05  INFO      ACCEPTED  GRANULES  norenordno=26070800100499
+2026-07-08 05:00:05  INFO      CAPITAL  committed=Rs0.00  (released Rs214.40 for MIS GRANULES)
+2026-07-08 05:00:05  INFO      ENTRY #1    GRANULES      SHORT  Rs857.65  qty=1  [flip DOWN | atr=4.76 st=867.49 sl=864.79]
+2026-07-08 05:00:05  INFO      ORDER UPDATE  NewAck    GRANULES-EQ  norenordno=26070800100499
+2026-07-08 05:00:05  ERROR     ORDER REJECTED  GRANULES-EQ  norenordno=26070800100499  reason=RED:RULE:{Allowed Basket}in Basket NSE.MIS.NSEMIS for GRANULES-EQ for C-FZ38545 [KAMBALA]
+2026-07-08 05:00:06  DEBUG     Sending ping
+2026-07-08 05:00:20  DEBUG     CANDLE  BALRAMCHIN    O=568.90  H=568.90  L=567.00  C=568.50
+2026-07-08 05:00:20  DEBUG     CANDLE  CESC          O=166.19  H=166.42  L=166.00  C=166.32
+2026-07-08 05:00:20  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 05:00:20  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 05:00:20  ERROR     CNC BUY CESC skipped — no capital left (committed=Rs0.00)
+2026-07-08 05:00:26  DEBUG     CANDLE  ZEEL          O=100.71  H=100.76  L=100.36  C=100.40
+2026-07-08 05:00:36  DEBUG     Sending ping
+2026-07-08 05:01:06  DEBUG     Sending ping
+2026-07-08 05:01:36  DEBUG     Sending ping
+2026-07-08 05:02:06  DEBUG     Sending ping
+2026-07-08 05:02:36  DEBUG     Sending ping
+2026-07-08 05:03:06  DEBUG     Sending ping
+2026-07-08 05:03:36  DEBUG     Sending ping
+2026-07-08 05:04:06  DEBUG     Sending ping
+2026-07-08 05:04:36  DEBUG     Sending ping
+2026-07-08 05:05:06  DEBUG     Sending ping
+2026-07-08 05:05:36  DEBUG     Sending ping
+2026-07-08 05:06:06  DEBUG     Sending ping
+2026-07-08 05:06:36  DEBUG     Sending ping
+2026-07-08 05:07:06  DEBUG     Sending ping
+2026-07-08 05:07:36  DEBUG     Sending ping
+2026-07-08 05:08:06  DEBUG     Sending ping
+2026-07-08 05:08:36  DEBUG     Sending ping
+2026-07-08 05:09:06  DEBUG     Sending ping
+2026-07-08 05:09:36  DEBUG     Sending ping
+2026-07-08 05:10:06  DEBUG     Sending ping
+2026-07-08 05:10:36  DEBUG     Sending ping
+2026-07-08 05:11:06  DEBUG     Sending ping
+2026-07-08 05:11:36  DEBUG     Sending ping
+2026-07-08 05:12:06  DEBUG     Sending ping
+2026-07-08 05:12:36  DEBUG     Sending ping
+2026-07-08 05:13:06  DEBUG     Sending ping
+2026-07-08 05:13:36  DEBUG     Sending ping
+2026-07-08 05:14:06  DEBUG     Sending ping
+2026-07-08 05:14:36  DEBUG     Sending ping
+2026-07-08 05:15:01  DEBUG     CANDLE  ZEEL          O=100.39  H=101.00  L=100.31  C=100.86
+2026-07-08 05:15:01  DEBUG     CANDLE  NMDC          O=84.70  H=84.70  L=84.51  C=84.65
+2026-07-08 05:15:01  DEBUG     CANDLE  BANKBARODA    O=244.45  H=244.90  L=244.25  C=244.40
+2026-07-08 05:15:02  DEBUG     CANDLE  SUZLON        O=54.15  H=54.24  L=54.12  C=54.24
+2026-07-08 05:15:04  DEBUG     CANDLE  HFCL          O=220.35  H=220.77  L=219.26  C=220.43
+2026-07-08 05:15:04  DEBUG     CANDLE  CESC          O=166.06  H=166.45  L=165.85  C=166.00
+2026-07-08 05:15:06  DEBUG     Sending ping
+2026-07-08 05:15:11  DEBUG     CANDLE  BALRAMCHIN    O=568.35  H=569.50  L=567.30  C=569.50
+2026-07-08 05:15:16  DEBUG     CANDLE  GRANULES      O=857.80  H=859.00  L=857.25  C=857.35
+2026-07-08 05:15:36  DEBUG     Sending ping
+2026-07-08 05:16:06  DEBUG     Sending ping
+2026-07-08 05:16:36  DEBUG     Sending ping
+2026-07-08 05:17:06  DEBUG     Sending ping
+2026-07-08 05:17:36  DEBUG     Sending ping
+2026-07-08 05:18:06  DEBUG     Sending ping
+2026-07-08 05:18:36  DEBUG     Sending ping
+2026-07-08 05:19:06  DEBUG     Sending ping
+2026-07-08 05:19:36  DEBUG     Sending ping
+2026-07-08 05:20:06  DEBUG     Sending ping
+2026-07-08 05:20:36  DEBUG     Sending ping
+2026-07-08 05:21:06  DEBUG     Sending ping
+2026-07-08 05:21:36  DEBUG     Sending ping
+2026-07-08 05:22:06  DEBUG     Sending ping
+2026-07-08 05:22:36  DEBUG     Sending ping
+2026-07-08 05:23:06  DEBUG     Sending ping
+2026-07-08 05:23:36  DEBUG     Sending ping
+2026-07-08 05:24:06  DEBUG     Sending ping
+2026-07-08 05:24:36  DEBUG     Sending ping
+2026-07-08 05:25:06  DEBUG     Sending ping
+2026-07-08 05:25:36  DEBUG     Sending ping
+2026-07-08 05:26:06  DEBUG     Sending ping
+2026-07-08 05:26:36  DEBUG     Sending ping
+2026-07-08 05:27:06  DEBUG     Sending ping
+2026-07-08 05:27:36  DEBUG     Sending ping
+2026-07-08 05:28:06  DEBUG     Sending ping
+2026-07-08 05:28:36  DEBUG     Sending ping
+2026-07-08 05:29:06  DEBUG     Sending ping
+2026-07-08 05:29:36  DEBUG     Sending ping
+2026-07-08 05:30:00  DEBUG     CANDLE  NMDC          O=84.63  H=84.79  L=84.50  C=84.53
+2026-07-08 05:30:00  DEBUG     CANDLE  BANKBARODA    O=244.35  H=244.70  L=243.85  C=244.35
+2026-07-08 05:30:03  DEBUG     CANDLE  HFCL          O=220.42  H=220.74  L=219.69  C=219.75
+2026-07-08 05:30:05  DEBUG     CANDLE  SUZLON        O=54.23  H=54.25  L=54.13  C=54.15
+2026-07-08 05:30:05  DEBUG     CANDLE  BALRAMCHIN    O=570.00  H=572.80  L=569.90  C=570.65
+2026-07-08 05:30:06  DEBUG     Sending ping
+2026-07-08 05:30:06  DEBUG     CANDLE  GRANULES      O=857.40  H=859.45  L=857.40  C=858.90
+2026-07-08 05:30:15  DEBUG     CANDLE  CESC          O=166.10  H=166.10  L=165.03  C=165.06
+2026-07-08 05:30:24  DEBUG     CANDLE  ZEEL          O=100.85  H=101.29  L=100.83  C=100.90
+2026-07-08 05:30:36  DEBUG     Sending ping
+2026-07-08 05:31:06  DEBUG     Sending ping
+2026-07-08 05:31:36  DEBUG     Sending ping
+2026-07-08 05:32:06  DEBUG     Sending ping
+2026-07-08 05:32:36  DEBUG     Sending ping
+2026-07-08 05:33:06  DEBUG     Sending ping
+2026-07-08 05:33:36  DEBUG     Sending ping
+2026-07-08 05:34:06  DEBUG     Sending ping
+2026-07-08 05:34:36  DEBUG     Sending ping
+2026-07-08 05:35:06  DEBUG     Sending ping
+2026-07-08 05:35:36  DEBUG     Sending ping
+2026-07-08 05:36:06  DEBUG     Sending ping
+2026-07-08 05:36:36  DEBUG     Sending ping
+2026-07-08 05:37:06  DEBUG     Sending ping
+2026-07-08 05:37:36  DEBUG     Sending ping
+2026-07-08 05:38:06  DEBUG     Sending ping
+2026-07-08 05:38:36  DEBUG     Sending ping
+2026-07-08 05:39:06  DEBUG     Sending ping
+2026-07-08 05:39:36  DEBUG     Sending ping
+2026-07-08 05:40:06  DEBUG     Sending ping
+2026-07-08 05:40:36  DEBUG     Sending ping
+2026-07-08 05:41:06  DEBUG     Sending ping
+2026-07-08 05:41:36  DEBUG     Sending ping
+2026-07-08 05:42:06  DEBUG     Sending ping
+2026-07-08 05:42:36  DEBUG     Sending ping
+2026-07-08 05:43:06  DEBUG     Sending ping
+2026-07-08 05:43:36  DEBUG     Sending ping
+2026-07-08 05:44:06  DEBUG     Sending ping
+2026-07-08 05:44:36  DEBUG     Sending ping
+2026-07-08 05:45:01  DEBUG     CANDLE  BALRAMCHIN    O=570.80  H=570.80  L=569.05  C=570.15
+2026-07-08 05:45:02  DEBUG     CANDLE  HFCL          O=219.76  H=220.70  L=219.50  C=220.43
+2026-07-08 05:45:02  DEBUG     CANDLE  NMDC          O=84.51  H=84.78  L=84.51  C=84.62
+2026-07-08 05:45:02  DEBUG     CANDLE  BANKBARODA    O=244.30  H=245.00  L=244.10  C=244.80
+2026-07-08 05:45:02  DEBUG     CANDLE  ZEEL          O=100.95  H=101.09  L=100.61  C=100.97
+2026-07-08 05:45:02  DEBUG     CANDLE  SUZLON        O=54.17  H=54.25  L=54.15  C=54.23
+2026-07-08 05:45:04  DEBUG     CANDLE  GRANULES      O=858.95  H=860.00  L=858.75  C=859.85
+2026-07-08 05:45:06  DEBUG     CANDLE  CESC          O=165.14  H=165.68  L=165.05  C=165.51
+2026-07-08 05:45:06  DEBUG     Sending ping
+2026-07-08 05:45:36  DEBUG     Sending ping
+2026-07-08 05:46:06  DEBUG     Sending ping
+2026-07-08 05:46:36  DEBUG     Sending ping
+2026-07-08 05:47:06  DEBUG     Sending ping
+2026-07-08 05:47:36  DEBUG     Sending ping
+2026-07-08 05:48:06  DEBUG     Sending ping
+2026-07-08 05:48:36  DEBUG     Sending ping
+2026-07-08 05:49:06  DEBUG     Sending ping
+2026-07-08 05:49:36  DEBUG     Sending ping
+2026-07-08 05:50:06  DEBUG     Sending ping
+2026-07-08 05:50:36  DEBUG     Sending ping
+2026-07-08 05:51:06  DEBUG     Sending ping
+2026-07-08 05:51:36  DEBUG     Sending ping
+2026-07-08 05:52:06  DEBUG     Sending ping
+2026-07-08 05:52:36  DEBUG     Sending ping
+2026-07-08 05:53:06  DEBUG     Sending ping
+2026-07-08 05:53:36  DEBUG     Sending ping
+2026-07-08 05:54:06  DEBUG     Sending ping
+2026-07-08 05:54:36  DEBUG     Sending ping
+2026-07-08 05:55:06  DEBUG     Sending ping
+2026-07-08 05:55:36  DEBUG     Sending ping
+2026-07-08 05:56:06  DEBUG     Sending ping
+2026-07-08 05:56:36  DEBUG     Sending ping
+2026-07-08 05:57:06  DEBUG     Sending ping
+2026-07-08 05:57:36  DEBUG     Sending ping
+2026-07-08 05:58:06  DEBUG     Sending ping
+2026-07-08 05:58:36  DEBUG     Sending ping
+2026-07-08 05:59:06  DEBUG     Sending ping
+2026-07-08 05:59:36  DEBUG     Sending ping
+2026-07-08 06:00:00  DEBUG     CANDLE  SUZLON        O=54.22  H=54.38  L=54.15  C=54.23
+2026-07-08 06:00:00  DEBUG     CANDLE  BALRAMCHIN    O=570.00  H=570.70  L=570.00  C=570.65
+2026-07-08 06:00:01  DEBUG     CANDLE  HFCL          O=220.46  H=222.65  L=220.40  C=222.40
+2026-07-08 06:00:01  DEBUG     CANDLE  NMDC          O=84.61  H=84.64  L=84.53  C=84.58
+2026-07-08 06:00:01  DEBUG     CANDLE  GRANULES      O=859.45  H=860.45  L=858.60  C=860.45
+2026-07-08 06:00:04  DEBUG     CANDLE  ZEEL          O=100.92  H=101.04  L=100.71  C=100.81
+2026-07-08 06:00:06  DEBUG     Sending ping
+2026-07-08 06:00:06  DEBUG     CANDLE  BANKBARODA    O=244.90  H=245.45  L=244.60  C=245.25
+2026-07-08 06:00:06  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 06:00:06  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 06:00:06  ERROR     CNC BUY BANKBARODA skipped — no capital left (committed=Rs0.00)
+2026-07-08 06:00:12  DEBUG     CANDLE  CESC          O=165.52  H=165.76  L=165.15  C=165.33
+2026-07-08 06:00:36  DEBUG     Sending ping
+2026-07-08 06:01:06  DEBUG     Sending ping
+2026-07-08 06:01:36  DEBUG     Sending ping
+2026-07-08 06:02:06  DEBUG     Sending ping
+2026-07-08 06:02:36  DEBUG     Sending ping
+2026-07-08 06:03:06  DEBUG     Sending ping
+2026-07-08 06:03:36  DEBUG     Sending ping
+2026-07-08 06:04:06  DEBUG     Sending ping
+2026-07-08 06:04:36  DEBUG     Sending ping
+2026-07-08 06:05:06  DEBUG     Sending ping
+2026-07-08 06:05:36  DEBUG     Sending ping
+2026-07-08 06:06:06  DEBUG     Sending ping
+2026-07-08 06:06:36  DEBUG     Sending ping
+2026-07-08 06:07:06  DEBUG     Sending ping
+2026-07-08 06:07:36  DEBUG     Sending ping
+2026-07-08 06:08:06  DEBUG     Sending ping
+2026-07-08 06:08:36  DEBUG     Sending ping
+2026-07-08 06:09:06  DEBUG     Sending ping
+2026-07-08 06:09:36  DEBUG     Sending ping
+2026-07-08 06:10:06  DEBUG     Sending ping
+2026-07-08 06:10:36  DEBUG     Sending ping
+2026-07-08 06:11:06  DEBUG     Sending ping
+2026-07-08 06:11:36  DEBUG     Sending ping
+2026-07-08 06:12:06  DEBUG     Sending ping
+2026-07-08 06:12:36  DEBUG     Sending ping
+2026-07-08 06:13:06  DEBUG     Sending ping
+2026-07-08 06:13:36  DEBUG     Sending ping
+2026-07-08 06:14:06  DEBUG     Sending ping
+2026-07-08 06:14:36  DEBUG     Sending ping
+2026-07-08 06:15:00  DEBUG     CANDLE  HFCL          O=222.39  H=222.53  L=221.02  C=221.26
+2026-07-08 06:15:03  DEBUG     CANDLE  GRANULES      O=860.40  H=864.00  L=859.10  C=862.00
+2026-07-08 06:15:03  DEBUG     CANDLE  ZEEL          O=100.80  H=100.89  L=100.62  C=100.62
+2026-07-08 06:15:05  DEBUG     CANDLE  BANKBARODA    O=245.35  H=245.45  L=244.85  C=245.10
+2026-07-08 06:15:05  DEBUG     CANDLE  SUZLON        O=54.24  H=54.24  L=54.07  C=54.16
+2026-07-08 06:15:06  DEBUG     Sending ping
+2026-07-08 06:15:08  DEBUG     CANDLE  BALRAMCHIN    O=570.55  H=570.60  L=570.00  C=570.40
+2026-07-08 06:15:15  DEBUG     CANDLE  CESC          O=165.32  H=165.61  L=165.30  C=165.37
+2026-07-08 06:15:21  DEBUG     CANDLE  NMDC          O=84.54  H=84.61  L=84.50  C=84.50
+2026-07-08 06:15:36  DEBUG     Sending ping
+2026-07-08 06:16:06  DEBUG     Sending ping
+2026-07-08 06:16:36  DEBUG     Sending ping
+2026-07-08 06:17:06  DEBUG     Sending ping
+2026-07-08 06:17:36  DEBUG     Sending ping
+2026-07-08 06:18:06  DEBUG     Sending ping
+2026-07-08 06:18:36  DEBUG     Sending ping
+2026-07-08 06:19:06  DEBUG     Sending ping
+2026-07-08 06:19:36  DEBUG     Sending ping
+2026-07-08 06:20:06  DEBUG     Sending ping
+2026-07-08 06:20:36  DEBUG     Sending ping
+2026-07-08 06:21:06  DEBUG     Sending ping
+2026-07-08 06:21:36  DEBUG     Sending ping
+2026-07-08 06:22:06  DEBUG     Sending ping
+2026-07-08 06:22:36  DEBUG     Sending ping
+2026-07-08 06:23:06  DEBUG     Sending ping
+2026-07-08 06:23:36  DEBUG     Sending ping
+2026-07-08 06:24:06  DEBUG     Sending ping
+2026-07-08 06:24:36  DEBUG     Sending ping
+2026-07-08 06:25:06  DEBUG     Sending ping
+2026-07-08 06:25:36  DEBUG     Sending ping
+2026-07-08 06:26:06  DEBUG     Sending ping
+2026-07-08 06:26:36  DEBUG     Sending ping
+2026-07-08 06:27:06  DEBUG     Sending ping
+2026-07-08 06:27:36  DEBUG     Sending ping
+2026-07-08 06:28:06  DEBUG     Sending ping
+2026-07-08 06:28:36  DEBUG     Sending ping
+2026-07-08 06:29:06  DEBUG     Sending ping
+2026-07-08 06:29:36  DEBUG     Sending ping
+2026-07-08 06:30:00  DEBUG     CANDLE  HFCL          O=221.25  H=221.90  L=221.01  C=221.24
+2026-07-08 06:30:00  DEBUG     CANDLE  NMDC          O=84.54  H=84.76  L=84.50  C=84.76
+2026-07-08 06:30:00  DEBUG     CANDLE  BANKBARODA    O=245.15  H=245.30  L=244.65  C=244.65
+2026-07-08 06:30:00  DEBUG     CANDLE  SUZLON        O=54.14  H=54.25  L=54.12  C=54.21
+2026-07-08 06:30:02  DEBUG     CANDLE  GRANULES      O=861.20  H=861.80  L=860.00  C=860.90
+2026-07-08 06:30:02  DEBUG     CANDLE  ZEEL          O=100.70  H=100.72  L=100.50  C=100.64
+2026-07-08 06:30:04  DEBUG     CANDLE  CESC          O=165.47  H=165.58  L=165.28  C=165.45
+2026-07-08 06:30:06  DEBUG     Sending ping
+2026-07-08 06:30:07  DEBUG     CANDLE  BALRAMCHIN    O=570.10  H=570.75  L=570.05  C=570.65
+2026-07-08 06:30:36  DEBUG     Sending ping
+2026-07-08 06:31:06  DEBUG     Sending ping
+2026-07-08 06:31:36  DEBUG     Sending ping
+2026-07-08 06:32:06  DEBUG     Sending ping
+2026-07-08 06:32:36  DEBUG     Sending ping
+2026-07-08 06:33:06  DEBUG     Sending ping
+2026-07-08 06:33:36  DEBUG     Sending ping
+2026-07-08 06:34:06  DEBUG     Sending ping
+2026-07-08 06:34:36  DEBUG     Sending ping
+2026-07-08 06:35:06  DEBUG     Sending ping
+2026-07-08 06:35:36  DEBUG     Sending ping
+2026-07-08 06:36:06  DEBUG     Sending ping
+2026-07-08 06:36:36  DEBUG     Sending ping
+2026-07-08 06:37:06  DEBUG     Sending ping
+2026-07-08 06:37:36  DEBUG     Sending ping
+2026-07-08 06:38:06  DEBUG     Sending ping
+2026-07-08 06:38:36  DEBUG     Sending ping
+2026-07-08 06:39:06  DEBUG     Sending ping
+2026-07-08 06:39:36  DEBUG     Sending ping
+2026-07-08 06:40:06  DEBUG     Sending ping
+2026-07-08 06:40:36  DEBUG     Sending ping
+2026-07-08 06:41:06  DEBUG     Sending ping
+2026-07-08 06:41:36  DEBUG     Sending ping
+2026-07-08 06:42:06  DEBUG     Sending ping
+2026-07-08 06:42:36  DEBUG     Sending ping
+2026-07-08 06:43:06  DEBUG     Sending ping
+2026-07-08 06:43:36  DEBUG     Sending ping
+2026-07-08 06:44:06  DEBUG     Sending ping
+2026-07-08 06:44:36  DEBUG     Sending ping
+2026-07-08 06:45:01  DEBUG     CANDLE  NMDC          O=84.79  H=84.79  L=84.59  C=84.62
+2026-07-08 06:45:01  DEBUG     CANDLE  ZEEL          O=100.69  H=100.69  L=100.46  C=100.53
+2026-07-08 06:45:01  DEBUG     CANDLE  SUZLON        O=54.24  H=54.25  L=54.15  C=54.19
+2026-07-08 06:45:03  DEBUG     CANDLE  BALRAMCHIN    O=570.90  H=570.90  L=570.15  C=570.15
+2026-07-08 06:45:05  DEBUG     CANDLE  HFCL          O=221.23  H=221.27  L=220.25  C=220.33
+2026-07-08 06:45:05  DEBUG     CANDLE  GRANULES      O=861.00  H=864.85  L=860.95  C=864.85
+2026-07-08 06:45:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 06:45:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 06:45:05  ERROR     MIS BUY GRANULES skipped — no capital left (committed=Rs0.00)
+2026-07-08 06:45:06  DEBUG     Sending ping
+2026-07-08 06:45:09  DEBUG     CANDLE  BANKBARODA    O=244.60  H=244.85  L=243.90  C=244.15
+2026-07-08 06:45:11  DEBUG     CANDLE  CESC          O=165.41  H=165.76  L=165.21  C=165.21
+2026-07-08 06:45:36  DEBUG     Sending ping
+2026-07-08 06:46:06  DEBUG     Sending ping
+2026-07-08 06:46:36  DEBUG     Sending ping
+2026-07-08 06:47:06  DEBUG     Sending ping
+2026-07-08 06:47:36  DEBUG     Sending ping
+2026-07-08 06:48:06  DEBUG     Sending ping
+2026-07-08 06:48:36  DEBUG     Sending ping
+2026-07-08 06:49:06  DEBUG     Sending ping
+2026-07-08 06:49:36  DEBUG     Sending ping
+2026-07-08 06:50:06  DEBUG     Sending ping
+2026-07-08 06:50:36  DEBUG     Sending ping
+2026-07-08 06:51:06  DEBUG     Sending ping
+2026-07-08 06:51:36  DEBUG     Sending ping
+2026-07-08 06:52:06  DEBUG     Sending ping
+2026-07-08 06:52:36  DEBUG     Sending ping
+2026-07-08 06:53:06  DEBUG     Sending ping
+2026-07-08 06:53:36  DEBUG     Sending ping
+2026-07-08 06:54:06  DEBUG     Sending ping
+2026-07-08 06:54:36  DEBUG     Sending ping
+2026-07-08 06:55:06  DEBUG     Sending ping
+2026-07-08 06:55:36  DEBUG     Sending ping
+2026-07-08 06:56:06  DEBUG     Sending ping
+2026-07-08 06:56:36  DEBUG     Sending ping
+2026-07-08 06:57:06  DEBUG     Sending ping
+2026-07-08 06:57:36  DEBUG     Sending ping
+2026-07-08 06:58:06  DEBUG     Sending ping
+2026-07-08 06:58:36  DEBUG     Sending ping
+2026-07-08 06:59:06  DEBUG     Sending ping
+2026-07-08 06:59:36  DEBUG     Sending ping
+2026-07-08 07:00:01  DEBUG     CANDLE  HFCL          O=220.32  H=220.52  L=219.50  C=219.60
+2026-07-08 07:00:01  DEBUG     CANDLE  ZEEL          O=100.50  H=100.55  L=100.25  C=100.38
+2026-07-08 07:00:02  DEBUG     CANDLE  NMDC          O=84.59  H=84.72  L=84.51  C=84.54
+2026-07-08 07:00:06  DEBUG     Sending ping
+2026-07-08 07:00:08  DEBUG     CANDLE  SUZLON        O=54.21  H=54.22  L=54.07  C=54.10
+2026-07-08 07:00:10  DEBUG     CANDLE  BANKBARODA    O=244.10  H=244.60  L=244.00  C=244.10
+2026-07-08 07:00:10  DEBUG     CANDLE  CESC          O=165.22  H=165.56  L=165.22  C=165.32
+2026-07-08 07:00:22  DEBUG     CANDLE  BALRAMCHIN    O=570.55  H=570.55  L=569.75  C=570.35
+2026-07-08 07:00:30  DEBUG     CANDLE  GRANULES      O=865.00  H=865.15  L=862.50  C=865.00
+2026-07-08 07:00:36  DEBUG     Sending ping
+2026-07-08 07:01:06  DEBUG     Sending ping
+2026-07-08 07:01:36  DEBUG     Sending ping
+2026-07-08 07:02:06  DEBUG     Sending ping
+2026-07-08 07:02:36  DEBUG     Sending ping
+2026-07-08 07:03:06  DEBUG     Sending ping
+2026-07-08 07:03:36  DEBUG     Sending ping
+2026-07-08 07:04:06  DEBUG     Sending ping
+2026-07-08 07:04:36  DEBUG     Sending ping
+2026-07-08 07:05:06  DEBUG     Sending ping
+2026-07-08 07:05:36  DEBUG     Sending ping
+2026-07-08 07:06:06  DEBUG     Sending ping
+2026-07-08 07:06:36  DEBUG     Sending ping
+2026-07-08 07:07:06  DEBUG     Sending ping
+2026-07-08 07:07:36  DEBUG     Sending ping
+2026-07-08 07:08:06  DEBUG     Sending ping
+2026-07-08 07:08:36  DEBUG     Sending ping
+2026-07-08 07:09:06  DEBUG     Sending ping
+2026-07-08 07:09:36  DEBUG     Sending ping
+2026-07-08 07:10:06  DEBUG     Sending ping
+2026-07-08 07:10:36  DEBUG     Sending ping
+2026-07-08 07:11:06  DEBUG     Sending ping
+2026-07-08 07:11:36  DEBUG     Sending ping
+2026-07-08 07:12:06  DEBUG     Sending ping
+2026-07-08 07:12:36  DEBUG     Sending ping
+2026-07-08 07:13:06  DEBUG     Sending ping
+2026-07-08 07:13:36  DEBUG     Sending ping
+2026-07-08 07:14:06  DEBUG     Sending ping
+2026-07-08 07:14:36  DEBUG     Sending ping
+2026-07-08 07:15:01  DEBUG     CANDLE  NMDC          O=84.59  H=84.60  L=84.52  C=84.59
+2026-07-08 07:15:01  DEBUG     CANDLE  CESC          O=165.45  H=165.45  L=165.30  C=165.31
+2026-07-08 07:15:01  DEBUG     CANDLE  SUZLON        O=54.09  H=54.15  L=54.05  C=54.11
+2026-07-08 07:15:02  DEBUG     CANDLE  HFCL          O=219.64  H=219.70  L=217.75  C=217.88
+2026-07-08 07:15:05  DEBUG     CANDLE  ZEEL          O=100.33  H=100.38  L=100.12  C=100.28
+2026-07-08 07:15:06  DEBUG     Sending ping
+2026-07-08 07:15:07  DEBUG     CANDLE  BANKBARODA    O=244.05  H=244.15  L=243.75  C=244.00
+2026-07-08 07:15:36  DEBUG     Sending ping
+2026-07-08 07:16:01  DEBUG     CANDLE  GRANULES      O=865.50  H=867.50  L=862.00  C=864.40
+2026-07-08 07:16:06  DEBUG     Sending ping
+2026-07-08 07:16:27  DEBUG     CANDLE  BALRAMCHIN    O=569.90  H=570.95  L=569.75  C=570.65
+2026-07-08 07:16:36  DEBUG     Sending ping
+2026-07-08 07:17:06  DEBUG     Sending ping
+2026-07-08 07:17:36  DEBUG     Sending ping
+2026-07-08 07:18:06  DEBUG     Sending ping
+2026-07-08 07:18:36  DEBUG     Sending ping
+2026-07-08 07:19:06  DEBUG     Sending ping
+2026-07-08 07:19:36  DEBUG     Sending ping
+2026-07-08 07:20:06  DEBUG     Sending ping
+2026-07-08 07:20:36  DEBUG     Sending ping
+2026-07-08 07:21:06  DEBUG     Sending ping
+2026-07-08 07:21:36  DEBUG     Sending ping
+2026-07-08 07:22:06  DEBUG     Sending ping
+2026-07-08 07:22:36  DEBUG     Sending ping
+2026-07-08 07:23:06  DEBUG     Sending ping
+2026-07-08 07:23:36  DEBUG     Sending ping
+2026-07-08 07:24:06  DEBUG     Sending ping
+2026-07-08 07:24:36  DEBUG     Sending ping
+2026-07-08 07:25:06  DEBUG     Sending ping
+2026-07-08 07:25:36  DEBUG     Sending ping
+2026-07-08 07:26:06  DEBUG     Sending ping
+2026-07-08 07:26:36  DEBUG     Sending ping
+2026-07-08 07:27:06  DEBUG     Sending ping
+2026-07-08 07:27:36  DEBUG     Sending ping
+2026-07-08 07:28:06  DEBUG     Sending ping
+2026-07-08 07:28:36  DEBUG     Sending ping
+2026-07-08 07:29:06  DEBUG     Sending ping
+2026-07-08 07:29:36  DEBUG     Sending ping
+2026-07-08 07:30:00  DEBUG     CANDLE  HFCL          O=217.87  H=220.22  L=217.52  C=219.75
+2026-07-08 07:30:00  DEBUG     CANDLE  BANKBARODA    O=243.95  H=244.45  L=243.95  C=244.25
+2026-07-08 07:30:00  DEBUG     CANDLE  ZEEL          O=100.29  H=101.39  L=100.24  C=100.80
+2026-07-08 07:30:00  DEBUG     CANDLE  SUZLON        O=54.12  H=54.60  L=54.12  C=54.57
+2026-07-08 07:30:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:30:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 07:30:00  ERROR     MIS BUY SUZLON skipped — no capital left (committed=Rs0.00)
+2026-07-08 07:30:01  DEBUG     CANDLE  NMDC          O=84.60  H=84.86  L=84.59  C=84.82
+2026-07-08 07:30:05  DEBUG     CANDLE  GRANULES      O=864.10  H=864.75  L=863.30  C=864.50
+2026-07-08 07:30:06  DEBUG     Sending ping
+2026-07-08 07:30:09  DEBUG     CANDLE  BALRAMCHIN    O=570.35  H=571.30  L=570.35  C=571.15
+2026-07-08 07:30:11  DEBUG     CANDLE  CESC          O=165.41  H=165.60  L=165.11  C=165.23
+2026-07-08 07:30:36  DEBUG     Sending ping
+2026-07-08 07:31:06  DEBUG     Sending ping
+2026-07-08 07:31:36  DEBUG     Sending ping
+2026-07-08 07:32:06  DEBUG     Sending ping
+2026-07-08 07:32:36  DEBUG     Sending ping
+2026-07-08 07:33:06  DEBUG     Sending ping
+2026-07-08 07:33:36  DEBUG     Sending ping
+2026-07-08 07:34:06  DEBUG     Sending ping
+2026-07-08 07:34:36  DEBUG     Sending ping
+2026-07-08 07:35:06  DEBUG     Sending ping
+2026-07-08 07:35:36  DEBUG     Sending ping
+2026-07-08 07:36:06  DEBUG     Sending ping
+2026-07-08 07:36:36  DEBUG     Sending ping
+2026-07-08 07:37:06  DEBUG     Sending ping
+2026-07-08 07:37:36  DEBUG     Sending ping
+2026-07-08 07:38:06  DEBUG     Sending ping
+2026-07-08 07:38:36  DEBUG     Sending ping
+2026-07-08 07:39:06  DEBUG     Sending ping
+2026-07-08 07:39:36  DEBUG     Sending ping
+2026-07-08 07:40:06  DEBUG     Sending ping
+2026-07-08 07:40:36  DEBUG     Sending ping
+2026-07-08 07:41:06  DEBUG     Sending ping
+2026-07-08 07:41:36  DEBUG     Sending ping
+2026-07-08 07:42:06  DEBUG     Sending ping
+2026-07-08 07:42:36  DEBUG     Sending ping
+2026-07-08 07:43:06  DEBUG     Sending ping
+2026-07-08 07:43:36  DEBUG     Sending ping
+2026-07-08 07:44:06  DEBUG     Sending ping
+2026-07-08 07:44:36  DEBUG     Sending ping
+2026-07-08 07:45:00  DEBUG     CANDLE  ZEEL          O=100.78  H=102.29  L=100.62  C=101.31
+2026-07-08 07:45:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:45:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 07:45:00  ERROR     CNC BUY ZEEL skipped — no capital left (committed=Rs0.00)
+2026-07-08 07:45:00  DEBUG     CANDLE  SUZLON        O=54.58  H=54.59  L=54.50  C=54.52
+2026-07-08 07:45:02  DEBUG     CANDLE  HFCL          O=219.91  H=222.13  L=219.71  C=221.71
+2026-07-08 07:45:02  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:45:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 07:45:02  ERROR     CNC BUY HFCL skipped — no capital left (committed=Rs0.00)
+2026-07-08 07:45:02  DEBUG     CANDLE  GRANULES      O=864.25  H=865.40  L=862.80  C=864.80
+2026-07-08 07:45:04  DEBUG     CANDLE  BANKBARODA    O=244.35  H=244.60  L=244.30  C=244.35
+2026-07-08 07:45:04  DEBUG     CANDLE  CESC          O=165.25  H=165.59  L=165.19  C=165.47
+2026-07-08 07:45:06  DEBUG     Sending ping
+2026-07-08 07:45:16  DEBUG     CANDLE  NMDC          O=84.84  H=84.95  L=84.76  C=84.84
+2026-07-08 07:45:36  DEBUG     Sending ping
+2026-07-08 07:46:01  DEBUG     CANDLE  BALRAMCHIN    O=571.30  H=572.80  L=571.00  C=571.00
+2026-07-08 07:46:06  DEBUG     Sending ping
+2026-07-08 07:46:36  DEBUG     Sending ping
+2026-07-08 07:47:06  DEBUG     Sending ping
+2026-07-08 07:47:36  DEBUG     Sending ping
+2026-07-08 07:48:06  DEBUG     Sending ping
+2026-07-08 07:48:36  DEBUG     Sending ping
+2026-07-08 07:49:06  DEBUG     Sending ping
+2026-07-08 07:49:36  DEBUG     Sending ping
+2026-07-08 07:50:06  DEBUG     Sending ping
+2026-07-08 07:50:36  DEBUG     Sending ping
+2026-07-08 07:51:06  DEBUG     Sending ping
+2026-07-08 07:51:36  DEBUG     Sending ping
+2026-07-08 07:52:06  DEBUG     Sending ping
+2026-07-08 07:52:36  DEBUG     Sending ping
+2026-07-08 07:53:06  DEBUG     Sending ping
+2026-07-08 07:53:36  DEBUG     Sending ping
+2026-07-08 07:54:06  DEBUG     Sending ping
+2026-07-08 07:54:36  DEBUG     Sending ping
+2026-07-08 07:55:06  DEBUG     Sending ping
+2026-07-08 07:55:36  DEBUG     Sending ping
+2026-07-08 07:55:53  ERROR     WS ERROR  Connection to remote host was lost.
+2026-07-08 07:55:53  ERROR     Connection to remote host was lost. - goodbye
+2026-07-08 07:55:53  WARNING   WS DISCONNECTED  code=None  reason=None  trades=1  pnl=Rs+0.00
+[Wed Jul  8 07:55:53 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 07:56:03 UTC 2026] Starting runner...
+2026-07-08 07:56:03  INFO      ============================================================
+2026-07-08 07:56:03  INFO      STARTUP  date=2026-07-08  pid=219462
+2026-07-08 07:56:03  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 07:56:03  INFO      Resolving NSE tokens...
+2026-07-08 07:56:03  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:04  INFO      Resolved  HFCL             token=21951
+2026-07-08 07:56:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:04  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 07:56:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:04  INFO      Resolved  NMDC             token=15332
+2026-07-08 07:56:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:04  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:04  INFO      Resolved  CESC             token=628
+2026-07-08 07:56:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:05  INFO      Resolved  ZEEL             token=3812
+2026-07-08 07:56:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:05  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 07:56:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:05  INFO      Resolved  GRANULES         token=11872
+2026-07-08 07:56:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:05  INFO      Resolved  SUZLON           token=12018
+2026-07-08 07:56:05  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:06  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 07:56:06  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:06  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 07:56:06  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 07:56:06  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 07:56:06  INFO      ============================================================
+2026-07-08 07:56:06  ERROR     WS ERROR  Handshake status 502 Bad Gateway -+-+- {'date': 'Wed, 08 Jul 2026 07:56:06 GMT', 'content-type': 'text/plain; charset=UTF-8', 'content-length': '15', 'connection': 'keep-alive', 'report-to': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=dI8nVN1FKCkmqyRgF2h36NJC7Nv%2BgoKHzGb%2FbUBIhhjxB%2FyeKHRTKpvE0%2BRq2vG77YN%2BfqNEymGyA%2B6fb9kOgA5T6gXMTBaI6R%2B%2F3tAkPjfUUbukaPXiGsjxktfO4wpJKWChWeNtDik%3D"}],"group":"cf-nel","max_age":604800}', 'nel': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'same-origin', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'server': 'cloudflare', 'cf-ray': 'a17d87cb6fc8e4cc-RIX', 'server-timing': 'cfL4;desc="?proto=TCP&rtt=15263&min_rtt=15207&rtt_var=5743&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2826&recv_bytes=835&delivery_rate=190438&cwnd=52&unsent_bytes=0&cid=68680cdbd499b92b&ts=499&x=0"'} -+-+- b'error code: 502'
+2026-07-08 07:56:06  ERROR     Handshake status 502 Bad Gateway -+-+- {'date': 'Wed, 08 Jul 2026 07:56:06 GMT', 'content-type': 'text/plain; charset=UTF-8', 'content-length': '15', 'connection': 'keep-alive', 'report-to': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=dI8nVN1FKCkmqyRgF2h36NJC7Nv%2BgoKHzGb%2FbUBIhhjxB%2FyeKHRTKpvE0%2BRq2vG77YN%2BfqNEymGyA%2B6fb9kOgA5T6gXMTBaI6R%2B%2F3tAkPjfUUbukaPXiGsjxktfO4wpJKWChWeNtDik%3D"}],"group":"cf-nel","max_age":604800}', 'nel': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'same-origin', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'server': 'cloudflare', 'cf-ray': 'a17d87cb6fc8e4cc-RIX', 'server-timing': 'cfL4;desc="?proto=TCP&rtt=15263&min_rtt=15207&rtt_var=5743&sent=4&recv=6&lost=0&retrans=0&sent_bytes=2826&recv_bytes=835&delivery_rate=190438&cwnd=52&unsent_bytes=0&cid=68680cdbd499b92b&ts=499&x=0"'} -+-+- b'error code: 502' - goodbye
+2026-07-08 07:56:06  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+[Wed Jul  8 07:56:06 UTC 2026] Runner exited, restarting in 10s...
+[Wed Jul  8 07:56:16 UTC 2026] Starting runner...
+2026-07-08 07:56:16  INFO      ============================================================
+2026-07-08 07:56:16  INFO      STARTUP  date=2026-07-08  pid=219469
+2026-07-08 07:56:16  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-08 07:56:16  INFO      Resolving NSE tokens...
+2026-07-08 07:56:16  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:17  INFO      Resolved  HFCL             token=21951
+2026-07-08 07:56:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:17  INFO      Resolved  BANKBARODA       token=4668
+2026-07-08 07:56:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:17  INFO      Resolved  NMDC             token=15332
+2026-07-08 07:56:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:17  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:17  INFO      Resolved  CESC             token=628
+2026-07-08 07:56:17  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:18  INFO      Resolved  ZEEL             token=3812
+2026-07-08 07:56:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:18  INFO      Resolved  BALRAMCHIN       token=341
+2026-07-08 07:56:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:18  INFO      Resolved  GRANULES         token=11872
+2026-07-08 07:56:18  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:18  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-08 07:56:19  INFO      Resolved  SUZLON           token=12018
+2026-07-08 07:56:19  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:19  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-08 07:56:19  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 07:56:19  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-08 07:56:19  INFO      *** LIVE MODE  cash=Rs0  4x=Rs0  K=4  per_trade=Rs1000 ***
+2026-07-08 07:56:19  INFO      8 stocks | Rs1000/trade | K=4 | EOD 15:00 IST
+2026-07-08 07:56:19  INFO      ============================================================
+2026-07-08 07:56:19  INFO      Websocket connected
+2026-07-08 07:56:20  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-08 07:56:20  INFO      Ticks -> data/2026-07-08/ticks.jsonl
+2026-07-08 07:57:19  DEBUG     Sending ping
+2026-07-08 07:57:49  DEBUG     Sending ping
+2026-07-08 07:58:19  DEBUG     Sending ping
+2026-07-08 07:58:49  DEBUG     Sending ping
+2026-07-08 07:59:19  DEBUG     Sending ping
+2026-07-08 07:59:49  DEBUG     Sending ping
+2026-07-08 08:00:00  DEBUG     CANDLE  NMDC          O=84.85  H=84.92  L=84.85  C=84.87
+2026-07-08 08:00:01  DEBUG     CANDLE  SUZLON        O=54.52  H=54.54  L=54.48  C=54.51
+2026-07-08 08:00:01  DEBUG     CANDLE  BANKBARODA    O=244.35  H=244.50  L=244.25  C=244.25
+2026-07-08 08:00:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 08:00:02  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 08:00:02  ERROR     CNC SELL BANKBARODA skipped — no holdings found in demat
+2026-07-08 08:00:04  DEBUG     CANDLE  HFCL          O=221.36  H=221.55  L=221.00  C=221.20
+2026-07-08 08:00:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 08:00:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 08:00:05  ERROR     CNC SELL HFCL skipped — no holdings found in demat
+2026-07-08 08:00:05  DEBUG     CANDLE  CESC          O=165.26  H=165.27  L=165.13  C=165.26
+2026-07-08 08:00:05  DEBUG     CANDLE  GRANULES      O=865.30  H=865.80  L=865.10  C=865.55
+2026-07-08 08:00:19  DEBUG     Sending ping
+2026-07-08 08:00:26  DEBUG     CANDLE  BALRAMCHIN    O=571.50  H=571.50  L=570.60  C=570.75
+2026-07-08 08:00:30  DEBUG     CANDLE  ZEEL          O=101.70  H=101.75  L=101.60  C=101.70
+2026-07-08 08:00:49  DEBUG     Sending ping
+2026-07-08 08:01:19  DEBUG     Sending ping
+2026-07-08 08:01:49  DEBUG     Sending ping
+2026-07-08 08:02:19  DEBUG     Sending ping
+2026-07-08 08:02:49  DEBUG     Sending ping
+2026-07-08 08:03:19  DEBUG     Sending ping
+2026-07-08 08:03:49  DEBUG     Sending ping
+2026-07-08 08:04:19  DEBUG     Sending ping
+2026-07-08 08:04:49  DEBUG     Sending ping
+2026-07-08 08:05:19  DEBUG     Sending ping
+2026-07-08 08:05:49  DEBUG     Sending ping
+2026-07-08 08:06:19  DEBUG     Sending ping
+2026-07-08 08:06:49  DEBUG     Sending ping
+2026-07-08 08:07:19  DEBUG     Sending ping
+2026-07-08 08:07:49  DEBUG     Sending ping
+2026-07-08 08:08:19  DEBUG     Sending ping
+2026-07-08 08:08:49  DEBUG     Sending ping
+2026-07-08 08:09:19  DEBUG     Sending ping
+2026-07-08 08:09:49  DEBUG     Sending ping
+2026-07-08 08:10:19  DEBUG     Sending ping
+2026-07-08 08:10:49  DEBUG     Sending ping
+2026-07-08 08:11:19  DEBUG     Sending ping
+2026-07-08 08:11:49  DEBUG     Sending ping
+2026-07-08 08:12:19  DEBUG     Sending ping
+2026-07-08 08:12:49  DEBUG     Sending ping
+2026-07-08 08:13:19  DEBUG     Sending ping
+2026-07-08 08:13:49  DEBUG     Sending ping
+2026-07-08 08:14:19  DEBUG     Sending ping
+2026-07-08 08:14:49  DEBUG     Sending ping
+2026-07-08 08:15:02  DEBUG     CANDLE  BANKBARODA    O=244.35  H=244.65  L=244.20  C=244.55
+2026-07-08 08:15:02  DEBUG     CANDLE  CESC          O=165.17  H=165.49  L=165.12  C=165.38
+2026-07-08 08:15:03  DEBUG     CANDLE  BALRAMCHIN    O=571.55  H=571.90  L=570.55  C=571.20
+2026-07-08 08:15:03  DEBUG     CANDLE  NMDC          O=84.89  H=84.89  L=84.67  C=84.77
+2026-07-08 08:15:04  DEBUG     CANDLE  SUZLON        O=54.52  H=54.78  L=54.48  C=54.68
+2026-07-08 08:15:06  DEBUG     CANDLE  HFCL          O=221.33  H=222.71  L=220.70  C=220.99
+2026-07-08 08:15:08  DEBUG     CANDLE  GRANULES      O=865.40  H=866.00  L=863.10  C=865.00
+2026-07-08 08:15:08  DEBUG     CANDLE  ZEEL          O=101.65  H=101.89  L=101.49  C=101.78
+2026-07-08 08:15:19  DEBUG     Sending ping
+2026-07-08 08:15:49  DEBUG     Sending ping
+2026-07-08 08:16:19  DEBUG     Sending ping
+2026-07-08 08:16:49  DEBUG     Sending ping
+2026-07-08 08:17:19  DEBUG     Sending ping
+2026-07-08 08:17:49  DEBUG     Sending ping
+2026-07-08 08:18:19  DEBUG     Sending ping
+2026-07-08 08:18:49  DEBUG     Sending ping
+2026-07-08 08:19:19  DEBUG     Sending ping
+2026-07-08 08:19:49  DEBUG     Sending ping
+2026-07-08 08:20:19  DEBUG     Sending ping
+2026-07-08 08:20:49  DEBUG     Sending ping
+2026-07-08 08:21:19  DEBUG     Sending ping
+2026-07-08 08:21:50  DEBUG     Sending ping
+2026-07-08 08:22:20  DEBUG     Sending ping
+2026-07-08 08:22:50  DEBUG     Sending ping
+2026-07-08 08:23:20  DEBUG     Sending ping
+2026-07-08 08:23:50  DEBUG     Sending ping
+2026-07-08 08:24:20  DEBUG     Sending ping
+2026-07-08 08:24:50  DEBUG     Sending ping
+2026-07-08 08:25:20  DEBUG     Sending ping
+2026-07-08 08:25:50  DEBUG     Sending ping
+2026-07-08 08:26:20  DEBUG     Sending ping
+2026-07-08 08:26:50  DEBUG     Sending ping
+2026-07-08 08:27:20  DEBUG     Sending ping
+2026-07-08 08:27:50  DEBUG     Sending ping
+2026-07-08 08:28:20  DEBUG     Sending ping
+2026-07-08 08:28:50  DEBUG     Sending ping
+2026-07-08 08:29:20  DEBUG     Sending ping
+2026-07-08 08:29:50  DEBUG     Sending ping
+2026-07-08 08:30:00  DEBUG     CANDLE  SUZLON        O=54.67  H=54.70  L=53.80  C=53.80
+2026-07-08 08:30:01  DEBUG     CANDLE  HFCL          O=220.98  H=221.20  L=216.17  C=216.37
+2026-07-08 08:30:01  DEBUG     CANDLE  NMDC          O=84.80  H=84.82  L=84.15  C=84.15
+2026-07-08 08:30:01  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 08:30:01  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 08:30:01  ERROR     CNC SELL NMDC skipped — no holdings found in demat
+2026-07-08 08:30:02  DEBUG     CANDLE  BANKBARODA    O=244.65  H=245.20  L=241.55  C=241.60
+2026-07-08 08:30:02  DEBUG     CANDLE  CESC          O=165.48  H=165.48  L=164.35  C=164.42
+2026-07-08 08:30:03  DEBUG     CANDLE  GRANULES      O=864.80  H=864.95  L=857.35  C=857.35
+2026-07-08 08:30:03  DEBUG     CANDLE  ZEEL          O=101.81  H=101.85  L=100.50  C=100.50
+2026-07-08 08:30:04  DEBUG     CANDLE  BALRAMCHIN    O=571.40  H=571.40  L=567.05  C=567.05
+2026-07-08 08:30:04  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-08 08:30:05  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Holdings HTTP/1.1" 200 2
+2026-07-08 08:30:05  ERROR     CNC SELL BALRAMCHIN skipped — no holdings found in demat
+2026-07-08 08:30:20  DEBUG     Sending ping
+2026-07-08 08:30:50  DEBUG     Sending ping
+2026-07-08 08:31:20  DEBUG     Sending ping
+2026-07-08 08:31:50  DEBUG     Sending ping
+2026-07-08 08:32:20  DEBUG     Sending ping
+2026-07-08 08:32:50  DEBUG     Sending ping
+2026-07-08 08:33:20  DEBUG     Sending ping
+2026-07-08 08:33:50  DEBUG     Sending ping
+2026-07-08 08:34:20  DEBUG     Sending ping
+2026-07-08 08:34:50  DEBUG     Sending ping
+2026-07-08 08:35:20  DEBUG     Sending ping
+2026-07-08 08:35:50  DEBUG     Sending ping
+2026-07-08 08:36:20  DEBUG     Sending ping
+2026-07-08 08:36:50  DEBUG     Sending ping
+2026-07-08 08:37:20  DEBUG     Sending ping
+2026-07-08 08:37:50  DEBUG     Sending ping
+2026-07-08 08:38:20  DEBUG     Sending ping
+2026-07-08 08:38:50  DEBUG     Sending ping
+2026-07-08 08:39:20  DEBUG     Sending ping
+2026-07-08 08:39:50  DEBUG     Sending ping
+2026-07-08 08:40:20  DEBUG     Sending ping
+2026-07-08 08:40:50  DEBUG     Sending ping
+2026-07-08 08:41:20  DEBUG     Sending ping
+2026-07-08 08:41:50  DEBUG     Sending ping
+2026-07-08 08:42:20  DEBUG     Sending ping
+2026-07-08 08:42:50  DEBUG     Sending ping
+2026-07-08 08:43:20  DEBUG     Sending ping
+2026-07-08 08:43:50  DEBUG     Sending ping
+2026-07-08 08:44:20  DEBUG     Sending ping
+2026-07-08 08:44:21  WARNING   TICK GAP  HFCL — silent for 10 min  (last tick 14:03:59)
+2026-07-08 08:44:50  DEBUG     Sending ping
+2026-07-08 08:45:00  DEBUG     CANDLE  SUZLON        O=53.82  H=53.88  L=53.26  C=53.28
+2026-07-08 08:45:01  DEBUG     CANDLE  BALRAMCHIN    O=566.70  H=566.75  L=559.70  C=560.70
+2026-07-08 08:45:03  DEBUG     CANDLE  BANKBARODA    O=241.55  H=241.85  L=240.05  C=240.25
+2026-07-08 08:45:06  DEBUG     CANDLE  NMDC          O=84.13  H=84.16  L=83.60  C=83.63
+2026-07-08 08:45:07  DEBUG     CANDLE  GRANULES      O=857.45  H=858.00  L=852.75  C=853.90
+2026-07-08 08:45:08  DEBUG     CANDLE  ZEEL          O=100.45  H=100.60  L=99.60  C=99.81
+2026-07-08 08:45:15  DEBUG     CANDLE  CESC          O=164.40  H=164.50  L=163.33  C=163.72
+2026-07-08 08:45:20  DEBUG     Sending ping
+2026-07-08 08:45:21  WARNING   TICK GAP  HFCL — silent for 11 min  (last tick 14:03:59)
+2026-07-08 08:45:50  DEBUG     Sending ping
+2026-07-08 08:46:20  DEBUG     Sending ping
+2026-07-08 08:46:21  WARNING   TICK GAP  HFCL — silent for 12 min  (last tick 14:03:59)
+2026-07-08 08:46:50  DEBUG     Sending ping
+2026-07-08 08:47:20  DEBUG     Sending ping
+2026-07-08 08:47:21  WARNING   TICK GAP  HFCL — silent for 13 min  (last tick 14:03:59)
+2026-07-08 08:47:50  DEBUG     Sending ping
+2026-07-08 08:48:20  DEBUG     Sending ping
+2026-07-08 08:48:21  WARNING   TICK GAP  HFCL — silent for 14 min  (last tick 14:03:59)
+2026-07-08 08:48:50  DEBUG     Sending ping
+2026-07-08 08:49:20  DEBUG     Sending ping
+2026-07-08 08:49:21  WARNING   TICK GAP  HFCL — silent for 15 min  (last tick 14:03:59)
+2026-07-08 08:49:50  DEBUG     Sending ping
+2026-07-08 08:50:20  DEBUG     Sending ping
+2026-07-08 08:50:21  WARNING   TICK GAP  HFCL — silent for 16 min  (last tick 14:03:59)
+2026-07-08 08:50:50  DEBUG     Sending ping
+2026-07-08 08:51:20  DEBUG     Sending ping
+2026-07-08 08:51:21  WARNING   TICK GAP  HFCL — silent for 17 min  (last tick 14:03:59)
+2026-07-08 08:51:50  DEBUG     Sending ping
+2026-07-08 08:52:20  DEBUG     Sending ping
+2026-07-08 08:52:21  WARNING   TICK GAP  HFCL — silent for 18 min  (last tick 14:03:59)
+2026-07-08 08:52:50  DEBUG     Sending ping
+2026-07-08 08:53:20  DEBUG     Sending ping
+2026-07-08 08:53:21  WARNING   TICK GAP  HFCL — silent for 19 min  (last tick 14:03:59)
+2026-07-08 08:53:50  DEBUG     Sending ping
+2026-07-08 08:54:20  DEBUG     Sending ping
+2026-07-08 08:54:21  WARNING   TICK GAP  HFCL — silent for 20 min  (last tick 14:03:59)
+2026-07-08 08:54:50  DEBUG     Sending ping
+2026-07-08 08:55:20  DEBUG     Sending ping
+2026-07-08 08:55:22  WARNING   TICK GAP  HFCL — silent for 21 min  (last tick 14:03:59)
+2026-07-08 08:55:50  DEBUG     Sending ping
+2026-07-08 08:56:20  DEBUG     Sending ping
+2026-07-08 08:56:22  WARNING   TICK GAP  HFCL — silent for 22 min  (last tick 14:03:59)
+2026-07-08 08:56:50  DEBUG     Sending ping
+2026-07-08 08:57:20  DEBUG     Sending ping
+2026-07-08 08:57:22  WARNING   TICK GAP  HFCL — silent for 23 min  (last tick 14:03:59)
+2026-07-08 08:57:50  DEBUG     Sending ping
+2026-07-08 08:58:20  DEBUG     Sending ping
+2026-07-08 08:58:22  WARNING   TICK GAP  HFCL — silent for 24 min  (last tick 14:03:59)
+2026-07-08 08:58:50  DEBUG     Sending ping
+2026-07-08 08:59:20  DEBUG     Sending ping
+2026-07-08 08:59:22  WARNING   TICK GAP  HFCL — silent for 25 min  (last tick 14:03:59)
+2026-07-08 08:59:50  DEBUG     Sending ping
+2026-07-08 09:00:00  DEBUG     CANDLE  SUZLON        O=53.30  H=53.50  L=52.96  C=52.99
+2026-07-08 09:00:01  DEBUG     CANDLE  NMDC          O=83.65  H=83.93  L=83.52  C=83.57
+2026-07-08 09:00:01  DEBUG     CANDLE  BANKBARODA    O=240.20  H=240.70  L=239.45  C=239.50
+2026-07-08 09:00:01  DEBUG     CANDLE  CESC          O=163.70  H=164.00  L=163.52  C=163.65
+2026-07-08 09:00:01  DEBUG     CANDLE  GRANULES      O=854.05  H=857.50  L=854.00  C=855.55
+2026-07-08 09:00:02  DEBUG     CANDLE  ZEEL          O=99.80  H=100.16  L=99.75  C=99.89
+2026-07-08 09:00:02  DEBUG     CANDLE  BALRAMCHIN    O=559.85  H=562.80  L=559.85  C=561.20
+2026-07-08 09:00:20  DEBUG     Sending ping
+2026-07-08 09:00:22  WARNING   TICK GAP  HFCL — silent for 26 min  (last tick 14:03:59)
+2026-07-08 09:00:50  DEBUG     Sending ping
+2026-07-08 09:01:20  DEBUG     Sending ping
+2026-07-08 09:01:22  WARNING   TICK GAP  HFCL — silent for 27 min  (last tick 14:03:59)
+2026-07-08 09:01:50  DEBUG     Sending ping
+2026-07-08 09:02:20  DEBUG     Sending ping
+2026-07-08 09:02:22  WARNING   TICK GAP  HFCL — silent for 28 min  (last tick 14:03:59)
+2026-07-08 09:02:50  DEBUG     Sending ping
+2026-07-08 09:03:20  DEBUG     Sending ping
+2026-07-08 09:03:22  WARNING   TICK GAP  HFCL — silent for 29 min  (last tick 14:03:59)
+2026-07-08 09:03:50  DEBUG     Sending ping
+2026-07-08 09:04:20  DEBUG     Sending ping
+2026-07-08 09:04:22  WARNING   TICK GAP  HFCL — silent for 30 min  (last tick 14:03:59)
+2026-07-08 09:04:50  DEBUG     Sending ping
+2026-07-08 09:05:20  DEBUG     Sending ping
+2026-07-08 09:05:22  WARNING   TICK GAP  HFCL — silent for 31 min  (last tick 14:03:59)
+2026-07-08 09:05:50  DEBUG     Sending ping
+2026-07-08 09:06:20  DEBUG     Sending ping
+2026-07-08 09:06:22  WARNING   TICK GAP  HFCL — silent for 32 min  (last tick 14:03:59)
+2026-07-08 09:06:50  DEBUG     Sending ping
+2026-07-08 09:07:20  DEBUG     Sending ping
+2026-07-08 09:07:22  WARNING   TICK GAP  HFCL — silent for 33 min  (last tick 14:03:59)
+2026-07-08 09:07:50  DEBUG     Sending ping
+2026-07-08 09:08:20  DEBUG     Sending ping
+2026-07-08 09:08:22  WARNING   TICK GAP  HFCL — silent for 34 min  (last tick 14:03:59)
+2026-07-08 09:08:50  DEBUG     Sending ping
+2026-07-08 09:09:20  DEBUG     Sending ping
+2026-07-08 09:09:22  WARNING   TICK GAP  HFCL — silent for 35 min  (last tick 14:03:59)
+2026-07-08 09:09:50  DEBUG     Sending ping
+2026-07-08 09:10:20  DEBUG     Sending ping
+2026-07-08 09:10:22  WARNING   TICK GAP  HFCL — silent for 36 min  (last tick 14:03:59)
+2026-07-08 09:10:50  DEBUG     Sending ping
+2026-07-08 09:11:20  DEBUG     Sending ping
+2026-07-08 09:11:22  WARNING   TICK GAP  HFCL — silent for 37 min  (last tick 14:03:59)
+2026-07-08 09:11:50  DEBUG     Sending ping
+2026-07-08 09:12:20  DEBUG     Sending ping
+2026-07-08 09:12:22  WARNING   TICK GAP  HFCL — silent for 38 min  (last tick 14:03:59)
+2026-07-08 09:12:50  DEBUG     Sending ping
+2026-07-08 09:13:20  DEBUG     Sending ping
+2026-07-08 09:13:22  WARNING   TICK GAP  HFCL — silent for 39 min  (last tick 14:03:59)
+2026-07-08 09:13:50  DEBUG     Sending ping
+2026-07-08 09:14:20  DEBUG     Sending ping
+2026-07-08 09:14:22  WARNING   TICK GAP  HFCL — silent for 40 min  (last tick 14:03:59)
+2026-07-08 09:14:50  DEBUG     Sending ping
+2026-07-08 09:15:02  DEBUG     CANDLE  NMDC          O=83.56  H=83.80  L=83.45  C=83.50
+2026-07-08 09:15:02  DEBUG     CANDLE  BANKBARODA    O=239.55  H=239.95  L=239.15  C=239.45
+2026-07-08 09:15:04  DEBUG     CANDLE  ZEEL          O=99.87  H=100.51  L=99.51  C=99.97
+2026-07-08 09:15:04  DEBUG     CANDLE  BALRAMCHIN    O=561.10  H=561.60  L=560.00  C=560.15
+2026-07-08 09:15:09  DEBUG     CANDLE  CESC          O=163.72  H=164.00  L=163.66  C=163.95
+2026-07-08 09:15:10  DEBUG     CANDLE  SUZLON        O=52.98  H=53.27  L=52.81  C=52.97
+2026-07-08 09:15:20  DEBUG     Sending ping
+2026-07-08 09:15:22  DEBUG     CANDLE  GRANULES      O=855.20  H=857.20  L=854.90  C=856.75
+2026-07-08 09:15:22  WARNING   TICK GAP  HFCL — silent for 41 min  (last tick 14:03:59)
+2026-07-08 09:15:50  DEBUG     Sending ping
+2026-07-08 09:16:20  DEBUG     Sending ping
+2026-07-08 09:16:22  WARNING   TICK GAP  HFCL — silent for 42 min  (last tick 14:03:59)
+2026-07-08 09:16:50  DEBUG     Sending ping
+2026-07-08 09:17:20  DEBUG     Sending ping
+2026-07-08 09:17:23  WARNING   TICK GAP  HFCL — silent for 43 min  (last tick 14:03:59)
+2026-07-08 09:17:50  DEBUG     Sending ping
+2026-07-08 09:18:20  DEBUG     Sending ping
+2026-07-08 09:18:23  WARNING   TICK GAP  HFCL — silent for 44 min  (last tick 14:03:59)
+2026-07-08 09:18:50  DEBUG     Sending ping
+2026-07-08 09:19:20  DEBUG     Sending ping
+2026-07-08 09:19:23  WARNING   TICK GAP  HFCL — silent for 45 min  (last tick 14:03:59)
+2026-07-08 09:19:50  DEBUG     Sending ping
+2026-07-08 09:20:20  DEBUG     Sending ping
+2026-07-08 09:20:23  WARNING   TICK GAP  HFCL — silent for 46 min  (last tick 14:03:59)
+2026-07-08 09:20:50  DEBUG     Sending ping
+2026-07-08 09:21:20  DEBUG     Sending ping
+2026-07-08 09:21:23  WARNING   TICK GAP  HFCL — silent for 47 min  (last tick 14:03:59)
+2026-07-08 09:21:50  DEBUG     Sending ping
+2026-07-08 09:22:20  DEBUG     Sending ping
+2026-07-08 09:22:23  WARNING   TICK GAP  HFCL — silent for 48 min  (last tick 14:03:59)
+2026-07-08 09:22:50  DEBUG     Sending ping
+2026-07-08 09:23:20  DEBUG     Sending ping
+2026-07-08 09:23:23  WARNING   TICK GAP  HFCL — silent for 49 min  (last tick 14:03:59)
+2026-07-08 09:23:50  DEBUG     Sending ping
+2026-07-08 09:24:20  DEBUG     Sending ping
+2026-07-08 09:24:23  WARNING   TICK GAP  HFCL — silent for 50 min  (last tick 14:03:59)
+2026-07-08 09:24:50  DEBUG     Sending ping
+2026-07-08 09:25:20  DEBUG     Sending ping
+2026-07-08 09:25:23  WARNING   TICK GAP  HFCL — silent for 51 min  (last tick 14:03:59)
+2026-07-08 09:25:50  DEBUG     Sending ping
+2026-07-08 09:26:20  DEBUG     Sending ping
+2026-07-08 09:26:23  WARNING   TICK GAP  HFCL — silent for 52 min  (last tick 14:03:59)
+2026-07-08 09:26:50  DEBUG     Sending ping
+2026-07-08 09:27:20  DEBUG     Sending ping
+2026-07-08 09:27:23  WARNING   TICK GAP  HFCL — silent for 53 min  (last tick 14:03:59)
+2026-07-08 09:27:50  DEBUG     Sending ping
+2026-07-08 09:28:20  DEBUG     Sending ping
+2026-07-08 09:28:23  WARNING   TICK GAP  HFCL — silent for 54 min  (last tick 14:03:59)
+2026-07-08 09:28:50  DEBUG     Sending ping
+2026-07-08 09:29:20  DEBUG     Sending ping
+2026-07-08 09:29:23  WARNING   TICK GAP  HFCL — silent for 55 min  (last tick 14:03:59)
+2026-07-08 09:29:50  DEBUG     Sending ping
+2026-07-08 09:30:00  INFO      ────────────────────────────────────────────────────────────
+2026-07-08 09:30:00  INFO      EOD SUMMARY  date=2026-07-08  trades=0  total_pnl=Rs0.00
+2026-07-08 09:30:00  INFO      All positions flat at EOD
+2026-07-08 09:30:00  INFO      Ticks  -> data/2026-07-08/ticks.jsonl
+2026-07-08 09:30:00  INFO      Trades -> logs/trades_2026-07-08.csv
+2026-07-08 09:30:00  INFO      ────────────────────────────────────────────────────────────
+2026-07-08 09:30:20  DEBUG     Sending ping
+2026-07-08 09:30:23  WARNING   TICK GAP  HFCL — silent for 56 min  (last tick 14:03:59)
+2026-07-08 09:30:50  DEBUG     Sending ping
+2026-07-08 09:31:20  DEBUG     Sending ping
+2026-07-08 09:31:23  WARNING   TICK GAP  HFCL — silent for 57 min  (last tick 14:03:59)
+2026-07-08 09:31:50  DEBUG     Sending ping
+2026-07-08 09:32:20  DEBUG     Sending ping
+2026-07-08 09:32:23  WARNING   TICK GAP  HFCL — silent for 58 min  (last tick 14:03:59)
+2026-07-08 09:32:50  DEBUG     Sending ping
+2026-07-08 09:33:20  DEBUG     Sending ping
+2026-07-08 09:33:23  WARNING   TICK GAP  HFCL — silent for 59 min  (last tick 14:03:59)
+2026-07-08 09:33:50  DEBUG     Sending ping
+2026-07-08 09:34:20  DEBUG     Sending ping
+2026-07-08 09:34:23  WARNING   TICK GAP  HFCL — silent for 60 min  (last tick 14:03:59)
+2026-07-08 09:34:50  DEBUG     Sending ping
+2026-07-08 09:35:01  INFO      SIGINT received — flushing and shutting down
+2026-07-08 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-07-08 09:35:01  INFO      EOD SUMMARY  date=2026-07-08  trades=0  total_pnl=Rs0.00
+2026-07-08 09:35:01  INFO      All positions flat at EOD
+2026-07-08 09:35:01  INFO      Ticks  -> data/2026-07-08/ticks.jsonl
+2026-07-08 09:35:01  INFO      Trades -> logs/trades_2026-07-08.csv
+2026-07-08 09:35:01  INFO      ────────────────────────────────────────────────────────────
+2026-07-08 09:35:01  ERROR     WS ERROR  0
+[Wed Jul  8 09:35:01 UTC 2026] Runner stopped
+2026-07-08 09:35:01  WARNING   WS DISCONNECTED  code=None  reason=None  trades=0  pnl=Rs+0.00
+2026-07-08 09:35:01  ERROR     error from callback <bound method FlattradeClient._ws_close of <client.FlattradeClient object at 0x7fb7b2fa2ee0>>: I/O operation on closed file.
+2026-07-08 09:35:01  ERROR     WS ERROR  I/O operation on closed file.
+[Wed Jul  8 09:35:01 UTC 2026] Runner exited, restarting in 10s...
