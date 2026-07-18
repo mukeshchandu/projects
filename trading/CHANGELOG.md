@@ -2,6 +2,12 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-18 — Morning selection/warm-up
+select_basket stamping now keys off market open (09:15) not a magic hour: a PRE-OPEN run
+(the new 08:00 IST cron) stamps TODAY's session; an at/after-open run stamps NEXT session.
+Move the select_basket cron from 18:30 IST to 08:00 IST so selection + warm-up happen the
+morning of the session (warms from yesterday's close, which the 08:45 runner loads).
+
 ## 2026-07-18 — Entry filters + universe refresh + bigger basket
 - `supertrend.py`: entry FILTERS (OOS-validated, `entry_filter_backtest.py`) — no entries on
   bars starting before 09:30 or after 14:15 (≈09:45–14:30 execution; skips open noise + late

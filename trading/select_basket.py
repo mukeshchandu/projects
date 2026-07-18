@@ -181,11 +181,15 @@ def main():
         sys.exit(0)
 
     top = ranked[:TOP_K]
-    # Stamp the basket for the NEXT trading session so an evening run is valid next morning.
-    # Run after market open (>=9 IST) -> next session; run pre-open -> today. Skip weekends.
-    from config import IST
+    # Stamp the basket for the session it will be traded in:
+    #   run PRE-OPEN (before 09:15 IST, e.g. the 08:00 morning cron) -> TODAY's session;
+    #   run at/after open (e.g. an evening run)                      -> the NEXT session.
+    # Skip weekends either way. Morning-run stamping uses yesterday-close history, which is
+    # exactly what the 08:45 runner then loads warm.
+    from config import IST, MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE
     now = datetime.now(IST)
-    session = now.date() + (timedelta(days=1) if now.hour >= 9 else timedelta(0))
+    before_open = (now.hour, now.minute) < (MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE)
+    session = now.date() + (timedelta(0) if before_open else timedelta(days=1))
     while session.weekday() >= 5:      # Sat/Sun -> roll to Monday
         session += timedelta(days=1)
     session_str = session.strftime("%Y-%m-%d")
