@@ -16,6 +16,13 @@ TAKE_PROFIT_MULT = 0.0       # fixed take-profit at N×ATR (0 disables; caps win
 # they took the exit from ~-2268 to ~-486 vs the old (be=1.0, no trail). Cuts big losers fast +
 # locks winners near the peak instead of giving them back to the wide Supertrend trail / EOD.
 
+# ── Entry FILTERS (entry_filter_backtest.py, OOS-validated: beats baseline in both halves,
+# lifted test win% 28→34). Windows are on the bar's START time; a 15-min bar entered at close,
+# so start 09:30–14:15 ≈ execution 09:45–14:30 (skip open noise + late/EOD-risk entries).
+ENTRY_START_MIN   = 9 * 60 + 30   # no entries on bars starting before 09:30 (exec ~09:45)
+ENTRY_END_MIN     = 14 * 60 + 15  # no entries on bars starting after 14:15 (exec ~14:30)
+ENTRY_EMA_GAP_ATR = 0.3           # require |close - EMA| >= this×ATR (price extended in trend; 0 disables)
+
 
 class SupertrendStrategy(BaseStrategy):
 
@@ -243,10 +250,14 @@ class SupertrendStrategy(BaseStrategy):
             self.save_state()
             return signals   # exited this candle — no re-entry on the same bar
 
-        # ── Entry on trend flip (optionally gated by EMA trend filter) ──
+        # ── Entry on trend flip (gated by EMA filter + entry filters) ──
         if prev_trend != 0 and new_trend != prev_trend and self.position == 0:
-            long_ok  = self._ema is None or candle.close > self._ema
-            short_ok = self._ema is None or candle.close < self._ema
+            mins = h * 60 + m
+            in_window = ENTRY_START_MIN <= mins <= ENTRY_END_MIN
+            gap_ok = (ENTRY_EMA_GAP_ATR <= 0 or self._ema is None or not self._atr
+                      or abs(candle.close - self._ema) >= ENTRY_EMA_GAP_ATR * self._atr)
+            long_ok  = (self._ema is None or candle.close > self._ema) and in_window and gap_ok
+            short_ok = (self._ema is None or candle.close < self._ema) and in_window and gap_ok
             if new_trend == 1 and long_ok:
                 self.position     = 1
                 self._entry_price = candle.close

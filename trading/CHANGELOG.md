@@ -2,6 +2,17 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-18 — Entry filters + universe refresh + bigger basket
+- `supertrend.py`: entry FILTERS (OOS-validated, `entry_filter_backtest.py`) — no entries on
+  bars starting before 09:30 or after 14:15 (≈09:45–14:30 execution; skips open noise + late
+  entries), and require |close−EMA| ≥ 0.3×ATR (price extended in trend). Cut junk flips; with
+  the trailtight exit the 19-day backtest went -486 → +262, TEST win% 28→34, better in both
+  OOS halves. (ADX≥15 also helped a little but was left out — marginal + heavy state.)
+- `select_basket.py`: TOP_K 5 → **8** stocks observed/day; universe now loads from
+  data/nifty100.json (weekly refresh) with the hardcoded Nifty-100 as fallback.
+- `update_universe.py` (new): fetches NIFTY 100 constituents from NSE → data/nifty100.json;
+  never overwrites on a failed/short fetch. Cron (EC2, UTC) `20 10 * * 5` = Fri 15:50 IST.
+
 ## 2026-07-18 — Tighter profit-locking exit (trailtight)
 Changed the exit defaults in `strategies/supertrend.py`: breakeven trigger 1.0→**0.5**×ATR
 and chandelier peak-trail 0.0→**1.5**×ATR (take-profit still off). Basis: a 19-day / 131-trade

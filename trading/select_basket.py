@@ -22,12 +22,14 @@ SupertrendStrategy.save_state = lambda self: None    # disabled during scoring (
 SupertrendStrategy._load_state = lambda self: None
 
 LOOKBACK = 5           # trading days for the ranking window
-TOP_K = 5
+TOP_K = 8              # stocks observed/subscribed per session
 EMA_PERIOD = 50        # must match the runner's dynamic-basket EMA filter
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/today_basket.json")
 
 # Official NIFTY 100 (Nifty 50 + Next 50). Yahoo-unavailable names self-prune at download.
-UNIVERSE = (
+# This hardcoded list is the FALLBACK; the live universe is refreshed weekly (Fri ~15:50) by
+# update_universe.py into data/nifty100.json and loaded below if present.
+UNIVERSE_FALLBACK = (
     "ADANIENT ADANIPORTS APOLLOHOSP ASIANPAINT AXISBANK BAJAJ-AUTO BAJFINANCE BAJAJFINSV "
     "BEL BHARTIARTL CIPLA COALINDIA DRREDDY EICHERMOT ETERNAL GRASIM HCLTECH HDFCBANK "
     "HDFCLIFE HINDALCO HINDUNILVR ICICIBANK INDIGO INFY ITC JIOFIN JSWSTEEL KOTAKBANK LT "
@@ -38,6 +40,26 @@ UNIVERSE = (
     "HAL HINDZINC HYUNDAI INDHOTEL IOC IRFC JINDALSTEL LODHA MAZDOCK MUTHOOTFIN "
     "PIDILITIND PFC PNB RECLTD MOTHERSON SHREECEM SIEMENS SOLARINDS TATACAP TMCV TATAPOWER "
     "TORNTPHARM TVSMOTOR UNIONBANK UNITDSPR VBL VEDL ZYDUSLIFE").split()
+
+def _load_universe():
+    """Weekly-refreshed Nifty 100 from data/nifty100.json (written by update_universe.py);
+    fall back to the hardcoded list if the file is missing/empty/stale-unreadable."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/nifty100.json")
+    try:
+        with open(path) as fh:
+            data = __import__("json").load(fh)
+        syms = data.get("symbols") if isinstance(data, dict) else data
+        if isinstance(syms, list) and len(syms) >= 50:
+            print(f"[select_basket] universe from {path}: {len(syms)} symbols "
+                  f"(updated {data.get('updated','?') if isinstance(data, dict) else '?'})")
+            return [str(s).strip().upper() for s in syms if str(s).strip()]
+    except FileNotFoundError:
+        pass
+    except Exception as e:
+        print(f"[select_basket] universe file unreadable ({e}) — using hardcoded fallback")
+    return UNIVERSE_FALLBACK
+
+UNIVERSE = _load_universe()
 
 # Stocks the account cannot trade as MIS -> excluded from selection.
 MIS_BLOCKLIST = {"BALRAMCHIN"}
