@@ -68,7 +68,7 @@ class LiveBroker:
 
     def simulate_fill(self, symbol: str, side: str, qty: int,
                       mid_price: float, reason: str = "", quote=None,
-                      cross_ticks: int = 0) -> Optional[PaperFill]:
+                      cross_ticks: int = 0, is_exit: bool = False) -> Optional[PaperFill]:
         mode     = self.mode_map.get(symbol, "MIS")
         product  = "C" if mode == "CNC" else "I"
         tsym     = self.tsym_map.get(symbol, f"{symbol}-EQ")
@@ -92,8 +92,12 @@ class LiveBroker:
                 return None
             limit_price = round((math.floor(round(bid / t, 8)) - cross_ticks) * t, 4)
 
-        # ── Capital check before BUY ───────────────────────────────────────
-        if side.upper() == "BUY":
+        # ── Capital check before an ENTRY BUY only ─────────────────────────
+        # NEVER capital-gate or qty-reduce an EXIT/cover: closing an existing
+        # position must always be allowed at full qty (it releases margin, it
+        # doesn't consume buying power). Gating a short-cover on cash is what
+        # caused the 9k-attempt retry loop — the stop could never fire.
+        if side.upper() == "BUY" and not is_exit:
             avail = self._available_cash(mode)
             # MIS: broker gives ~4x leverage so actual margin = value/4
             # CNC: full value required
@@ -155,16 +159,16 @@ class LiveBroker:
         norenordno = resp.get("norenordno", "")
         log.info("ACCEPTED  %s  norenordno=%s", symbol, norenordno)
 
-        # ── Track committed margin so next order sees reduced capital ──────
-        if side.upper() == "BUY":
-            margin = (qty * limit_price / 4.0) if mode == "MIS" else (qty * limit_price)
+        # ── Track committed margin by ENTRY-vs-EXIT intent, not BUY-vs-SELL ──
+        # An entry (long BUY or short SELL) locks margin; an exit (long SELL or
+        # short-cover BUY) releases it. Keying off side alone wrongly released
+        # margin on a short entry and committed it on a cover.
+        margin = (qty * limit_price / 4.0) if mode == "MIS" else (qty * limit_price)
+        if not is_exit:
             self._committed += margin
             log.info("CAPITAL  committed=Rs%.2f  (added Rs%.2f for %s %s)",
                      self._committed, margin, mode, symbol)
-
-        if side.upper() == "SELL":
-            # Release the committed margin for this position
-            margin = (qty * limit_price / 4.0) if mode == "MIS" else (qty * limit_price)
+        else:
             self._committed = max(0.0, self._committed - margin)
             log.info("CAPITAL  committed=Rs%.2f  (released Rs%.2f for %s %s)",
                      self._committed, margin, mode, symbol)

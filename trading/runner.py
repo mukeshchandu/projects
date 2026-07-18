@@ -19,7 +19,8 @@ from marketdata import CandleBuilder, Tick
 from paper import PaperBroker
 from live_broker import LiveBroker
 from strategies.supertrend import SupertrendStrategy
-from config import IST, EOD_EXIT_HOUR, EOD_EXIT_MINUTE
+from config import (IST, EOD_EXIT_HOUR, EOD_EXIT_MINUTE,
+                    MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE)
 
 # ── Logging ─────────────────────────────────────────────────────────────
 _today = datetime.now(tz=IST).strftime("%Y-%m-%d")
@@ -76,6 +77,7 @@ _last_tick:   Dict[str, datetime]      = {}
 _quote:       Dict[str, tuple]         = {}   # symbol -> (best_bid, best_ask) from the feed
 _last_price:  Dict[str, float]         = {}   # last seen ltp per symbol (carry across quote-only ticks)
 _eod_done     = False
+_eod_orphan_done: set                  = set()  # symbols whose orphan net was squared at EOD
 _shutting_down = False
 _runner_state_path = "data/runner_state.json"
 
@@ -368,7 +370,7 @@ class TradingApp:
         # First attempt sits AT the bid/ask (0 ticks); every retry crosses a fixed 1 tick.
         cross = 1 if t.get("exit_tries", 0) else 0
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason,
-                                    quote=_quote.get(symbol), cross_ticks=cross)
+                                    quote=_quote.get(symbol), cross_ticks=cross, is_exit=True)
         if fill is None:
             t["exit_armed"] = True          # no quote / placement failed -> retry next tick
             return False
@@ -442,6 +444,15 @@ class TradingApp:
         if ts.date() != datetime.now(tz=IST).date():
             return
 
+        # ── Market-open gate ──────────────────────────────────────────────────
+        # Never build candles or trade on pre-open ticks (09:00–09:15) or stale
+        # snapshot ticks whose feed-time (ft) predates the open. The strategy must
+        # only ever see real, regular-session bars. (Bug: without this, the 08:45
+        # start built a phantom pre-open candle and fired an order at 09:00 that the
+        # exchange rejected — seeding a phantom position.)
+        if (ts.hour, ts.minute) < (MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE):
+            return
+
         _last_tick[symbol] = datetime.now(tz=IST)
 
         # EOD
@@ -464,6 +475,18 @@ class TradingApp:
                     # Aggressive EOD close via the confirm-before-book path; retries on cancel.
                     if not t.get("exiting"):
                         self._do_exit(symbol, price, "EOD", ts.strftime("%H:%M"))
+            elif inst.get("mode", "MIS") == "MIS" and symbol not in _eod_orphan_done:
+                # We think we're FLAT here — but reconcile against the exchange. An untracked
+                # net position (e.g. a phantom 'cover' that actually opened a real position)
+                # must be squared by US at EOD, not left for Flattrade's ~15:20 auto-square.
+                net = broker.net_position(symbol) if hasattr(broker, "net_position") else None
+                if net:   # non-zero and not None
+                    _eod_orphan_done.add(symbol)
+                    oside = "SELL" if net > 0 else "BUY"
+                    log.warning("EOD ORPHAN  %s — exchange net=%d but ledger flat; squaring %s %d",
+                                symbol, net, oside, abs(net))
+                    broker.simulate_fill(symbol, oside, abs(net), price, "EOD orphan",
+                                         quote=_quote.get(symbol), is_exit=True)
             mis_open = any(_open_trades.get(s) for s in MODES if MODES[s] == "MIS")
             if not _eod_done and not mis_open:
                 _eod_done = True
@@ -606,11 +629,16 @@ class TradingApp:
                         log.warning("EXIT UNFILLED  %s — %s; RETRY #%d (still holding, not booked)",
                                     sym, rtype, t["exit_tries"])
                         _save_runner_state()
-                elif p and p["side"].upper() == "BUY":
+                elif p:
+                    # Any ENTRY order (BUY=long OR SELL=short) that was rejected / cancelled
+                    # without filling => undo the phantom. Previously this only handled BUY,
+                    # so a rejected SHORT entry (a SELL) left a phantom short that then tried
+                    # to "cover" forever. Clear the ledger for either side.
                     sym = p["symbol"]
                     if _open_trades.get(sym):
                         _open_trades[sym] = None
-                        log.warning("PHANTOM CLEARED  %s — entry rejected, ledger reset", sym)
+                        log.warning("PHANTOM CLEARED  %s — %s entry %s, ledger reset",
+                                    sym, p["side"].upper(), rtype)
                         for inst in INSTRUMENTS.values():
                             if inst["symbol"] == sym:
                                 st = inst["strategy"]

@@ -8,9 +8,13 @@ from strategies.base import BaseStrategy
 
 STATE_DIR    = "data/st_state"
 HARD_SL_MULT = 1.5           # hard stop: exit if price moves 1.5×ATR against entry
-BREAKEVEN_TRIGGER_MULT = 1.0 # once +1×ATR in profit, move stop to entry (0 disables)
-TRAIL_PEAK_MULT = 0.0        # chandelier: exit if price retraces N×ATR from peak (0 disables)
+BREAKEVEN_TRIGGER_MULT = 0.5 # once +0.5×ATR in profit, move stop to entry (0 disables)
+TRAIL_PEAK_MULT = 1.5        # chandelier: exit if price retraces 1.5×ATR from peak (0 disables)
 TAKE_PROFIT_MULT = 0.0       # fixed take-profit at N×ATR (0 disables; caps winners — backtest first)
+# Exit tuning basis (19-day tick backtest, 131 trades — see exit_backtest.py): the chandelier
+# trail (1.5×ATR) is the dominant improvement, the 0.5×ATR breakeven is complementary. Together
+# they took the exit from ~-2268 to ~-486 vs the old (be=1.0, no trail). Cuts big losers fast +
+# locks winners near the peak instead of giving them back to the wide Supertrend trail / EOD.
 
 
 class SupertrendStrategy(BaseStrategy):
