@@ -20,40 +20,63 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "data", "nifty100.json")
 MIN_EXPECTED = 50   # never overwrite with a suspiciously short list
 
-# NSE publishes constituents as CSV; primary + mirror. Column of interest: "Symbol".
-SOURCES = [
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/122.0 Safari/537.36")
+BROWSER = {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9",
+           "Accept-Encoding": "gzip, deflate, br"}
+# Legacy CSV archives (often 503 now) — kept as a last resort.
+CSV_SOURCES = [
     "https://archives.nseindia.com/content/indices/ind_nifty100list.csv",
-    "https://www1.nseindia.com/content/indices/ind_nifty100list.csv",
+    "https://nsearchives.nseindia.com/content/indices/ind_nifty100list.csv",
 ]
-HEADERS = {  # NSE rejects the default UA
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/122.0 Safari/537.36",
-    "Accept": "text/csv,application/csv,*/*",
-}
 
 
-def _fetch_symbols():
+def _from_nse_api():
+    """NSE's live JSON API needs a browser session with cookies first (prime the homepage,
+    then hit the equity-stockIndices endpoint with a Referer)."""
+    import requests
+    s = requests.Session()
+    s.headers.update(BROWSER)
+    try:
+        s.get("https://www.nseindia.com/", timeout=20)
+        s.get("https://www.nseindia.com/market-data/live-equity-market", timeout=20)
+        r = s.get("https://www.nseindia.com/api/equity-stockIndices?index=NIFTY%20100",
+                  headers={"Accept": "application/json",
+                           "Referer": "https://www.nseindia.com/market-data/live-equity-market"},
+                  timeout=20)
+        if r.status_code != 200:
+            print(f"  NSE api -> HTTP {r.status_code}"); return None
+        data = r.json().get("data", [])
+        syms = sorted({d["symbol"].strip().upper() for d in data
+                       if d.get("symbol") and d["symbol"].upper() != "NIFTY 100"})
+        print(f"  NSE api -> {len(syms)} symbols")
+        return syms if len(syms) >= MIN_EXPECTED else None
+    except Exception as e:
+        print(f"  NSE api -> {e}"); return None
+
+
+def _from_csv():
     import csv, io, requests
-    for url in SOURCES:
+    for url in CSV_SOURCES:
         try:
-            r = requests.get(url, headers=HEADERS, timeout=20)
+            r = requests.get(url, headers={**BROWSER, "Accept": "text/csv,*/*"}, timeout=20)
             if r.status_code != 200 or not r.text:
-                print(f"  {url} -> HTTP {r.status_code}")
-                continue
+                print(f"  {url} -> HTTP {r.status_code}"); continue
             rows = list(csv.DictReader(io.StringIO(r.text)))
             col = next((c for c in (rows[0].keys() if rows else []) if c.strip().lower() == "symbol"), None)
             if not col:
-                print(f"  {url} -> no 'Symbol' column ({list(rows[0].keys()) if rows else 'empty'})")
-                continue
-            syms = [row[col].strip().upper() for row in rows if row.get(col, "").strip()]
-            syms = sorted(set(syms))
+                print(f"  {url} -> no 'Symbol' column"); continue
+            syms = sorted({row[col].strip().upper() for row in rows if row.get(col, "").strip()})
+            print(f"  {url} -> {len(syms)} symbols")
             if len(syms) >= MIN_EXPECTED:
-                print(f"  {url} -> {len(syms)} symbols")
                 return syms
-            print(f"  {url} -> only {len(syms)} symbols (<{MIN_EXPECTED}), skipping")
         except Exception as e:
             print(f"  {url} -> {e}")
     return None
+
+
+def _fetch_symbols():
+    return _from_nse_api() or _from_csv()
 
 
 def main():
