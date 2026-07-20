@@ -1,0 +1,462 @@
+[Mon Jul 20 03:15:10 UTC 2026] Watchdog started
+[Mon Jul 20 03:15:10 UTC 2026] Starting runner...
+2026-07-20 03:15:10  INFO      ============================================================
+2026-07-20 03:15:10  INFO      STARTUP  date=2026-07-20  pid=686487
+2026-07-20 03:15:10  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-20 03:15:10  INFO      DYNAMIC BASKET (8): ADANIGREEN,ETERNAL,HDFCAMC,INFY,HCLTECH,DIVISLAB,ADANIPOWER,ZYDUSLIFE | EMA filter=50
+2026-07-20 03:15:10  INFO      Resolving NSE tokens...
+2026-07-20 03:15:10  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:11  INFO      Resolved  ADANIGREEN       token=3563  tick=0.1
+2026-07-20 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:11  INFO      Resolved  ETERNAL          token=5097  tick=0.05
+2026-07-20 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:11  INFO      Resolved  HDFCAMC          token=4244  tick=0.1
+2026-07-20 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:11  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:11  INFO      Resolved  INFY             token=1594  tick=0.1
+2026-07-20 03:15:11  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:12  INFO      Resolved  HCLTECH          token=7229  tick=0.1
+2026-07-20 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:12  INFO      Resolved  DIVISLAB         token=10940  tick=0.5
+2026-07-20 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:12  INFO      Resolved  ADANIPOWER       token=17388  tick=0.01
+2026-07-20 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:12  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 03:15:12  INFO      Resolved  ZYDUSLIFE        token=7929  tick=0.1
+2026-07-20 03:15:12  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-20 03:15:13  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 03:15:13  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-20 03:15:13  INFO      *** LIVE MODE  cash=Rs1492  deploy(85%)=Rs1268  K=2  cap/stock=Rs634 (MIS notional 4x, CNC 1x) ***
+2026-07-20 03:15:13  INFO      8 stocks | Rs634/trade | K=2 | EOD 15:00 IST
+2026-07-20 03:15:13  INFO      ============================================================
+2026-07-20 03:15:14  INFO      Websocket connected
+2026-07-20 03:15:14  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-20 03:15:14  INFO      Ticks -> data/2026-07-20/ticks.jsonl
+2026-07-20 03:16:14  DEBUG     Sending ping
+2026-07-20 03:16:44  DEBUG     Sending ping
+2026-07-20 03:17:14  DEBUG     Sending ping
+2026-07-20 03:17:44  DEBUG     Sending ping
+2026-07-20 03:18:14  DEBUG     Sending ping
+2026-07-20 03:18:44  DEBUG     Sending ping
+2026-07-20 03:19:14  DEBUG     Sending ping
+2026-07-20 03:19:44  DEBUG     Sending ping
+2026-07-20 03:20:14  DEBUG     Sending ping
+2026-07-20 03:20:44  DEBUG     Sending ping
+2026-07-20 03:21:14  DEBUG     Sending ping
+2026-07-20 03:21:44  DEBUG     Sending ping
+2026-07-20 03:22:14  DEBUG     Sending ping
+2026-07-20 03:22:44  DEBUG     Sending ping
+2026-07-20 03:23:14  DEBUG     Sending ping
+2026-07-20 03:23:44  DEBUG     Sending ping
+2026-07-20 03:24:14  DEBUG     Sending ping
+2026-07-20 03:24:44  DEBUG     Sending ping
+2026-07-20 03:25:14  DEBUG     Sending ping
+2026-07-20 03:25:44  DEBUG     Sending ping
+2026-07-20 03:26:14  DEBUG     Sending ping
+2026-07-20 03:26:44  DEBUG     Sending ping
+2026-07-20 03:27:14  DEBUG     Sending ping
+2026-07-20 03:27:44  DEBUG     Sending ping
+2026-07-20 03:28:14  DEBUG     Sending ping
+2026-07-20 03:28:44  DEBUG     Sending ping
+2026-07-20 03:29:14  DEBUG     Sending ping
+2026-07-20 03:29:44  DEBUG     Sending ping
+2026-07-20 03:30:14  DEBUG     Sending ping
+2026-07-20 03:30:44  DEBUG     Sending ping
+2026-07-20 03:31:14  DEBUG     Sending ping
+2026-07-20 03:31:44  DEBUG     Sending ping
+2026-07-20 03:32:14  DEBUG     Sending ping
+2026-07-20 03:32:44  DEBUG     Sending ping
+2026-07-20 03:33:14  DEBUG     Sending ping
+2026-07-20 03:33:44  DEBUG     Sending ping
+2026-07-20 03:34:14  DEBUG     Sending ping
+2026-07-20 03:34:44  DEBUG     Sending ping
+2026-07-20 03:35:14  DEBUG     Sending ping
+2026-07-20 03:35:44  DEBUG     Sending ping
+2026-07-20 03:36:14  DEBUG     Sending ping
+2026-07-20 03:36:44  DEBUG     Sending ping
+2026-07-20 03:37:14  DEBUG     Sending ping
+2026-07-20 03:37:44  DEBUG     Sending ping
+2026-07-20 03:38:14  DEBUG     Sending ping
+2026-07-20 03:38:44  DEBUG     Sending ping
+2026-07-20 03:39:14  DEBUG     Sending ping
+2026-07-20 03:39:44  DEBUG     Sending ping
+2026-07-20 03:40:14  DEBUG     Sending ping
+2026-07-20 03:40:44  DEBUG     Sending ping
+2026-07-20 03:41:14  DEBUG     Sending ping
+2026-07-20 03:41:44  DEBUG     Sending ping
+2026-07-20 03:42:14  DEBUG     Sending ping
+2026-07-20 03:42:44  DEBUG     Sending ping
+2026-07-20 03:43:14  DEBUG     Sending ping
+2026-07-20 03:43:44  DEBUG     Sending ping
+2026-07-20 03:44:14  DEBUG     Sending ping
+2026-07-20 03:44:44  DEBUG     Sending ping
+2026-07-20 03:45:14  DEBUG     Sending ping
+2026-07-20 03:45:44  DEBUG     Sending ping
+2026-07-20 03:46:14  DEBUG     Sending ping
+2026-07-20 03:46:44  DEBUG     Sending ping
+2026-07-20 03:47:14  DEBUG     Sending ping
+2026-07-20 03:47:44  DEBUG     Sending ping
+2026-07-20 03:48:14  DEBUG     Sending ping
+2026-07-20 03:48:44  DEBUG     Sending ping
+2026-07-20 03:49:14  DEBUG     Sending ping
+2026-07-20 03:49:44  DEBUG     Sending ping
+2026-07-20 03:50:14  DEBUG     Sending ping
+2026-07-20 03:50:44  DEBUG     Sending ping
+2026-07-20 03:51:14  DEBUG     Sending ping
+2026-07-20 03:51:44  DEBUG     Sending ping
+2026-07-20 03:52:14  DEBUG     Sending ping
+2026-07-20 03:52:44  DEBUG     Sending ping
+2026-07-20 03:53:14  DEBUG     Sending ping
+2026-07-20 03:53:44  DEBUG     Sending ping
+2026-07-20 03:54:14  DEBUG     Sending ping
+2026-07-20 03:54:44  DEBUG     Sending ping
+2026-07-20 03:55:14  DEBUG     Sending ping
+2026-07-20 03:55:44  DEBUG     Sending ping
+2026-07-20 03:56:14  DEBUG     Sending ping
+2026-07-20 03:56:44  DEBUG     Sending ping
+2026-07-20 03:57:14  DEBUG     Sending ping
+2026-07-20 03:57:44  DEBUG     Sending ping
+2026-07-20 03:58:14  DEBUG     Sending ping
+2026-07-20 03:58:44  DEBUG     Sending ping
+2026-07-20 03:59:14  DEBUG     Sending ping
+2026-07-20 03:59:44  DEBUG     Sending ping
+2026-07-20 04:00:00  DEBUG     CANDLE  ADANIPOWER    O=215.74  H=216.60  L=213.80  C=214.30
+2026-07-20 04:00:00  DEBUG     CANDLE  INFY          O=1101.00  H=1103.10  L=1091.00  C=1096.80
+2026-07-20 04:00:00  DEBUG     CANDLE  ZYDUSLIFE     O=1144.00  H=1159.40  L=1144.00  C=1148.80
+2026-07-20 04:00:00  DEBUG     CANDLE  ADANIGREEN    O=1523.00  H=1523.00  L=1499.40  C=1509.30
+2026-07-20 04:00:02  DEBUG     CANDLE  HDFCAMC       O=2655.20  H=2655.20  L=2603.00  C=2609.20
+2026-07-20 04:00:02  DEBUG     CANDLE  ETERNAL       O=285.85  H=286.50  L=284.45  C=284.45
+2026-07-20 04:00:03  DEBUG     CANDLE  HCLTECH       O=1200.10  H=1215.20  L=1200.10  C=1207.60
+2026-07-20 04:00:11  DEBUG     CANDLE  DIVISLAB      O=7253.50  H=7321.50  L=7245.50  C=7280.00
+2026-07-20 04:00:14  DEBUG     Sending ping
+2026-07-20 04:00:44  DEBUG     Sending ping
+2026-07-20 04:01:14  DEBUG     Sending ping
+2026-07-20 04:01:44  DEBUG     Sending ping
+2026-07-20 04:02:14  DEBUG     Sending ping
+2026-07-20 04:02:44  DEBUG     Sending ping
+2026-07-20 04:03:14  DEBUG     Sending ping
+2026-07-20 04:03:44  DEBUG     Sending ping
+2026-07-20 04:04:14  DEBUG     Sending ping
+2026-07-20 04:04:44  DEBUG     Sending ping
+2026-07-20 04:05:14  DEBUG     Sending ping
+2026-07-20 04:05:44  DEBUG     Sending ping
+2026-07-20 04:06:14  DEBUG     Sending ping
+2026-07-20 04:06:44  DEBUG     Sending ping
+2026-07-20 04:07:14  DEBUG     Sending ping
+2026-07-20 04:07:44  DEBUG     Sending ping
+2026-07-20 04:08:14  DEBUG     Sending ping
+2026-07-20 04:08:44  DEBUG     Sending ping
+2026-07-20 04:09:14  DEBUG     Sending ping
+2026-07-20 04:09:44  DEBUG     Sending ping
+2026-07-20 04:10:14  DEBUG     Sending ping
+2026-07-20 04:10:44  DEBUG     Sending ping
+2026-07-20 04:11:14  DEBUG     Sending ping
+2026-07-20 04:11:44  DEBUG     Sending ping
+2026-07-20 04:12:14  DEBUG     Sending ping
+2026-07-20 04:12:44  DEBUG     Sending ping
+2026-07-20 04:13:14  DEBUG     Sending ping
+2026-07-20 04:13:44  DEBUG     Sending ping
+2026-07-20 04:14:14  DEBUG     Sending ping
+2026-07-20 04:14:44  DEBUG     Sending ping
+2026-07-20 04:15:00  DEBUG     CANDLE  ADANIGREEN    O=1509.70  H=1510.80  L=1498.00  C=1499.00
+2026-07-20 04:15:01  DEBUG     CANDLE  INFY          O=1096.70  H=1098.90  L=1093.60  C=1096.90
+2026-07-20 04:15:01  DEBUG     CANDLE  ETERNAL       O=284.55  H=286.35  L=284.40  C=286.30
+2026-07-20 04:15:01  DEBUG     CANDLE  DIVISLAB      O=7283.50  H=7309.50  L=7283.50  C=7295.00
+2026-07-20 04:15:06  DEBUG     CANDLE  HCLTECH       O=1208.90  H=1211.50  L=1207.30  C=1211.50
+2026-07-20 04:15:06  DEBUG     CANDLE  ADANIPOWER    O=214.28  H=215.21  L=213.95  C=214.38
+2026-07-20 04:15:14  DEBUG     Sending ping
+2026-07-20 04:15:14  DEBUG     CANDLE  ZYDUSLIFE     O=1149.50  H=1155.40  L=1148.30  C=1153.30
+2026-07-20 04:15:16  DEBUG     CANDLE  HDFCAMC       O=2609.00  H=2625.90  L=2608.80  C=2616.10
+2026-07-20 04:15:44  DEBUG     Sending ping
+2026-07-20 04:16:14  DEBUG     Sending ping
+2026-07-20 04:16:44  DEBUG     Sending ping
+2026-07-20 04:17:14  DEBUG     Sending ping
+2026-07-20 04:17:44  DEBUG     Sending ping
+2026-07-20 04:18:14  DEBUG     Sending ping
+2026-07-20 04:18:44  DEBUG     Sending ping
+2026-07-20 04:19:14  DEBUG     Sending ping
+2026-07-20 04:19:44  DEBUG     Sending ping
+2026-07-20 04:20:14  DEBUG     Sending ping
+2026-07-20 04:20:44  DEBUG     Sending ping
+2026-07-20 04:21:14  DEBUG     Sending ping
+2026-07-20 04:21:44  DEBUG     Sending ping
+2026-07-20 04:22:14  DEBUG     Sending ping
+2026-07-20 04:22:44  DEBUG     Sending ping
+2026-07-20 04:23:14  DEBUG     Sending ping
+2026-07-20 04:23:44  DEBUG     Sending ping
+2026-07-20 04:24:14  DEBUG     Sending ping
+2026-07-20 04:24:44  DEBUG     Sending ping
+2026-07-20 04:25:14  DEBUG     Sending ping
+2026-07-20 04:25:44  DEBUG     Sending ping
+2026-07-20 04:26:14  DEBUG     Sending ping
+2026-07-20 04:26:44  DEBUG     Sending ping
+2026-07-20 04:27:14  DEBUG     Sending ping
+2026-07-20 04:27:44  DEBUG     Sending ping
+2026-07-20 04:28:14  DEBUG     Sending ping
+2026-07-20 04:28:44  DEBUG     Sending ping
+2026-07-20 04:29:14  DEBUG     Sending ping
+2026-07-20 04:29:44  DEBUG     Sending ping
+2026-07-20 04:30:00  DEBUG     CANDLE  ADANIPOWER    O=214.35  H=215.70  L=214.31  C=214.96
+2026-07-20 04:30:00  DEBUG     CANDLE  ETERNAL       O=286.35  H=286.45  L=285.30  C=285.55
+2026-07-20 04:30:00  DEBUG     CANDLE  DIVISLAB      O=7294.00  H=7321.50  L=7288.00  C=7317.50
+2026-07-20 04:30:02  DEBUG     CANDLE  INFY          O=1097.20  H=1097.80  L=1091.00  C=1092.70
+2026-07-20 04:30:02  DEBUG     CANDLE  ADANIGREEN    O=1498.50  H=1511.40  L=1498.00  C=1506.70
+2026-07-20 04:30:04  DEBUG     CANDLE  ZYDUSLIFE     O=1153.40  H=1158.00  L=1153.40  C=1157.80
+2026-07-20 04:30:08  DEBUG     CANDLE  HCLTECH       O=1210.50  H=1211.20  L=1206.30  C=1207.60
+2026-07-20 04:30:14  DEBUG     Sending ping
+2026-07-20 04:30:14  DEBUG     CANDLE  HDFCAMC       O=2617.00  H=2620.00  L=2612.00  C=2616.60
+2026-07-20 04:30:44  DEBUG     Sending ping
+2026-07-20 04:31:14  DEBUG     Sending ping
+2026-07-20 04:31:44  DEBUG     Sending ping
+2026-07-20 04:32:14  DEBUG     Sending ping
+2026-07-20 04:32:24  ERROR     WS ERROR  ping/pong timed out
+2026-07-20 04:32:24  ERROR     ping/pong timed out - goodbye
+2026-07-20 04:32:27  WARNING   WS DISCONNECTED  code=None  reason=None  trades=18  pnl=Rs+71.40
+[Mon Jul 20 04:32:27 UTC 2026] Runner exited, restarting in 10s...
+[Mon Jul 20 04:32:37 UTC 2026] Starting runner...
+2026-07-20 04:32:37  INFO      ============================================================
+2026-07-20 04:32:37  INFO      STARTUP  date=2026-07-20  pid=688544
+2026-07-20 04:32:37  INFO      Strategy: Supertrend atr=14 mult=1.5 | 15-min | LIVE mode
+2026-07-20 04:32:37  INFO      DYNAMIC BASKET (8): ADANIGREEN,ETERNAL,HDFCAMC,INFY,HCLTECH,DIVISLAB,ADANIPOWER,ZYDUSLIFE | EMA filter=50
+2026-07-20 04:32:37  INFO      Resolving NSE tokens...
+2026-07-20 04:32:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:37  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:37  INFO      Resolved  ADANIGREEN       token=3563  tick=0.1
+2026-07-20 04:32:37  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:38  INFO      Resolved  ETERNAL          token=5097  tick=0.05
+2026-07-20 04:32:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:38  INFO      Resolved  HDFCAMC          token=4244  tick=0.1
+2026-07-20 04:32:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:38  INFO      Resolved  INFY             token=1594  tick=0.1
+2026-07-20 04:32:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:38  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:38  INFO      Resolved  HCLTECH          token=7229  tick=0.1
+2026-07-20 04:32:38  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:39  INFO      Resolved  DIVISLAB         token=10940  tick=0.5
+2026-07-20 04:32:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:39  INFO      Resolved  ADANIPOWER       token=17388  tick=0.01
+2026-07-20 04:32:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/SearchScrip HTTP/1.1" 200 None
+2026-07-20 04:32:39  INFO      Resolved  ZYDUSLIFE        token=7929  tick=0.1
+2026-07-20 04:32:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:39  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PositionBook HTTP/1.1" 200 None
+2026-07-20 04:32:39  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 04:32:40  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-20 04:32:40  INFO      *** LIVE MODE  cash=Rs1492  deploy(85%)=Rs1268  K=2  cap/stock=Rs634 (MIS notional 4x, CNC 1x) ***
+2026-07-20 04:32:40  INFO      8 stocks | Rs634/trade | K=2 | EOD 15:00 IST
+2026-07-20 04:32:40  INFO      ============================================================
+2026-07-20 04:32:40  INFO      Websocket connected
+2026-07-20 04:32:40  INFO      WS CONNECTED  subscribed=8 instruments
+2026-07-20 04:32:40  INFO      Ticks -> data/2026-07-20/ticks.jsonl
+2026-07-20 04:33:40  DEBUG     Sending ping
+2026-07-20 04:34:10  DEBUG     Sending ping
+2026-07-20 04:34:40  DEBUG     Sending ping
+2026-07-20 04:35:10  DEBUG     Sending ping
+2026-07-20 04:35:40  DEBUG     Sending ping
+2026-07-20 04:36:10  DEBUG     Sending ping
+2026-07-20 04:36:40  DEBUG     Sending ping
+2026-07-20 04:37:10  DEBUG     Sending ping
+2026-07-20 04:37:40  DEBUG     Sending ping
+2026-07-20 04:38:10  DEBUG     Sending ping
+2026-07-20 04:38:40  DEBUG     Sending ping
+2026-07-20 04:39:10  DEBUG     Sending ping
+2026-07-20 04:39:40  DEBUG     Sending ping
+2026-07-20 04:40:10  DEBUG     Sending ping
+2026-07-20 04:40:40  DEBUG     Sending ping
+2026-07-20 04:41:10  DEBUG     Sending ping
+2026-07-20 04:41:40  DEBUG     Sending ping
+2026-07-20 04:42:10  DEBUG     Sending ping
+2026-07-20 04:42:40  DEBUG     Sending ping
+2026-07-20 04:43:10  DEBUG     Sending ping
+2026-07-20 04:43:40  DEBUG     Sending ping
+2026-07-20 04:44:10  DEBUG     Sending ping
+2026-07-20 04:44:40  DEBUG     Sending ping
+2026-07-20 04:45:00  DEBUG     CANDLE  INFY          O=1093.00  H=1094.60  L=1090.10  C=1090.40
+2026-07-20 04:45:01  DEBUG     CANDLE  ADANIPOWER    O=215.05  H=215.59  L=214.96  C=215.33
+2026-07-20 04:45:01  DEBUG     CANDLE  ADANIGREEN    O=1506.00  H=1511.00  L=1502.20  C=1511.00
+2026-07-20 04:45:02  DEBUG     CANDLE  HCLTECH       O=1207.70  H=1208.90  L=1205.70  C=1206.70
+2026-07-20 04:45:06  DEBUG     CANDLE  HDFCAMC       O=2624.40  H=2628.70  L=2619.20  C=2627.80
+2026-07-20 04:45:06  DEBUG     CANDLE  ETERNAL       O=285.65  H=286.45  L=285.55  C=286.05
+2026-07-20 04:45:08  DEBUG     CANDLE  ZYDUSLIFE     O=1156.60  H=1157.70  L=1154.70  C=1157.50
+2026-07-20 04:45:10  DEBUG     Sending ping
+2026-07-20 04:45:12  DEBUG     CANDLE  DIVISLAB      O=7322.50  H=7340.00  L=7317.00  C=7320.00
+2026-07-20 04:45:40  DEBUG     Sending ping
+2026-07-20 04:46:10  DEBUG     Sending ping
+2026-07-20 04:46:40  DEBUG     Sending ping
+2026-07-20 04:47:10  DEBUG     Sending ping
+2026-07-20 04:47:40  DEBUG     Sending ping
+2026-07-20 04:48:10  DEBUG     Sending ping
+2026-07-20 04:48:40  DEBUG     Sending ping
+2026-07-20 04:49:10  DEBUG     Sending ping
+2026-07-20 04:49:40  DEBUG     Sending ping
+2026-07-20 04:50:10  DEBUG     Sending ping
+2026-07-20 04:50:40  DEBUG     Sending ping
+2026-07-20 04:51:10  DEBUG     Sending ping
+2026-07-20 04:51:40  DEBUG     Sending ping
+2026-07-20 04:52:10  DEBUG     Sending ping
+2026-07-20 04:52:40  DEBUG     Sending ping
+2026-07-20 04:53:10  DEBUG     Sending ping
+2026-07-20 04:53:40  DEBUG     Sending ping
+2026-07-20 04:54:10  DEBUG     Sending ping
+2026-07-20 04:54:40  DEBUG     Sending ping
+2026-07-20 04:55:10  DEBUG     Sending ping
+2026-07-20 04:55:40  DEBUG     Sending ping
+2026-07-20 04:56:10  DEBUG     Sending ping
+2026-07-20 04:56:40  DEBUG     Sending ping
+2026-07-20 04:57:10  DEBUG     Sending ping
+2026-07-20 04:57:40  DEBUG     Sending ping
+2026-07-20 04:58:10  DEBUG     Sending ping
+2026-07-20 04:58:40  DEBUG     Sending ping
+2026-07-20 04:59:10  DEBUG     Sending ping
+2026-07-20 04:59:40  DEBUG     Sending ping
+2026-07-20 05:00:00  DEBUG     CANDLE  ETERNAL       O=286.00  H=288.00  L=286.00  C=287.80
+2026-07-20 05:00:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 05:00:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/Limits HTTP/1.1" 200 None
+2026-07-20 05:00:00  INFO      ORDER  ETERNAL       BUY    MIS   qty=8       price=Rs287.75   reason=flip UP | atr=1.29 st=285.06 sl=285.86
+2026-07-20 05:00:00  DEBUG     Starting new HTTPS connection (1): piconnect.flattrade.in:443
+2026-07-20 05:00:00  DEBUG     https://piconnect.flattrade.in:443 "POST /PiConnectAPI/PlaceOrder HTTP/1.1" 200 None
+2026-07-20 05:00:00  INFO      ACCEPTED  ETERNAL  norenordno=26072000099424
+2026-07-20 05:00:00  INFO      CAPITAL  committed=Rs575.50  (added Rs575.50 for MIS ETERNAL)
+2026-07-20 05:00:00  INFO      ENTRY #19   ETERNAL       LONG   Rs287.75  qty=8  [flip UP | atr=1.29 st=285.06 sl=285.86]
+2026-07-20 05:00:00  INFO      ORDER UPDATE  NewAck    ETERNAL-EQ  norenordno=26072000099424
+2026-07-20 05:00:00  INFO      ORDER UPDATE  New       ETERNAL-EQ  norenordno=26072000099424
+2026-07-20 05:00:00  WARNING   ORDER CANCELED  ETERNAL-EQ  norenordno=26072000099424  reason=16388: cancelled by Exchange
+2026-07-20 05:00:00  WARNING   PHANTOM CLEARED  ETERNAL — BUY entry Canceled, ledger reset
+2026-07-20 05:00:01  DEBUG     CANDLE  ADANIPOWER    O=215.46  H=217.25  L=215.17  C=217.25
+2026-07-20 05:00:01  DEBUG     CANDLE  ADANIGREEN    O=1510.80  H=1514.00  L=1507.00  C=1512.60
+2026-07-20 05:00:01  DEBUG     CANDLE  INFY          O=1090.50  H=1094.70  L=1089.20  C=1093.60
+2026-07-20 05:00:02  DEBUG     CANDLE  HCLTECH       O=1206.30  H=1210.00  L=1205.40  C=1209.30
+2026-07-20 05:00:04  DEBUG     CANDLE  HDFCAMC       O=2628.10  H=2633.10  L=2623.30  C=2625.20
+2026-07-20 05:00:04  DEBUG     CANDLE  DIVISLAB      O=7317.50  H=7329.50  L=7314.00  C=7321.00
+2026-07-20 05:00:10  DEBUG     CANDLE  ZYDUSLIFE     O=1158.00  H=1163.90  L=1156.50  C=1163.00
+2026-07-20 05:00:10  DEBUG     Sending ping
+2026-07-20 05:00:40  DEBUG     Sending ping
+2026-07-20 05:01:10  DEBUG     Sending ping
+2026-07-20 05:01:40  DEBUG     Sending ping
+2026-07-20 05:02:10  DEBUG     Sending ping
+2026-07-20 05:02:40  DEBUG     Sending ping
+2026-07-20 05:03:10  DEBUG     Sending ping
+2026-07-20 05:03:40  DEBUG     Sending ping
+2026-07-20 05:04:10  DEBUG     Sending ping
+2026-07-20 05:04:40  DEBUG     Sending ping
+2026-07-20 05:05:10  DEBUG     Sending ping
+2026-07-20 05:05:40  DEBUG     Sending ping
+2026-07-20 05:06:10  DEBUG     Sending ping
+2026-07-20 05:06:40  DEBUG     Sending ping
+2026-07-20 05:07:10  DEBUG     Sending ping
+2026-07-20 05:07:40  DEBUG     Sending ping
+2026-07-20 05:08:10  DEBUG     Sending ping
+2026-07-20 05:08:40  DEBUG     Sending ping
+2026-07-20 05:09:10  DEBUG     Sending ping
+2026-07-20 05:09:40  DEBUG     Sending ping
+2026-07-20 05:10:10  DEBUG     Sending ping
+2026-07-20 05:10:40  DEBUG     Sending ping
+2026-07-20 05:11:10  DEBUG     Sending ping
+2026-07-20 05:11:40  DEBUG     Sending ping
+2026-07-20 05:12:10  DEBUG     Sending ping
+2026-07-20 05:12:40  DEBUG     Sending ping
+2026-07-20 05:13:10  DEBUG     Sending ping
+2026-07-20 05:13:40  DEBUG     Sending ping
+2026-07-20 05:14:10  DEBUG     Sending ping
+2026-07-20 05:14:40  DEBUG     Sending ping
+2026-07-20 05:15:00  DEBUG     CANDLE  ADANIPOWER    O=217.17  H=219.10  L=216.74  C=217.95
+2026-07-20 05:15:00  DEBUG     CANDLE  HDFCAMC       O=2625.50  H=2635.00  L=2620.40  C=2622.00
+2026-07-20 05:15:01  DEBUG     CANDLE  ETERNAL       O=287.65  H=289.05  L=287.55  C=288.55
+2026-07-20 05:15:01  DEBUG     CANDLE  DIVISLAB      O=7322.00  H=7330.00  L=7316.00  C=7329.50
+2026-07-20 05:15:01  DEBUG     CANDLE  HCLTECH       O=1209.00  H=1210.00  L=1208.30  C=1209.40
+2026-07-20 05:15:02  DEBUG     CANDLE  ADANIGREEN    O=1512.70  H=1523.70  L=1512.00  C=1518.00
+2026-07-20 05:15:02  DEBUG     CANDLE  INFY          O=1093.20  H=1095.40  L=1092.00  C=1092.70
+2026-07-20 05:15:04  DEBUG     CANDLE  ZYDUSLIFE     O=1162.90  H=1163.90  L=1161.80  C=1162.40
+2026-07-20 05:15:10  DEBUG     Sending ping
+2026-07-20 05:15:40  DEBUG     Sending ping
+2026-07-20 05:16:10  DEBUG     Sending ping
+2026-07-20 05:16:40  DEBUG     Sending ping
+2026-07-20 05:17:10  DEBUG     Sending ping
+2026-07-20 05:17:40  DEBUG     Sending ping
+2026-07-20 05:18:10  DEBUG     Sending ping
+2026-07-20 05:18:40  DEBUG     Sending ping
+2026-07-20 05:19:10  DEBUG     Sending ping
+2026-07-20 05:19:40  DEBUG     Sending ping
+2026-07-20 05:20:10  DEBUG     Sending ping
+2026-07-20 05:20:40  DEBUG     Sending ping
+2026-07-20 05:21:10  DEBUG     Sending ping
+2026-07-20 05:21:40  DEBUG     Sending ping
+2026-07-20 05:22:10  DEBUG     Sending ping
+2026-07-20 05:22:40  DEBUG     Sending ping
+2026-07-20 05:23:10  DEBUG     Sending ping
+2026-07-20 05:23:40  DEBUG     Sending ping
+2026-07-20 05:24:10  DEBUG     Sending ping
+2026-07-20 05:24:40  DEBUG     Sending ping
+2026-07-20 05:25:10  DEBUG     Sending ping
+2026-07-20 05:25:40  DEBUG     Sending ping
+2026-07-20 05:26:10  DEBUG     Sending ping
+2026-07-20 05:26:40  DEBUG     Sending ping
+2026-07-20 05:27:10  DEBUG     Sending ping
+2026-07-20 05:27:40  DEBUG     Sending ping
+2026-07-20 05:28:10  DEBUG     Sending ping
+2026-07-20 05:28:40  DEBUG     Sending ping
+2026-07-20 05:29:10  DEBUG     Sending ping
+2026-07-20 05:29:40  DEBUG     Sending ping
+2026-07-20 05:30:00  DEBUG     CANDLE  INFY          O=1092.80  H=1094.80  L=1092.40  C=1094.30
+2026-07-20 05:30:00  DEBUG     CANDLE  ZYDUSLIFE     O=1162.60  H=1162.60  L=1157.10  C=1159.80
+2026-07-20 05:30:01  DEBUG     CANDLE  ETERNAL       O=288.60  H=288.60  L=287.85  C=288.35
+2026-07-20 05:30:01  DEBUG     CANDLE  DIVISLAB      O=7327.50  H=7346.50  L=7320.00  C=7344.00
+2026-07-20 05:30:01  DEBUG     CANDLE  HCLTECH       O=1209.90  H=1213.80  L=1209.30  C=1212.60
+2026-07-20 05:30:05  DEBUG     CANDLE  HDFCAMC       O=2620.50  H=2621.00  L=2613.30  C=2614.30
+2026-07-20 05:30:05  DEBUG     CANDLE  ADANIGREEN    O=1518.30  H=1522.00  L=1515.00  C=1520.90
+2026-07-20 05:30:05  DEBUG     CANDLE  ADANIPOWER    O=217.90  H=218.55  L=217.70  C=218.30
+2026-07-20 05:30:10  DEBUG     Sending ping
+2026-07-20 05:30:40  DEBUG     Sending ping
+2026-07-20 05:31:10  DEBUG     Sending ping
+2026-07-20 05:31:40  DEBUG     Sending ping
+2026-07-20 05:32:10  DEBUG     Sending ping
+2026-07-20 05:32:40  DEBUG     Sending ping
+2026-07-20 05:33:10  DEBUG     Sending ping
+2026-07-20 05:33:40  DEBUG     Sending ping
+2026-07-20 05:34:10  DEBUG     Sending ping
+2026-07-20 05:34:40  DEBUG     Sending ping
+2026-07-20 05:35:10  DEBUG     Sending ping
+2026-07-20 05:35:40  DEBUG     Sending ping
+2026-07-20 05:36:10  DEBUG     Sending ping
+2026-07-20 05:36:40  DEBUG     Sending ping
+2026-07-20 05:37:10  DEBUG     Sending ping
+2026-07-20 05:37:40  DEBUG     Sending ping
+2026-07-20 05:38:10  DEBUG     Sending ping
+2026-07-20 05:38:40  DEBUG     Sending ping
+2026-07-20 05:39:10  DEBUG     Sending ping
+2026-07-20 05:39:40  DEBUG     Sending ping
+2026-07-20 05:40:10  DEBUG     Sending ping
+2026-07-20 05:40:40  DEBUG     Sending ping
+2026-07-20 05:41:10  DEBUG     Sending ping
+2026-07-20 05:41:40  DEBUG     Sending ping
+2026-07-20 05:42:10  DEBUG     Sending ping
+2026-07-20 05:42:40  DEBUG     Sending ping
+2026-07-20 05:43:10  DEBUG     Sending ping
+2026-07-20 05:43:40  DEBUG     Sending ping
+2026-07-20 05:44:10  DEBUG     Sending ping
+2026-07-20 05:44:40  DEBUG     Sending ping
+2026-07-20 05:45:00  DEBUG     CANDLE  INFY          O=1094.60  H=1095.50  L=1093.00  C=1093.80
+2026-07-20 05:45:00  DEBUG     CANDLE  HDFCAMC       O=2615.50  H=2617.10  L=2610.80  C=2615.10
+2026-07-20 05:45:00  DEBUG     CANDLE  ETERNAL       O=288.40  H=288.75  L=287.85  C=288.15
+2026-07-20 05:45:01  DEBUG     CANDLE  ADANIPOWER    O=218.29  H=219.20  L=217.96  C=218.50
+2026-07-20 05:45:01  DEBUG     CANDLE  ZYDUSLIFE     O=1159.50  H=1160.00  L=1155.70  C=1157.10
+2026-07-20 05:45:01  DEBUG     CANDLE  ADANIGREEN    O=1520.40  H=1522.00  L=1516.60  C=1517.70
+2026-07-20 05:45:01  DEBUG     CANDLE  HCLTECH       O=1212.70  H=1213.00  L=1211.20  C=1211.60
+2026-07-20 05:45:06  DEBUG     CANDLE  DIVISLAB      O=7344.50  H=7355.00  L=7341.00  C=7350.00
+2026-07-20 05:45:10  DEBUG     Sending ping
+2026-07-20 05:45:40  DEBUG     Sending ping
+2026-07-20 05:46:10  DEBUG     Sending ping
+2026-07-20 05:46:40  DEBUG     Sending ping
+2026-07-20 05:47:10  DEBUG     Sending ping
