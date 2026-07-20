@@ -2,6 +2,15 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-20 — Entry retry-on-cancel + 15-stock basket
+- `runner.py`: entries now RETRY on exchange cancel (IOC 16388) instead of being dropped —
+  `_do_entry` mirrors `_do_exit`. Schedule (entries AND exits): attempts 1 & 2 sit at the
+  FRESH bid/ask (0 ticks), attempts 3+ cross a fixed 1 tick; always the fresh quote, never
+  LTP. Capped at MAX_ENTRY_RETRIES=3, then abandon (ledger + strategy reset, margin released).
+  Entries are now confirm-before-book (real only on fill) and stops are gated on `filled`.
+- `select_basket.py`: TOP_K 8 → 15 (more names → more flip opportunities). Added `--today`
+  flag to force stamping TODAY's session for an intentional mid-session re-warm + restart.
+
 ## 2026-07-18 — Morning selection/warm-up
 select_basket stamping now keys off market open (09:15) not a magic hour: a PRE-OPEN run
 (the new 08:00 IST cron) stamps TODAY's session; an at/after-open run stamps NEXT session.

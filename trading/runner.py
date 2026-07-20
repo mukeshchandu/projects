@@ -62,6 +62,7 @@ MODES = {
 }
 MAX_CAPITAL_PER_STOCK = 5_000          # own capital deployed per stock (pre-leverage)
 MAX_POSITIONS      = int(os.getenv("MAX_POSITIONS", "2"))
+MAX_ENTRY_RETRIES  = 3   # re-place a cancelled ENTRY at most N times (fresh quote, +1 tick)
 CAPITAL_PER_TRADE  = MAX_CAPITAL_PER_STOCK
 WALLET_DEPLOY_FRAC = 0.85              # never commit more than 85% of wallet cash
 EMA_PERIOD = int(os.getenv("EMA_FILTER", "0")) or None   # EMA trend filter (None = off; dynamic basket sets 50)
@@ -367,8 +368,9 @@ class TradingApp:
         if not t or t.get("exiting"):
             return False
         side = "SELL" if t["side"] == "LONG" else "BUY"
-        # First attempt sits AT the bid/ask (0 ticks); every retry crosses a fixed 1 tick.
-        cross = 1 if t.get("exit_tries", 0) else 0
+        # First TWO attempts sit AT the fresh bid/ask (0 ticks) — re-quote before giving up a
+        # tick; only from the 2nd retry on do we cross a fixed 1 tick to force the fill.
+        cross = 1 if t.get("exit_tries", 0) >= 2 else 0
         fill = broker.simulate_fill(symbol, side, t["qty"], px, reason,
                                     quote=_quote.get(symbol), cross_ticks=cross, is_exit=True)
         if fill is None:
@@ -385,6 +387,37 @@ class TradingApp:
             log.info("EXIT ORDER  %-12s  %s  qty=%d  [%s] — awaiting fill", symbol, side, t["qty"], reason)
             return True
         self._book_exit(symbol, t, fill.price, t["qty"], reason, ts_str)
+        return True
+
+    def _do_entry(self, symbol: str, price: float, reason: str, ts_str: str) -> bool:
+        """Place/RE-place an ENTRY order. The first TWO attempts (initial + 1st retry) sit AT
+        the FRESH bid/ask (0 ticks) — a first cancel is usually just the quote moving, so we
+        re-quote without giving up a tick. Only from the 2nd retry on do we cross a fixed 1
+        tick to force the fill. Always priced off the fresh quote, never the stale one, never
+        LTP. LIVE: real only once the fill confirms; PAPER: filled immediately."""
+        t = _open_trades.get(symbol)
+        if not t or t.get("filled") or t.get("exiting"):
+            return False
+        side  = "BUY" if t["side"] == "LONG" else "SELL"
+        cross = 1 if t.get("entry_tries", 0) >= 2 else 0
+        fill  = broker.simulate_fill(symbol, side, t["qty"], price, reason,
+                                     quote=_quote.get(symbol), cross_ticks=cross, is_exit=False)
+        if fill is None:
+            t["entry_armed"] = True          # no live quote yet -> retry on the next fresh tick
+            return False
+        if hasattr(broker, "pending") and getattr(fill, "ordno", ""):
+            t["entry_armed"] = False
+            t["entry"] = fill.price
+            broker.pending[fill.ordno].update({
+                "kind": "entry", "symbol": symbol, "side": side,
+                "mode": MODES.get(symbol, "MIS"), "qty": t["qty"], "reason": reason})
+            log.info("ENTRY ORDER  %-12s  %s  qty=%d  Rs%.2f  [%s] — awaiting fill",
+                     symbol, side, t["qty"], fill.price, reason)
+            return True
+        # PAPER: immediate fill
+        t["entry"] = fill.price; t["filled"] = True; t["entry_armed"] = False
+        log.info("ENTRY #%-3d  %-12s  %-5s  Rs%.2f  qty=%d  [%s]",
+                 t.get("trade_no", 0), symbol, t["side"], fill.price, t["qty"], reason)
         return True
 
     def handle_tick(self, msg: dict) -> None:
@@ -498,7 +531,13 @@ class TradingApp:
         # Entry/trend logic still runs only on closed candles (below).
         t = _open_trades.get(symbol)
         if t is not None and not t.get("exiting"):
-            if t.get("exit_armed"):
+            if not t.get("filled"):
+                # entry not yet confirmed on the exchange: if a prior attempt was cancelled,
+                # re-place on THIS fresh tick (fresh bid/ask, +1 tick). No stop checks until
+                # we actually hold the position.
+                if t.get("entry_armed"):
+                    self._do_entry(symbol, price, t.get("reason", "entry retry"), t.get("ts_str", ""))
+            elif t.get("exit_armed"):
                 # a prior exit cancelled -> retry on EVERY tick (incl. quote-only) with the
                 # freshest bid/ask, so we're not waiting for the next trade to get out
                 self._do_exit(symbol, price, "retry", datetime.now(tz=IST).strftime("%H:%M"))
@@ -530,33 +569,19 @@ class TradingApp:
             px     = sig["price"]
             reason = sig.get("reason", "")
 
-            if action == "BUY" and _open_trades[symbol] is None:
+            if action in ("BUY", "SELL") and _open_trades[symbol] is None:
                 if sum(1 for v in _open_trades.values() if v) >= MAX_POSITIONS:
                     continue
                 lev  = 4 if inst.get("mode", "MIS") == "MIS" else 1
                 qty  = max(1, int(CAPITAL_PER_TRADE * lev / px))
-                fill = broker.simulate_fill(symbol, "BUY", qty, px, reason, quote=_quote.get(symbol))
-                if fill is None:
-                    continue
                 _trade_no += 1
-                _open_trades[symbol] = {"side": "LONG", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False, "trade_no": _trade_no}
+                _open_trades[symbol] = {"side": "LONG" if action == "BUY" else "SHORT",
+                                        "entry": px, "qty": qty, "ts_str": ts_str,
+                                        "filled": False, "entry_armed": False, "entry_tries": 0,
+                                        "trade_no": _trade_no, "reason": reason}
                 _entry_meta[_trade_no] = {"entry_time": ts_str}
-                log.info("ENTRY #%-3d  %-12s  LONG   Rs%.2f  qty=%d  [%s]",
-                         _trade_no, symbol, fill.price, qty, reason)
-
-            elif action == "SELL" and _open_trades[symbol] is None:
-                if sum(1 for v in _open_trades.values() if v) >= MAX_POSITIONS:
-                    continue
-                lev  = 4 if inst.get("mode", "MIS") == "MIS" else 1
-                qty  = max(1, int(CAPITAL_PER_TRADE * lev / px))
-                fill = broker.simulate_fill(symbol, "SELL", qty, px, reason, quote=_quote.get(symbol))
-                if fill is None:
-                    continue
-                _trade_no += 1
-                _open_trades[symbol] = {"side": "SHORT", "entry": fill.price, "qty": qty, "ts_str": ts_str, "filled": False, "trade_no": _trade_no}
-                _entry_meta[_trade_no] = {"entry_time": ts_str}
-                log.info("ENTRY #%-3d  %-12s  SHORT  Rs%.2f  qty=%d  [%s]",
-                         _trade_no, symbol, fill.price, qty, reason)
+                # place at the touch now; a cancel re-arms a fresh-quote +1-tick retry
+                self._do_entry(symbol, px, reason, ts_str)
 
             elif action == "EXIT" and _open_trades[symbol] is not None:
                 self._do_exit(symbol, px, reason, ts_str)
@@ -601,6 +626,7 @@ class TradingApp:
                     if t:
                         t["entry"] = actual
                         t["filled"] = True   # confirmed by the exchange -> real position
+                        t["entry_armed"] = False
                         if filled < p["qty"]:
                             t["qty"] = filled
                             log.warning("PARTIAL ENTRY  %s  filled=%d/%d — position qty reduced to %d",
@@ -625,31 +651,40 @@ class TradingApp:
                     if t:
                         t["exiting"] = False
                         t["exit_armed"] = True
-                        t["exit_tries"] = t.get("exit_tries", 0) + 1   # next retry crosses 1 more tick
+                        t["exit_tries"] = t.get("exit_tries", 0) + 1   # crosses 1 tick from the 2nd retry on
                         log.warning("EXIT UNFILLED  %s — %s; RETRY #%d (still holding, not booked)",
                                     sym, rtype, t["exit_tries"])
                         _save_runner_state()
                 elif p:
-                    # Any ENTRY order (BUY=long OR SELL=short) that was rejected / cancelled
-                    # without filling => undo the phantom. Previously this only handled BUY,
-                    # so a rejected SHORT entry (a SELL) left a phantom short that then tried
-                    # to "cover" forever. Clear the ledger for either side.
+                    # An ENTRY (BUY=long OR SELL=short) that cancelled/rejected without filling.
+                    # RETRY it: re-arm so the next fresh tick re-places at the current bid/ask
+                    # +1 tick (never the stale quote). Give up only after MAX_ENTRY_RETRIES,
+                    # then clear the phantom (reset ledger + strategy + release margin).
                     sym = p["symbol"]
-                    if _open_trades.get(sym):
-                        _open_trades[sym] = None
-                        log.warning("PHANTOM CLEARED  %s — %s entry %s, ledger reset",
-                                    sym, p["side"].upper(), rtype)
-                        for inst in INSTRUMENTS.values():
-                            if inst["symbol"] == sym:
-                                st = inst["strategy"]
-                                st.position = 0
-                                st._entry_price = None
-                                st._entry_atr = None
-                                break
-                        if hasattr(broker, "_committed"):
-                            margin = (p["qty"] * p["est"] / 4.0) if p.get("mode") == "MIS" else (p["qty"] * p["est"])
-                            broker._committed = max(0.0, broker._committed - margin)
-                        _save_runner_state()
+                    t = _open_trades.get(sym)
+                    if t and not t.get("filled"):
+                        if t.get("entry_tries", 0) < MAX_ENTRY_RETRIES:
+                            t["entry_armed"] = True
+                            t["entry_tries"] = t.get("entry_tries", 0) + 1
+                            log.warning("ENTRY UNFILLED  %s — %s; RETRY #%d (fresh quote%s)",
+                                        sym, rtype, t["entry_tries"],
+                                        ", +1 tick" if t["entry_tries"] >= 2 else "")
+                            _save_runner_state()
+                        else:
+                            _open_trades[sym] = None
+                            log.warning("ENTRY ABANDONED  %s — %d cancels, no fill; ledger reset",
+                                        sym, t.get("entry_tries", 0))
+                            for inst in INSTRUMENTS.values():
+                                if inst["symbol"] == sym:
+                                    st = inst["strategy"]
+                                    st.position = 0
+                                    st._entry_price = None
+                                    st._entry_atr = None
+                                    break
+                            if hasattr(broker, "_committed"):
+                                margin = (p["qty"] * p["est"] / 4.0) if p.get("mode") == "MIS" else (p["qty"] * p["est"])
+                                broker._committed = max(0.0, broker._committed - margin)
+                            _save_runner_state()
         else:
             log.info("ORDER UPDATE  %-8s  %s  norenordno=%s", rtype, tsym, norenordno)
 

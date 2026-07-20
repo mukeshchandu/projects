@@ -22,7 +22,7 @@ SupertrendStrategy.save_state = lambda self: None    # disabled during scoring (
 SupertrendStrategy._load_state = lambda self: None
 
 LOOKBACK = 5           # trading days for the ranking window
-TOP_K = 8              # stocks observed/subscribed per session
+TOP_K = 15             # stocks observed/subscribed per session (more names = more flips)
 EMA_PERIOD = 50        # must match the runner's dynamic-basket EMA filter
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/today_basket.json")
 
@@ -188,8 +188,12 @@ def main():
     # exactly what the 08:45 runner then loads warm.
     from config import IST, MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE
     now = datetime.now(IST)
-    before_open = (now.hour, now.minute) < (MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE)
-    session = now.date() + (timedelta(0) if before_open else timedelta(days=1))
+    if "--today" in sys.argv:
+        # Force TODAY's session — for an intentional mid-session re-warm + runner restart.
+        session = now.date()
+    else:
+        before_open = (now.hour, now.minute) < (MARKET_OPEN_HOUR, MARKET_OPEN_MINUTE)
+        session = now.date() + (timedelta(0) if before_open else timedelta(days=1))
     while session.weekday() >= 5:      # Sat/Sun -> roll to Monday
         session += timedelta(days=1)
     session_str = session.strftime("%Y-%m-%d")
