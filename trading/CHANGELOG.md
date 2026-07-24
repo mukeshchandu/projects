@@ -2,6 +2,11 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-25 — HANDOVER.md for a fresh machine/session
+- Added `HANDOVER.md`: self-contained onboarding for a new laptop — both repos, new-machine setup
+  (fresh gh/PAT auth), deploy workflow, AWS/cron, secrets, the new options logging + backtest
+  toolkit, conventions, current live config, findings, and pending work. Written by Claude.
+
 ## 2026-07-24 — Options data logging + repo slimmed for clean AWS deploy
 - **New `options_logger.py`** — standalone daemon (NEVER trades) that records NSE index-option
   chain ticks for future backtesting. Resolves nearest-expiry strikes around ATM for NIFTY /
