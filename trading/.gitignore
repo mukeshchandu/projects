@@ -11,3 +11,13 @@ __pycache__/
 *.pyc
 STOP
 .watchdog.lock
+.options_logger.lock
+
+# Keep the AWS repo lean: runtime-generated data & research artifacts stay out of git.
+# (To share a specific day for backtesting, force it in: `git add -f data/<...>`.)
+data/*/ticks.jsonl
+data/options/
+*.pkl
+*.html
+*_results.csv
+*_results.txt

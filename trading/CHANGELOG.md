@@ -2,6 +2,22 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-24 — Options data logging + repo slimmed for clean AWS deploy
+- **New `options_logger.py`** — standalone daemon (NEVER trades) that records NSE index-option
+  chain ticks for future backtesting. Resolves nearest-expiry strikes around ATM for NIFTY /
+  BANKNIFTY via SearchScrip (defensive tsym parse; manual-list override), subscribes the NFO
+  option tokens + spot over one WS, and appends raw ticks (+ local `rt`) to
+  `data/options/<date>/<UNDERLYING>.jsonl` with a `_manifest.json`. Self-exits at 15:30 IST.
+  `--dry-run` resolves + writes the manifest without connecting.
+- **New `start_options_logger.sh`** — flock-singleton launcher/watchdog (cron alongside the runner).
+- **Repo slimmed:** all research/backtest scripts, HTML charts, the 15m pkl cache, and the
+  committed tick data were REMOVED from this repo (they live on in the separate `trading-lab`
+  repo). This repo is now just the live runtime + ops + docs, so the AWS working tree stays clean.
+- **`.gitignore`** now excludes runtime-generated data & artifacts (`data/*/ticks.jsonl`,
+  `data/options/`, `*.pkl`, `*.html`, `*_results.*`). To share a logged day for backtesting,
+  force it in: `git add -f data/options/<date>`.
+- Written by Claude (AI assistant).
+
 ## 2026-07-24 — Preserve research/backtest lab before machine decommission
 - Committed the full Mac-only research toolkit (previously kept uncommitted by convention) so it
   survives the machine wipe: `bt_engine.py` (faithful engine — fills at best bid/ask on ticks,
