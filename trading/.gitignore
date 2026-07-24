@@ -17,6 +17,7 @@ STOP
 # (To share a specific day for backtesting, force it in: `git add -f data/<...>`.)
 data/*/ticks.jsonl
 data/options/
+data/options_hist/
 *.pkl
 *.html
 *_results.csv

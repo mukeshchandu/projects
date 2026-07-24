@@ -2,6 +2,16 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-25 — Historical option fetcher (TPSeries) — real option history
+- Confirmed Flattrade's `TPSeries` serves HISTORICAL option candles (OHLC + VWAP + volume + OI)
+  for currently-listed NFO contracts back to listing (weeklies ~2wk, monthlies more; ~90d ceiling
+  seen on the index). New **`fetch_option_history.py`**: reuses the chain resolver, pulls candles
+  for every strike×CE/PE (+ the spot index) at a chosen interval/lookback, saves
+  `data/options_hist/<UNDER>_<expiry>/<tsym>.json` (+ `_spot.json`, `_manifest.json`). Gitignored;
+  share via `git add -f`. NOTE: OHLCV+OI only (no bid/ask → backtest fills at close±spread); and
+  TPSeries only serves LIVE tokens, so run it before each expiry to capture a contract's full life
+  (expired-token history would need a historical symbol master). Written by Claude.
+
 ## 2026-07-25 — Options logging moved INTO runner (single WS per token)
 - Confirmed empirically that Flattrade allows only ONE active WebSocket per session token (a 2nd
   connection disconnects the 1st). So a standalone options-logger process would kick the live
