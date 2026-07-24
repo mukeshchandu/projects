@@ -183,11 +183,12 @@ separate process; it piggybacks on the runner's existing WS.
 - `options_logger.py` remains as (a) the importable resolver module used by the runner and (b) a
   manual/`--dry-run` tool. **Do NOT run it standalone while `runner.py` is live** (2nd WS). There is
   intentionally **no options cron** and `start_options_logger.sh` was removed.
-- **Verify on AWS:** `python options_logger.py --dry-run` should resolve ~42 instruments per
-  underlying and write the manifest (this is the one piece needing live-API confirmation). Then in a
-  live session, check `data/options/<date>/NIFTY.jsonl` grows and the runner log shows
-  `OPTIONS LOGGING ON`. If resolution ever returns 0, drop a manual list at
-  `data/options/instruments_NIFTY.json` (format in the logger header).
+- **STATUS (2026-07-25):** DEPLOYED (commit `12f3ef3`) and verified off-hours on AWS — resolves
+  84 instruments and the WS accepts `subscribed=N equity + 84 option + 2 spot` (feed `d`). The one
+  remaining check (that all 84 depth feeds actually stream under live load) is in §10 item 1.
+- If resolution ever returns 0 (e.g. tsym format changes), `python options_logger.py --dry-run`
+  re-checks it; drop a manual list at `data/options/instruments_NIFTY.json` (format in the logger
+  header) to override.
 - Logged data is gitignored in the live repo. To move a day into the lab for backtesting:
   `git -C /home/ec2-user/projects add -f trading/data/options/<date> && git commit && git push`,
   then copy under `trading-lab/data/options/<date>/`.
@@ -240,7 +241,32 @@ validation/learning system. Full detail in `trading-lab/README.md`.
 ---
 
 ## 10. Pending work
-1. **Verify `options_logger.py` instrument resolution on the live API** (§6) — the main open item.
+1. **Confirm the option DEPTH feeds actually STREAM under live market load** — the one open item.
+   *What happened:* options logging is deployed (commit `12f3ef3`) and verified off-hours on AWS —
+   it resolves 84 instruments and the WS accepts `subscribed=N equity + 84 option + 2 spot` (feed
+   `d`). What's NOT yet confirmed is that all 84 depth subscriptions actually push ticks during a
+   live session (some brokers silently throttle large depth subscriptions).
+   *What to do — on the next trading day (first live session after deploy):* check that both
+   `data/options/<date>/NIFTY.jsonl` and `BANKNIFTY.jsonl` are growing and contain a **healthy
+   spread of strikes** (not just a few tokens). Quick check on AWS during/after market hours:
+   ```bash
+   cd /home/ec2-user/projects/trading
+   wc -l data/options/$(date +%F)/*.jsonl
+   # distinct option tokens actually seen (should be ~ up to 84):
+   python - <<'PY'
+   import json, glob, datetime
+   for f in glob.glob(f"data/options/{datetime.date.today()}/*.jsonl"):
+       toks=set(); n=0
+       for line in open(f):
+           try: toks.add(json.loads(line).get("tk")); n+=1
+           except: pass
+       print(f, "ticks:", n, "distinct tokens:", len(toks))
+   PY
+   ```
+   *If some strikes stay silent / too few tokens appear:* it's a one-line tune — either lower
+   `n_each_side` in `options_logger.py`'s `UNDERLYINGS` (fewer strikes), or set `OPTION_FEED=t`
+   (touchline is lighter than depth). Both are safe; **equity trading is unaffected regardless**
+   (option ticks are routed out before any trading logic, and setup is best-effort).
 2. **Options cost-model rates + strategy retune** (§6 reviewer TODOs).
 3. **Oversell fix (real bug):** the partial-fill handler can re-order a "remaining" qty while the
    original is still filling → oversell → accidental short (seen live on UNIONBANK). Fix: don't
