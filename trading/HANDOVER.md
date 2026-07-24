@@ -13,7 +13,70 @@ and backtest work, so you can continue without re-deriving anything. Written 202
    (pricing off best bid/ask, IOC retries, confirm-before-book, EOD reconcile). Confirm your
    understanding matches `runner.py`, `live_broker.py`, `strategies/supertrend.py`,
    `select_basket.py`. The full reference is [`README.md`](README.md).
-2. **Respect the conventions in §7** — especially: never auto-commit, never add AI as author.
+2. **Read §A below (HOW TO WORK) before touching anything** — it is the most important section;
+   most mistakes come from breaking these rules.
+
+---
+
+## A. HOW TO WORK — operating rules (behave exactly like this)
+
+### The golden interaction model — you edit the Mac, AWS is the user's hands
+- You (Claude) run commands **only on the user's local Mac clone**. You do **NOT** have SSH or
+  console access to EC2 — never assume you can run anything on AWS.
+- Anything that must happen on AWS, you hand to the user as **copy-paste command blocks**; the user
+  runs them on EC2 and pastes the output back. **Wait for that output** before concluding it worked
+  — don't declare an AWS step successful you didn't see succeed.
+- **Git is the single source of truth:** Mac (edit) → GitHub (push) → AWS (`git pull`). AWS is
+  **pull-only**. Never edit AWS files by hand and never tell the user to hand-edit AWS code. The one
+  exception is `trading/.env`, which is edited directly on EC2 via a targeted command and never
+  committed.
+
+### The edit loop — do this for every code change
+1. **Understand first.** Read the code. If the user is still forming their intent, **do NOT change
+   code yet** — the user's explicit rule: *"don't do anything in the code until I understand."*
+   Explain what's there and what you'd change, get the go-ahead, then act.
+2. **Edit in the Mac clone only** (`projects/trading/`).
+3. **Test before pushing — always:**
+   - `python3 -m py_compile <files>` + `python3 -m pyflakes <files>`.
+   - **Import smoke-test with heavy deps stubbed.** The Mac may lack `websocket`/`dotenv`/`requests`/
+     `pyotp`, and importing `runner` has file side-effects — so stub the missing modules in
+     `sys.modules` first, then import. Pattern:
+     ```python
+     import sys, types
+     for m in ['dotenv','requests','websocket','pyotp']:
+         sys.modules[m] = types.ModuleType(m)
+     sys.modules['dotenv'].load_dotenv = lambda *a, **k: None
+     sys.modules['websocket'].WebSocketApp = object
+     import config, marketdata, paper, live_broker, client, auth, options_logger
+     from strategies.supertrend import SupertrendStrategy
+     print("imports OK")
+     ```
+   - Run `test_entry_retry.py` when touching entry/exit/order logic.
+4. **Commit/push only when the user explicitly asks** (see §7). Then hand the user the AWS
+   deploy + verify commands.
+
+### How to give AWS commands
+- One command per fenced ```bash block, no leading `$`, and **sanitize** any URL/remote that could
+  contain the PAT: pipe through `sed -E 's#//[^@]*@#//***@#g'`.
+- Always say **what the user should expect** in the output so they can tell success from failure.
+
+### NEVER (these cause real damage)
+- **Never auto-commit or push** without an explicit request.
+- **Never add the AI as git author/co-author.** Commit as
+  `git -c user.name='mukeshchandu' commit -m "..."` and note in the body that Claude wrote it.
+- **Never commit, print, or log** `trading/.env` or the PAT. Sanitize every remote/URL you echo.
+- **Never price orders off LTP** — always the fresh best bid/ask.
+- **Never rewrite git history or force-push** — both repos are shared with AWS.
+- **Never re-add heavy/research files** (`*.html`, `*.pkl`, tick data, backtest scripts) to the
+  **live** repo — those belong in `trading-lab`.
+- **Never let `options_logger.py` place orders** — it only records, and stays a separate process
+  from `runner.py`.
+- Don't expect a running `runner.py` to hot-reload — changes apply only on the next restart.
+
+### Posture
+Be honest about the edge (there isn't a retail-capturable one — §9); OOS-validate any strategy
+change before recommending it; keep capital tiny; treat live as validation. For chart HTML
+deliverables, just hand over the file path — the user opens it locally.
 
 ---
 
