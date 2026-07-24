@@ -103,6 +103,81 @@ if os.path.getsize(_strat_path) == 0:
     _strat_fh.flush()
 
 
+# ── Options chain logging (piggybacks on the SAME WebSocket — Flattrade allows only ONE
+# active WS per session token, so we cannot run a second logger process. Option/spot ticks
+# are routed out at the very TOP of handle_tick and never touch trading logic.) ──
+import options_logger as _OL   # reuse its chain resolver + UNDERLYINGS config
+
+LOG_OPTIONS = os.getenv("LOG_OPTIONS", "1").strip().lower() not in ("0", "false", "no", "off", "")
+OPTION_FEED = os.getenv("OPTION_FEED", "d")   # 'd' = full depth book (raw, nothing dropped); 't' = touchline
+_opt_under_of: Dict[str, str] = {}   # token -> underlying (routes a tick to the right file)
+_opt_fh: Dict[str, object]    = {}   # underlying -> open jsonl file handle
+_opt_nfo_keys: list           = []   # ["NFO|63927", ...] subscribed with OPTION_FEED (depth)
+_opt_spot_keys: list          = []   # ["NSE|26000", ...] subscribed with 't' (index has no depth)
+_opt_tick_n = 0
+
+
+def _setup_options_logging(client) -> None:
+    """Resolve option chains for the configured underlyings and open per-underlying jsonl
+    files. BEST-EFFORT: any failure logs a warning and leaves trading completely unaffected
+    (options logging simply stays off for the day)."""
+    if not LOG_OPTIONS:
+        log.info("Options logging DISABLED (LOG_OPTIONS=0)")
+        return
+    try:
+        base = f"data/options/{_today}"
+        os.makedirs(base, exist_ok=True)
+        manifests = {}
+        for name, cfg in _OL.UNDERLYINGS.items():
+            try:
+                mani, keys = _OL._resolve_chain(client, name, cfg)
+            except Exception as e:
+                log.warning("options: resolve %s failed (%s) — skipping", name, e)
+                continue
+            if not keys:
+                continue
+            manifests[name] = mani
+            _opt_fh[name] = open(f"{base}/{name}.jsonl", "a")
+            for exch, tok in keys:
+                _opt_under_of[str(tok)] = name
+                (_opt_nfo_keys if exch == "NFO" else _opt_spot_keys).append(f"{exch}|{tok}")
+        for name, mani in manifests.items():
+            with open(f"{base}/{name}_manifest.json", "w") as f:
+                json.dump(mani, f, indent=2)
+        if _opt_under_of:
+            log.info("OPTIONS LOGGING ON: %d option instruments, %d underlyings, feed='%s' -> %s",
+                     len(_opt_nfo_keys), len(manifests), OPTION_FEED, base)
+        else:
+            log.warning("OPTIONS LOGGING: resolved 0 instruments — off for today")
+    except Exception as e:
+        log.warning("options logging setup failed (%s) — continuing WITHOUT it (trading unaffected)", e)
+        _opt_under_of.clear(); _opt_fh.clear(); _opt_nfo_keys.clear(); _opt_spot_keys.clear()
+
+
+def _log_option_tick(name: str, msg: dict) -> None:
+    """Append one raw option/spot tick (full message + local receive time) to its jsonl."""
+    global _opt_tick_n
+    fh = _opt_fh.get(name)
+    if fh is None:
+        return
+    msg["rt"] = round(time.time(), 3)
+    try:
+        fh.write(json.dumps(msg, separators=(",", ":")) + "\n")
+        _opt_tick_n += 1
+        if _opt_tick_n % 200 == 0:
+            fh.flush()
+    except (ValueError, OSError):
+        pass
+
+
+def _flush_options() -> None:
+    for fh in _opt_fh.values():
+        try:
+            fh.flush()
+        except (ValueError, OSError):
+            pass
+
+
 def _log_strat_state(candle, symbol, strat, sig) -> None:
     """Record the real-time strategy state at each closed candle so behaviour can be
     reviewed/charted from the actual live values — no recomputation needed."""
@@ -337,6 +412,11 @@ def _flush_and_close() -> None:
     _csv_fh.close()
     _strat_fh.flush()
     _strat_fh.close()
+    for fh in _opt_fh.values():
+        try:
+            fh.flush(); fh.close()
+        except (ValueError, OSError):
+            pass
 
 
 class TradingApp:
@@ -422,6 +502,17 @@ class TradingApp:
 
     def handle_tick(self, msg: dict) -> None:
         global _trade_no, _eod_done
+
+        # ── Options/spot chain logging (piggyback) ──────────────────────────────
+        # Route option & index ticks OUT here — before the tk/tf filter and before any
+        # trading logic — and log the FULL raw message (depth 'dk'/'df' included). Trading
+        # below only ever sees equity tokens (those in INSTRUMENTS). This cannot affect
+        # order handling in any way.
+        if _opt_under_of:
+            u = _opt_under_of.get(str(msg.get("tk")))
+            if u:
+                _log_option_tick(u, msg)
+                return
 
         if msg.get("t") not in ("tk", "tf"):
             return
@@ -737,6 +828,8 @@ def main() -> None:
         log.error("No instruments resolved — exiting")
         sys.exit(1)
 
+    _setup_options_logging(client)   # best-effort; never blocks trading
+
     scrip_keys = "#".join(f"{inst['exchange']}|{tok}" for tok, inst in INSTRUMENTS.items())
 
     threading.Thread(target=_heartbeat, daemon=True).start()
@@ -744,9 +837,15 @@ def main() -> None:
     app = TradingApp()
 
     def on_open(c: FlattradeClient) -> None:
+        # Equity FIRST (so a WS subscription cap can never starve trading), then options.
         c.subscribe(scrip_keys, feed_type="t")
         c.subscribe_orders()
-        log.info("WS CONNECTED  subscribed=%d instruments", len(INSTRUMENTS))
+        if _opt_nfo_keys:
+            c.subscribe("#".join(_opt_nfo_keys), feed_type=OPTION_FEED)
+        if _opt_spot_keys:
+            c.subscribe("#".join(_opt_spot_keys), feed_type="t")
+        log.info("WS CONNECTED  subscribed=%d equity + %d option + %d spot",
+                 len(INSTRUMENTS), len(_opt_nfo_keys), len(_opt_spot_keys))
         log.info("Ticks -> %s", _tick_path)
 
     def on_close(code=None, msg=None) -> None:
@@ -757,6 +856,7 @@ def main() -> None:
         try:
             _tick_fh.flush()
             _csv_fh.flush()
+            _flush_options()
         except ValueError:
             pass   # files already closed during shutdown
 

@@ -144,7 +144,6 @@ just works as `mukeshchandu`. If not, embed a fresh PAT in the remote:
   ```
   30 2  * * 1-5   select_basket.py        (08:00 IST)  pick + warm today's 15-stock basket
   15 3  * * 1-5   start_trading.sh        (08:45 IST)  token + flock watchdog + runner
-  42 3  * * 1-5   start_options_logger.sh (09:12 IST)  NEW: record option chains (see §6)
   35 9  * * 1-5   stop_trading.sh         (15:05 IST)  STOP flag halts watchdog
   15 10 * * 1-5   replay_ticks.py         (15:45 IST)  legacy ATR warmup
   20 10 * * 5     update_universe.py      (15:50 IST, Fri) refresh Nifty-100 universe
@@ -162,21 +161,33 @@ Keys: `FLATTRADE_USER_ID`, `FLATTRADE_API_KEY`, `FLATTRADE_API_SECRET`, `PASSWOR
 
 ## 6. Options data logging (NEW — 2026-07-24/25) & the backtest toolkit
 
-**Why:** we want to research option strategies but have no historical option data. So the live repo
-now includes a **standalone logger** that records NSE index-option chains, and the lab includes a
-**full options backtest toolkit** ready to test strategies once data accumulates.
+**Why:** we want to research option strategies but have no historical option data. So the live
+runner now also RECORDS NSE index-option chains, and the lab has a full options backtest toolkit.
 
-**Live repo (`projects/trading/`):**
-- `options_logger.py` — standalone daemon (⚠️ **never trades**; separate process from `runner.py`).
-  Resolves nearest-expiry strikes around ATM for NIFTY/BANKNIFTY via `SearchScrip` (defensive tsym
-  parse; manual-list override), subscribes the NFO option tokens + spot over one WS, appends raw
-  ticks (+ local `rt`) to `data/options/<date>/<UNDERLYING>.jsonl` with a `_manifest.json`.
-  Self-exits at 15:30 IST.
-- `start_options_logger.sh` — flock-singleton watchdog (cron above).
-- **Verify on AWS:** `python options_logger.py --dry-run` → should print resolved instrument counts
-  and write the manifest. **If it reports "0 parseable options"**, the broker's tsym format differs
-  from the parser — drop a manual list at `data/options/instruments_NIFTY.json` (format documented
-  in the logger header) and re-run. *(This is the one piece not verifiable without live API access.)*
+**Single WebSocket per token (important):** Flattrade allows only ONE active WS per session token
+(empirically verified — a 2nd connection disconnects the 1st). So options logging must NOT be a
+separate process; it piggybacks on the runner's existing WS.
+
+**Live repo (`projects/trading/`) — options logging is INSIDE `runner.py`:**
+- At startup `runner.py` calls `_setup_options_logging()`: resolves the NIFTY/BANKNIFTY chains
+  (nearest expiry, ATM ± N strikes) by reusing `options_logger._resolve_chain` (which uses
+  `client.get_option_chain` → `GetOptionChain`), writes `data/options/<date>/<UNDER>_manifest.json`,
+  and opens the jsonl files.
+- In `on_open` it subscribes the option tokens as **full DEPTH (`d`)** and spot as touchline (`t`)
+  on the SAME connection (equity is subscribed FIRST so a WS cap can't starve trading).
+- Option & index ticks are routed out at the TOP of `handle_tick` (before the tk/tf filter and all
+  trading logic) and written RAW (+ local `rt`) to `data/options/<date>/<UNDER>.jsonl`. The trading
+  path only ever sees equity tokens → **order handling is unchanged**.
+- **Flags:** `LOG_OPTIONS` (default on; `0` disables), `OPTION_FEED` (default `d`; `t` for lighter
+  touchline). Setup is best-effort — any failure logs a warning and trading continues.
+- `options_logger.py` remains as (a) the importable resolver module used by the runner and (b) a
+  manual/`--dry-run` tool. **Do NOT run it standalone while `runner.py` is live** (2nd WS). There is
+  intentionally **no options cron** and `start_options_logger.sh` was removed.
+- **Verify on AWS:** `python options_logger.py --dry-run` should resolve ~42 instruments per
+  underlying and write the manifest (this is the one piece needing live-API confirmation). Then in a
+  live session, check `data/options/<date>/NIFTY.jsonl` grows and the runner log shows
+  `OPTIONS LOGGING ON`. If resolution ever returns 0, drop a manual list at
+  `data/options/instruments_NIFTY.json` (format in the logger header).
 - Logged data is gitignored in the live repo. To move a day into the lab for backtesting:
   `git -C /home/ec2-user/projects add -f trading/data/options/<date> && git commit && git push`,
   then copy under `trading-lab/data/options/<date>/`.

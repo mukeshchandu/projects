@@ -344,6 +344,15 @@ def main() -> None:
     names = [n.strip().upper() for n in args.underlyings.split(",") if n.strip()]
     day = datetime.now(IST).date().isoformat()
 
+    # ⚠️ Flattrade allows only ONE active WebSocket per session token. Options logging now
+    # runs INSIDE runner.py (LOG_OPTIONS=1) on the trading WS. Do NOT run this as a live
+    # daemon while runner.py is running — the second WS will disconnect the trader. This
+    # standalone entry point is for manual use (e.g. --dry-run, or logging on a non-trading
+    # box/day). The resolver functions here are imported and reused by runner.py.
+    if not args.dry_run:
+        _log("NOTE: options logging is normally done by runner.py (LOG_OPTIONS=1). Running this "
+             "standalone opens a SEPARATE WS — do NOT do this while runner.py is live.")
+
     uid, token = get_session()
     client = FlattradeClient()
     client.set_session(uid, token)

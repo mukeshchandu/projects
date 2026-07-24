@@ -2,6 +2,23 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-25 — Options logging moved INTO runner (single WS per token)
+- Confirmed empirically that Flattrade allows only ONE active WebSocket per session token (a 2nd
+  connection disconnects the 1st). So a standalone options-logger process would kick the live
+  trader offline. **Options logging is now woven into `runner.py`** on the trading WS: at startup
+  it resolves the NIFTY/BANKNIFTY chains (reusing `options_logger`'s resolver) and subscribes them
+  on the same connection — **options as full DEPTH feed (`d`), equity unchanged as touchline (`t`)**.
+  Option & index ticks are routed out at the very top of `handle_tick` (before the tk/tf filter and
+  all trading logic) and written raw (+ local `rt`) to `data/options/<date>/<UNDER>.jsonl`; the
+  trading path only ever sees equity tokens, so order handling is byte-for-byte unchanged.
+- Env flags: `LOG_OPTIONS` (default on; `0` to disable), `OPTION_FEED` (default `d`). Setup is
+  best-effort — any resolution/subscribe failure logs a warning and trading continues unaffected.
+  Equity is subscribed FIRST so a WS subscription cap can never starve trading.
+- **Removed `start_options_logger.sh`** (a 2nd process would open a 2nd WS — do NOT cron it).
+  `options_logger.py` stays as an importable module (its resolver is reused) and a manual/dry-run
+  tool, with a header warning never to run it standalone while `runner.py` is live.
+- Written by Claude (AI assistant).
+
 ## 2026-07-25 — Fix options_logger instrument resolution (GetOptionChain)
 - The initial `SearchScrip('NFO', underlying)` approach returned only 25 relevance-capped rows
   (lowest strikes, nowhere near ATM) → resolved 0 instruments. Rewrote resolution: discover the
