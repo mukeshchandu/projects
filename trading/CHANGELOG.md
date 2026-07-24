@@ -2,6 +2,15 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-25 — Fix options_logger instrument resolution (GetOptionChain)
+- The initial `SearchScrip('NFO', underlying)` approach returned only 25 relevance-capped rows
+  (lowest strikes, nowhere near ATM) → resolved 0 instruments. Rewrote resolution: discover the
+  nearest expiry from SearchScrip `exd` fields, build the tsym expiry-token (e.g. `28JUL26`), then
+  enumerate the ATM±N window via **`GetOptionChain`** (new `client.get_option_chain`; strprc must be
+  an integer string). Seeds at the window bottom + ATM to sweep the ascending chain; dedups by
+  token; reads lot size from the API `ls` field. Falls back to per-strike EXACT SearchScrip, then
+  to a manual list. Verified on the live API (chain returns stat=Ok). Written by Claude.
+
 ## 2026-07-25 — HANDOVER.md for a fresh machine/session
 - Added `HANDOVER.md`: self-contained onboarding for a new laptop — both repos, new-machine setup
   (fresh gh/PAT auth), deploy workflow, AWS/cron, secrets, the new options logging + backtest

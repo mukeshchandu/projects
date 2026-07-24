@@ -64,6 +64,17 @@ class FlattradeClient:
             return result.get("values", [])
         return []
 
+    def get_option_chain(self, exchange: str, tsym: str, strike, count=10) -> Dict[str, Any]:
+        """Option chain around `strike` for the contract `tsym` (an existing option
+        trading symbol, e.g. 'NIFTY28JUL26C23750'). Returns the raw dict; on success
+        result['values'] is a list of {token, tsym, optt(CE/PE), strprc, ls, ti, ...}.
+        NOTE: strprc must be a plain integer string (e.g. '23750', not '23750.00');
+        the API 400s otherwise. Returns strikes ascending from the given strike."""
+        return self._req("GetOptionChain", {
+            "exch": exchange, "tsym": tsym,
+            "strprc": str(int(float(strike))), "cnt": str(count),
+        })
+
     def get_time_price_series(
         self,
         exchange: str,

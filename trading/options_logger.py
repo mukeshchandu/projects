@@ -112,14 +112,110 @@ def _spot_ltp(client: FlattradeClient, exch: str, token: str) -> Optional[float]
     return None
 
 
+def _expiry_token(d: date) -> str:
+    """date(2026,7,28) -> '28JUL26' (the token used inside NFO option trading symbols)."""
+    return f"{d.day:02d}{d.strftime('%b').upper()}{d.year % 100:02d}"
+
+
+def _nearest_expiry(client: FlattradeClient, name: str) -> Optional[date]:
+    """Nearest expiry (>= today) for `name`, discovered from SearchScrip `exd` fields
+    (format 'DD-MON-YYYY'). Uses option rows if present, else any matching-symbol row."""
+    rows = client.search_scrip(NFO_EXCH, name)
+    today = datetime.now(IST).date()
+    exps = []
+    for r in rows:
+        if r.get("symname") != name:
+            continue
+        exd = r.get("exd")
+        if not exd:
+            continue
+        try:
+            exps.append(datetime.strptime(exd, "%d-%b-%Y").date())
+        except (ValueError, TypeError):
+            continue
+    future = sorted(e for e in exps if e >= today)
+    if future:
+        return future[0]
+    return sorted(exps)[0] if exps else None
+
+
+def _mk_inst(v: dict, expiry: date, lot_default: int) -> Optional[dict]:
+    """Normalize one GetOptionChain / SearchScrip row into our instrument dict."""
+    if v.get("optt") not in ("CE", "PE"):
+        return None
+    tok = v.get("token")
+    if not tok:
+        return None
+    try:
+        strike = float(v["strprc"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    try:
+        ls = int(float(v.get("ls"))) if v.get("ls") else lot_default
+    except (TypeError, ValueError):
+        ls = lot_default
+    return {"exch": NFO_EXCH, "token": str(tok), "tsym": v.get("tsym"),
+            "strike": strike, "opt": v["optt"], "expiry": expiry.isoformat(), "lot_size": ls}
+
+
+def _chain_via_optionchain(client, name, exptoken, expiry, atm, step, n, lot) -> List[dict]:
+    """Enumerate the ATM +/- n window using GetOptionChain. It returns strikes ascending
+    from the seed strike, so seeding at the window BOTTOM (and again at ATM) sweeps the
+    whole window in a couple of calls. Dedup by token."""
+    lo, hi = atm - n * step, atm + n * step
+    cnt = 2 * n + 2
+    insts: Dict[str, dict] = {}
+    for opt_char in ("C", "P"):
+        for center in (lo, atm):
+            tsym = f"{name}{exptoken}{opt_char}{int(center)}"
+            try:
+                res = client.get_option_chain(NFO_EXCH, tsym, center, cnt)
+            except Exception as e:
+                _log(f"    {name}: GetOptionChain({tsym}) error: {e}")
+                continue
+            if not isinstance(res, dict) or res.get("stat") != "Ok":
+                continue
+            for v in res.get("values", []):
+                inst = _mk_inst(v, expiry, lot)
+                if inst and lo <= inst["strike"] <= hi:
+                    insts[inst["token"]] = inst
+    return list(insts.values())
+
+
+def _chain_via_search(client, name, exptoken, expiry, atm, step, n, lot) -> List[dict]:
+    """Fallback: resolve each strike x {CE,PE} in the window by an EXACT SearchScrip on the
+    constructed trading symbol (proven to return exactly that contract). ~2*(2n+1) calls."""
+    lo, hi = atm - n * step, atm + n * step
+    insts: Dict[str, dict] = {}
+    strike = lo
+    while strike <= hi:
+        for opt_char in ("C", "P"):
+            tsym = f"{name}{exptoken}{opt_char}{int(strike)}"
+            try:
+                rows = client.search_scrip(NFO_EXCH, tsym)
+            except Exception:
+                rows = []
+            for r in rows:
+                if r.get("tsym") != tsym:
+                    continue
+                # SearchScrip rows carry optt; synthesize strprc from the strike we asked for
+                r = dict(r)
+                r.setdefault("strprc", strike)
+                inst = _mk_inst(r, expiry, lot)
+                if inst:
+                    insts[inst["token"]] = inst
+        strike += step
+    return list(insts.values())
+
+
 def _resolve_chain(client: FlattradeClient, name: str, cfg: dict) -> Tuple[dict, List[Tuple[str, str]]]:
     """Return (manifest, [(exch, token), ...]) for `name`, nearest expiry, ATM +/- n strikes."""
-    # 0) manual override
     manual_path = f"data/options/instruments_{name}.json"
     spot = _spot_ltp(client, cfg["spot_exch"], cfg["spot_token"])
     step = cfg["step"]
     atm = round(spot / step) * step if spot else None
 
+    # 0) manual override
     if os.path.exists(manual_path):
         insts = json.load(open(manual_path))
         _log(f"  {name}: using MANUAL instrument list ({len(insts)}) from {manual_path}")
@@ -130,44 +226,28 @@ def _resolve_chain(client: FlattradeClient, name: str, cfg: dict) -> Tuple[dict,
         _log(f"  {name}: could not read spot LTP — skipping (drop a manual list to override)")
         return {}, []
 
-    # 1) search NFO for the underlying, parse option scrips
-    rows = client.search_scrip(NFO_EXCH, name)
-    parsed = []
-    for r in rows:
-        tsym = r.get("tsym") or r.get("cname") or ""
-        tok = r.get("token")
-        if not tsym or not tok:
-            continue
-        p = _parse_option_tsym(tsym)
-        if not p:
-            continue
-        sym, expiry, opt, strike = p
-        if sym != name:
-            continue
-        ls = r.get("ls")
-        try:
-            ls = int(float(ls)) if ls else cfg["lot_size"]
-        except (TypeError, ValueError):
-            ls = cfg["lot_size"]
-        parsed.append({"exch": NFO_EXCH, "token": str(tok), "tsym": tsym,
-                       "strike": strike, "opt": opt, "expiry": expiry.isoformat(), "lot_size": ls})
+    # 1) discover the nearest expiry, build the token used inside option tsyms
+    expiry = _nearest_expiry(client, name)
+    if not expiry:
+        _log(f"  {name}: could not discover an expiry via SearchScrip — provide {manual_path}")
+        return {}, []
+    exptoken = _expiry_token(expiry)
+    n, lot = cfg["n_each_side"], cfg["lot_size"]
 
-    if not parsed:
-        _log(f"  {name}: SearchScrip returned 0 parseable options "
-             f"(got {len(rows)} rows). Provide {manual_path} to override.")
+    # 2) enumerate the strike window: GetOptionChain, with per-strike search as fallback
+    insts = _chain_via_optionchain(client, name, exptoken, expiry, atm, step, n, lot)
+    if not insts:
+        _log(f"  {name}: GetOptionChain returned nothing — falling back to per-strike search")
+        insts = _chain_via_search(client, name, exptoken, expiry, atm, step, n, lot)
+
+    if not insts:
+        _log(f"  {name}: resolved 0 instruments (expiry={expiry}, token={exptoken}). "
+             f"Provide {manual_path} to override.")
         return {}, []
 
-    # 2) nearest expiry that is today or later
-    today = datetime.now(IST).date()
-    expiries = sorted({p["expiry"] for p in parsed})
-    future = [e for e in expiries if date.fromisoformat(e) >= today] or expiries
-    expiry = future[0]
-
-    # 3) strike window around ATM
-    lo, hi = atm - cfg["n_each_side"] * step, atm + cfg["n_each_side"] * step
-    insts = [p for p in parsed if p["expiry"] == expiry and lo <= p["strike"] <= hi]
     insts.sort(key=lambda p: (p["strike"], p["opt"]))
-    _log(f"  {name}: spot={spot:.1f} atm={atm} expiry={expiry} "
+    lo, hi = atm - n * step, atm + n * step
+    _log(f"  {name}: spot={spot:.1f} atm={atm} expiry={expiry} token={exptoken} "
          f"strikes[{lo:.0f}..{hi:.0f}] -> {len(insts)} option instruments")
 
     manifest = _manifest(name, cfg, spot, atm, insts)
