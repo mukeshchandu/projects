@@ -1,18 +1,198 @@
 {
   "underlying": "NIFTY",
   "expiry": "2026-07-28",
-  "interval_min": 5,
-  "fetched_at": "2026-07-25T01:04:25+05:30",
+  "interval_min": 1,
+  "fetched_at": "2026-07-25T01:23:20+05:30",
   "range": [
-    "2026-05-26T01:03:50.844560+05:30",
-    "2026-07-25T01:03:50.844560+05:30"
+    "2026-04-26T01:21:10.433504+05:30",
+    "2026-07-25T01:21:10.433504+05:30"
   ],
   "spot": {
     "token": "26000",
     "exch": "NSE",
-    "candles": 3150
+    "candles": 19928
   },
   "instruments": {
+    "NIFTY28JUL26C22750": {
+      "token": "63885",
+      "tsym": "NIFTY28JUL26C22750",
+      "exch": "NFO",
+      "strike": 22750.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P22750": {
+      "token": "63886",
+      "tsym": "NIFTY28JUL26P22750",
+      "exch": "NFO",
+      "strike": 22750.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C22800": {
+      "token": "63887",
+      "tsym": "NIFTY28JUL26C22800",
+      "exch": "NFO",
+      "strike": 22800.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P22800": {
+      "token": "63888",
+      "tsym": "NIFTY28JUL26P22800",
+      "exch": "NFO",
+      "strike": 22800.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C22850": {
+      "token": "63889",
+      "tsym": "NIFTY28JUL26C22850",
+      "exch": "NFO",
+      "strike": 22850.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P22850": {
+      "token": "63890",
+      "tsym": "NIFTY28JUL26P22850",
+      "exch": "NFO",
+      "strike": 22850.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C22900": {
+      "token": "63891",
+      "tsym": "NIFTY28JUL26C22900",
+      "exch": "NFO",
+      "strike": 22900.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P22900": {
+      "token": "63892",
+      "tsym": "NIFTY28JUL26P22900",
+      "exch": "NFO",
+      "strike": 22900.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C22950": {
+      "token": "63893",
+      "tsym": "NIFTY28JUL26C22950",
+      "exch": "NFO",
+      "strike": 22950.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P22950": {
+      "token": "63894",
+      "tsym": "NIFTY28JUL26P22950",
+      "exch": "NFO",
+      "strike": 22950.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C23000": {
+      "token": "63895",
+      "tsym": "NIFTY28JUL26C23000",
+      "exch": "NFO",
+      "strike": 23000.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P23000": {
+      "token": "63896",
+      "tsym": "NIFTY28JUL26P23000",
+      "exch": "NFO",
+      "strike": 23000.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C23050": {
+      "token": "63897",
+      "tsym": "NIFTY28JUL26C23050",
+      "exch": "NFO",
+      "strike": 23050.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P23050": {
+      "token": "63898",
+      "tsym": "NIFTY28JUL26P23050",
+      "exch": "NFO",
+      "strike": 23050.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C23100": {
+      "token": "63899",
+      "tsym": "NIFTY28JUL26C23100",
+      "exch": "NFO",
+      "strike": 23100.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P23100": {
+      "token": "63900",
+      "tsym": "NIFTY28JUL26P23100",
+      "exch": "NFO",
+      "strike": 23100.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C23150": {
+      "token": "63901",
+      "tsym": "NIFTY28JUL26C23150",
+      "exch": "NFO",
+      "strike": 23150.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P23150": {
+      "token": "63902",
+      "tsym": "NIFTY28JUL26P23150",
+      "exch": "NFO",
+      "strike": 23150.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C23200": {
+      "token": "63903",
+      "tsym": "NIFTY28JUL26C23200",
+      "exch": "NFO",
+      "strike": 23200.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P23200": {
+      "token": "63904",
+      "tsym": "NIFTY28JUL26P23200",
+      "exch": "NFO",
+      "strike": 23200.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
     "NIFTY28JUL26C23250": {
       "token": "63905",
       "tsym": "NIFTY28JUL26C23250",
@@ -387,6 +567,186 @@
       "tsym": "NIFTY28JUL26P24250",
       "exch": "NFO",
       "strike": 24250.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24300": {
+      "token": "63951",
+      "tsym": "NIFTY28JUL26C24300",
+      "exch": "NFO",
+      "strike": 24300.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24300": {
+      "token": "63952",
+      "tsym": "NIFTY28JUL26P24300",
+      "exch": "NFO",
+      "strike": 24300.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24350": {
+      "token": "63953",
+      "tsym": "NIFTY28JUL26C24350",
+      "exch": "NFO",
+      "strike": 24350.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24350": {
+      "token": "63954",
+      "tsym": "NIFTY28JUL26P24350",
+      "exch": "NFO",
+      "strike": 24350.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24400": {
+      "token": "63955",
+      "tsym": "NIFTY28JUL26C24400",
+      "exch": "NFO",
+      "strike": 24400.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24400": {
+      "token": "63956",
+      "tsym": "NIFTY28JUL26P24400",
+      "exch": "NFO",
+      "strike": 24400.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24450": {
+      "token": "63957",
+      "tsym": "NIFTY28JUL26C24450",
+      "exch": "NFO",
+      "strike": 24450.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24450": {
+      "token": "63958",
+      "tsym": "NIFTY28JUL26P24450",
+      "exch": "NFO",
+      "strike": 24450.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24500": {
+      "token": "63959",
+      "tsym": "NIFTY28JUL26C24500",
+      "exch": "NFO",
+      "strike": 24500.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24500": {
+      "token": "63960",
+      "tsym": "NIFTY28JUL26P24500",
+      "exch": "NFO",
+      "strike": 24500.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24550": {
+      "token": "63961",
+      "tsym": "NIFTY28JUL26C24550",
+      "exch": "NFO",
+      "strike": 24550.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24550": {
+      "token": "63962",
+      "tsym": "NIFTY28JUL26P24550",
+      "exch": "NFO",
+      "strike": 24550.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24600": {
+      "token": "63963",
+      "tsym": "NIFTY28JUL26C24600",
+      "exch": "NFO",
+      "strike": 24600.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24600": {
+      "token": "63964",
+      "tsym": "NIFTY28JUL26P24600",
+      "exch": "NFO",
+      "strike": 24600.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24650": {
+      "token": "63965",
+      "tsym": "NIFTY28JUL26C24650",
+      "exch": "NFO",
+      "strike": 24650.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24650": {
+      "token": "63966",
+      "tsym": "NIFTY28JUL26P24650",
+      "exch": "NFO",
+      "strike": 24650.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24700": {
+      "token": "63967",
+      "tsym": "NIFTY28JUL26C24700",
+      "exch": "NFO",
+      "strike": 24700.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24700": {
+      "token": "63968",
+      "tsym": "NIFTY28JUL26P24700",
+      "exch": "NFO",
+      "strike": 24700.0,
+      "opt": "PE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26C24750": {
+      "token": "63969",
+      "tsym": "NIFTY28JUL26C24750",
+      "exch": "NFO",
+      "strike": 24750.0,
+      "opt": "CE",
+      "expiry": "2026-07-28",
+      "lot_size": 65
+    },
+    "NIFTY28JUL26P24750": {
+      "token": "63970",
+      "tsym": "NIFTY28JUL26P24750",
+      "exch": "NFO",
+      "strike": 24750.0,
       "opt": "PE",
       "expiry": "2026-07-28",
       "lot_size": 65
