@@ -11,3 +11,6 @@ ENV/
 *.log
 logs/
 stuck_debug.png
+
+# macOS
+.DS_Store

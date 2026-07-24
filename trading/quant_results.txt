@@ -1,0 +1,122 @@
+# 120 configs | Nifty100 15m/60d | train/test | MIS costs + spread | our-exit=chandelier
+strat         exit    tf     train     test  trades   win%  params
+ema_cross     native  True   -11810     3469    1016   46.1  {'fast': 20, 'slow': 50}
+ema_cross     native  False   -17522     1122    1215   45.7  {'fast': 20, 'slow': 50}
+vwap_mr       native  False     3951      860      85   52.9  {'k': 0.02}
+donchian      native  True    -2950      711     438   50.5  {'n': 55}
+vwap_mr       native  True     4046      431      78   50.0  {'k': 0.02}
+donchian      native  False    -4056      372     629   49.1  {'n': 55}
+vwap_mr       our     False     -594     -530      85   22.4  {'k': 0.02}
+vwap_mr       our     True     -538     -960      78   16.7  {'k': 0.02}
+supertrend    native  False   -26018    -2444    1716   46.8  {'atr': 10, 'mult': 3.0}
+supertrend    native  False   -29160    -3652    1773   47.7  {'atr': 20, 'mult': 3.0}
+donchian      native  False   -31149    -4012    1473   47.0  {'n': 20}
+ema_cross     native  False   -22636    -4067    2044   42.9  {'fast': 12, 'slow': 26}
+donchian      native  False   -11956    -4264     865   48.7  {'n': 40}
+donchian      native  True    -2671    -5002     545   48.1  {'n': 40}
+supertrend    native  True    -5851    -5078    1049   47.2  {'atr': 10, 'mult': 3.0}
+momentum      native  True   -37762    -5380    2951   36.6  {'n': 40, 'th': 0.005}
+supertrend    native  True    -5686    -6029    1113   48.4  {'atr': 20, 'mult': 3.0}
+rsi_mr        native  True     8431    -6416     331   46.5  {'n': 14, 'lo': 25, 'hi': 75}
+ema_cross     native  True    -9993    -6433    1586   42.6  {'fast': 12, 'slow': 26}
+donchian      native  True   -13411    -6577     865   47.1  {'n': 20}
+rsi_mr        native  False      485    -7167     606   50.5  {'n': 14, 'lo': 25, 'hi': 75}
+supertrend    native  True    -6032    -7639    1912   45.3  {'atr': 10, 'mult': 2.0}
+rsi_mr        our     False    -7078    -8210     606   18.6  {'n': 14, 'lo': 25, 'hi': 75}
+rsi_mr        our     True    -2206    -8243     331   11.2  {'n': 14, 'lo': 25, 'hi': 75}
+ema_cross     native  True   -10574    -8390    1940   40.4  {'fast': 9, 'slow': 21}
+bollinger_mr  native  True     3373    -8412     601   49.9  {'n': 20, 'k': 2.5}
+ema_cross     native  False   -24879    -9414    2565   40.5  {'fast': 9, 'slow': 21}
+bollinger_mr  our     True    -5957    -9806     601   19.0  {'n': 20, 'k': 2.5}
+supertrend    native  True    -7213    -9936    2812   44.2  {'atr': 14, 'mult': 1.5}
+rsi_mr        native  True     4835   -10581     580   48.6  {'n': 14, 'lo': 30, 'hi': 70}
+orb           native  True   -32602   -11080    2077   46.7  {'or_bars': 1}
+vwap_mr       our     False   -15454   -11596     663   19.2  {'k': 0.01}
+donchian      native  True   -14606   -11640    1666   45.3  {'n': 10}
+ema_cross     native  True   -16364   -12464    2580   37.2  {'fast': 5, 'slow': 20}
+momentum      native  False   -43674   -12592    3730   36.6  {'n': 40, 'th': 0.005}
+ema_cross     native  False   -25440   -12883    3448   37.9  {'fast': 5, 'slow': 20}
+vwap_mr       our     True   -14743   -13017     611   17.0  {'k': 0.01}
+donchian      our     True   -14188   -13089     438    6.8  {'n': 55}
+bollinger_mr  our     False   -14127   -14184    1352   22.2  {'n': 20, 'k': 2.5}
+rsi_mr        our     True    -5658   -15382     580   11.6  {'n': 14, 'lo': 30, 'hi': 70}
+donchian      native  False   -17464   -15527    2475   44.2  {'n': 10}
+donchian      our     True   -13574   -16000     545    8.6  {'n': 40}
+rsi_mr        our     False   -12103   -17283    1026   17.5  {'n': 14, 'lo': 30, 'hi': 70}
+vwap_mr       native  False    -4382   -18487     663   44.6  {'k': 0.01}
+donchian      our     False   -22329   -18548     629    9.2  {'n': 55}
+rsi_mr        our     True    -9722   -18628     748   14.7  {'n': 7, 'lo': 20, 'hi': 80}
+rsi_mr        native  True    -2218   -19351     748   48.1  {'n': 7, 'lo': 20, 'hi': 80}
+rsi_mr        native  False     2244   -19544    1026   50.7  {'n': 14, 'lo': 30, 'hi': 70}
+vwap_mr       native  True    -5559   -20179     611   43.4  {'k': 0.01}
+supertrend    native  False   -17100   -20195    2871   43.8  {'atr': 10, 'mult': 2.0}
+bollinger_mr  native  False     -719   -21761    1352   53.0  {'n': 20, 'k': 2.5}
+bollinger_mr  our     True   -15915   -21768     970   11.8  {'n': 30, 'k': 2.0}
+rsi_mr        native  False    -6517   -22009    1321   52.2  {'n': 7, 'lo': 20, 'hi': 80}
+orb           native  True   -39608   -22071    2215   47.1  {'or_bars': 4}
+rsi_mr        our     False   -18423   -22615    1321   18.4  {'n': 7, 'lo': 20, 'hi': 80}
+momentum      native  False   -64299   -23570    5315   34.4  {'n': 20, 'th': 0.003}
+donchian      our     True   -27738   -24059     865    8.7  {'n': 20}
+orb           native  False   -40268   -24150    2270   46.7  {'or_bars': 4}
+bollinger_mr  native  True    -2703   -24234     970   46.5  {'n': 30, 'k': 2.0}
+bollinger_mr  our     True   -19434   -24291    1148   11.8  {'n': 20, 'k': 2.0}
+supertrend    native  False   -24932   -24452    3957   42.4  {'atr': 14, 'mult': 1.5}
+bollinger_mr  native  True   -10486   -24514    1150   49.5  {'n': 20, 'k': 2.0}
+momentum      native  True   -46482   -24930    4115   33.5  {'n': 20, 'th': 0.003}
+donchian      our     False   -24308   -25076     865   10.3  {'n': 40}
+macd          native  True   -10982   -27454    3518   38.9  {}
+orb           native  True   -49981   -28753    2594   46.1  {'or_bars': 2}
+orb           native  False   -50831   -29377    2926   45.8  {'or_bars': 1}
+momentum      native  False   -54020   -30816    5666   34.0  {'n': 20, 'th': 0.0}
+orb           native  False   -50631   -30941    2643   45.7  {'or_bars': 2}
+ema_cross     our     True   -32804   -31043     998    6.2  {'fast': 20, 'slow': 50}
+bollinger_mr  our     False   -24125   -31195    1562   15.8  {'n': 30, 'k': 2.0}
+momentum      native  True   -42240   -31898    4474   33.4  {'n': 20, 'th': 0.0}
+supertrend    our     True   -35467   -33138    1049    7.4  {'atr': 10, 'mult': 3.0}
+bollinger_mr  our     False   -33111   -34565    2069   17.1  {'n': 20, 'k': 2.0}
+supertrend    our     True   -33045   -35168    1113    8.1  {'atr': 20, 'mult': 3.0}
+ema_cross     our     False   -37880   -36977    1196    7.2  {'fast': 20, 'slow': 50}
+vwap_mr       native  False   -35949   -37560    2454   54.0  {'k': 0.005}
+momentum      native  True    -9599   -37697    7069   33.0  {'n': 10, 'th': 0.0}
+vwap_mr       native  True   -29169   -39392    2236   53.2  {'k': 0.005}
+macd          native  False   -11465   -39545    4403   38.6  {}
+bollinger_mr  native  False   -16687   -39824    2073   52.7  {'n': 20, 'k': 2.0}
+bollinger_mr  native  False     1897   -41299    1562   48.5  {'n': 30, 'k': 2.0}
+vwap_mr       our     False   -61823   -42647    2443   15.8  {'k': 0.005}
+donchian      our     False   -45712   -43592    1473   10.2  {'n': 20}
+ema_cross     our     True   -45097   -44704    1528    8.0  {'fast': 12, 'slow': 26}
+vwap_mr       our     True   -64126   -45281    2226   13.9  {'k': 0.005}
+donchian      our     True   -54392   -50938    1663    8.9  {'n': 10}
+ema_cross     our     True   -53795   -52607    1816    7.5  {'fast': 9, 'slow': 21}
+bollinger_mr  native  True   -53168   -53733    3310   55.2  {'n': 10, 'k': 1.5}
+bollinger_mr  native  False   -55734   -55250    4536   56.2  {'n': 10, 'k': 1.5}
+supertrend    our     False   -60297   -55694    1716    8.6  {'atr': 10, 'mult': 3.0}
+supertrend    our     True   -58859   -57621    1912    7.9  {'atr': 10, 'mult': 2.0}
+supertrend    our     False   -58173   -59298    1773    8.6  {'atr': 20, 'mult': 3.0}
+ema_cross     our     False   -58280   -59668    1977    8.5  {'fast': 12, 'slow': 26}
+momentum      native  False   -28062   -59723    8510   32.8  {'n': 10, 'th': 0.0}
+ema_cross     our     True   -60420   -68056    2283    7.9  {'fast': 5, 'slow': 20}
+orb           our     True   -73886   -68838    2074    6.5  {'or_bars': 1}
+ema_cross     our     False   -70720   -71596    2428    8.5  {'fast': 9, 'slow': 21}
+orb           our     True   -82320   -71627    2215    6.7  {'or_bars': 4}
+orb           our     False   -82982   -73709    2270    7.3  {'or_bars': 4}
+bollinger_mr  our     True   -84739   -74529    3262    9.8  {'n': 10, 'k': 1.5}
+donchian      our     False   -73866   -77348    2471    9.7  {'n': 10}
+momentum      our     True   -90489   -77404    2585    8.2  {'n': 40, 'th': 0.005}
+supertrend    our     True   -83501   -86855    2812    8.0  {'atr': 14, 'mult': 1.5}
+orb           our     True  -100853   -89332    2593    6.1  {'or_bars': 2}
+bollinger_mr  our     False  -102297   -89896    4465   13.1  {'n': 10, 'k': 1.5}
+momentum      our     True   -92640   -90391    3169    9.7  {'n': 20, 'th': 0.0}
+supertrend    our     False   -92966   -91048    2871    8.6  {'atr': 10, 'mult': 2.0}
+orb           our     False  -101500   -91516    2642    6.5  {'or_bars': 2}
+ema_cross     our     False   -81615   -92660    3119    9.4  {'fast': 5, 'slow': 20}
+macd          our     True   -88144   -96073    3216    8.9  {}
+momentum      our     False  -112374   -97272    3325    9.6  {'n': 40, 'th': 0.005}
+orb           our     False  -108771   -98135    2923    6.4  {'or_bars': 1}
+momentum      our     True  -104170   -99855    3504    9.4  {'n': 20, 'th': 0.003}
+macd          our     False  -113369  -122060    4057    9.8  {}
+momentum      our     False  -120885  -123400    4161   10.5  {'n': 20, 'th': 0.0}
+supertrend    our     False  -122612  -124413    3956    8.9  {'atr': 14, 'mult': 1.5}
+momentum      our     False  -139363  -132003    4607   10.8  {'n': 20, 'th': 0.003}
+momentum      our     True  -126677  -137897    4771    8.6  {'n': 10, 'th': 0.0}
+momentum      our     False  -161644  -175747    5977    9.3  {'n': 10, 'th': 0.0}

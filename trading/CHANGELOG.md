@@ -2,6 +2,20 @@
 
 _All entries authored by Claude (AI assistant). Most recent on top._
 
+## 2026-07-24 — Preserve research/backtest lab before machine decommission
+- Committed the full Mac-only research toolkit (previously kept uncommitted by convention) so it
+  survives the machine wipe: `bt_engine.py` (faithful engine — fills at best bid/ask on ticks,
+  close±spread on yfinance), `quant_lab.py` (9 strategy types × params, OOS train/test),
+  `obi_lab.py` (order-book-imbalance signal), `ml_micro.py` + `cross_asset.py` (walk-forward ML,
+  leakage-audited), the `bt_*`/`chart_*`/`sim_chart`/`*_backtest`/`tf_backtest` sweeps,
+  `verify_pipeline.py`, `test_entry_retry.py`, `NAIM_TRADE_HANDOFF.md`, results txts, and the
+  `nifty100_15m.pkl` data cache.
+- Standing finding across all of it: NO retail-capturable edge — trend/MR TA has no OOS signal;
+  microstructure/ML signal is real but sits under the spread (taker loses); the cross-asset daily
+  "edge" was a look-ahead leak (52% after de-leaking, loses to buy-and-hold). Live system is
+  hardened/safe but should not be expected to profit.
+- This entry and the committed research code were written by Claude, the AI assistant.
+
 ## 2026-07-20 — Entry retry-on-cancel + 15-stock basket
 - `runner.py`: entries now RETRY on exchange cancel (IOC 16388) instead of being dropped —
   `_do_entry` mirrors `_do_exit`. Schedule (entries AND exits): attempts 1 & 2 sit at the
