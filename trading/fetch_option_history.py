@@ -110,6 +110,9 @@ def main() -> None:
     ap.add_argument("--underlyings", default=",".join(OL.UNDERLYINGS))
     ap.add_argument("--interval", type=int, default=5, help="candle minutes: 1/3/5/15/30/60")
     ap.add_argument("--days", type=int, default=60, help="lookback days (TPSeries caps ~90)")
+    ap.add_argument("--each-side", type=int, default=None,
+                    help="override strikes each side of ATM (wider = ATM stays covered as spot "
+                         "moves over a long lookback; default uses UNDERLYINGS config, ~10)")
     args = ap.parse_args()
 
     names = [n.strip().upper() for n in args.underlyings.split(",") if n.strip()]
@@ -127,6 +130,8 @@ def main() -> None:
         if not cfg:
             _log(f"  {name}: no config — skipping")
             continue
+        if args.each_side is not None:
+            cfg = {**cfg, "n_each_side": args.each_side}
         fetch_underlying(client, name, cfg, start_dt, end_dt, args.interval)
     _log("done.")
 
